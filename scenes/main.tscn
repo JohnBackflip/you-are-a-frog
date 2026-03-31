@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://0yo5kafitfqt"]
+
+[ext_resource type="Texture2D" uid="uid://clkrn3vh430ka" path="res://assets/placeholder_tavern.jpg" id="1_o5qli"]
+[ext_resource type="Texture2D" uid="uid://56ecsc5jv4n0" path="res://assets/placeholder_cauldron.png" id="2_0wfyh"]
+
+[node name="Main" type="Node2D"]
+
+[node name="PlaceholderBackground" type="Sprite2D" parent="."]
+position = Vector2(577, 323.00003)
+scale = Vector2(1.2216386, 1.213588)
+texture = ExtResource("1_o5qli")
+
+[node name="PlaceholderCauldron" type="Sprite2D" parent="."]
+position = Vector2(569, 453.625)
+scale = Vector2(10.333334, 9.215516)
+texture = ExtResource("2_0wfyh")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
