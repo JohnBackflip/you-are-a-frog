@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://56ecsc5jv4n0"
-path="res://.godot/imported/placeholder_cauldron.png-b125d28849feca254b26d0ae538b5395.ctex"
+uid="uid://off6fecbxg26"
+path="res://.godot/imported/shop_night.JPG-d714cbf92cd44b444880ce38f148426f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/placeholder_cauldron.png"
-dest_files=["res://.godot/imported/placeholder_cauldron.png-b125d28849feca254b26d0ae538b5395.ctex"]
+source_file="res://assets/shop_night.JPG"
+dest_files=["res://.godot/imported/shop_night.JPG-d714cbf92cd44b444880ce38f148426f.ctex"]
 
 [params]
 

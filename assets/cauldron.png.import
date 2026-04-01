@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clkrn3vh430ka"
-path="res://.godot/imported/placeholder_tavern.jpg-eec46b2ba9bf9d7a5ba728f86642e2e0.ctex"
+uid="uid://b5d05pcx3qonl"
+path="res://.godot/imported/cauldron.png-c19e57c44accdaef2cb751d843a6ad41.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/placeholder_tavern.jpg"
-dest_files=["res://.godot/imported/placeholder_tavern.jpg-eec46b2ba9bf9d7a5ba728f86642e2e0.ctex"]
+source_file="res://assets/cauldron.png"
+dest_files=["res://.godot/imported/cauldron.png-c19e57c44accdaef2cb751d843a6ad41.ctex"]
 
 [params]
 

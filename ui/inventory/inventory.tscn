@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwe26a1mdaome"]
+
+[ext_resource type="Script" uid="uid://blq0dqyiv2pok" path="res://ui/inventory/inventory.gd" id="1_s83yu"]
+[ext_resource type="PackedScene" uid="uid://bj32pp33u7ou4" path="res://ui/inventory/slot.tscn" id="1_t68fq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t68fq"]
+bg_color = Color(0.19524848, 0.55629444, 0.55131316, 0.7254902)
+
+[node name="Inventory" type="PanelContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_t68fq")
+script = ExtResource("1_s83yu")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="ItemGrid" type="GridContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
+columns = 5
+
+[node name="Slot" parent="MarginContainer/ItemGrid" instance=ExtResource("1_t68fq")]
+layout_mode = 2
