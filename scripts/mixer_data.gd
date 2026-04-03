@@ -2,7 +2,8 @@
 extends InventoryData
 class_name MixerData
 
-signal is_mixer_full(full: bool)
+signal mixer_contents(contents: Array[SlotData], full: bool)
+
 
 func is_full() -> bool:
 	for slot_data in slot_datas:
@@ -12,9 +13,8 @@ func is_full() -> bool:
 
 
 func on_inventory_update(_inventory_data: InventoryData) -> void:
-	# Checks if mixer is full whenever an item is added / removed
+	# Emit mixer contents on every update (for ratio calculations)
 	if is_full():
-		print("Mixer full!")
-		is_mixer_full.emit(true)
+		mixer_contents.emit(slot_datas, true)
 	else:
-		is_mixer_full.emit(false)
+		mixer_contents.emit(slot_datas, false)
