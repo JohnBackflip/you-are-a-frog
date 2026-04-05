@@ -28,6 +28,7 @@ script = ExtResource("1_a646j")
 sprite_frames = SubResource("SpriteFrames_1vfb6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(20.5, -60)
 shape = SubResource("RectangleShape2D_a646j")
 

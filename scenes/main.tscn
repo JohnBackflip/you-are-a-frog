@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://0yo5kafitfqt"]
+[gd_scene load_steps=11 format=3 uid="uid://0yo5kafitfqt"]
 
 [ext_resource type="Script" uid="uid://f6bjpg5u0tat" path="res://scripts/main.gd" id="1_jyhfs"]
 [ext_resource type="Texture2D" uid="uid://da1hf6oukdqme" path="res://assets/shop_bg_night.png" id="2_tipki"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bj32pp33u7ou4" path="res://ui/inventory/slot.tscn" id="5_tbgi4"]
 [ext_resource type="Script" uid="uid://db5q8dhejojql" path="res://scenes/craft_button.gd" id="7_o6xl0"]
 [ext_resource type="Script" uid="uid://bkym06b03jhrv" path="res://ui/inventory/mixer.gd" id="7_tipki"]
+[ext_resource type="Script" uid="uid://c7knec5qe8cr4" path="res://scripts/ratio_chart.gd" id="10_choun"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_jyhfs")
@@ -23,10 +24,12 @@ metadata/_edit_lock_ = true
 position = Vector2(643, 450)
 scale = Vector2(0.3, 0.3)
 priority = 4
+metadata/_edit_lock_ = true
 
 [node name="RecipeBook" parent="." instance=ExtResource("4_85g3d")]
 position = Vector2(912.00006, 563)
 scale = Vector2(0.17, 0.17)
+metadata/_edit_lock_ = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -93,5 +96,14 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 20
 text = "CRAFT!"
 script = ExtResource("7_o6xl0")
+
+[node name="RatioChart" type="Control" parent="CanvasLayer/CraftingInterface"]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = 213.0
+offset_top = 263.0
+offset_right = 333.0
+offset_bottom = 383.0
+script = ExtResource("10_choun")
 
 [connection signal="pressed" from="CanvasLayer/CraftingInterface/CraftButton" to="CanvasLayer/CraftingInterface/CraftButton" method="_on_pressed"]

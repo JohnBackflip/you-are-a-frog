@@ -2,7 +2,7 @@
 extends InventoryData
 class_name MixerData
 
-signal mixer_contents(contents: Array[SlotData], full: bool)
+signal mixer_contents(contents: Array[ItemData], full: bool)
 
 
 func is_full() -> bool:
