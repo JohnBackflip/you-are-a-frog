@@ -3,7 +3,7 @@ class_name Inventory
 
 const SLOT = preload("uid://bj32pp33u7ou4")
 
-@onready var item_grid: GridContainer = $MarginContainer/ItemGrid
+@onready var item_grid: GridContainer = $VBoxContainer/MarginContainer/ItemGrid
 
 
 func set_inventory_data(inventory_data: InventoryData) -> void:

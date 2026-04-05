@@ -2,6 +2,7 @@
 extends Control
 
 @onready var player_inventory: Inventory = %PlayerInventory
+@onready var item_description : TabContainer = $PlayerInventory/VBoxContainer/ItemDescription
 @onready var mixer: Mixer = $Mixer
 @onready var grabbed_slot: PanelContainer = $GrabbedSlot
 @onready var craft_button: Button = $CraftButton
@@ -51,5 +52,6 @@ func update_grabbed_slot() -> void:
 	if grabbed_slot_data:
 		grabbed_slot.show()
 		grabbed_slot.set_slot_data(grabbed_slot_data)
+		item_description.set_info(grabbed_slot_data)
 	else:
 		grabbed_slot.hide()

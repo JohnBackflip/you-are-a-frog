@@ -3,6 +3,10 @@ class_name Mixer
 
 @onready var craft_button: Button = %CraftButton
 
+func _ready() -> void:
+	# Remove the "description" on the mixer
+	$VBoxContainer/ItemDescription.queue_free()
+
 signal ingredients_updated(ingredients: Array[ItemData])
 
 func check_mixer_contents(contents: Array[SlotData], full: bool) -> void:

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bwe26a1mdaome"]
+[gd_scene load_steps=5 format=3 uid="uid://bwe26a1mdaome"]
 
 [ext_resource type="StyleBox" uid="uid://b7mquqaqmh7yf" path="res://ui/panel_container.tres" id="1_qrt2q"]
 [ext_resource type="Script" uid="uid://blq0dqyiv2pok" path="res://ui/inventory/inventory.gd" id="1_s83yu"]
 [ext_resource type="PackedScene" uid="uid://bj32pp33u7ou4" path="res://ui/inventory/slot.tscn" id="1_t68fq"]
+[ext_resource type="Script" uid="uid://daoqvnp1hwhld" path="res://ui/inventory/item_description.gd" id="4_lep46"]
 
 [node name="Inventory" type="PanelContainer"]
 offset_right = 40.0
@@ -10,18 +11,61 @@ offset_bottom = 40.0
 theme_override_styles/panel = ExtResource("1_qrt2q")
 script = ExtResource("1_s83yu")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="ItemGrid" type="GridContainer" parent="MarginContainer"]
+[node name="ItemGrid" type="GridContainer" parent="VBoxContainer/MarginContainer"]
 layout_mode = 2
 theme_override_constants/h_separation = 8
 theme_override_constants/v_separation = 8
 columns = 5
 
-[node name="Slot" parent="MarginContainer/ItemGrid" instance=ExtResource("1_t68fq")]
+[node name="Slot" parent="VBoxContainer/MarginContainer/ItemGrid" instance=ExtResource("1_t68fq")]
 layout_mode = 2
+
+[node name="ItemDescription" type="TabContainer" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+current_tab = 0
+script = ExtResource("4_lep46")
+
+[node name="Description" type="MarginContainer" parent="VBoxContainer/ItemDescription"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+metadata/_tab_index = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/ItemDescription/Description"]
+layout_mode = 2
+theme_override_constants/line_separation = 3
+theme_override_constants/paragraph_separation = 4
+bbcode_enabled = true
+text = "Hello "
+
+[node name="Known Recipes" type="MarginContainer" parent="VBoxContainer/ItemDescription"]
+visible = false
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+metadata/_tab_index = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/ItemDescription/Known Recipes"]
+layout_mode = 2
+theme_override_constants/line_separation = 3
+theme_override_constants/paragraph_separation = 4
+bbcode_enabled = true
+text = "You don't know any recipes with this ingredient... [i]yet[/i]"
