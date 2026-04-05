@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bgh7nj36fxlmf"]
 
-[ext_resource type="Script" uid="uid://cp2fegm8ogi0y" path="res://scenes/cauldron.gd" id="1_8jqlm"]
+[ext_resource type="Script" uid="uid://cp2fegm8ogi0y" path="res://scripts/crafting/cauldron.gd" id="1_8jqlm"]
 [ext_resource type="Texture2D" uid="uid://b5d05pcx3qonl" path="res://assets/cauldron.png" id="1_bi80w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8jqlm"]

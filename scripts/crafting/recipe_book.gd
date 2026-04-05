@@ -2,6 +2,23 @@ extends Area2D
 
 @onready var sprite: AnimatedSprite2D = $Sprite
 
+var encyclopedia: Encyclopedia
+
+
+func _ready() -> void:
+	get_recipes()
+
+
+func get_recipes() -> void:
+	encyclopedia = game_manager.encyclopedia
+	if encyclopedia:
+		print_recipes()
+	else:
+		push_error("Encyclopedia not found!")
+
+func print_recipes() -> void:
+	for potion: PotionData in encyclopedia.potions:
+		print(potion.name)
 
 func _on_mouse_entered() -> void:
 	var tween = create_tween()

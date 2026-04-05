@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="PotionData" load_steps=9 format=3 uid="uid://b3tnuk6rq76gg"]
+
+[ext_resource type="Texture2D" uid="uid://dxhked8oouaok" path="res://assets/#1 - Transparent Icons.png" id="1_dhl2y"]
+[ext_resource type="Script" uid="uid://csfappelxyahy" path="res://scripts/items/recipe_step.gd" id="2_l82kl"]
+[ext_resource type="Resource" uid="uid://ck5fvhmmd8dlm" path="res://resources/ingredient_properties/healing.tres" id="3_qnr8o"]
+[ext_resource type="Script" uid="uid://66tqeact8x1t" path="res://scripts/items/recipe.gd" id="4_62o28"]
+[ext_resource type="Script" uid="uid://c7frnt306tx28" path="res://scripts/items/potion_data.gd" id="5_8rygj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_scebp"]
+atlas = ExtResource("1_dhl2y")
+region = Rect2(5, 291, 22, 26)
+
+[sub_resource type="Resource" id="Resource_vmfrh"]
+script = ExtResource("2_l82kl")
+property = ExtResource("3_qnr8o")
+quantity = 2
+metadata/_custom_type_script = "uid://csfappelxyahy"
+
+[sub_resource type="Resource" id="Resource_exwmf"]
+script = ExtResource("4_62o28")
+recipe_steps = Array[ExtResource("2_l82kl")]([SubResource("Resource_vmfrh")])
+metadata/_custom_type_script = "uid://66tqeact8x1t"
+
+[resource]
+script = ExtResource("5_8rygj")
+recipe = SubResource("Resource_exwmf")
+name = "Healing Potion"
+art = SubResource("AtlasTexture_scebp")
+description = "A standard healing potion"
+metadata/_custom_type_script = "uid://c7frnt306tx28"

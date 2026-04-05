@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="MixerData" load_steps=3 format=3 uid="uid://ctskj2xpfe8fy"]
 
-[ext_resource type="Script" uid="uid://b427ytjs4pve1" path="res://scripts/mixer_data.gd" id="1_gihqs"]
-[ext_resource type="Script" uid="uid://ya5q8k0syvlc" path="res://scripts/slot_data.gd" id="2_am02x"]
+[ext_resource type="Script" uid="uid://b427ytjs4pve1" path="res://scripts/inventory/mixer_data.gd" id="1_gihqs"]
+[ext_resource type="Script" uid="uid://ya5q8k0syvlc" path="res://scripts/inventory/slot_data.gd" id="2_am02x"]
 
 [resource]
 script = ExtResource("1_gihqs")

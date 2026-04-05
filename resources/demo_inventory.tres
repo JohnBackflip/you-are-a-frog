@@ -1,28 +1,28 @@
 [gd_resource type="Resource" script_class="InventoryData" load_steps=9 format=3 uid="uid://eajge1jeea0y"]
 
-[ext_resource type="Script" uid="uid://b3trg1hfu14lr" path="res://scripts/inventory_data.gd" id="1_886py"]
-[ext_resource type="Script" uid="uid://ya5q8k0syvlc" path="res://scripts/slot_data.gd" id="2_3o3uf"]
-[ext_resource type="Resource" uid="uid://b6ooc8hp0it2k" path="res://resources/items/apple.tres" id="3_5bmcv"]
-[ext_resource type="Resource" uid="uid://vaohbk3dsln8" path="res://resources/items/poison_mushroom.tres" id="3_jyk7l"]
-[ext_resource type="Resource" uid="uid://b5b2iwu50cnjf" path="res://resources/items/root.tres" id="4_jyk7l"]
+[ext_resource type="Script" uid="uid://b3trg1hfu14lr" path="res://scripts/inventory/inventory_data.gd" id="1_886py"]
+[ext_resource type="Script" uid="uid://ya5q8k0syvlc" path="res://scripts/inventory/slot_data.gd" id="2_3o3uf"]
+[ext_resource type="Resource" uid="uid://cu73ggvwv8i1v" path="res://resources/ingredients/apple.tres" id="3_jyk7l"]
+[ext_resource type="Resource" uid="uid://bjln21jd2twkv" path="res://resources/ingredients/poison_mushroom.tres" id="4_46yob"]
+[ext_resource type="Resource" uid="uid://w6ymsvsleat6" path="res://resources/ingredients/root.tres" id="5_83vuj"]
 
 [sub_resource type="Resource" id="Resource_cejnm"]
 script = ExtResource("2_3o3uf")
 item_data = ExtResource("3_jyk7l")
-metadata/_custom_type_script = "uid://ya5q8k0syvlc"
-
-[sub_resource type="Resource" id="Resource_46yob"]
-script = ExtResource("2_3o3uf")
-item_data = ExtResource("3_5bmcv")
 quantity = 3
 metadata/_custom_type_script = "uid://ya5q8k0syvlc"
 
-[sub_resource type="Resource" id="Resource_83vuj"]
+[sub_resource type="Resource" id="Resource_6im7c"]
 script = ExtResource("2_3o3uf")
-item_data = ExtResource("4_jyk7l")
+item_data = ExtResource("4_46yob")
+metadata/_custom_type_script = "uid://ya5q8k0syvlc"
+
+[sub_resource type="Resource" id="Resource_k1k83"]
+script = ExtResource("2_3o3uf")
+item_data = ExtResource("5_83vuj")
 metadata/_custom_type_script = "uid://ya5q8k0syvlc"
 
 [resource]
 script = ExtResource("1_886py")
-slot_datas = Array[ExtResource("2_3o3uf")]([SubResource("Resource_cejnm"), null, null, SubResource("Resource_46yob"), null, SubResource("Resource_83vuj"), null, null, null, null, null, null, null, null, null])
+slot_datas = Array[ExtResource("2_3o3uf")]([null, SubResource("Resource_cejnm"), null, null, SubResource("Resource_6im7c"), null, null, SubResource("Resource_k1k83"), null, null, null, null, null, null, null])
 metadata/_custom_type_script = "uid://b3trg1hfu14lr"

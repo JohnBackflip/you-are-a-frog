@@ -12,7 +12,7 @@ func _ready() -> void:
 
 
 func set_slot_data(slot_data: SlotData):
-	texture_rect.texture = slot_data.item_data.texture
+	texture_rect.texture = slot_data.item_data.art
 	quantity_label.text = "x%s" % str(slot_data.quantity)
 	if slot_data.quantity > 1:
 		quantity_label.show()

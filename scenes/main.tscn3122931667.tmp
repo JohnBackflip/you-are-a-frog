@@ -5,11 +5,11 @@
 [ext_resource type="PackedScene" uid="uid://bwe26a1mdaome" path="res://ui/inventory/inventory.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://bgh7nj36fxlmf" path="res://scenes/cauldron.tscn" id="3_tipki"]
 [ext_resource type="PackedScene" uid="uid://bdlxaluranoch" path="res://scenes/recipe_book.tscn" id="4_85g3d"]
-[ext_resource type="Script" uid="uid://bxnd2guymaw3e" path="res://scripts/crafting/crafting_interface.gd" id="4_tefeu"]
+[ext_resource type="Script" uid="uid://bxnd2guymaw3e" path="res://scripts/crafting_interface.gd" id="4_tefeu"]
 [ext_resource type="PackedScene" uid="uid://bj32pp33u7ou4" path="res://ui/inventory/slot.tscn" id="5_tbgi4"]
-[ext_resource type="Script" uid="uid://db5q8dhejojql" path="res://scripts/crafting/craft_button.gd" id="7_o6xl0"]
+[ext_resource type="Script" uid="uid://db5q8dhejojql" path="res://scenes/craft_button.gd" id="7_o6xl0"]
 [ext_resource type="Script" uid="uid://bkym06b03jhrv" path="res://ui/inventory/mixer.gd" id="7_tipki"]
-[ext_resource type="Script" uid="uid://c7knec5qe8cr4" path="res://scripts/crafting/ratio_chart.gd" id="10_choun"]
+[ext_resource type="Script" uid="uid://c7knec5qe8cr4" path="res://scripts/ratio_chart.gd" id="10_choun"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_jyhfs")

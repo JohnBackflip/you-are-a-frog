@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="IngredientProperty" load_steps=2 format=3 uid="uid://clvr2d54jyo3n"]
+
+[ext_resource type="Script" uid="uid://d1eqbv1pms38t" path="res://scripts/items/ingredient_property.gd" id="1_5w3v2"]
+
+[resource]
+script = ExtResource("1_5w3v2")
+name = "Poisonous"
+colour = Color(0, 1, 0, 1)
+metadata/_custom_type_script = "uid://d1eqbv1pms38t"
