@@ -11,6 +11,18 @@ func on_slot_clicked(index: int, button: int) -> void:
 	inventory_interact.emit(self, index, button)
 
 
+func add_item(data: ItemData) -> bool:
+	for index in slot_datas.size():
+		if slot_datas[index] == null:
+			slot_datas[index] = SlotData.new()
+			slot_datas[index].item_data = data
+			inventory_updated.emit(self)
+			return true
+	print("Inventory Full!")
+	return false
+			
+
+
 func grab_slot_data(index: int) -> SlotData:
 	var slot_data = slot_datas[index]
 	if slot_data:

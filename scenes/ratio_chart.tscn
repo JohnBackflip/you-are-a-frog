@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://xptg32g8s6sw"]
+
+[ext_resource type="PackedScene" uid="uid://bfe5mm3kkr1hj" path="res://scenes/property_legend.tscn" id="1_vk5kh"]
+[ext_resource type="PackedScene" uid="uid://bblhqi2jsidsi" path="res://scenes/mixer.tscn" id="2_vk5kh"]
+
+[node name="RatioChart" type="HBoxContainer"]
+offset_right = 204.0
+offset_bottom = 100.0
+theme_override_constants/separation = 30
+
+[node name="ColourLegend" parent="." instance=ExtResource("1_vk5kh")]
+layout_mode = 2
+
+[node name="Mixer" parent="." instance=ExtResource("2_vk5kh")]
+layout_mode = 2

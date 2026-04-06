@@ -3,10 +3,9 @@ extends Control
 
 @onready var player_inventory: Inventory = %PlayerInventory
 @onready var item_description : TabContainer = $PlayerInventory/VBoxContainer/ItemDescription
-@onready var mixer: Mixer = $Mixer
 @onready var grabbed_slot: PanelContainer = $GrabbedSlot
 @onready var craft_button: Button = $CraftButton
-@onready var ratio_chart: Control = %RatioChart
+@onready var mixer: Control = %Mixer
 
 var grabbed_slot_data
 
@@ -29,10 +28,9 @@ func set_player_inventory_data(inventory_data: InventoryData) -> void:
 func set_mixer_data(mixer_data: MixerData) -> void:
 	mixer_data.inventory_interact.connect(on_inventory_interact)
 	mixer_data.inventory_updated.connect(mixer_data.on_inventory_update)
-	mixer.set_inventory_data(mixer_data)
+
 	# Connect signals
-	mixer_data.mixer_contents.connect(mixer.check_mixer_contents)
-	mixer.ingredients_updated.connect(ratio_chart.update_ingredients)
+	mixer_data.mixer_contents.connect(mixer.on_ingredients_update)
 
 
 # Grab or place selected item from the inventory 

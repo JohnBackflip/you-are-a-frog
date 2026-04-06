@@ -1,0 +1,67 @@
+[gd_scene load_steps=2 format=3 uid="uid://bfe5mm3kkr1hj"]
+
+[ext_resource type="Texture2D" uid="uid://cfwhanqe6jifd" path="res://assets/blank.png" id="1_2qavb"]
+
+[node name="PropertyLegend" type="TextureRect"]
+self_modulate = Color(0.49019608, 0.79607844, 0.8666667, 0.49803922)
+custom_minimum_size = Vector2(130, 150)
+offset_right = 130.0
+offset_bottom = 150.0
+texture = ExtResource("1_2qavb")
+expand_mode = 1
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 0
+columns = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_right = 4
+
+[node name="ColourIcon" type="TextureProgressBar" parent="GridContainer/MarginContainer"]
+custom_minimum_size = Vector2(12, 12)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+value = 100.0
+fill_mode = 4
+nine_patch_stretch = true
+texture_progress = ExtResource("1_2qavb")
+tint_progress = Color(1, 0, 0, 1)
+
+[node name="ColourLabel" type="Label" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Healing"
+
+[node name="MarginContainer2" type="MarginContainer" parent="GridContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_right = 4
+
+[node name="ColourIcon" type="TextureProgressBar" parent="GridContainer/MarginContainer2"]
+custom_minimum_size = Vector2(12, 12)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+value = 100.0
+fill_mode = 4
+nine_patch_stretch = true
+texture_progress = ExtResource("1_2qavb")
+tint_progress = Color(0, 1, 0, 1)
+
+[node name="ColourLabel2" type="Label" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Poisonous"

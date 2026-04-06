@@ -15,7 +15,7 @@ func _ready() -> void:
 	cauldron.toggle_crafting_mode.connect(crafting_interface.on_toggle_crafting_mode)
 	
 	# Initialise inventory and mixer
-	player_inventory_data = game_manager.demo_inventory_data
+	player_inventory_data = game_manager.player_inventory_data
 	mixer_data = game_manager.mixer_data
 	crafting_interface.set_player_inventory_data(player_inventory_data)
 	crafting_interface.set_mixer_data(mixer_data)
