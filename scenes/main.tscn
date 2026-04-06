@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://0yo5kafitfqt"]
+[gd_scene load_steps=15 format=3 uid="uid://0yo5kafitfqt"]
 
 [ext_resource type="Script" uid="uid://f6bjpg5u0tat" path="res://scripts/main.gd" id="1_jyhfs"]
 [ext_resource type="Texture2D" uid="uid://da1hf6oukdqme" path="res://assets/shop_bg_night.png" id="2_tipki"]
@@ -13,6 +13,7 @@
 [ext_resource type="StyleBox" uid="uid://dehhuyk6gs1jn" path="res://ui/button_hovered.tres" id="11_trceg"]
 [ext_resource type="PackedScene" uid="uid://bblhqi2jsidsi" path="res://scenes/mixer.tscn" id="12_eb6dy"]
 [ext_resource type="PackedScene" uid="uid://bfe5mm3kkr1hj" path="res://scenes/property_legend.tscn" id="13_trceg"]
+[ext_resource type="PackedScene" uid="uid://bgnd5wqde0tr8" path="res://scenes/potion_diary.tscn" id="14_a8y0u"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_jyhfs")
@@ -29,7 +30,7 @@ scale = Vector2(0.3, 0.3)
 priority = 4
 metadata/_edit_lock_ = true
 
-[node name="RecipeBook" parent="." instance=ExtResource("4_85g3d")]
+[node name="Book" parent="." instance=ExtResource("4_85g3d")]
 position = Vector2(912.00006, 563)
 scale = Vector2(0.17, 0.17)
 metadata/_edit_lock_ = true
@@ -37,6 +38,7 @@ metadata/_edit_lock_ = true
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="CraftingInterface" type="Control" parent="CanvasLayer"]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -103,5 +105,8 @@ offset_left = 777.0
 offset_top = 1.0
 offset_right = 907.0
 offset_bottom = 151.0
+
+[node name="PotionDiary" parent="CanvasLayer" instance=ExtResource("14_a8y0u")]
+visible = false
 
 [connection signal="pressed" from="CanvasLayer/CraftingInterface/CraftButton" to="CanvasLayer/CraftingInterface/CraftButton" method="_on_pressed"]

@@ -4,6 +4,7 @@ class_name PotionData
 @export var recipe: Recipe
 
 var slots_taken: int
+var recipe_unlocked: bool = false
 
 func set_slot_count() -> void:
 	var count = 0

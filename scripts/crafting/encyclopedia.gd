@@ -44,3 +44,7 @@ func find_craftable_potion(ingredients: Array[IngredientData]):
 		if recipe and recipe.is_match(property_count):
 			return potion
 	return DUD_POTION
+
+
+func unlock_potion_recipe(potion: PotionData) -> void:
+	potion.recipe_unlocked = true

@@ -1,0 +1,65 @@
+[gd_scene load_steps=4 format=3 uid="uid://bgnd5wqde0tr8"]
+
+[ext_resource type="Script" uid="uid://debmmmcnoyrmm" path="res://ui/potion_diary.gd" id="1_c06s2"]
+[ext_resource type="Texture2D" uid="uid://d3hv5gxuqrdrx" path="res://assets/book.png" id="1_qonrc"]
+[ext_resource type="PackedScene" uid="uid://bbgbt2amtl16h" path="res://scenes/diary_entry.tscn" id="2_30xml"]
+
+[node name="PotionDiary" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c06s2")
+
+[node name="BookCover" type="TextureRect" parent="."]
+self_modulate = Color(0.7792914, 0.7792914, 0.7792913, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_qonrc")
+expand_mode = 1
+
+[node name="Page1" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 178.0
+offset_top = 97.0
+offset_right = 599.0
+offset_bottom = 624.0
+theme_override_constants/separation = 30
+
+[node name="Entry" parent="Page1" instance=ExtResource("2_30xml")]
+layout_mode = 2
+
+[node name="Entry2" parent="Page1" instance=ExtResource("2_30xml")]
+layout_mode = 2
+
+[node name="Entry3" parent="Page1" instance=ExtResource("2_30xml")]
+layout_mode = 2
+
+[node name="Entry4" parent="Page1" instance=ExtResource("2_30xml")]
+layout_mode = 2
+
+[node name="Page2" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 714.0
+offset_top = 97.0
+offset_right = 1135.0
+offset_bottom = 624.0
+theme_override_constants/separation = 30
+
+[node name="Entry" parent="Page2" instance=ExtResource("2_30xml")]
+layout_mode = 2
+
+[node name="Entry2" parent="Page2" instance=ExtResource("2_30xml")]
+layout_mode = 2
+
+[node name="Entry3" parent="Page2" instance=ExtResource("2_30xml")]
+layout_mode = 2
+
+[node name="Entry4" parent="Page2" instance=ExtResource("2_30xml")]
+layout_mode = 2

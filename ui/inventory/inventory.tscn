@@ -3,7 +3,7 @@
 [ext_resource type="StyleBox" uid="uid://b7mquqaqmh7yf" path="res://ui/panel_container.tres" id="1_qrt2q"]
 [ext_resource type="Script" uid="uid://blq0dqyiv2pok" path="res://ui/inventory/inventory.gd" id="1_s83yu"]
 [ext_resource type="PackedScene" uid="uid://bj32pp33u7ou4" path="res://ui/inventory/slot.tscn" id="1_t68fq"]
-[ext_resource type="Script" path="res://ui/inventory/item_description.gd" id="4_lep46"]
+[ext_resource type="Script" uid="uid://daoqvnp1hwhld" path="res://ui/inventory/item_description.gd" id="4_lep46"]
 
 [node name="Inventory" type="PanelContainer"]
 offset_right = 40.0
@@ -53,7 +53,7 @@ theme_override_constants/paragraph_separation = 4
 bbcode_enabled = true
 text = "Hello "
 
-[node name="Known Recipes" type="MarginContainer" parent="VBoxContainer/ItemDescription"]
+[node name="KnownRecipes" type="MarginContainer" parent="VBoxContainer/ItemDescription"]
 visible = false
 custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
@@ -63,7 +63,7 @@ theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 metadata/_tab_index = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/ItemDescription/Known Recipes"]
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/ItemDescription/KnownRecipes"]
 layout_mode = 2
 theme_override_constants/line_separation = 3
 theme_override_constants/paragraph_separation = 4

@@ -3,10 +3,11 @@ extends Node2D
 # This is set to the demo inventory for now, change when needed. Might have to change these to global variables
 var player_inventory_data: InventoryData
 var mixer_data: MixerData
+var character_set: CharacterSet
 
 @onready var crafting_interface: Control = $CanvasLayer/CraftingInterface
 @onready var cauldron: Area2D = $Cauldron
-@onready var recipe_book: Area2D = $RecipeBook
+@onready var book: Area2D = $Book
 
 
 # Called when the node enters the scene tree for the first time.
