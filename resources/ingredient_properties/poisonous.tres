@@ -1,9 +1,15 @@
-[gd_resource type="Resource" script_class="IngredientProperty" load_steps=2 format=3 uid="uid://clvr2d54jyo3n"]
+[gd_resource type="Resource" script_class="IngredientProperty" load_steps=4 format=3 uid="uid://clvr2d54jyo3n"]
 
 [ext_resource type="Script" uid="uid://d1eqbv1pms38t" path="res://scripts/items/ingredient_property.gd" id="1_5w3v2"]
+[ext_resource type="Texture2D" uid="uid://dxhked8oouaok" path="res://assets/#1 - Transparent Icons.png" id="1_251mu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lktt7"]
+atlas = ExtResource("1_251mu")
+region = Rect2(3, 3, 26, 26)
 
 [resource]
 script = ExtResource("1_5w3v2")
 name = "Poisonous"
 colour = Color(0, 1, 0, 1)
+icon = SubResource("AtlasTexture_lktt7")
 metadata/_custom_type_script = "uid://d1eqbv1pms38t"

@@ -27,4 +27,5 @@ recipe = SubResource("Resource_exwmf")
 name = "Healing Potion"
 art = SubResource("AtlasTexture_scebp")
 description = "A standard healing potion"
+stackable = false
 metadata/_custom_type_script = "uid://c7frnt306tx28"

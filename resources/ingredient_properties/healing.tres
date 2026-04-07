@@ -1,9 +1,15 @@
-[gd_resource type="Resource" script_class="IngredientProperty" load_steps=2 format=3 uid="uid://ck5fvhmmd8dlm"]
+[gd_resource type="Resource" script_class="IngredientProperty" load_steps=4 format=3 uid="uid://ck5fvhmmd8dlm"]
 
+[ext_resource type="Texture2D" uid="uid://dxhked8oouaok" path="res://assets/#1 - Transparent Icons.png" id="1_4wifx"]
 [ext_resource type="Script" uid="uid://d1eqbv1pms38t" path="res://scripts/items/ingredient_property.gd" id="1_hpra6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hh8hn"]
+atlas = ExtResource("1_4wifx")
+region = Rect2(163, 99, 26, 26)
 
 [resource]
 script = ExtResource("1_hpra6")
 name = "Healing"
 colour = Color(1, 0, 0, 1)
+icon = SubResource("AtlasTexture_hh8hn")
 metadata/_custom_type_script = "uid://d1eqbv1pms38t"

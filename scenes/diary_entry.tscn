@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://bbgbt2amtl16h"]
+
+[ext_resource type="Texture2D" uid="uid://dxhked8oouaok" path="res://assets/#1 - Transparent Icons.png" id="1_j8gap"]
+[ext_resource type="Script" uid="uid://dwcc68ifegeeg" path="res://ui/diary_entry.gd" id="1_n24co"]
+[ext_resource type="PackedScene" uid="uid://lh4vs3jsdx63" path="res://scenes/required_property.tscn" id="3_2ny6w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_30xml"]
+atlas = ExtResource("1_j8gap")
+region = Rect2(133, 291, 25, 26)
+
+[node name="Entry" type="VBoxContainer"]
+theme_override_constants/separation = 10
+script = ExtResource("1_n24co")
+
+[node name="PotionName" type="Label" parent="."]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 20
+text = "Healing Potion"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="PotionIcon" type="TextureRect" parent="HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = SubResource("AtlasTexture_30xml")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+
+[node name="RequiredProperties" type="HBoxContainer" parent="HBoxContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="RequiredProperty" parent="HBoxContainer/MarginContainer/RequiredProperties" instance=ExtResource("3_2ny6w")]
+layout_mode = 2
+
+[node name="RequiredProperty2" parent="HBoxContainer/MarginContainer/RequiredProperties" instance=ExtResource("3_2ny6w")]
+layout_mode = 2
+
+[node name="RequiredProperty3" parent="HBoxContainer/MarginContainer/RequiredProperties" instance=ExtResource("3_2ny6w")]
+layout_mode = 2
+
+[node name="RequiredProperty4" parent="HBoxContainer/MarginContainer/RequiredProperties" instance=ExtResource("3_2ny6w")]
+layout_mode = 2
+
+[node name="RequiredProperty5" parent="HBoxContainer/MarginContainer/RequiredProperties" instance=ExtResource("3_2ny6w")]
+layout_mode = 2

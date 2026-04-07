@@ -12,4 +12,5 @@ script = ExtResource("1_qmiq6")
 name = "Dud Potion"
 art = SubResource("AtlasTexture_p6q4c")
 description = "This potion doesn't seem to do anything"
+stackable = false
 metadata/_custom_type_script = "uid://c7frnt306tx28"

@@ -6,7 +6,7 @@ var mixer_data: MixerData
 
 @onready var crafting_interface: Control = $CanvasLayer/CraftingInterface
 @onready var cauldron: Area2D = $Cauldron
-@onready var recipe_book: Area2D = $RecipeBook
+@onready var book: Area2D = $Book
 
 
 # Called when the node enters the scene tree for the first time.

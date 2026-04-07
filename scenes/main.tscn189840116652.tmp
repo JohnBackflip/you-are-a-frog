@@ -38,7 +38,6 @@ metadata/_edit_lock_ = true
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="CraftingInterface" type="Control" parent="CanvasLayer"]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -108,5 +107,6 @@ offset_bottom = 151.0
 
 [node name="PotionDiary" parent="CanvasLayer" instance=ExtResource("14_a8y0u")]
 visible = false
+entries_per_page = 4
 
 [connection signal="pressed" from="CanvasLayer/CraftingInterface/CraftButton" to="CanvasLayer/CraftingInterface/CraftButton" method="_on_pressed"]
