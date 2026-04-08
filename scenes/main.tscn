@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://da1hf6oukdqme" path="res://assets/shop_bg_night.png" id="2_tipki"]
 [ext_resource type="PackedScene" uid="uid://bwe26a1mdaome" path="res://ui/inventory/inventory.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://bgh7nj36fxlmf" path="res://scenes/cauldron.tscn" id="3_tipki"]
-[ext_resource type="PackedScene" uid="uid://bdlxaluranoch" path="res://scenes/recipe_book.tscn" id="4_85g3d"]
+[ext_resource type="PackedScene" uid="uid://bdlxaluranoch" path="res://scenes/book.tscn" id="4_85g3d"]
 [ext_resource type="Script" uid="uid://bxnd2guymaw3e" path="res://scripts/crafting/crafting_interface.gd" id="4_tefeu"]
 [ext_resource type="PackedScene" uid="uid://bj32pp33u7ou4" path="res://ui/inventory/slot.tscn" id="5_tbgi4"]
 [ext_resource type="Script" uid="uid://db5q8dhejojql" path="res://scripts/crafting/craft_button.gd" id="7_o6xl0"]
