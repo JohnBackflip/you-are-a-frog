@@ -1,5 +1,7 @@
 extends Node2D
 
+signal finished_walking(timeline : String)
+
 @onready var step : AnimationPlayer = $CharacterStep
 @onready var walk : AnimationPlayer = $CharacterWalk
 @onready var leave_animation  : AnimationPlayer = $CharacterLeave
@@ -21,13 +23,15 @@ func walk_in(character_data : CharacterData, deadline_str : String, index_timeli
 	deadline = deadline_str
 	timeline = timelines_dir + "/" + character_data.name + "_" + str(index_timeline) + ".dtl"
 	character.texture = character_data.art
+	Dialogic.VAR.bold_color = character_data.color
+	
 	walk.play("character_walk")
 	step.play("character_step")
 
 func _on_character_walk_animation_finished(_anim_name):
 	step.stop(true)
 	Dialogic.VAR.potion_deadline = deadline
-	Dialogic.start_timeline(timeline)
+	finished_walking.emit(timeline)
 
 func DialogicSignal(arg : String):
 	if (arg == "leave"):

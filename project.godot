@@ -24,17 +24,17 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
-"good_guy": "res://addons/dialogic/Characters/good_guy.dch"
+"npchilde": "res://addons/dialogic/Characters/npchilde.dch"
 }
 directories/dtl_directory={
-"Timelines/good_0": "res://addons/dialogic/Timelines/good_0.dtl",
-"good_0": "res://addons/dialogic/Timelines/Good Knight_0.dtl"
+"npchilde_0": "res://addons/dialogic/Timelines/N.P. Childe_0.dtl"
 }
 layout/style_directory={
 "": "res://addons/dialogic/Styles/style.tres",
 "style": "res://addons/dialogic/Styles/style.tres"
 }
 variables={
+"bold_color": "8e91f6",
 "potion_deadline": "",
 "potion_use": ""
 }

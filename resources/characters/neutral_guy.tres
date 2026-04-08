@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CharacterData" load_steps=3 format=3 uid="uid://c42t0w1oirmgi"]
+
+[ext_resource type="Texture2D" uid="uid://bn1vqb1ytxkts" path="res://assets/knight.png" id="1_4h1am"]
+[ext_resource type="Script" uid="uid://b5nbxtpiyq5ta" path="res://scripts/character/character_data.gd" id="2_ndasu"]
+
+[resource]
+script = ExtResource("2_ndasu")
+name = "N.P. Childe"
+alignment = 2
+art = ExtResource("1_4h1am")
+color = "8e91f6"
