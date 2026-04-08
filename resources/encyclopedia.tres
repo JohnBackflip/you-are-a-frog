@@ -1,10 +1,7 @@
-[gd_resource type="Resource" script_class="Encyclopedia" load_steps=4 format=3 uid="uid://bysghl6lhebf4"]
+[gd_resource type="Resource" script_class="Encyclopedia" load_steps=2 format=3 uid="uid://bysghl6lhebf4"]
 
-[ext_resource type="Script" uid="uid://c7frnt306tx28" path="res://scripts/items/potion_data.gd" id="1_ko7uv"]
 [ext_resource type="Script" uid="uid://jtdpv86ewsc5" path="res://scripts/crafting/encyclopedia.gd" id="1_kxtsw"]
-[ext_resource type="Resource" uid="uid://b3tnuk6rq76gg" path="res://resources/potions/healing_potion.tres" id="2_u2ulo"]
 
 [resource]
 script = ExtResource("1_kxtsw")
-potions = Array[ExtResource("1_ko7uv")]([ExtResource("2_u2ulo")])
 metadata/_custom_type_script = "uid://jtdpv86ewsc5"

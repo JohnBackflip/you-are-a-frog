@@ -1,11 +1,13 @@
 extends Area2D
 
 @onready var sprite: AnimatedSprite2D = $Sprite
+@export var night_mode : bool
 
 var encyclopedia: Encyclopedia
 
 
 func _ready() -> void:
+	sprite.animation = "night" if night_mode else "day"
 	get_recipes()
 
 

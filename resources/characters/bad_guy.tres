@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CharacterData" load_steps=3 format=3 uid="uid://tgbe3t2r8q67"]
+
+[ext_resource type="Texture2D" uid="uid://216xry1fq4he" path="res://icon.svg" id="1_caage"]
+[ext_resource type="Script" uid="uid://b5nbxtpiyq5ta" path="res://scripts/character/character_data.gd" id="2_grmu5"]
+
+[resource]
+script = ExtResource("2_grmu5")
+name = "Bad Rat"
+alignment = 1
+art = ExtResource("1_caage")
+dialog = Array[String](["Hmm... I have heard much about you"])

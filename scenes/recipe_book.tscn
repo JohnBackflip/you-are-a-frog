@@ -1,7 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bdlxaluranoch"]
+[gd_scene load_steps=7 format=3 uid="uid://bdlxaluranoch"]
 
 [ext_resource type="Script" uid="uid://bennponl3empk" path="res://scripts/crafting/book.gd" id="1_a646j"]
 [ext_resource type="Texture2D" uid="uid://8a0a5qnf60ti" path="res://assets/recipe_books.png" id="3_a646j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jfus2"]
+atlas = ExtResource("3_a646j")
+region = Rect2(1920, 0, 1920, 2160)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yxdbw"]
 atlas = ExtResource("3_a646j")
@@ -11,10 +15,18 @@ region = Rect2(0, 0, 1920, 2160)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_jfus2")
+}],
+"loop": true,
+"name": &"day",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_yxdbw")
 }],
 "loop": true,
-"name": &"default",
+"name": &"night",
 "speed": 5.0
 }]
 
@@ -26,6 +38,7 @@ script = ExtResource("1_a646j")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_1vfb6")
+animation = &"day"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
