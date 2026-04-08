@@ -7,7 +7,7 @@ var character_set: CharacterSet
 
 @onready var crafting_interface: Control = $CanvasLayer/CraftingInterface
 @onready var cauldron: Area2D = $Cauldron
-@onready var book: Area2D = $Book
+@onready var recipe_book: Area2D = $RecipeBook
 
 
 # Called when the node enters the scene tree for the first time.
