@@ -19,7 +19,7 @@ func initialize_char (timeline_dir : String):
 func walk_in(character_data : CharacterData, deadline_str : String, index_timeline : int):
 	character.self_modulate = "ffffff" # The character disappears, have to reset the transparency when they're back
 	deadline = deadline_str
-	timeline = timelines_dir + character_data.name + "_" + str(index_timeline) + ".dtl"
+	timeline = timelines_dir + "/" + character_data.name + "_" + str(index_timeline) + ".dtl"
 	character.texture = character_data.art
 	walk.play("character_walk")
 	step.play("character_step")
@@ -27,7 +27,7 @@ func walk_in(character_data : CharacterData, deadline_str : String, index_timeli
 func _on_character_walk_animation_finished(_anim_name):
 	step.stop(true)
 	Dialogic.VAR.potion_deadline = deadline
-	Dialogic.start_timeline("res://addons/dialogic/Timelines/firstInteraction.dtl")
+	Dialogic.start_timeline(timeline)
 
 func DialogicSignal(arg : String):
 	if (arg == "leave"):

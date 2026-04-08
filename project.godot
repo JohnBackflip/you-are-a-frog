@@ -27,7 +27,7 @@ directories/dch_directory={
 "good_guy": "res://addons/dialogic/Characters/good_guy.dch"
 }
 directories/dtl_directory={
-"good_0": "res://addons/dialogic/Timelines/good_0.dtl"
+"good_0": "res://addons/dialogic/Timelines/Good Knight_0.dtl"
 }
 layout/style_directory={
 "": "res://addons/dialogic/Styles/style.tres",

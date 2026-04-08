@@ -33,6 +33,7 @@ metadata/_edit_lock_ = true
 [node name="Book" parent="." instance=ExtResource("4_85g3d")]
 position = Vector2(912.00006, 563)
 scale = Vector2(0.17, 0.17)
+night_mode = true
 metadata/_edit_lock_ = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
