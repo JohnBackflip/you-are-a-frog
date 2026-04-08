@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://0yo5kafitfqt"]
+[gd_scene load_steps=20 format=3 uid="uid://0yo5kafitfqt"]
 
 [ext_resource type="Script" uid="uid://f6bjpg5u0tat" path="res://scripts/main.gd" id="1_jyhfs"]
 [ext_resource type="Texture2D" uid="uid://da1hf6oukdqme" path="res://assets/shop_bg_night.png" id="2_tipki"]
@@ -14,6 +14,11 @@
 [ext_resource type="PackedScene" uid="uid://bblhqi2jsidsi" path="res://scenes/mixer.tscn" id="12_eb6dy"]
 [ext_resource type="PackedScene" uid="uid://bfe5mm3kkr1hj" path="res://scenes/property_legend.tscn" id="13_trceg"]
 [ext_resource type="PackedScene" uid="uid://bgnd5wqde0tr8" path="res://scenes/potion_diary.tscn" id="14_a8y0u"]
+[ext_resource type="Texture2D" uid="uid://b0i1pwq3bq2o4" path="res://assets/cropped_images/desk_potion1.tres" id="15_jkv2x"]
+[ext_resource type="Texture2D" uid="uid://d3xmoo1htpywr" path="res://assets/cropped_images/desk_potion2.tres" id="16_jbj1t"]
+[ext_resource type="Texture2D" uid="uid://by5ccgowu40ny" path="res://assets/cropped_images/desk_potion3.tres" id="17_muem4"]
+[ext_resource type="Texture2D" uid="uid://q356ulxxi6oe" path="res://assets/cropped_images/desk_potion4.tres" id="18_dp3eg"]
+[ext_resource type="Texture2D" uid="uid://dykncb3ep7al1" path="res://assets/cropped_images/desk_potion5.tres" id="19_0ld40"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_jyhfs")
@@ -31,15 +36,41 @@ priority = 4
 metadata/_edit_lock_ = true
 
 [node name="RecipeBook" parent="." instance=ExtResource("4_85g3d")]
-position = Vector2(912.00006, 563)
+position = Vector2(920, 565)
 scale = Vector2(0.17, 0.17)
 night_mode = true
 metadata/_edit_lock_ = true
 
+[node name="DeskPotions" type="Node2D" parent="."]
+
+[node name="DeskPotion1" type="Sprite2D" parent="DeskPotions"]
+position = Vector2(380, 530)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("15_jkv2x")
+
+[node name="DeskPotion2" type="Sprite2D" parent="DeskPotions"]
+position = Vector2(1111, 563)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("16_jbj1t")
+
+[node name="DeskPotion3" type="Sprite2D" parent="DeskPotions"]
+position = Vector2(178, 526)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_muem4")
+
+[node name="DeskPotion4" type="Sprite2D" parent="DeskPotions"]
+position = Vector2(276, 577)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("18_dp3eg")
+
+[node name="DeskPotion5" type="Sprite2D" parent="DeskPotions"]
+position = Vector2(1198, 535)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("19_0ld40")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="CraftingInterface" type="Control" parent="CanvasLayer"]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

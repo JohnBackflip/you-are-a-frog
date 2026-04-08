@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bbgbt2amtl16h"]
 
 [ext_resource type="Texture2D" uid="uid://dxhked8oouaok" path="res://assets/#1 - Transparent Icons.png" id="1_j8gap"]
-[ext_resource type="Script" uid="uid://dwcc68ifegeeg" path="res://ui/diary_entry.gd" id="1_n24co"]
+[ext_resource type="Script" path="res://ui/diary_entry.gd" id="1_n24co"]
 [ext_resource type="PackedScene" uid="uid://lh4vs3jsdx63" path="res://scenes/required_property.tscn" id="3_2ny6w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_30xml"]

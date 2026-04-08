@@ -1,21 +1,22 @@
-[gd_scene load_steps=7 format=3 uid="uid://bdlxaluranoch"]
+[gd_scene load_steps=8 format=3 uid="uid://bdlxaluranoch"]
 
-[ext_resource type="Script" uid="uid://bennponl3empk" path="res://scripts/crafting/book.gd" id="1_a646j"]
-[ext_resource type="Texture2D" uid="uid://8a0a5qnf60ti" path="res://assets/recipe_books.png" id="3_a646j"]
+[ext_resource type="Script" uid="uid://bennponl3empk" path="res://scripts/crafting/recipe_book.gd" id="1_a646j"]
+[ext_resource type="Texture2D" uid="uid://c2hq42wua87fu" path="res://assets/cropped_images/recipe_book_day.tres" id="2_a646j"]
+[ext_resource type="Texture2D" uid="uid://bp8yqoyexcw64" path="res://assets/cropped_images/recipe_book_night.tres" id="3_yxdbw"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jfus2"]
-atlas = ExtResource("3_a646j")
-region = Rect2(1920, 0, 1920, 2160)
+[sub_resource type="AtlasTexture" id="AtlasTexture_1vfb6"]
+atlas = ExtResource("2_a646j")
+region = Rect2(0, 0, 1486, 695)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_yxdbw"]
-atlas = ExtResource("3_a646j")
-region = Rect2(0, 0, 1920, 2160)
+[sub_resource type="AtlasTexture" id="AtlasTexture_bhyhu"]
+atlas = ExtResource("3_yxdbw")
+region = Rect2(0, 0, 1486, 695)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1vfb6"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jfus2")
+"texture": SubResource("AtlasTexture_1vfb6")
 }],
 "loop": true,
 "name": &"day",
@@ -23,7 +24,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_yxdbw")
+"texture": SubResource("AtlasTexture_bhyhu")
 }],
 "loop": true,
 "name": &"night",
@@ -38,7 +39,7 @@ script = ExtResource("1_a646j")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_1vfb6")
-animation = &"day"
+animation = &"night"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false

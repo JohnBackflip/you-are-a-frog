@@ -27,7 +27,7 @@ directories/dch_directory={
 "npchilde": "res://addons/dialogic/Characters/npchilde.dch"
 }
 directories/dtl_directory={
-"npchilde_0": "res://addons/dialogic/Timelines/N.P. Childe_0.dtl"
+"N.P. Childe_0": "res://addons/dialogic/Timelines/N.P. Childe_0.dtl"
 }
 layout/style_directory={
 "": "res://addons/dialogic/Styles/style.tres",
@@ -88,6 +88,10 @@ enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 [global_group]
 
 property_bar="The colour part in the ratio chart"
+
+[gui]
+
+theme/custom="uid://bh026vnea6f0h"
 
 [input]
 

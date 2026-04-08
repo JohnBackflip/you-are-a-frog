@@ -36,7 +36,6 @@ func populate_page(page: VBoxContainer, num_entries: int) -> void:
 		child.queue_free()
 		
 	for i in range(num_entries):
-		print("Potion Index:", potion_index)
 		if potion_index > encyclopedia.potions.size() - 1:
 			return
 			

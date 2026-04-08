@@ -8,7 +8,6 @@ const REQUIRED_PROPERTY = preload("uid://lh4vs3jsdx63")
 
 
 func populate_entry(potion_name: String, potion_icon: Texture, property_count: Dictionary) -> void:
-	print(potion_name_label, potion_icon_texture, required_properties)
 	for child in required_properties.get_children():
 		child.queue_free()
 	potion_name_label.text = potion_name

@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://b0i1pwq3bq2o4"]
+
+[ext_resource type="Texture2D" uid="uid://dja1ftx3n6p7t" path="res://assets/potions.png" id="1_abigs"]
+
+[resource]
+atlas = ExtResource("1_abigs")
+region = Rect2(76.20873, 75.3988, 819.7499, 856.7916)

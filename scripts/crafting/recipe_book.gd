@@ -1,6 +1,7 @@
 extends Area2D
 
 @onready var sprite: AnimatedSprite2D = $Sprite
+
 @export var night_mode : bool
 
 var encyclopedia: Encyclopedia
@@ -37,5 +38,4 @@ func _on_mouse_exited() -> void:
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.is_pressed():
 		if event.button_index == MOUSE_BUTTON_LEFT:
-			print("recipe book clicked!")
 			game_events.open_potion_diary.emit()
