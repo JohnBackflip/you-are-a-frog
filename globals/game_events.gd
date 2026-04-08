@@ -2,3 +2,4 @@
 extends Node
 
 signal open_potion_diary
+signal potion_discovered(potion: PotionData)

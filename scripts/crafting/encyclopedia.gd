@@ -8,7 +8,7 @@ const DUD_POTION = preload("uid://dkuedc1yd8tfs")
 var potions: Array[PotionData]
 
 
-func init_potions():
+func init_potions() -> void:
 	potions.clear()
 	var dir = DirAccess.open(potions_folder)
 	
@@ -31,7 +31,7 @@ func init_potions():
 		push_error("Could not open potion folder path: " + potions_folder)
 
 
-func find_craftable_potion(ingredients: Array[IngredientData]):
+func find_craftable_potion(ingredients: Array[IngredientData]) -> PotionData:
 	# Initialise qty of each property
 	var property_count = {}
 	for ingredient in ingredients:

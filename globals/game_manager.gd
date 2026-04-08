@@ -8,3 +8,4 @@ var character_set : CharacterSet = preload("res://resources/characters/character
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	encyclopedia.init_potions()
+	game_events.potion_discovered.connect(encyclopedia.unlock_potion_recipe)

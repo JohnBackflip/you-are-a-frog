@@ -24,7 +24,7 @@ metadata/_custom_type_script = "uid://66tqeact8x1t"
 [resource]
 script = ExtResource("5_8rygj")
 recipe = SubResource("Resource_exwmf")
-name = "Healing Potion"
+name = "Minor Potion of Healing"
 art = SubResource("AtlasTexture_scebp")
 description = "A standard healing potion"
 stackable = false

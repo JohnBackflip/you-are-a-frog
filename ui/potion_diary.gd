@@ -10,23 +10,25 @@ extends Control
 const DIARY_ENTRY = preload("uid://bbgbt2amtl16h")
 
 var encyclopedia: Encyclopedia
+var page_number: int = 0
 var potion_index: int # Keeps track of which potion to start from depending on page number
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	encyclopedia = game_manager.encyclopedia
 	game_events.open_potion_diary.connect(open_diary)
-	populate_diary()
+	update_encyclopedia()
 
 
 # Call this whenever the player unlocks a new potion
 func update_encyclopedia() -> void:
 	encyclopedia = game_manager.encyclopedia
+	populate_diary()
 
 
 func populate_diary() -> void:
 	if encyclopedia:
+		potion_index = page_number
 		populate_page(page_1, entries_per_page)
 		populate_page(page_2, entries_per_page)
 
@@ -52,11 +54,12 @@ func populate_page(page: VBoxContainer, num_entries: int) -> void:
 		# Create an entry
 		var entry = DIARY_ENTRY.instantiate()
 		page.add_child(entry)
-		entry.populate_entry(potion.name, potion.art, property_count)
+		entry.populate_entry(potion.name, potion.art, property_count, potion.recipe_unlocked)
 		potion_index += 1
 
 
 func open_diary() -> void:
+	update_encyclopedia()
 	show()
 	var tween = create_tween()
 	tween.tween_property(background_overlay, "self_modulate", background_overlay.self_modulate, 0.1).from(Color(0.0, 0.0, 0.0, 0.0))

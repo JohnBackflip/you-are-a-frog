@@ -24,7 +24,7 @@ metadata/_custom_type_script = "uid://66tqeact8x1t"
 [resource]
 script = ExtResource("1_k01ij")
 recipe = SubResource("Resource_qjske")
-name = "Poison Potion"
+name = "Minor Potion of Poison"
 art = SubResource("AtlasTexture_pkuse")
 description = "A poisonous potion"
 stackable = false

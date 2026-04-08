@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="PotionData" load_steps=9 format=3 uid="uid://tvwni6xm5fia"]
+
+[ext_resource type="Texture2D" uid="uid://dxhked8oouaok" path="res://assets/#1 - Transparent Icons.png" id="1_23i5p"]
+[ext_resource type="Script" uid="uid://c7frnt306tx28" path="res://scripts/items/potion_data.gd" id="1_oqdj7"]
+[ext_resource type="Script" uid="uid://csfappelxyahy" path="res://scripts/crafting/recipe_step.gd" id="2_iw27r"]
+[ext_resource type="Resource" uid="uid://cbbxslmojbucu" path="res://resources/ingredient_properties/cold.tres" id="3_c8yvk"]
+[ext_resource type="Script" uid="uid://66tqeact8x1t" path="res://scripts/crafting/recipe.gd" id="4_xu0gk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nue6p"]
+atlas = ExtResource("1_23i5p")
+region = Rect2(37, 291, 22, 26)
+
+[sub_resource type="Resource" id="Resource_q57ep"]
+script = ExtResource("2_iw27r")
+property = ExtResource("3_c8yvk")
+quantity = 2
+metadata/_custom_type_script = "uid://csfappelxyahy"
+
+[sub_resource type="Resource" id="Resource_tnxgx"]
+script = ExtResource("4_xu0gk")
+recipe_steps = Array[ExtResource("2_iw27r")]([SubResource("Resource_q57ep")])
+metadata/_custom_type_script = "uid://66tqeact8x1t"
+
+[resource]
+script = ExtResource("1_oqdj7")
+recipe = SubResource("Resource_tnxgx")
+name = "Potion of Frost"
+art = SubResource("AtlasTexture_nue6p")
+description = "This potion feels cold to the touch"
+metadata/_custom_type_script = "uid://c7frnt306tx28"
