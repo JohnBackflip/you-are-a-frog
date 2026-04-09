@@ -1,0 +1,32 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+&"_translation_id": "",
+&"color": Color(0.9882353, 0.7137255, 0.011764706, 1),
+&"custom_info": {
+"prefix": "",
+"sound_mood_default": "",
+"sound_moods": {},
+"style": "style",
+"suffix": ""
+},
+&"default_portrait": "Default",
+&"description": "A rat in his mid-30s (or the equivalent of a rat-life), lived his entire life working for different criminal organizations in the city. What many would consider illegal and immoral, Mortimer sees it as an average Tuesday. It’s a difficult life, but after recently taking over the lead criminal gang in the city, Mortimer is desperate to step up and do a good job to lead his new group, and all the people he suddenly finds that are depending on him for survival.
+As a new potion-making establishment has opened, Mortimer decides to try his luck with the new potion maker, since he has been banned from his usual underground establishments ",
+&"display_name": "Mortimer",
+&"mirror": false,
+&"nicknames": [""],
+&"offset": Vector2(0, 0),
+&"portraits": {
+"Default": {
+"export_overrides": {
+"image": "\"res://assets/mortimer.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
+&"scale": 1.0
+}

@@ -1,9 +1,10 @@
-npchilde: Why hello there! What a lovely shop you've set up, and in a great location! You will surely have many customers in no time.
-npchilde: Let me introduce myself: I am [color={bold_color}]N.P. Childe[/color], owner of the largest merchant guild here in this town! If there would ever be any wares you'd need, just swing on by and I'll set you up with what you need.
-npchilde: Oh but it seems that you are the only one in this establishment. Surely it must be difficult to leave the shop unattended just to order some wares.
-npchilde: Tell you what - let me offer you this [color={bold_color}]enchanted magazine[/color], in which you can [color={bold_color}]place orders[/color] and my employees can deliver them to you the [color={bold_color}]next day[/color]!
-npchilde: Nifty stuff, isn't it? I'll let you keep it for a [color={bold_color}]minor potion of healing[/color], seems like a fair trade, no? I'll have to get going now, so if possible I'll swing by [color={bold_color}]tomorrow[/color] to get it.
+NPChilde: Why hello there! What a lovely shop you've set up, and in a great location! You will surely have many customers in no time.
+NPChilde: Let me introduce myself\: I am [color={bold_color}]N.P. Childe[/color], owner of the largest merchant guild here in this town! If there would ever be any wares you'd need, just swing on by and I'll set you up with what you need.
+NPChilde: Oh but it seems that you are the only one in this establishment. Surely it must be difficult to leave the shop unattended just to order some wares.
+NPChilde: Tell you what - let me offer you this [color={bold_color}]enchanted magazine[/color], in which you can [color={bold_color}]place orders[/color] and my employees can deliver them to you the [color={bold_color}]next day[/color]!
+NPChilde: Nifty stuff, isn't it? I'll let you keep it for a [color={bold_color}]minor potion of healing[/color], seems like a fair trade, no? I'll have to get going now, so if possible I'll swing by [color={bold_color}]tomorrow[/color] to get it.
 
 set {potion_use} = "Minor potion of healing"
 set {potion_deadline} = "1 day"
+[wait time="1.0"]
 [signal arg="leave"]

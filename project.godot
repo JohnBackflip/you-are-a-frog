@@ -24,9 +24,11 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
-"npchilde": "res://addons/dialogic/Characters/npchilde.dch"
+"Mortimer": "res://addons/dialogic/Characters/Mortimer.dch",
+"NPChilde": "res://addons/dialogic/Characters/NPChilde.dch"
 }
 directories/dtl_directory={
+"Mortimer": "res://addons/dialogic/Timelines/Mortimer_0.dtl",
 "N.P. Childe_0": "res://addons/dialogic/Timelines/N.P. Childe_0.dtl"
 }
 layout/style_directory={

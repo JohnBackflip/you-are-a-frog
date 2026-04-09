@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d4im1yu4arort" path="res://scripts/character/plot_manager.gd" id="1_eqbn8"]
 [ext_resource type="Texture2D" uid="uid://baie5fkg2tqqm" path="res://assets/shop_bg_day.png" id="1_k50im"]
-[ext_resource type="PackedScene" path="res://scenes/character.tscn" id="2_eqbn8"]
+[ext_resource type="PackedScene" uid="uid://cb4rt7jf37g8r" path="res://scenes/character.tscn" id="2_eqbn8"]
 [ext_resource type="Texture2D" uid="uid://ctkfngs64ierh" path="res://assets/table.png" id="3_un4hc"]
 [ext_resource type="PackedScene" uid="uid://bdlxaluranoch" path="res://scenes/recipe_book.tscn" id="4_a7re3"]
 [ext_resource type="Texture2D" uid="uid://b0i1pwq3bq2o4" path="res://assets/cropped_images/desk_potion1.tres" id="6_rk0u7"]
@@ -23,6 +23,7 @@ centered = false
 metadata/_edit_lock_ = true
 
 [node name="Character" parent="." instance=ExtResource("2_eqbn8")]
+position = Vector2(-39, 99)
 
 [node name="Table" type="Sprite2D" parent="."]
 position = Vector2(0, 515)

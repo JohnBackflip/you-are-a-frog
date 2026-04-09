@@ -1,0 +1,5 @@
+Mortimer: Good evening. I'd like to put in an order for a [color={bold_color}]minor potion of poison[/color]. If possible I'd like to pick it up in [color={bold_color}]2 days[/color], the same time as today.
+set {potion_use} = "Minor potion of poison"
+set {potion_deadline} = "2 days"
+[wait time="1.0"]
+[signal arg="leave"]
