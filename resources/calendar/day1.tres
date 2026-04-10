@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="DailyCustomers" load_steps=2 format=3 uid="uid://b2rqe8qt2wynu"]
+
+[ext_resource type="Script" uid="uid://cd2fhgo117axf" path="res://scripts/calendar/daily_customers.gd" id="1_uunth"]
+
+[resource]
+script = ExtResource("1_uunth")
+randoms_calendar = 1

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CustomerCalendar" load_steps=5 format=3 uid="uid://v36n3opo3mld"]
+
+[ext_resource type="Script" uid="uid://cd2fhgo117axf" path="res://scripts/calendar/daily_customers.gd" id="1_4dmgh"]
+[ext_resource type="Script" uid="uid://duesf7d7uyduo" path="res://scripts/calendar/customer_calendar.gd" id="2_1uwme"]
+[ext_resource type="Resource" uid="uid://w16u48vsmf6t" path="res://resources/calendar/day0.tres" id="2_3eqye"]
+[ext_resource type="Resource" uid="uid://b2rqe8qt2wynu" path="res://resources/calendar/day1.tres" id="3_2jw1c"]
+
+[resource]
+script = ExtResource("2_1uwme")
+customer_calendar = Array[ExtResource("1_4dmgh")]([ExtResource("2_3eqye"), ExtResource("3_2jw1c")])

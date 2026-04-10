@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="DailyCustomers" load_steps=2 format=3 uid="uid://w16u48vsmf6t"]
+
+[ext_resource type="Script" uid="uid://cd2fhgo117axf" path="res://scripts/calendar/daily_customers.gd" id="1_gvcw3"]
+
+[resource]
+script = ExtResource("1_gvcw3")
+customer_calendar = Array[int]([2, 1])
