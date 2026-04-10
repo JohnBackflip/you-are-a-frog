@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="IngredientProperty" load_steps=4 format=3 uid="uid://siabk7e3ib08"]
+
+[ext_resource type="Texture2D" uid="uid://dxhked8oouaok" path="res://assets/#1 - Transparent Icons.png" id="1_71r2c"]
+[ext_resource type="Script" uid="uid://d1eqbv1pms38t" path="res://scripts/items/ingredient_property.gd" id="1_rs1mi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tn0pf"]
+atlas = ExtResource("1_71r2c")
+region = Rect2(483, 99, 26, 26)
+
+[resource]
+script = ExtResource("1_rs1mi")
+name = "Euphoric"
+colour = Color(0.9956607, 0.51266867, 0.57850075, 1)
+icon = SubResource("AtlasTexture_tn0pf")
+metadata/_custom_type_script = "uid://d1eqbv1pms38t"

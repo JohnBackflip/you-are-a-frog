@@ -27,6 +27,9 @@ func _ready() -> void:
 
 
 func on_craft_button_pressed() -> void:
+	if potion_slot_data:
+		print("There is still a potion inside the mixer!")
+		return
 	var result_potion: PotionData = game_manager.encyclopedia.find_craftable_potion(crafting_ingredients)
 	potion_slot_data = SlotData.new()
 	potion_slot_data.item_data = result_potion

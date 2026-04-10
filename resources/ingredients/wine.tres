@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="IngredientData" load_steps=5 format=3 uid="uid://dshila4utvib1"]
+
+[ext_resource type="Script" uid="uid://twcr3o7hisyf" path="res://scripts/items/ingredient_data.gd" id="1_cjrte"]
+[ext_resource type="Texture2D" uid="uid://dxhked8oouaok" path="res://assets/#1 - Transparent Icons.png" id="1_opmra"]
+[ext_resource type="Resource" uid="uid://cvu33fqfoe6iq" path="res://resources/ingredient_properties/somniferous.tres" id="2_je5ly"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hmo6i"]
+atlas = ExtResource("1_opmra")
+region = Rect2(484, 419, 25, 25)
+
+[resource]
+script = ExtResource("1_cjrte")
+property = ExtResource("2_je5ly")
+name = "Wine"
+art = SubResource("AtlasTexture_hmo6i")
+description = "A bottle of strong alcohol"
+metadata/_custom_type_script = "uid://twcr3o7hisyf"

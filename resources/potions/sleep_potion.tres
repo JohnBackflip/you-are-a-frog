@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="PotionData" load_steps=9 format=3 uid="uid://dvpuree42g8hc"]
+
+[ext_resource type="Script" uid="uid://c7frnt306tx28" path="res://scripts/items/potion_data.gd" id="1_b6rqy"]
+[ext_resource type="Texture2D" uid="uid://dxhked8oouaok" path="res://assets/#1 - Transparent Icons.png" id="1_xnt2j"]
+[ext_resource type="Resource" uid="uid://cvu33fqfoe6iq" path="res://resources/ingredient_properties/somniferous.tres" id="2_0j1wf"]
+[ext_resource type="Script" uid="uid://csfappelxyahy" path="res://scripts/crafting/recipe_step.gd" id="3_8udut"]
+[ext_resource type="Script" uid="uid://66tqeact8x1t" path="res://scripts/crafting/recipe.gd" id="4_li5pb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c0i0k"]
+atlas = ExtResource("1_xnt2j")
+region = Rect2(293, 291, 23, 26)
+
+[sub_resource type="Resource" id="Resource_v0hnb"]
+script = ExtResource("3_8udut")
+property = ExtResource("2_0j1wf")
+quantity = 2
+metadata/_custom_type_script = "uid://csfappelxyahy"
+
+[sub_resource type="Resource" id="Resource_vs4hd"]
+script = ExtResource("4_li5pb")
+recipe_steps = Array[ExtResource("3_8udut")]([SubResource("Resource_v0hnb")])
+metadata/_custom_type_script = "uid://66tqeact8x1t"
+
+[resource]
+script = ExtResource("1_b6rqy")
+recipe = SubResource("Resource_vs4hd")
+primary_property = ExtResource("2_0j1wf")
+name = "Potion of Sleep"
+art = SubResource("AtlasTexture_c0i0k")
+description = "Makes you fall asleep instantly"
+metadata/_custom_type_script = "uid://c7frnt306tx28"

@@ -41,7 +41,7 @@ metadata/_edit_lock_ = true
 [node name="DeskPotions" type="Node2D" parent="."]
 
 [node name="DeskPotion1" type="Sprite2D" parent="DeskPotions"]
-position = Vector2(380, 530)
+position = Vector2(400, 530)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("6_rk0u7")
 
@@ -51,12 +51,12 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("7_0py7a")
 
 [node name="DeskPotion3" type="Sprite2D" parent="DeskPotions"]
-position = Vector2(178, 526)
+position = Vector2(208, 526)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("8_28uoa")
 
 [node name="DeskPotion4" type="Sprite2D" parent="DeskPotions"]
-position = Vector2(276, 577)
+position = Vector2(306, 577)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("9_76k7d")
 

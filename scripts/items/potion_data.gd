@@ -2,9 +2,12 @@ extends ItemData
 class_name PotionData
 
 @export var recipe: Recipe
+@export var primary_property: IngredientProperty
 
 var slots_taken: int
-var recipe_unlocked: bool = false
+var recipe_unlocked: bool = false #This unlocks properties required and potion image
+var effect_discovered: bool = false #This unlocks the actual potion name
+
 
 func set_slot_count() -> void:
 	var count = 0

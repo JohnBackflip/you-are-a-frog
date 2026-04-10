@@ -1,17 +1,19 @@
-[gd_resource type="Resource" script_class="InventoryData" load_steps=15 format=3 uid="uid://eajge1jeea0y"]
+[gd_resource type="Resource" script_class="InventoryData" load_steps=19 format=3 uid="uid://eajge1jeea0y"]
 
 [ext_resource type="Script" uid="uid://b3trg1hfu14lr" path="res://scripts/inventory/inventory_data.gd" id="1_886py"]
 [ext_resource type="Script" uid="uid://ya5q8k0syvlc" path="res://scripts/inventory/slot_data.gd" id="2_3o3uf"]
-[ext_resource type="Resource" uid="uid://dtirxfsspa82t" path="res://resources/ingredients/ice_cubes.tres" id="3_6im7c"]
+[ext_resource type="Resource" uid="uid://xl8ry04s0ggg" path="res://resources/ingredients/banana.tres" id="3_83vuj"]
 [ext_resource type="Resource" uid="uid://cu73ggvwv8i1v" path="res://resources/ingredients/apple.tres" id="3_jyk7l"]
 [ext_resource type="Resource" uid="uid://bjln21jd2twkv" path="res://resources/ingredients/poison_mushroom.tres" id="4_46yob"]
 [ext_resource type="Resource" uid="uid://w6ymsvsleat6" path="res://resources/ingredients/root.tres" id="5_83vuj"]
-[ext_resource type="Resource" uid="uid://bfvvorsr6winv" path="res://resources/ingredients/jellyfish.tres" id="7_cejnm"]
-[ext_resource type="Resource" uid="uid://4erdlwgy7gpo" path="res://resources/ingredients/mint.tres" id="7_k1k83"]
+[ext_resource type="Resource" uid="uid://dshila4utvib1" path="res://resources/ingredients/wine.tres" id="5_k1k83"]
+[ext_resource type="Resource" uid="uid://cteduc2r8fkkk" path="res://resources/ingredients/acidflower_bulb.tres" id="6_46yob"]
+[ext_resource type="Resource" uid="uid://dbveok1nnprmn" path="res://resources/ingredients/coffee.tres" id="7_fuwxj"]
+[ext_resource type="Resource" uid="uid://d3wuv7gcyl2hd" path="res://resources/ingredients/dreamy_mint.tres" id="8_gg53m"]
 
-[sub_resource type="Resource" id="Resource_iu74g"]
+[sub_resource type="Resource" id="Resource_fuwxj"]
 script = ExtResource("2_3o3uf")
-item_data = ExtResource("3_6im7c")
+item_data = ExtResource("3_83vuj")
 quantity = 2
 metadata/_custom_type_script = "uid://ya5q8k0syvlc"
 
@@ -21,10 +23,27 @@ item_data = ExtResource("3_jyk7l")
 quantity = 3
 metadata/_custom_type_script = "uid://ya5q8k0syvlc"
 
+[sub_resource type="Resource" id="Resource_iu74g"]
+script = ExtResource("2_3o3uf")
+item_data = ExtResource("5_k1k83")
+metadata/_custom_type_script = "uid://ya5q8k0syvlc"
+
 [sub_resource type="Resource" id="Resource_6im7c"]
 script = ExtResource("2_3o3uf")
 item_data = ExtResource("4_46yob")
 quantity = 3
+metadata/_custom_type_script = "uid://ya5q8k0syvlc"
+
+[sub_resource type="Resource" id="Resource_qibqt"]
+script = ExtResource("2_3o3uf")
+item_data = ExtResource("7_fuwxj")
+quantity = 2
+metadata/_custom_type_script = "uid://ya5q8k0syvlc"
+
+[sub_resource type="Resource" id="Resource_a72gn"]
+script = ExtResource("2_3o3uf")
+item_data = ExtResource("8_gg53m")
+quantity = 2
 metadata/_custom_type_script = "uid://ya5q8k0syvlc"
 
 [sub_resource type="Resource" id="Resource_k1k83"]
@@ -33,19 +52,13 @@ item_data = ExtResource("5_83vuj")
 quantity = 2
 metadata/_custom_type_script = "uid://ya5q8k0syvlc"
 
-[sub_resource type="Resource" id="Resource_qibqt"]
+[sub_resource type="Resource" id="Resource_83vuj"]
 script = ExtResource("2_3o3uf")
-item_data = ExtResource("7_k1k83")
-quantity = 2
-metadata/_custom_type_script = "uid://ya5q8k0syvlc"
-
-[sub_resource type="Resource" id="Resource_gg53m"]
-script = ExtResource("2_3o3uf")
-item_data = ExtResource("7_cejnm")
+item_data = ExtResource("6_46yob")
 quantity = 2
 metadata/_custom_type_script = "uid://ya5q8k0syvlc"
 
 [resource]
 script = ExtResource("1_886py")
-slot_datas = Array[ExtResource("2_3o3uf")]([SubResource("Resource_iu74g"), SubResource("Resource_cejnm"), null, null, SubResource("Resource_6im7c"), null, null, SubResource("Resource_k1k83"), null, SubResource("Resource_qibqt"), null, null, null, SubResource("Resource_gg53m"), null])
+slot_datas = Array[ExtResource("2_3o3uf")]([SubResource("Resource_fuwxj"), SubResource("Resource_cejnm"), SubResource("Resource_iu74g"), null, SubResource("Resource_6im7c"), SubResource("Resource_qibqt"), SubResource("Resource_a72gn"), SubResource("Resource_k1k83"), null, null, SubResource("Resource_83vuj"), null, null, null, null])
 metadata/_custom_type_script = "uid://b3trg1hfu14lr"

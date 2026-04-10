@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="PotionData" load_steps=9 format=3 uid="uid://hvyvin3wy0yl"]
+
+[ext_resource type="Script" uid="uid://c7frnt306tx28" path="res://scripts/items/potion_data.gd" id="1_5vuii"]
+[ext_resource type="Script" uid="uid://csfappelxyahy" path="res://scripts/crafting/recipe_step.gd" id="1_7sjgy"]
+[ext_resource type="Texture2D" uid="uid://dxhked8oouaok" path="res://assets/#1 - Transparent Icons.png" id="1_74oob"]
+[ext_resource type="Script" uid="uid://66tqeact8x1t" path="res://scripts/crafting/recipe.gd" id="2_04qd3"]
+[ext_resource type="Resource" uid="uid://c8bglah43dlkw" path="res://resources/ingredient_properties/energizing.tres" id="3_h6jcg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bxo47"]
+atlas = ExtResource("1_74oob")
+region = Rect2(419, 291, 26, 26)
+
+[sub_resource type="Resource" id="Resource_74oob"]
+script = ExtResource("1_7sjgy")
+property = ExtResource("3_h6jcg")
+quantity = 2
+metadata/_custom_type_script = "uid://csfappelxyahy"
+
+[sub_resource type="Resource" id="Resource_h6jcg"]
+script = ExtResource("2_04qd3")
+recipe_steps = Array[ExtResource("1_7sjgy")]([SubResource("Resource_74oob")])
+metadata/_custom_type_script = "uid://66tqeact8x1t"
+
+[resource]
+script = ExtResource("1_5vuii")
+recipe = SubResource("Resource_h6jcg")
+primary_property = ExtResource("3_h6jcg")
+name = "Potion of Speed"
+art = SubResource("AtlasTexture_bxo47")
+metadata/_custom_type_script = "uid://c7frnt306tx28"

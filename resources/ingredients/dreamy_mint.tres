@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="IngredientData" load_steps=5 format=3 uid="uid://d3wuv7gcyl2hd"]
+
+[ext_resource type="Script" uid="uid://twcr3o7hisyf" path="res://scripts/items/ingredient_data.gd" id="1_6x7pl"]
+[ext_resource type="Texture2D" uid="uid://dxhked8oouaok" path="res://assets/#1 - Transparent Icons.png" id="1_h6rv7"]
+[ext_resource type="Resource" uid="uid://cvu33fqfoe6iq" path="res://resources/ingredient_properties/somniferous.tres" id="2_2yhl6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gtr38"]
+atlas = ExtResource("1_h6rv7")
+region = Rect2(484, 356, 24, 25)
+
+[resource]
+script = ExtResource("1_6x7pl")
+property = ExtResource("2_2yhl6")
+name = "Dreamy Mint"
+art = SubResource("AtlasTexture_gtr38")
+description = "It's smell is enough to make you feel woozy"
+metadata/_custom_type_script = "uid://twcr3o7hisyf"

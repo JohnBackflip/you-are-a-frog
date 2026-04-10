@@ -7,7 +7,7 @@ extends Control
 @onready var craft_button: Button = $CraftButton
 @onready var mixer: Control = %Mixer
 
-var grabbed_slot_data
+var grabbed_slot_data: SlotData
 
 
 func _physics_process(_delta: float) -> void:
@@ -53,3 +53,5 @@ func update_grabbed_slot() -> void:
 		item_description.set_info(grabbed_slot_data)
 	else:
 		grabbed_slot.hide()
+
+		

@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="PotionData" load_steps=11 format=3 uid="uid://bsickm0dywktf"]
+
+[ext_resource type="Script" uid="uid://c7frnt306tx28" path="res://scripts/items/potion_data.gd" id="1_02rry"]
+[ext_resource type="Texture2D" uid="uid://brxg4jb5qop75" path="res://assets/potion_icons.png" id="1_8bhuo"]
+[ext_resource type="Resource" uid="uid://cvu33fqfoe6iq" path="res://resources/ingredient_properties/somniferous.tres" id="2_rdwuw"]
+[ext_resource type="Script" uid="uid://csfappelxyahy" path="res://scripts/crafting/recipe_step.gd" id="3_pdaqy"]
+[ext_resource type="Resource" uid="uid://ck5fvhmmd8dlm" path="res://resources/ingredient_properties/medical.tres" id="4_hjb33"]
+[ext_resource type="Script" uid="uid://66tqeact8x1t" path="res://scripts/crafting/recipe.gd" id="5_cv4pu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qi4p8"]
+atlas = ExtResource("1_8bhuo")
+region = Rect2(998, 629, 560, 754)
+
+[sub_resource type="Resource" id="Resource_0omri"]
+script = ExtResource("3_pdaqy")
+property = ExtResource("2_rdwuw")
+quantity = 1
+metadata/_custom_type_script = "uid://csfappelxyahy"
+
+[sub_resource type="Resource" id="Resource_xquk2"]
+script = ExtResource("3_pdaqy")
+property = ExtResource("4_hjb33")
+quantity = 1
+metadata/_custom_type_script = "uid://csfappelxyahy"
+
+[sub_resource type="Resource" id="Resource_3pdbo"]
+script = ExtResource("5_cv4pu")
+recipe_steps = Array[ExtResource("3_pdaqy")]([SubResource("Resource_0omri"), SubResource("Resource_xquk2")])
+metadata/_custom_type_script = "uid://66tqeact8x1t"
+
+[resource]
+script = ExtResource("1_02rry")
+recipe = SubResource("Resource_3pdbo")
+primary_property = ExtResource("2_rdwuw")
+name = "Potion of Drowsiness"
+art = SubResource("AtlasTexture_qi4p8")
+description = "A potion for insomniacs"
+metadata/_custom_type_script = "uid://c7frnt306tx28"
