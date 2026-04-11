@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://bdlxaluranoch"]
 
-[ext_resource type="Script" uid="uid://bennponl3empk" path="res://scripts/crafting/recipe_book.gd" id="1_a646j"]
+[ext_resource type="Script" uid="uid://bennponl3empk" path="res://scripts/diary/diary.gd" id="1_a646j"]
 [ext_resource type="Texture2D" uid="uid://c2hq42wua87fu" path="res://assets/cropped_images/recipe_book_day.tres" id="2_a646j"]
 [ext_resource type="Texture2D" uid="uid://bp8yqoyexcw64" path="res://assets/cropped_images/recipe_book_night.tres" id="3_yxdbw"]
 
@@ -34,7 +34,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a646j"]
 size = Vector2(1275, 628)
 
-[node name="RecipeBook" type="Area2D"]
+[node name="Diary" type="Area2D"]
 script = ExtResource("1_a646j")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]

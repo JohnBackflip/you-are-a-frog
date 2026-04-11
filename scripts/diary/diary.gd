@@ -19,9 +19,11 @@ func get_recipes() -> void:
 	else:
 		push_error("Encyclopedia not found!")
 
+
 func print_recipes() -> void:
 	for potion: PotionData in encyclopedia.potions:
 		print(potion.name)
+
 
 func _on_mouse_entered() -> void:
 	var tween = create_tween()

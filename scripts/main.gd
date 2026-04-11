@@ -3,7 +3,6 @@ extends Node2D
 @onready var canvas_layer: CanvasLayer = $CanvasLayer
 @onready var crafting_interface: Control = $CanvasLayer/CraftingInterface
 @onready var cauldron: Area2D = $Cauldron
-@onready var recipe_book: Area2D = $RecipeBook
 @onready var companion: Area2D = $Companion
 
 # This is set to the demo inventory for now, change when needed. Might have to change these to global variables

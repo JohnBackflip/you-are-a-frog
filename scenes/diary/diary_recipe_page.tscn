@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://bgnd5wqde0tr8"]
 
-[ext_resource type="Script" uid="uid://debmmmcnoyrmm" path="res://ui/potion_diary.gd" id="1_c06s2"]
+[ext_resource type="Script" uid="uid://debmmmcnoyrmm" path="res://scripts/diary/diary_recipe_page.gd" id="1_c06s2"]
 [ext_resource type="Texture2D" uid="uid://d3hv5gxuqrdrx" path="res://assets/book.png" id="1_qonrc"]
-[ext_resource type="PackedScene" uid="uid://bbgbt2amtl16h" path="res://scenes/diary_entry.tscn" id="2_30xml"]
+[ext_resource type="PackedScene" uid="uid://bbgbt2amtl16h" path="res://scenes/diary/diary_recipe_entry.tscn" id="2_30xml"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c06s2"]
 atlas = ExtResource("1_qonrc")

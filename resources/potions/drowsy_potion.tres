@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="PotionData" load_steps=11 format=3 uid="uid://bsickm0dywktf"]
 
-[ext_resource type="Script" uid="uid://c7frnt306tx28" path="res://scripts/items/potion_data.gd" id="1_02rry"]
+[ext_resource type="Script" uid="uid://c7frnt306tx28" path="res://scripts/items/potions/potion_data.gd" id="1_02rry"]
 [ext_resource type="Texture2D" uid="uid://brxg4jb5qop75" path="res://assets/potion_icons.png" id="1_8bhuo"]
 [ext_resource type="Resource" uid="uid://cvu33fqfoe6iq" path="res://resources/ingredient_properties/somniferous.tres" id="2_rdwuw"]
-[ext_resource type="Script" uid="uid://csfappelxyahy" path="res://scripts/crafting/recipe_step.gd" id="3_pdaqy"]
+[ext_resource type="Script" uid="uid://csfappelxyahy" path="res://scripts/items/potions/recipe_step.gd" id="3_pdaqy"]
 [ext_resource type="Resource" uid="uid://ck5fvhmmd8dlm" path="res://resources/ingredient_properties/medical.tres" id="4_hjb33"]
-[ext_resource type="Script" uid="uid://66tqeact8x1t" path="res://scripts/crafting/recipe.gd" id="5_cv4pu"]
+[ext_resource type="Script" uid="uid://66tqeact8x1t" path="res://scripts/items/potions/recipe.gd" id="5_cv4pu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qi4p8"]
 atlas = ExtResource("1_8bhuo")

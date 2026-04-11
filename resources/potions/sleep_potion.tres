@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="PotionData" load_steps=9 format=3 uid="uid://dvpuree42g8hc"]
 
-[ext_resource type="Script" uid="uid://c7frnt306tx28" path="res://scripts/items/potion_data.gd" id="1_b6rqy"]
+[ext_resource type="Script" uid="uid://c7frnt306tx28" path="res://scripts/items/potions/potion_data.gd" id="1_b6rqy"]
 [ext_resource type="Texture2D" uid="uid://dxhked8oouaok" path="res://assets/#1 - Transparent Icons.png" id="1_xnt2j"]
 [ext_resource type="Resource" uid="uid://cvu33fqfoe6iq" path="res://resources/ingredient_properties/somniferous.tres" id="2_0j1wf"]
-[ext_resource type="Script" uid="uid://csfappelxyahy" path="res://scripts/crafting/recipe_step.gd" id="3_8udut"]
-[ext_resource type="Script" uid="uid://66tqeact8x1t" path="res://scripts/crafting/recipe.gd" id="4_li5pb"]
+[ext_resource type="Script" uid="uid://csfappelxyahy" path="res://scripts/items/potions/recipe_step.gd" id="3_8udut"]
+[ext_resource type="Script" uid="uid://66tqeact8x1t" path="res://scripts/items/potions/recipe.gd" id="4_li5pb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c0i0k"]
 atlas = ExtResource("1_xnt2j")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://xptg32g8s6sw"]
 
-[ext_resource type="PackedScene" uid="uid://bfe5mm3kkr1hj" path="res://scenes/property_legend.tscn" id="1_vk5kh"]
-[ext_resource type="PackedScene" uid="uid://bblhqi2jsidsi" path="res://scenes/mixer.tscn" id="2_vk5kh"]
+[ext_resource type="PackedScene" uid="uid://bfe5mm3kkr1hj" path="res://scenes/crafting/property_legend.tscn" id="1_vk5kh"]
+[ext_resource type="PackedScene" uid="uid://bblhqi2jsidsi" path="res://scenes/crafting/mixer.tscn" id="2_vk5kh"]
 
 [node name="RatioChart" type="HBoxContainer"]
 offset_right = 204.0

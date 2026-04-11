@@ -1,8 +1,8 @@
 extends Node
 
-var encyclopedia: Encyclopedia = preload("res://resources/encyclopedia.tres")
-var player_inventory_data: InventoryData = preload("res://resources/demo_inventory.tres")
-var mixer_data: MixerData = preload("res://resources/mixer_data.tres")
+var player_inventory_data: InventoryData = preload("uid://eajge1jeea0y")
+var encyclopedia: Encyclopedia = preload("uid://bysghl6lhebf4")
+var mixer_data: MixerData = preload("uid://ctskj2xpfe8fy")
 var character_set : CharacterSet = preload("res://resources/characters/character_set.tres")
 var customer_calendar : CustomerCalendar = preload("res://resources/calendar/customer_calendar.tres")
 

@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="PotionData" load_steps=9 format=3 uid="uid://biq8vjwgo037u"]
 
-[ext_resource type="Script" uid="uid://c7frnt306tx28" path="res://scripts/items/potion_data.gd" id="1_k01ij"]
-[ext_resource type="Script" uid="uid://csfappelxyahy" path="res://scripts/crafting/recipe_step.gd" id="1_n5mi4"]
+[ext_resource type="Script" uid="uid://c7frnt306tx28" path="res://scripts/items/potions/potion_data.gd" id="1_k01ij"]
+[ext_resource type="Script" uid="uid://csfappelxyahy" path="res://scripts/items/potions/recipe_step.gd" id="1_n5mi4"]
 [ext_resource type="Texture2D" uid="uid://dxhked8oouaok" path="res://assets/#1 - Transparent Icons.png" id="1_udk43"]
 [ext_resource type="Resource" uid="uid://clvr2d54jyo3n" path="res://resources/ingredient_properties/poisonous.tres" id="2_udk43"]
-[ext_resource type="Script" uid="uid://66tqeact8x1t" path="res://scripts/crafting/recipe.gd" id="3_pkuse"]
+[ext_resource type="Script" uid="uid://66tqeact8x1t" path="res://scripts/items/potions/recipe.gd" id="3_pkuse"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pkuse"]
 atlas = ExtResource("1_udk43")

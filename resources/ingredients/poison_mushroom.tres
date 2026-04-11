@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="IngredientData" load_steps=5 format=3 uid="uid://bjln21jd2twkv"]
 
 [ext_resource type="Texture2D" uid="uid://dxhked8oouaok" path="res://assets/#1 - Transparent Icons.png" id="1_27mne"]
-[ext_resource type="Script" uid="uid://twcr3o7hisyf" path="res://scripts/items/ingredient_data.gd" id="1_bgrw4"]
+[ext_resource type="Script" uid="uid://twcr3o7hisyf" path="res://scripts/items/ingredients/ingredient_data.gd" id="1_bgrw4"]
 [ext_resource type="Resource" uid="uid://clvr2d54jyo3n" path="res://resources/ingredient_properties/poisonous.tres" id="2_aalyk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aalyk"]
