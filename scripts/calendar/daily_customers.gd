@@ -1,7 +1,5 @@
 extends Resource
 class_name DailyCustomers
 
-enum character_names {ELVISH, MORTIMER, NPCHILDE}
-
-@export var customer_calendar : Array[character_names]
-@export var randoms_calendar : int
+# What customers will come in a specific day
+@export var customers : Array[CharacterData]

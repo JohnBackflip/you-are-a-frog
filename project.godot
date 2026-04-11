@@ -28,7 +28,7 @@ directories/dch_directory={
 "NPChilde": "res://addons/dialogic/Characters/NPChilde.dch"
 }
 directories/dtl_directory={
-"Mortimer_0": "res://addons/dialogic/Timelines/Mortimer_0.dtl",
+"Mortimer": "res://addons/dialogic/Timelines/Mortimer_0.dtl",
 "N.P. Childe_0": "res://addons/dialogic/Timelines/N.P. Childe_0.dtl"
 }
 layout/style_directory={

@@ -23,9 +23,9 @@ func _ready() -> void:
 
 func daily_dialogue(day: int):
 	daily_customers = customer_calendar.get_day(day)
-	for customer in daily_customers.customer_calendar:
-		next_dialogue(character_set.get_char(customer))
-		await game_events.dialogue_ready
+	for customer in daily_customers.customers:
+		next_dialogue(customer)
+		await dialogue_ready
 	# TODO: implement randoms asw
 
 
@@ -39,4 +39,4 @@ func on_finished_walking (timeline : String, _deadline : String):
 
 func on_finished_talking ():
 	await get_tree().create_timer(3.0).timeout
-	game_events.dialogue_ready.emit()
+	dialogue_ready.emit()

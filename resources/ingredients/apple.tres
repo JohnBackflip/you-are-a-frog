@@ -2,15 +2,17 @@
 
 [ext_resource type="Texture2D" uid="uid://dxhked8oouaok" path="res://assets/#1 - Transparent Icons.png" id="1_4k1u6"]
 [ext_resource type="Script" uid="uid://twcr3o7hisyf" path="res://scripts/items/ingredient_data.gd" id="1_kan2j"]
-[ext_resource type="Resource" uid="uid://ck5fvhmmd8dlm" path="res://resources/ingredient_properties/medical.tres" id="2_w3n58"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w3n58"]
 atlas = ExtResource("1_4k1u6")
 region = Rect2(4, 451, 24, 26)
 
+[sub_resource type="Resource" id="Resource_4k1u6"]
+metadata/__load_path__ = "res://resources/ingredient_properties/healing.tres"
+
 [resource]
 script = ExtResource("1_kan2j")
-property = ExtResource("2_w3n58")
+property = SubResource("Resource_4k1u6")
 name = "Apple"
 art = SubResource("AtlasTexture_w3n58")
 description = "A sweet apple"
