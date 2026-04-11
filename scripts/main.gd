@@ -1,20 +1,23 @@
 extends Node2D
 
-# This is set to the demo inventory for now, change when needed. Might have to change these to global variables
-var player_inventory_data: InventoryData
-var mixer_data: MixerData
-var character_set: CharacterSet
-
+@onready var canvas_layer: CanvasLayer = $CanvasLayer
 @onready var crafting_interface: Control = $CanvasLayer/CraftingInterface
 @onready var cauldron: Area2D = $Cauldron
 @onready var recipe_book: Area2D = $RecipeBook
 @onready var companion: Area2D = $Companion
 
+# This is set to the demo inventory for now, change when needed. Might have to change these to global variables
+var player_inventory_data: InventoryData
+var mixer_data: MixerData
+var character_set: CharacterSet
 
-# Called when the node enters the scene tree for the first time.
+const POTION_DISCOVERY_SCREEN = preload("uid://v6wkfrj1f6om")
+
+
 func _ready() -> void:
 	# Connect signals
 	cauldron.toggle_crafting_mode.connect(crafting_interface.on_toggle_crafting_mode)
+	game_events.potion_discovered.connect(on_potion_discovered)
 	companion.mouse_entered.connect(_on_companion_mouse_entered)
 	companion.mouse_exited.connect(_on_companion_mouse_exited)
 	companion.input_event.connect(_on_companion_input_event)
@@ -44,3 +47,10 @@ func _on_companion_mouse_entered() -> void:
 func _on_companion_mouse_exited() -> void:
 	if companion.get_current_animation() == "drinking":
 		companion.play_default_animation()
+
+
+func on_potion_discovered(potion: PotionData) -> void:
+	var discovery_screen = POTION_DISCOVERY_SCREEN.instantiate()
+	canvas_layer.add_child(discovery_screen)
+	discovery_screen.display(potion)
+	

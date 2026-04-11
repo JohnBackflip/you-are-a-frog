@@ -42,9 +42,13 @@ func on_craft_button_pressed() -> void:
 			slot_data.consume_item()
 			if slot_data.quantity <= 0:
 				mixer_data.slot_datas[index] = null
-
+	
+	# Play some animation here
 	mixer_data.inventory_updated.emit(mixer_data)
-	game_events.potion_discovered.emit(result_potion)
+	if result_potion.recipe and result_potion.recipe_unlocked == false:
+		game_events.potion_discovered.emit(result_potion)
+		result_potion.recipe_unlocked = true
+		print("New potion %s discovered!" % result_potion.name)
 
 func request_potion_storage() -> void:
 	if potion_slot_data:
@@ -84,7 +88,6 @@ func layout_slots(mixer: MixerData):
 
 	for i in range(mixer_size):
 		var slot_data = mixer.slot_datas[i]
-		print("Slot data:", slot_data)
 		var slot = SLOT.instantiate()
 		slot.slot_clicked.connect(mixer_data.on_slot_clicked)
 		slot.index = i

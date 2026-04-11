@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://bdlxaluranoch" path="res://scenes/recipe_book.tscn" id="4_85g3d"]
 [ext_resource type="Script" uid="uid://bxnd2guymaw3e" path="res://scripts/crafting/crafting_interface.gd" id="4_tefeu"]
 [ext_resource type="PackedScene" uid="uid://bj32pp33u7ou4" path="res://ui/inventory/slot.tscn" id="5_tbgi4"]
-[ext_resource type="Script" uid="uid://db5q8dhejojql" path="res://scripts/crafting/craft_button.gd" id="7_o6xl0"]
 [ext_resource type="StyleBox" uid="uid://cduk5duabhbtg" path="res://ui/button_normal.tres" id="9_eb6dy"]
 [ext_resource type="StyleBox" uid="uid://daw7j6nw6apcq" path="res://ui/button_pressed.tres" id="10_trceg"]
 [ext_resource type="StyleBox" uid="uid://dehhuyk6gs1jn" path="res://ui/button_hovered.tres" id="11_trceg"]
@@ -20,6 +19,16 @@
 [ext_resource type="Texture2D" uid="uid://q356ulxxi6oe" path="res://assets/cropped_images/desk_potion4.tres" id="18_dp3eg"]
 [ext_resource type="Texture2D" uid="uid://dykncb3ep7al1" path="res://assets/cropped_images/desk_potion5.tres" id="19_0ld40"]
 [ext_resource type="PackedScene" uid="uid://bno15tnqsojkj" path="res://scenes/companion.tscn" id="20_gqmmt"]
+
+[sub_resource type="GDScript" id="GDScript_0ld40"]
+script/source = "extends Button
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	hide()
+	pass # Replace with function body.
+"
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_jyhfs")
@@ -126,7 +135,7 @@ theme_override_styles/normal = ExtResource("9_eb6dy")
 theme_override_styles/pressed = ExtResource("10_trceg")
 theme_override_styles/hover = ExtResource("11_trceg")
 text = "CRAFT!"
-script = ExtResource("7_o6xl0")
+script = SubResource("GDScript_0ld40")
 
 [node name="Mixer" parent="CanvasLayer/CraftingInterface" instance=ExtResource("12_eb6dy")]
 unique_name_in_owner = true
@@ -145,5 +154,3 @@ offset_bottom = 151.0
 
 [node name="PotionDiary" parent="CanvasLayer" instance=ExtResource("14_a8y0u")]
 visible = false
-
-[connection signal="pressed" from="CanvasLayer/CraftingInterface/CraftButton" to="CanvasLayer/CraftingInterface/CraftButton" method="_on_pressed"]
