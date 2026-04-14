@@ -4,7 +4,7 @@ NPChilde: Oh but it seems that you are the only one in this establishment. Surel
 NPChilde: Tell you what - let me offer you this [color={bold_color}]enchanted magazine[/color], in which you can [color={bold_color}]place orders[/color] and my employees can deliver them to you the [color={bold_color}]next day[/color]!
 NPChilde: Nifty stuff, isn't it? I'll let you keep it for a [color={bold_color}]minor potion of healing[/color], seems like a fair trade, no? I'll have to get going now, so if possible I'll swing by [color={bold_color}]tomorrow[/color] to get it.
 
-set {potion_use} = "Minor potion of healing"
-set {potion_deadline} = "1 day"
+set {request} = "Minor potion of healing"
+set {deadline} = 1.0
 [wait time="1.0"]
-[signal arg="leave"]
+[signal arg_type="dict" arg="{"desired_property0":"medical","desired_property1":"energizing","undesired_property0":"poisonous","undesired_property1":"somniferous"}"]

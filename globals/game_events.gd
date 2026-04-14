@@ -3,3 +3,5 @@ extends Node
 
 signal open_potion_diary
 signal potion_discovered(potion: PotionData)
+
+signal new_order(customer: CharacterData, request: String, deadline: int, desired_undesired : Dictionary)

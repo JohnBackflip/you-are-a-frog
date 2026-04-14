@@ -37,8 +37,8 @@ layout/style_directory={
 }
 variables={
 "bold_color": "8e91f6",
-"potion_deadline": "",
-"potion_use": ""
+"deadline": 1,
+"request": ""
 }
 layout/style_list=["res://addons/dialogic/Styles/style.tres"]
 layout/default_style="res://addons/dialogic/Styles/style.tres"

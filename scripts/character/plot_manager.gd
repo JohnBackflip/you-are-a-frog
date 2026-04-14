@@ -1,20 +1,28 @@
 extends Node
 
 signal dialogue_ready
+signal finished_talking
 
 @export_dir var timeline_dir : String
 @onready var potion_diary : Control = $CanvasLayer/PotionDiary
 @onready var character : Node2D = $Character
+
+var timeline : String
+var timelines_dir : String
+
 var character_set: CharacterSet
 var customer_calendar : CustomerCalendar
 var daily_customers : DailyCustomers
 
+var current_character : CharacterData
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	character_set = game_manager.character_set
+	finished_talking.connect(character.on_finished_talking)
 	character.finished_walking.connect(on_finished_walking)
-	character.finished_talking.connect(on_finished_talking)
-	character.initialize_char(timeline_dir)
+	Dialogic.signal_event.connect(DialogicSignal)
+	timelines_dir = timeline_dir
 	customer_calendar = game_manager.customer_calendar
 	
 	# Example use
@@ -30,13 +38,19 @@ func daily_dialogue(day: int):
 
 
 func next_dialogue(character_data : CharacterData):
+	timeline = timelines_dir + "/" + character_data.name + "_" + str(character_data.dialogue_index) + ".dtl"
 	character.walk_in(character_data)
+	current_character = character_data
+	Dialogic.VAR.bold_color = character_data.color
 	character_data.dialogue_index += 1
 
-func on_finished_walking (timeline : String, _deadline : String):
+func on_finished_walking ():
 	Dialogic.start_timeline(timeline)
 	potion_diary.close_diary()
 
-func on_finished_talking ():
-	await get_tree().create_timer(3.0).timeout
-	dialogue_ready.emit()
+func DialogicSignal(arg):
+	if (arg is Dictionary):
+		game_events.new_order.emit(current_character, Dialogic.VAR.request, Dialogic.VAR.deadline, arg)
+		finished_talking.emit()
+		await get_tree().create_timer(2.0).timeout
+		dialogue_ready.emit()
