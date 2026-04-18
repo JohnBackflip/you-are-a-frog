@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://chp1jryo073wa"]
+[gd_scene load_steps=16 format=3 uid="uid://chp1jryo073wa"]
 
 [ext_resource type="Script" uid="uid://d4im1yu4arort" path="res://scripts/character/plot_manager.gd" id="1_5uuf7"]
 [ext_resource type="Texture2D" uid="uid://baie5fkg2tqqm" path="res://assets/shop_bg_day.png" id="2_y5p17"]
@@ -11,6 +11,10 @@
 [ext_resource type="Texture2D" uid="uid://q356ulxxi6oe" path="res://assets/cropped_images/desk_potion4.tres" id="9_3v3vx"]
 [ext_resource type="Texture2D" uid="uid://dykncb3ep7al1" path="res://assets/cropped_images/desk_potion5.tres" id="10_6hiy0"]
 [ext_resource type="PackedScene" uid="uid://bgnd5wqde0tr8" path="res://scenes/diary/diary_recipe_page.tscn" id="11_uaden"]
+[ext_resource type="StyleBox" uid="uid://cduk5duabhbtg" path="res://ui/button_normal.tres" id="12_dip7t"]
+[ext_resource type="StyleBox" uid="uid://daw7j6nw6apcq" path="res://ui/button_pressed.tres" id="13_wmuix"]
+[ext_resource type="StyleBox" uid="uid://dehhuyk6gs1jn" path="res://ui/button_hovered.tres" id="14_s8gqh"]
+[ext_resource type="PackedScene" uid="uid://bno15tnqsojkj" path="res://scenes/shop/companion.tscn" id="15_wmuix"]
 
 [node name="DayShop" type="Node2D"]
 script = ExtResource("1_5uuf7")
@@ -37,6 +41,9 @@ metadata/_edit_lock_ = true
 position = Vector2(920, 565)
 scale = Vector2(0.17, 0.17)
 metadata/_edit_lock_ = true
+
+[node name="Companion" parent="." instance=ExtResource("15_wmuix")]
+position = Vector2(83, 543)
 
 [node name="DeskPotions" type="Node2D" parent="."]
 
@@ -69,3 +76,21 @@ texture = ExtResource("10_6hiy0")
 
 [node name="PotionDiary" parent="CanvasLayer" instance=ExtResource("11_uaden")]
 visible = false
+
+[node name="CloseShopButton" type="Button" parent="CanvasLayer"]
+custom_minimum_size = Vector2(100, 0)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -42.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/normal = ExtResource("12_dip7t")
+theme_override_styles/pressed = ExtResource("13_wmuix")
+theme_override_styles/hover = ExtResource("14_s8gqh")
+text = "Close Shop"
+
+[connection signal="pressed" from="CanvasLayer/CloseShopButton" to="." method="_on_close_shop_button_pressed"]

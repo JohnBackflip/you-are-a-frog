@@ -1,0 +1,171 @@
+[gd_scene load_steps=21 format=3 uid="uid://0yo5kafitfqt"]
+
+[ext_resource type="Script" uid="uid://f6bjpg5u0tat" path="res://scripts/night_shop.gd" id="1_5fy2q"]
+[ext_resource type="Texture2D" uid="uid://da1hf6oukdqme" path="res://assets/shop_bg_night.png" id="2_5sa7e"]
+[ext_resource type="PackedScene" uid="uid://bgh7nj36fxlmf" path="res://scenes/crafting/cauldron.tscn" id="3_12j2n"]
+[ext_resource type="PackedScene" uid="uid://bdlxaluranoch" path="res://scenes/diary/diary.tscn" id="4_bgxok"]
+[ext_resource type="PackedScene" uid="uid://bno15tnqsojkj" path="res://scenes/shop/companion.tscn" id="5_ob5p7"]
+[ext_resource type="Texture2D" uid="uid://b0i1pwq3bq2o4" path="res://assets/cropped_images/desk_potion1.tres" id="6_6i1nf"]
+[ext_resource type="Texture2D" uid="uid://d3xmoo1htpywr" path="res://assets/cropped_images/desk_potion2.tres" id="7_erqfe"]
+[ext_resource type="Texture2D" uid="uid://by5ccgowu40ny" path="res://assets/cropped_images/desk_potion3.tres" id="8_bimn6"]
+[ext_resource type="Texture2D" uid="uid://q356ulxxi6oe" path="res://assets/cropped_images/desk_potion4.tres" id="9_owys0"]
+[ext_resource type="Texture2D" uid="uid://dykncb3ep7al1" path="res://assets/cropped_images/desk_potion5.tres" id="10_sn7nu"]
+[ext_resource type="Script" uid="uid://bxnd2guymaw3e" path="res://scripts/crafting/crafting_interface.gd" id="11_qhh3u"]
+[ext_resource type="PackedScene" uid="uid://bwe26a1mdaome" path="res://scenes/crafting/inventory.tscn" id="12_fmcdd"]
+[ext_resource type="PackedScene" uid="uid://bj32pp33u7ou4" path="res://scenes/crafting/slot.tscn" id="13_2ldue"]
+[ext_resource type="StyleBox" uid="uid://cduk5duabhbtg" path="res://ui/button_normal.tres" id="14_pnxix"]
+[ext_resource type="StyleBox" uid="uid://daw7j6nw6apcq" path="res://ui/button_pressed.tres" id="15_7qalp"]
+[ext_resource type="StyleBox" uid="uid://dehhuyk6gs1jn" path="res://ui/button_hovered.tres" id="16_07tns"]
+[ext_resource type="PackedScene" uid="uid://bblhqi2jsidsi" path="res://scenes/crafting/mixer.tscn" id="17_85lvg"]
+[ext_resource type="PackedScene" uid="uid://bgnd5wqde0tr8" path="res://scenes/diary/diary_recipe_page.tscn" id="18_x6sor"]
+[ext_resource type="AudioStream" uid="uid://cpi4ypoisok0g" path="res://assets/audio/cricket_ambience.wav" id="19_n5yg0"]
+
+[sub_resource type="GDScript" id="GDScript_0ld40"]
+script/source = "extends Button
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	hide()
+	pass # Replace with function body.
+"
+
+[node name="NightShop" type="Node2D"]
+script = ExtResource("1_5fy2q")
+
+[node name="Background" type="Sprite2D" parent="."]
+scale = Vector2(0.3333333, 0.33379626)
+texture = ExtResource("2_5sa7e")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="Cauldron" parent="." instance=ExtResource("3_12j2n")]
+position = Vector2(643, 460)
+scale = Vector2(0.3, 0.3)
+priority = 4
+metadata/_edit_lock_ = true
+
+[node name="Diary" parent="." instance=ExtResource("4_bgxok")]
+position = Vector2(920, 565)
+scale = Vector2(0.17, 0.17)
+night_mode = true
+metadata/_edit_lock_ = true
+
+[node name="Companion" parent="." instance=ExtResource("5_ob5p7")]
+position = Vector2(83, 543)
+
+[node name="DeskPotions" type="Node2D" parent="."]
+
+[node name="DeskPotion1" type="Sprite2D" parent="DeskPotions"]
+position = Vector2(400, 530)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("6_6i1nf")
+
+[node name="DeskPotion2" type="Sprite2D" parent="DeskPotions"]
+position = Vector2(1111, 563)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_erqfe")
+
+[node name="DeskPotion3" type="Sprite2D" parent="DeskPotions"]
+position = Vector2(208, 526)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("8_bimn6")
+
+[node name="DeskPotion4" type="Sprite2D" parent="DeskPotions"]
+position = Vector2(306, 577)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("9_owys0")
+
+[node name="DeskPotion5" type="Sprite2D" parent="DeskPotions"]
+position = Vector2(1198, 535)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("10_sn7nu")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CraftingInterface" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("11_qhh3u")
+metadata/_edit_lock_ = true
+
+[node name="PlayerInventory" parent="CanvasLayer/CraftingInterface" instance=ExtResource("12_fmcdd")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -80.0
+offset_right = 0.0
+offset_bottom = 80.0
+grow_horizontal = 0
+
+[node name="GrabbedSlot" parent="CanvasLayer/CraftingInterface" instance=ExtResource("13_2ldue")]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+z_index = 99
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+mouse_filter = 2
+
+[node name="CraftButton" type="Button" parent="CanvasLayer/CraftingInterface"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -58.0
+offset_top = -215.0
+offset_right = 42.0
+offset_bottom = -165.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("14_pnxix")
+theme_override_styles/pressed = ExtResource("15_7qalp")
+theme_override_styles/hover = ExtResource("16_07tns")
+text = "CRAFT!"
+script = SubResource("GDScript_0ld40")
+
+[node name="Mixer" parent="CanvasLayer/CraftingInterface" instance=ExtResource("17_85lvg")]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 467.0
+offset_top = 30.0
+offset_right = 797.0
+offset_bottom = 360.0
+
+[node name="PotionDiary" parent="CanvasLayer" instance=ExtResource("18_x6sor")]
+visible = false
+
+[node name="EndNightButton" type="Button" parent="CanvasLayer"]
+custom_minimum_size = Vector2(100, 0)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -42.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/normal = ExtResource("14_pnxix")
+theme_override_styles/pressed = ExtResource("15_7qalp")
+theme_override_styles/hover = ExtResource("16_07tns")
+text = "End Night"
+
+[node name="Ambience" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("19_n5yg0")
+autoplay = true
+
+[connection signal="pressed" from="CanvasLayer/EndNightButton" to="." method="_on_end_night_button_pressed"]

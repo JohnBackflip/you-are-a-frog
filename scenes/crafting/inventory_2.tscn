@@ -1,0 +1,226 @@
+[gd_scene load_steps=5 format=3 uid="uid://2cjtxgpj2eqi"]
+
+[ext_resource type="StyleBox" uid="uid://b7mquqaqmh7yf" path="res://ui/panel_container.tres" id="1_6ij2f"]
+[ext_resource type="Texture2D" uid="uid://cfwhanqe6jifd" path="res://assets/blank.png" id="1_pbatm"]
+[ext_resource type="Script" uid="uid://byxeq7awjlx4w" path="res://scripts/ui/inventory_ui/inventory_2.gd" id="2_h1vrb"]
+[ext_resource type="PackedScene" uid="uid://bj32pp33u7ou4" path="res://scenes/crafting/slot.tscn" id="2_pbatm"]
+
+[node name="Inventory2" type="TextureRect"]
+self_modulate = Color(1, 1, 1, 0.4862745)
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -232.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("1_pbatm")
+script = ExtResource("2_h1vrb")
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("1_6ij2f")
+current_tab = 0
+clip_tabs = false
+
+[node name="Ingredients" type="MarginContainer" parent="TabContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+metadata/_tab_index = 0
+
+[node name="IngredientGrid" type="GridContainer" parent="TabContainer/Ingredients"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
+columns = 3
+
+[node name="Slot" parent="TabContainer/Ingredients/IngredientGrid" instance=ExtResource("2_pbatm")]
+layout_mode = 2
+
+[node name="Slot2" parent="TabContainer/Ingredients/IngredientGrid" instance=ExtResource("2_pbatm")]
+layout_mode = 2
+
+[node name="Slot3" parent="TabContainer/Ingredients/IngredientGrid" instance=ExtResource("2_pbatm")]
+layout_mode = 2
+
+[node name="Slot4" parent="TabContainer/Ingredients/IngredientGrid" instance=ExtResource("2_pbatm")]
+layout_mode = 2
+
+[node name="Slot5" parent="TabContainer/Ingredients/IngredientGrid" instance=ExtResource("2_pbatm")]
+layout_mode = 2
+
+[node name="Slot6" parent="TabContainer/Ingredients/IngredientGrid" instance=ExtResource("2_pbatm")]
+layout_mode = 2
+
+[node name="Slot7" parent="TabContainer/Ingredients/IngredientGrid" instance=ExtResource("2_pbatm")]
+layout_mode = 2
+
+[node name="Slot8" parent="TabContainer/Ingredients/IngredientGrid" instance=ExtResource("2_pbatm")]
+layout_mode = 2
+
+[node name="Slot9" parent="TabContainer/Ingredients/IngredientGrid" instance=ExtResource("2_pbatm")]
+layout_mode = 2
+
+[node name="Slot10" parent="TabContainer/Ingredients/IngredientGrid" instance=ExtResource("2_pbatm")]
+layout_mode = 2
+
+[node name="Slot11" parent="TabContainer/Ingredients/IngredientGrid" instance=ExtResource("2_pbatm")]
+layout_mode = 2
+
+[node name="Slot12" parent="TabContainer/Ingredients/IngredientGrid" instance=ExtResource("2_pbatm")]
+layout_mode = 2
+
+[node name="Slot13" parent="TabContainer/Ingredients/IngredientGrid" instance=ExtResource("2_pbatm")]
+layout_mode = 2
+
+[node name="Slot14" parent="TabContainer/Ingredients/IngredientGrid" instance=ExtResource("2_pbatm")]
+layout_mode = 2
+
+[node name="Slot15" parent="TabContainer/Ingredients/IngredientGrid" instance=ExtResource("2_pbatm")]
+layout_mode = 2
+
+[node name="Slot16" parent="TabContainer/Ingredients/IngredientGrid" instance=ExtResource("2_pbatm")]
+layout_mode = 2
+
+[node name="Slot17" parent="TabContainer/Ingredients/IngredientGrid" instance=ExtResource("2_pbatm")]
+layout_mode = 2
+
+[node name="Slot18" parent="TabContainer/Ingredients/IngredientGrid" instance=ExtResource("2_pbatm")]
+layout_mode = 2
+
+[node name="Slot19" parent="TabContainer/Ingredients/IngredientGrid" instance=ExtResource("2_pbatm")]
+layout_mode = 2
+
+[node name="Slot20" parent="TabContainer/Ingredients/IngredientGrid" instance=ExtResource("2_pbatm")]
+layout_mode = 2
+
+[node name="Slot21" parent="TabContainer/Ingredients/IngredientGrid" instance=ExtResource("2_pbatm")]
+layout_mode = 2
+
+[node name="Slot22" parent="TabContainer/Ingredients/IngredientGrid" instance=ExtResource("2_pbatm")]
+layout_mode = 2
+
+[node name="Slot23" parent="TabContainer/Ingredients/IngredientGrid" instance=ExtResource("2_pbatm")]
+layout_mode = 2
+
+[node name="Slot24" parent="TabContainer/Ingredients/IngredientGrid" instance=ExtResource("2_pbatm")]
+layout_mode = 2
+
+[node name="Slot25" parent="TabContainer/Ingredients/IngredientGrid" instance=ExtResource("2_pbatm")]
+layout_mode = 2
+
+[node name="Slot26" parent="TabContainer/Ingredients/IngredientGrid" instance=ExtResource("2_pbatm")]
+layout_mode = 2
+
+[node name="Slot27" parent="TabContainer/Ingredients/IngredientGrid" instance=ExtResource("2_pbatm")]
+layout_mode = 2
+
+[node name="Potions" type="MarginContainer" parent="TabContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+metadata/_tab_index = 1
+
+[node name="PotionGrid" type="GridContainer" parent="TabContainer/Potions"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
+columns = 3
+
+[node name="Slot" parent="TabContainer/Potions/PotionGrid" instance=ExtResource("2_pbatm")]
+custom_minimum_size = Vector2(64, 80)
+layout_mode = 2
+
+[node name="Slot2" parent="TabContainer/Potions/PotionGrid" instance=ExtResource("2_pbatm")]
+custom_minimum_size = Vector2(64, 80)
+layout_mode = 2
+
+[node name="Slot3" parent="TabContainer/Potions/PotionGrid" instance=ExtResource("2_pbatm")]
+custom_minimum_size = Vector2(64, 80)
+layout_mode = 2
+
+[node name="Slot4" parent="TabContainer/Potions/PotionGrid" instance=ExtResource("2_pbatm")]
+custom_minimum_size = Vector2(64, 80)
+layout_mode = 2
+
+[node name="Slot5" parent="TabContainer/Potions/PotionGrid" instance=ExtResource("2_pbatm")]
+custom_minimum_size = Vector2(64, 80)
+layout_mode = 2
+
+[node name="Slot6" parent="TabContainer/Potions/PotionGrid" instance=ExtResource("2_pbatm")]
+custom_minimum_size = Vector2(64, 80)
+layout_mode = 2
+
+[node name="Slot7" parent="TabContainer/Potions/PotionGrid" instance=ExtResource("2_pbatm")]
+custom_minimum_size = Vector2(64, 80)
+layout_mode = 2
+
+[node name="Slot8" parent="TabContainer/Potions/PotionGrid" instance=ExtResource("2_pbatm")]
+custom_minimum_size = Vector2(64, 80)
+layout_mode = 2
+
+[node name="Slot9" parent="TabContainer/Potions/PotionGrid" instance=ExtResource("2_pbatm")]
+custom_minimum_size = Vector2(64, 80)
+layout_mode = 2
+
+[node name="Slot10" parent="TabContainer/Potions/PotionGrid" instance=ExtResource("2_pbatm")]
+custom_minimum_size = Vector2(64, 80)
+layout_mode = 2
+
+[node name="Slot11" parent="TabContainer/Potions/PotionGrid" instance=ExtResource("2_pbatm")]
+custom_minimum_size = Vector2(64, 80)
+layout_mode = 2
+
+[node name="Slot12" parent="TabContainer/Potions/PotionGrid" instance=ExtResource("2_pbatm")]
+custom_minimum_size = Vector2(64, 80)
+layout_mode = 2
+
+[node name="Slot13" parent="TabContainer/Potions/PotionGrid" instance=ExtResource("2_pbatm")]
+custom_minimum_size = Vector2(64, 80)
+layout_mode = 2
+
+[node name="Slot14" parent="TabContainer/Potions/PotionGrid" instance=ExtResource("2_pbatm")]
+custom_minimum_size = Vector2(64, 80)
+layout_mode = 2
+
+[node name="Slot15" parent="TabContainer/Potions/PotionGrid" instance=ExtResource("2_pbatm")]
+custom_minimum_size = Vector2(64, 80)
+layout_mode = 2
+
+[node name="Slot16" parent="TabContainer/Potions/PotionGrid" instance=ExtResource("2_pbatm")]
+custom_minimum_size = Vector2(64, 80)
+layout_mode = 2
+
+[node name="Slot17" parent="TabContainer/Potions/PotionGrid" instance=ExtResource("2_pbatm")]
+custom_minimum_size = Vector2(64, 80)
+layout_mode = 2
+
+[node name="Slot18" parent="TabContainer/Potions/PotionGrid" instance=ExtResource("2_pbatm")]
+custom_minimum_size = Vector2(64, 80)
+layout_mode = 2
+
+[node name="Slot19" parent="TabContainer/Potions/PotionGrid" instance=ExtResource("2_pbatm")]
+custom_minimum_size = Vector2(64, 80)
+layout_mode = 2
+
+[node name="Slot20" parent="TabContainer/Potions/PotionGrid" instance=ExtResource("2_pbatm")]
+custom_minimum_size = Vector2(64, 80)
+layout_mode = 2
+
+[node name="Slot21" parent="TabContainer/Potions/PotionGrid" instance=ExtResource("2_pbatm")]
+custom_minimum_size = Vector2(64, 80)
+layout_mode = 2

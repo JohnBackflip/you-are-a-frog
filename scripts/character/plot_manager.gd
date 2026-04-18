@@ -24,17 +24,18 @@ func _ready() -> void:
 	Dialogic.signal_event.connect(DialogicSignal)
 	timelines_dir = timeline_dir
 	customer_calendar = game_manager.customer_calendar
-	
-	# Example use
-	daily_dialogue(0)
+
+	var day = game_manager.day
+	daily_dialogue(day)
 	#daily_dialogue(1)
 
 func daily_dialogue(day: int):
 	daily_customers = customer_calendar.get_day(day)
-	for customer in daily_customers.customers:
-		next_dialogue(customer)
-		await dialogue_ready
-	# TODO: implement randoms asw
+	if daily_customers:
+		for customer in daily_customers.customers:
+			next_dialogue(customer)
+			await dialogue_ready
+		# TODO: implement randoms asw
 
 
 func next_dialogue(character_data : CharacterData):
@@ -54,3 +55,7 @@ func DialogicSignal(arg):
 		finished_talking.emit()
 		await get_tree().create_timer(2.0).timeout
 		dialogue_ready.emit()
+
+
+func _on_close_shop_button_pressed() -> void:
+	game_manager.go_to_night()

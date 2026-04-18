@@ -5,4 +5,5 @@ class_name CustomerCalendar
 @export var customer_calendar : Array[DailyCustomers]
 
 func get_day(day : int):
-	return customer_calendar[day]
+	if day <= customer_calendar.size() - 1:
+		return customer_calendar[day]
