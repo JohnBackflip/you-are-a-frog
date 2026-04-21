@@ -91,10 +91,6 @@ enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 
 property_bar="The colour part in the ratio chart"
 
-[gui]
-
-theme/custom="uid://bh026vnea6f0h"
-
 [input]
 
 dialogic_default_action={

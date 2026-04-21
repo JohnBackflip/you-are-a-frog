@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://v6wkfrj1f6om"]
 
 [ext_resource type="Texture2D" uid="uid://brxg4jb5qop75" path="res://assets/potion_icons.png" id="1_6jmay"]
-[ext_resource type="Script" uid="uid://bj3bit6fobprt" path="res://ui/potion_discovery_screen.gd" id="1_skvh2"]
+[ext_resource type="Script" uid="uid://bj3bit6fobprt" path="res://scripts/ui/potion_discovery_screen.gd" id="1_skvh2"]
 [ext_resource type="Texture2D" uid="uid://bgrgtnvtqv0qn" path="res://assets/vfx/spotlight_01_a.png" id="2_asjob"]
 [ext_resource type="StyleBox" uid="uid://cduk5duabhbtg" path="res://ui/button_normal.tres" id="2_skvh2"]
 [ext_resource type="StyleBox" uid="uid://daw7j6nw6apcq" path="res://ui/button_pressed.tres" id="3_asjob"]
@@ -88,6 +88,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 texture = SubResource("AtlasTexture_hth18")
 expand_mode = 1
+stretch_mode = 5
 
 [node name="Button" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(80, 35)

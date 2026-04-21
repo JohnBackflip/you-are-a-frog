@@ -10,10 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://by5ccgowu40ny" path="res://assets/cropped_images/desk_potion3.tres" id="8_u1556"]
 [ext_resource type="Texture2D" uid="uid://q356ulxxi6oe" path="res://assets/cropped_images/desk_potion4.tres" id="9_3v3vx"]
 [ext_resource type="Texture2D" uid="uid://dykncb3ep7al1" path="res://assets/cropped_images/desk_potion5.tres" id="10_6hiy0"]
-[ext_resource type="PackedScene" uid="uid://bgnd5wqde0tr8" path="res://scenes/diary/diary_recipe_page.tscn" id="11_uaden"]
 [ext_resource type="StyleBox" uid="uid://cduk5duabhbtg" path="res://ui/button_normal.tres" id="12_dip7t"]
 [ext_resource type="StyleBox" uid="uid://daw7j6nw6apcq" path="res://ui/button_pressed.tres" id="13_wmuix"]
 [ext_resource type="StyleBox" uid="uid://dehhuyk6gs1jn" path="res://ui/button_hovered.tres" id="14_s8gqh"]
+[ext_resource type="PackedScene" uid="uid://ds82c7crgovni" path="res://scenes/diary/ui/diary_ui.tscn" id="15_s8gqh"]
 [ext_resource type="PackedScene" uid="uid://bno15tnqsojkj" path="res://scenes/shop/companion.tscn" id="15_wmuix"]
 
 [node name="DayShop" type="Node2D"]
@@ -74,9 +74,6 @@ texture = ExtResource("10_6hiy0")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="PotionDiary" parent="CanvasLayer" instance=ExtResource("11_uaden")]
-visible = false
-
 [node name="CloseShopButton" type="Button" parent="CanvasLayer"]
 custom_minimum_size = Vector2(100, 0)
 anchors_preset = 3
@@ -92,5 +89,8 @@ theme_override_styles/normal = ExtResource("12_dip7t")
 theme_override_styles/pressed = ExtResource("13_wmuix")
 theme_override_styles/hover = ExtResource("14_s8gqh")
 text = "Close Shop"
+
+[node name="DiaryUI" parent="CanvasLayer" instance=ExtResource("15_s8gqh")]
+visible = false
 
 [connection signal="pressed" from="CanvasLayer/CloseShopButton" to="." method="_on_close_shop_button_pressed"]

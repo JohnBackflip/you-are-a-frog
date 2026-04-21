@@ -4,7 +4,7 @@ signal dialogue_ready
 signal finished_talking
 
 @export_dir var timeline_dir : String
-@onready var potion_diary : Control = $CanvasLayer/PotionDiary
+@onready var potion_diary : Control = $CanvasLayer/DiaryUI
 @onready var character : Node2D = $Character
 
 var timeline : String

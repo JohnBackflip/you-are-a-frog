@@ -65,6 +65,7 @@ func open_diary() -> void:
 	tween.tween_property(background_overlay, "self_modulate", background_overlay.self_modulate, 0.1).from(Color(0.0, 0.0, 0.0, 0.0))
 	tween.parallel().tween_property(book, "position", book.position, 0.1).from(book.position + Vector2(0.0, 300.0))
 	
+	
 func close_diary() -> void:
 		var initial_modulate = background_overlay.self_modulate
 		var initial_position = book.position
@@ -76,6 +77,8 @@ func close_diary() -> void:
 		# Reset items to original values
 		background_overlay.self_modulate = initial_modulate
 		book.position = initial_position
+
+
 # Close diary
 func _on_background_overlay_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():

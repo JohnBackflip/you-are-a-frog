@@ -17,7 +17,7 @@
 [ext_resource type="StyleBox" uid="uid://daw7j6nw6apcq" path="res://ui/button_pressed.tres" id="15_7qalp"]
 [ext_resource type="StyleBox" uid="uid://dehhuyk6gs1jn" path="res://ui/button_hovered.tres" id="16_07tns"]
 [ext_resource type="PackedScene" uid="uid://bblhqi2jsidsi" path="res://scenes/crafting/mixer.tscn" id="17_85lvg"]
-[ext_resource type="PackedScene" uid="uid://bgnd5wqde0tr8" path="res://scenes/diary/diary_recipe_page.tscn" id="18_x6sor"]
+[ext_resource type="PackedScene" uid="uid://ds82c7crgovni" path="res://scenes/diary/ui/diary_ui.tscn" id="19_5sa7e"]
 [ext_resource type="AudioStream" uid="uid://cpi4ypoisok0g" path="res://assets/audio/cricket_ambience.wav" id="19_n5yg0"]
 
 [sub_resource type="GDScript" id="GDScript_0ld40"]
@@ -145,9 +145,6 @@ offset_top = 30.0
 offset_right = 797.0
 offset_bottom = 360.0
 
-[node name="PotionDiary" parent="CanvasLayer" instance=ExtResource("18_x6sor")]
-visible = false
-
 [node name="EndNightButton" type="Button" parent="CanvasLayer"]
 custom_minimum_size = Vector2(100, 0)
 anchors_preset = 3
@@ -163,6 +160,9 @@ theme_override_styles/normal = ExtResource("14_pnxix")
 theme_override_styles/pressed = ExtResource("15_7qalp")
 theme_override_styles/hover = ExtResource("16_07tns")
 text = "End Night"
+
+[node name="DiaryUI" parent="CanvasLayer" instance=ExtResource("19_5sa7e")]
+visible = false
 
 [node name="Ambience" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("19_n5yg0")
