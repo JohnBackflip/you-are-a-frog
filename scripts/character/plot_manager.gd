@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 
 signal dialogue_ready
 signal finished_talking
@@ -26,6 +26,7 @@ func _ready() -> void:
 	customer_calendar = game_manager.customer_calendar
 
 	var day = game_manager.day
+	print("Day: ", day)
 	daily_dialogue(day)
 	#daily_dialogue(1)
 
@@ -58,4 +59,14 @@ func DialogicSignal(arg):
 
 
 func _on_close_shop_button_pressed() -> void:
-	game_manager.go_to_night()
+	var night_shop = load("uid://0yo5kafitfqt").instantiate()
+	night_shop.get_node("Cauldron").modulate.a = 0
+	get_parent().add_child(night_shop)
+	move_to_front()
+	var tween = create_tween()
+	tween.tween_property(self, "modulate:a", 0, 1.0)
+	tween.tween_property(night_shop.get_node("Cauldron"), "modulate:a", 1, 0.3)
+	await tween.finished
+	# Reset transparency
+	self_modulate.a = 1
+	queue_free()

@@ -34,15 +34,3 @@ func load_scene(path: String):
 	target_scene_path = path
 	var loading_screen = load(LOADING_SCREEN_PATH)
 	get_tree().change_scene_to_packed(loading_screen)
-
-
-func go_next_day() -> void:
-	day += 1
-	period = Period.DAY
-	load_scene(DAY_SHOP_PATH)
-	print("Day:", day+1)
-	
-func go_to_night() -> void:
-	period = Period.NIGHT
-	load_scene(NIGHT_SHOP_PATH)
-	print("Day:", day+1)

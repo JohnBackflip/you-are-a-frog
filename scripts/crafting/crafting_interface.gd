@@ -27,7 +27,8 @@ func set_player_inventory_data(inventory_data: InventoryData) -> void:
 # Initialise ingredient mixer (behaves like an inventory)
 func set_mixer_data(mixer_data: MixerData) -> void:
 	mixer_data.inventory_interact.connect(on_inventory_interact)
-	mixer_data.inventory_updated.connect(mixer_data.on_inventory_update)
+	if !mixer_data.inventory_updated.is_connected(mixer_data.on_inventory_update):
+		mixer_data.inventory_updated.connect(mixer_data.on_inventory_update)
 	mixer_data.mixer_contents.connect(mixer.on_ingredients_update)
 
 

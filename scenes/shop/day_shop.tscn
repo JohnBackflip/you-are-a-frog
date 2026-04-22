@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://chp1jryo073wa"]
+[gd_scene load_steps=17 format=3 uid="uid://chp1jryo073wa"]
 
 [ext_resource type="Script" uid="uid://d4im1yu4arort" path="res://scripts/character/plot_manager.gd" id="1_5uuf7"]
 [ext_resource type="Texture2D" uid="uid://baie5fkg2tqqm" path="res://assets/shop_bg_day.png" id="2_y5p17"]
 [ext_resource type="PackedScene" uid="uid://cb4rt7jf37g8r" path="res://scenes/shop/character.tscn" id="3_a4svc"]
 [ext_resource type="Texture2D" uid="uid://ctkfngs64ierh" path="res://assets/table.png" id="4_dip7t"]
+[ext_resource type="PackedScene" uid="uid://bgh7nj36fxlmf" path="res://scenes/crafting/cauldron.tscn" id="5_s8gqh"]
 [ext_resource type="PackedScene" uid="uid://bdlxaluranoch" path="res://scenes/diary/diary.tscn" id="5_wmuix"]
 [ext_resource type="Texture2D" uid="uid://b0i1pwq3bq2o4" path="res://assets/cropped_images/desk_potion1.tres" id="6_s8gqh"]
 [ext_resource type="Texture2D" uid="uid://d3xmoo1htpywr" path="res://assets/cropped_images/desk_potion2.tres" id="7_ksefx"]
@@ -35,6 +36,14 @@ scale = Vector2(0.3333333, 0.33379626)
 texture = ExtResource("4_dip7t")
 centered = false
 region_rect = Rect2(1713, 236, 153, 84)
+metadata/_edit_lock_ = true
+
+[node name="Cauldron" parent="." instance=ExtResource("5_s8gqh")]
+visible = false
+position = Vector2(643, 460)
+scale = Vector2(0.3, 0.3)
+priority = 4
+script = null
 metadata/_edit_lock_ = true
 
 [node name="Diary" parent="." instance=ExtResource("5_wmuix")]
