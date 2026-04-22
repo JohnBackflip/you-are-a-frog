@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://q356ulxxi6oe" path="res://assets/cropped_images/desk_potion4.tres" id="9_owys0"]
 [ext_resource type="Texture2D" uid="uid://dykncb3ep7al1" path="res://assets/cropped_images/desk_potion5.tres" id="10_sn7nu"]
 [ext_resource type="Script" uid="uid://bxnd2guymaw3e" path="res://scripts/crafting/crafting_interface.gd" id="11_qhh3u"]
-[ext_resource type="PackedScene" uid="uid://bwe26a1mdaome" path="res://scenes/crafting/inventory.tscn" id="12_fmcdd"]
+[ext_resource type="PackedScene" uid="uid://bx8g66wwhuvfl" path="res://scenes/crafting/inventory_2.tscn" id="12_5fy2q"]
 [ext_resource type="PackedScene" uid="uid://bj32pp33u7ou4" path="res://scenes/crafting/slot.tscn" id="13_2ldue"]
 [ext_resource type="StyleBox" uid="uid://cduk5duabhbtg" path="res://ui/button_normal.tres" id="14_pnxix"]
 [ext_resource type="StyleBox" uid="uid://daw7j6nw6apcq" path="res://ui/button_pressed.tres" id="15_7qalp"]
@@ -84,7 +84,6 @@ texture = ExtResource("10_sn7nu")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="CraftingInterface" type="Control" parent="CanvasLayer"]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -95,16 +94,17 @@ mouse_filter = 2
 script = ExtResource("11_qhh3u")
 metadata/_edit_lock_ = true
 
-[node name="PlayerInventory" parent="CanvasLayer/CraftingInterface" instance=ExtResource("12_fmcdd")]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -80.0
-offset_right = 0.0
-offset_bottom = 80.0
-grow_horizontal = 0
+[node name="PlayerInventory" parent="CanvasLayer/CraftingInterface" instance=ExtResource("12_5fy2q")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 1048.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="GrabbedSlot" parent="CanvasLayer/CraftingInterface" instance=ExtResource("13_2ldue")]
 visible = false
@@ -139,6 +139,7 @@ script = SubResource("GDScript_0ld40")
 
 [node name="Mixer" parent="CanvasLayer/CraftingInterface" instance=ExtResource("17_85lvg")]
 unique_name_in_owner = true
+visible = false
 layout_mode = 0
 offset_left = 467.0
 offset_top = 30.0

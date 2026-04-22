@@ -58,10 +58,12 @@ func on_potion_discovered(potion: PotionData) -> void:
 func _on_end_night_button_pressed() -> void:
 	game_manager.day += 1
 	var day_shop = preload("uid://chp1jryo073wa").instantiate()
+	crafting_interface.save_mixer_contents()
 	#day_shop.modulate.a = 0
 	get_parent().add_child(day_shop)
 	move_to_front()
 	var tween = create_tween()
+	tween.tween_property(self.get_node("CanvasLayer/CraftingInterface"), "modulate:a", 0.0, 0.2)
 	tween.tween_property(self.get_node("Cauldron"), "modulate:a", 0.0, 0.5)
 	tween.tween_property(self, "modulate:a", 0, 1.0)
 	#tween.parallel().tween_property(day_shop.get_node("Background"), "modulate:a", 1, 1.0)

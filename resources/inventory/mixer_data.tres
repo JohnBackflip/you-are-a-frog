@@ -5,5 +5,5 @@
 
 [resource]
 script = ExtResource("1_gihqs")
-slot_datas = Array[ExtResource("2_am02x")]([null, null])
+slot_datas_ingredient = Array[ExtResource("2_am02x")]([null, null])
 metadata/_custom_type_script = "uid://b427ytjs4pve1"

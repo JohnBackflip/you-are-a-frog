@@ -6,6 +6,7 @@ signal finished_talking
 @export_dir var timeline_dir : String
 @onready var potion_diary : Control = $CanvasLayer/DiaryUI
 @onready var character : Node2D = $Character
+@onready var order_interface : Control = $CanvasLayer/OrderInterface
 
 var timeline : String
 var timelines_dir : String
@@ -15,6 +16,7 @@ var customer_calendar : CustomerCalendar
 var daily_customers : DailyCustomers
 
 var current_character : CharacterData
+var player_inventory_data: InventoryData
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -25,10 +27,14 @@ func _ready() -> void:
 	timelines_dir = timeline_dir
 	customer_calendar = game_manager.customer_calendar
 
+	# Initialise potion inventory
+	player_inventory_data = game_manager.player_inventory_data
+	order_interface.set_player_inventory_data(player_inventory_data)
+	order_interface.highlight_potion_tab()
+
 	var day = game_manager.day
 	print("Day: ", day)
 	daily_dialogue(day)
-	#daily_dialogue(1)
 
 func daily_dialogue(day: int):
 	daily_customers = customer_calendar.get_day(day)

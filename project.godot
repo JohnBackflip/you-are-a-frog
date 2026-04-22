@@ -75,6 +75,7 @@ audio/channel_defaults={
 }
 }
 glossary/default_case_sensitive=true
+extensions_folder="res://addons/dialogic_additions"
 
 [display]
 
@@ -90,6 +91,10 @@ enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 [global_group]
 
 property_bar="The colour part in the ratio chart"
+
+[gui]
+
+theme/custom="uid://bh026vnea6f0h"
 
 [input]
 

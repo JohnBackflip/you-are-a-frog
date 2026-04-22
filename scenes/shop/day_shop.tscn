@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://chp1jryo073wa"]
+[gd_scene load_steps=20 format=3 uid="uid://chp1jryo073wa"]
 
 [ext_resource type="Script" uid="uid://d4im1yu4arort" path="res://scripts/character/plot_manager.gd" id="1_5uuf7"]
 [ext_resource type="Texture2D" uid="uid://baie5fkg2tqqm" path="res://assets/shop_bg_day.png" id="2_y5p17"]
@@ -12,7 +12,10 @@
 [ext_resource type="Texture2D" uid="uid://q356ulxxi6oe" path="res://assets/cropped_images/desk_potion4.tres" id="9_3v3vx"]
 [ext_resource type="Texture2D" uid="uid://dykncb3ep7al1" path="res://assets/cropped_images/desk_potion5.tres" id="10_6hiy0"]
 [ext_resource type="StyleBox" uid="uid://cduk5duabhbtg" path="res://ui/button_normal.tres" id="12_dip7t"]
+[ext_resource type="Script" uid="uid://bb2be4dbm4lwr" path="res://scripts/orders/order_interface.gd" id="12_u1556"]
+[ext_resource type="PackedScene" uid="uid://bx8g66wwhuvfl" path="res://scenes/crafting/inventory_2.tscn" id="13_u1556"]
 [ext_resource type="StyleBox" uid="uid://daw7j6nw6apcq" path="res://ui/button_pressed.tres" id="13_wmuix"]
+[ext_resource type="PackedScene" uid="uid://bj32pp33u7ou4" path="res://scenes/crafting/slot.tscn" id="14_3v3vx"]
 [ext_resource type="StyleBox" uid="uid://dehhuyk6gs1jn" path="res://ui/button_hovered.tres" id="14_s8gqh"]
 [ext_resource type="PackedScene" uid="uid://ds82c7crgovni" path="res://scenes/diary/ui/diary_ui.tscn" id="15_s8gqh"]
 [ext_resource type="PackedScene" uid="uid://bno15tnqsojkj" path="res://scenes/shop/companion.tscn" id="15_wmuix"]
@@ -31,7 +34,7 @@ metadata/_edit_lock_ = true
 position = Vector2(-39, 99)
 
 [node name="Table" type="Sprite2D" parent="."]
-position = Vector2(0, 515)
+position = Vector2(0, 521.57)
 scale = Vector2(0.3333333, 0.33379626)
 texture = ExtResource("4_dip7t")
 centered = false
@@ -82,6 +85,38 @@ scale = Vector2(0.15, 0.15)
 texture = ExtResource("10_6hiy0")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="OrderInterface" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("12_u1556")
+metadata/_edit_lock_ = true
+
+[node name="PlayerInventory" parent="CanvasLayer/OrderInterface" instance=ExtResource("13_u1556")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 1048.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="GrabbedSlot" parent="CanvasLayer/OrderInterface" instance=ExtResource("14_3v3vx")]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+z_index = 99
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+mouse_filter = 2
 
 [node name="CloseShopButton" type="Button" parent="CanvasLayer"]
 custom_minimum_size = Vector2(100, 0)

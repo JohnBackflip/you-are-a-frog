@@ -6,6 +6,8 @@ const DAY_SHOP_PATH = "res://scenes/shop/day_shop.tscn"
 const NIGHT_SHOP_PATH = "res://scenes/shop/night_shop.tscn"
 
 var target_scene_path: String
+# Scene might need to be saved before switching (e.g. ingredients in the mixer going back to inventory)
+var to_save_scene_path: String
 
 # Data-related
 var player_inventory_data: InventoryData = preload("uid://eajge1jeea0y")
@@ -16,6 +18,7 @@ var customer_calendar : CustomerCalendar = preload("res://resources/calendar/cus
 var order_manager: OrderManager = preload("res://resources/orders/order_manager.tres")
 
 enum Period {DAY, NIGHT}
+enum InventoryTab {INGREDIENT, POTION}
 
 var day: int = 0 #Set to 0 for index usage
 var period: Period = Period.DAY

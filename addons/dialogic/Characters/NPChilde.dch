@@ -1,0 +1,33 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+&"_translation_id": "",
+&"color": Color(0.5578003, 0.5703248, 0.96484375, 1),
+&"custom_info": {
+"prefix": "",
+"sound_mood_default": "",
+"sound_moods": {},
+"style": "style",
+"suffix": ""
+},
+&"default_portrait": "Default",
+&"description": "A middle-aged/older person (did we decide on any appearance traits?) who has lived a very average, normal life in the city. Runs a merchant guild that brings in herbs and other potential potion ingredients, among other things. Very well-versed with shop and business management, as well as the city itself. Gives off the aura of a wise old friend/adviser.
+Kindly introduces THE PLAYER to the shop mechanics, such as a basic shop management strategy (taking orders and delivering them at a later date), as well as how to order ingredients from their merchant guild.",
+&"display_name": "N.P. Childe",
+&"mirror": false,
+&"nicknames": [""],
+&"offset": Vector2(0, 0),
+&"portraits": {
+"Default": {
+"export_overrides": {
+"image": "\"res://assets/knight.png\""
+},
+"ignore_char_scale": true,
+"mirror": false,
+"offset": Vector2(40, -100),
+"scale": 0.55,
+"scene": ""
+}
+},
+&"scale": 1.0
+}

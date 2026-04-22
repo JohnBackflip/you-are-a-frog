@@ -1,15 +1,45 @@
-[gd_scene load_steps=5 format=3 uid="uid://bwe26a1mdaome"]
+[gd_scene load_steps=5 format=3 uid="uid://b2cf11pgsj20c"]
 
-[ext_resource type="StyleBox" uid="uid://b7mquqaqmh7yf" path="res://ui/panel_container.tres" id="1_qrt2q"]
-[ext_resource type="Script" uid="uid://blq0dqyiv2pok" path="res://scripts/ui/inventory_ui/inventory.gd" id="1_s83yu"]
-[ext_resource type="PackedScene" uid="uid://bj32pp33u7ou4" path="res://scenes/crafting/slot.tscn" id="1_t68fq"]
-[ext_resource type="Script" uid="uid://daoqvnp1hwhld" path="res://scripts/ui/inventory_ui/item_description.gd" id="4_lep46"]
+[ext_resource type="StyleBox" uid="uid://b7mquqaqmh7yf" path="res://ui/panel_container.tres" id="1_6ij2f"]
+[ext_resource type="PackedScene" uid="uid://bj32pp33u7ou4" path="res://scenes/crafting/slot.tscn" id="2_pbatm"]
+[ext_resource type="Script" uid="uid://daoqvnp1hwhld" path="res://scripts/ui/inventory_ui/item_description.gd" id="5_b27hk"]
+
+[sub_resource type="GDScript" id="GDScript_0hyp3"]
+script/source = "extends PanelContainer
+class_name Inventory
+
+const SLOT = preload(\"uid://bj32pp33u7ou4\")
+
+@onready var item_grid: GridContainer = $VBoxContainer/MarginContainer/ItemGrid
+
+
+func set_inventory_data(inventory_data: InventoryData) -> void:
+	inventory_data.inventory_updated.connect(populate_item_grid)
+	populate_item_grid(inventory_data)
+
+
+func populate_item_grid(inventory_data: InventoryData) -> void:
+	# Clear previous / placeholder items
+	for item in item_grid.get_children():
+		item.queue_free()
+		
+	for index in inventory_data.slot_datas.size():
+		var slot_data = inventory_data.slot_datas[index]
+		var slot = SLOT.instantiate()
+		item_grid.add_child(slot)
+		
+		slot.slot_clicked.connect(inventory_data.on_slot_clicked)
+		slot.index = index
+		
+		if slot_data:
+			slot.set_slot_data(slot_data)
+"
 
 [node name="Inventory" type="PanelContainer"]
 offset_right = 40.0
 offset_bottom = 40.0
-theme_override_styles/panel = ExtResource("1_qrt2q")
-script = ExtResource("1_s83yu")
+theme_override_styles/panel = ExtResource("1_6ij2f")
+script = SubResource("GDScript_0hyp3")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
@@ -27,7 +57,7 @@ theme_override_constants/h_separation = 8
 theme_override_constants/v_separation = 8
 columns = 5
 
-[node name="Slot" parent="VBoxContainer/MarginContainer/ItemGrid" instance=ExtResource("1_t68fq")]
+[node name="Slot" parent="VBoxContainer/MarginContainer/ItemGrid" instance=ExtResource("2_pbatm")]
 layout_mode = 2
 
 [node name="ItemDescription" type="TabContainer" parent="VBoxContainer"]
@@ -35,7 +65,7 @@ visible = false
 layout_mode = 2
 size_flags_vertical = 3
 current_tab = 0
-script = ExtResource("4_lep46")
+script = ExtResource("5_b27hk")
 
 [node name="Description" type="MarginContainer" parent="VBoxContainer/ItemDescription"]
 custom_minimum_size = Vector2(0, 200)

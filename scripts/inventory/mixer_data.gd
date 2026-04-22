@@ -7,7 +7,7 @@ signal mixer_contents(data: MixerData, ingredients: Array)
 
 func get_ingredients() -> Array[IngredientData]:
 	var ingredients = [] as Array[IngredientData]
-	for slot_data in slot_datas:
+	for slot_data in slot_datas_ingredient:
 		if slot_data:
 			if slot_data.item_data and slot_data.item_data is IngredientData:
 				ingredients.append(slot_data.item_data)

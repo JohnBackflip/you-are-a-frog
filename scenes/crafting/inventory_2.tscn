@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://2cjtxgpj2eqi"]
+[gd_scene load_steps=6 format=3 uid="uid://bx8g66wwhuvfl"]
 
 [ext_resource type="StyleBox" uid="uid://b7mquqaqmh7yf" path="res://ui/panel_container.tres" id="1_6ij2f"]
 [ext_resource type="Texture2D" uid="uid://cfwhanqe6jifd" path="res://assets/blank.png" id="1_pbatm"]
-[ext_resource type="Script" uid="uid://byxeq7awjlx4w" path="res://scripts/ui/inventory_ui/inventory_2.gd" id="2_h1vrb"]
+[ext_resource type="Script" uid="uid://xt6o7v7dhiqt" path="res://scripts/ui/inventory_ui/inventory.gd" id="2_h1vrb"]
 [ext_resource type="PackedScene" uid="uid://bj32pp33u7ou4" path="res://scenes/crafting/slot.tscn" id="2_pbatm"]
+[ext_resource type="Script" uid="uid://daoqvnp1hwhld" path="res://scripts/ui/inventory_ui/item_description.gd" id="5_b27hk"]
 
 [node name="Inventory2" type="TextureRect"]
 self_modulate = Color(1, 1, 1, 0.4862745)
@@ -224,3 +225,30 @@ layout_mode = 2
 [node name="Slot21" parent="TabContainer/Potions/PotionGrid" instance=ExtResource("2_pbatm")]
 custom_minimum_size = Vector2(64, 80)
 layout_mode = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ItemDescription" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 299.0
+offset_bottom = 217.0
+script = ExtResource("5_b27hk")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/ItemDescription"]
+modulate = Color(0.13725491, 0, 0.24705882, 0.4)
+layout_mode = 0
+offset_right = 296.0
+offset_bottom = 219.0
+texture = ExtResource("1_pbatm")
+
+[node name="Description" type="RichTextLabel" parent="CanvasLayer/ItemDescription"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 14.0
+offset_right = 277.0
+offset_bottom = 200.0
+bbcode_enabled = true
+
+[connection signal="tab_changed" from="TabContainer" to="." method="_on_tab_container_tab_changed"]

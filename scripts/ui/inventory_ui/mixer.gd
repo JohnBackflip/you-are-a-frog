@@ -36,12 +36,12 @@ func on_craft_button_pressed() -> void:
 	potion_slot.set_slot_data(potion_slot_data)
 	
 	# Consume items in potion slot (all of them for now, to change for partial recipes)
-	for index in range(mixer_data.slot_datas.size()):
-		var slot_data = mixer_data.slot_datas[index]
+	for index in range(mixer_data.slot_datas_ingredient.size()):
+		var slot_data = mixer_data.slot_datas_ingredient[index]
 		if slot_data:
 			slot_data.consume_item()
 			if slot_data.quantity <= 0:
-				mixer_data.slot_datas[index] = null
+				mixer_data.slot_datas_ingredient[index] = null
 	
 	# Play some animation here
 	mixer_data.inventory_updated.emit(mixer_data)
@@ -60,6 +60,17 @@ func request_potion_storage() -> void:
 			potion_slot.set_slot_data(null)
 			potion_slot_data = null
 		
+func request_ingredients_storage() -> void:
+	for index in range(mixer_data.slot_datas_ingredient.size()):
+		var slot_data = mixer_data.slot_datas_ingredient[index]
+		if slot_data:
+			print("Ingredient name:", slot_data.item_data.name)
+			var success = game_manager.player_inventory_data.add_item(slot_data.item_data, slot_data.quantity)
+			if success:
+				print("Ingredient store success!")
+				mixer_data.slot_datas_ingredient[index] = null
+
+	layout_slots(mixer_data)
 
 # Update whenever ingredients are added or removed to the mixer slots
 func on_ingredients_update(new_mixer_data: MixerData, ingredients: Array[IngredientData]) -> void:
@@ -79,7 +90,7 @@ func layout_slots(mixer: MixerData):
 	for child in property_bars.get_children():
 		child.queue_free()
 	
-	var mixer_size = mixer.slot_datas.size()
+	var mixer_size = mixer.slot_datas_ingredient.size()
 
 	# Calculate the angle step (e.g., 360 / 3 = 120 degrees)
 	var angle_step = 360.0 / mixer_size
@@ -87,9 +98,11 @@ func layout_slots(mixer: MixerData):
 	var center = size / 2
 
 	for i in range(mixer_size):
-		var slot_data = mixer.slot_datas[i]
+		var slot_data = mixer.slot_datas_ingredient[i]
 		var slot = SLOT.instantiate()
 		slot.slot_clicked.connect(mixer_data.on_slot_clicked)
+		slot.slot_hovered.connect(mixer_data.on_slot_hovered)
+		slot.slot_hover_left.connect(mixer_data.on_slot_hover_left)
 		slot.index = i
 		slots.add_child(slot)
 		if slot_data:
@@ -120,3 +133,7 @@ func layout_slots(mixer: MixerData):
 				property_bar.tint_progress = item.property.colour
 				property_bar.value = 1.0
 		property_bars.add_child(property_bar)
+
+func save_contents() -> void:
+	request_potion_storage()
+	request_ingredients_storage()
