@@ -1,10 +1,11 @@
-NPChilde: Why hello there! What a lovely shop you've set up, and in a great location! You will surely have many customers in no time.
-NPChilde: Let me introduce myself\: I am [color={bold_color}]N.P. Childe[/color], owner of the largest merchant guild here in this town! If there would ever be any wares you'd need, just swing on by and I'll set you up with what you need.
-NPChilde: Oh but it seems that you are the only one in this establishment. Surely it must be difficult to leave the shop unattended just to order some wares.
-NPChilde: Tell you what - let me offer you this [color={bold_color}]enchanted magazine[/color], in which you can [color={bold_color}]place orders[/color] and my employees can deliver them to you the [color={bold_color}]next day[/color]!
-NPChilde: Nifty stuff, isn't it? I'll let you keep it for a [color={bold_color}]minor potion of healing[/color], seems like a fair trade, no? I'll have to get going now, so if possible I'll swing by [color={bold_color}]tomorrow[/color] to get it.
+NPChilde: "Why hello there! What a lovely shop you've set up, and in a great location! You will surely have many customers in no time.
 
-set {request} = "Minor potion of healing"
+NPChilde:Let me introduce myself: I am [color={bold_color}]N.P. Childe[/color], the largest merchant here in this town for distributing herbs and potent ingredients!
+
+NPChilde: Tell you what - let me offer you this [color={bold_color}]starting pack of ingredients[/color] as a showcase of goodwill!
+
+NPChilde: Nifty stuff, isn't it? In exchange, I would like a [color={bold_color}]potion of healing[/color], since my back has been acting up again. I'll have to get going now, so if possible I'll swing by [color={bold_color}]tomorrow[color={bold_color}] to get it.
+
+set {request} = "I would like a potion of healing, since my back has been acting up again"
 set {deadline} = 1.0
-[wait time="1.0"]
-[signal arg_type="dict" arg="{"desired_property0":"medical","desired_property1":"energizing","undesired_property0":"poisonous","undesired_property1":"somniferous"}"]
+[signal arg_type="dict" arg="{"desired_potion0":"healing"}"]

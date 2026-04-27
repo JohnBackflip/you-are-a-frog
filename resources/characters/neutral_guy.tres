@@ -1,11 +1,16 @@
-[gd_resource type="Resource" script_class="CharacterData" load_steps=3 format=3 uid="uid://c42t0w1oirmgi"]
+[gd_resource type="Resource" script_class="CharacterData" load_steps=4 format=3 uid="uid://c42t0w1oirmgi"]
 
-[ext_resource type="Texture2D" uid="uid://bn1vqb1ytxkts" path="res://assets/knight.png" id="1_4h1am"]
+[ext_resource type="Texture2D" uid="uid://b2e1othi6mwqi" path="res://assets/childe.png" id="1_4h1am"]
 [ext_resource type="Script" uid="uid://b5nbxtpiyq5ta" path="res://scripts/character/character_data.gd" id="2_ndasu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4h1am"]
+atlas = ExtResource("1_4h1am")
+region = Rect2(339, 305, 1354, 2153)
 
 [resource]
 script = ExtResource("2_ndasu")
 name = "N.P. Childe"
 alignment = 2
-art = ExtResource("1_4h1am")
+art = SubResource("AtlasTexture_4h1am")
 color = "8e91f6"
+scale = 0.32

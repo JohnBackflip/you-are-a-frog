@@ -1,0 +1,5 @@
+Elvish: Elf knight shows up with a story quest to help her with an attack on the underground faction, pickup in 2 days
+
+set {request} = "help her with an attack on the underground faction"
+set {deadline} = 2.0
+[signal arg_type="dict" arg="{"desired_property0":"medical","desired_property1":"energizing","undesired_property0":"poisonous","undesired_property1":"somniferous"}"]

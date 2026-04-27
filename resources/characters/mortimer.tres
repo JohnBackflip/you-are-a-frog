@@ -14,3 +14,4 @@ alignment = 1
 art = SubResource("AtlasTexture_peqev")
 color = "fcb603"
 icon = ExtResource("2_dxru5")
+scale = 0.7

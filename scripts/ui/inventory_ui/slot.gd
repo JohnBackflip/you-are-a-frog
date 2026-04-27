@@ -35,6 +35,7 @@ func _on_gui_input(event: InputEvent) -> void:
 func on_item_consumed(slot_data: SlotData, new_quantity: int) -> void:
 	if new_quantity <= 0:
 		set_slot_data(null)
+		slot_data = null
 	else:
 		set_slot_data(slot_data)
 

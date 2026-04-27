@@ -18,6 +18,9 @@ var daily_customers : DailyCustomers
 var current_character : CharacterData
 var player_inventory_data: InventoryData
 
+# Allows to give potions to characters only when they are waiting for them
+var awaiting_potion : bool
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	character_set = game_manager.character_set
@@ -46,6 +49,10 @@ func daily_dialogue(day: int):
 
 
 func next_dialogue(character_data : CharacterData):
+	awaiting_potion = false
+	if character.character_clicked.is_connected(order_interface.give_potion):
+		character.character_clicked.disconnect(order_interface.give_potion)
+	
 	timeline = timelines_dir + "/" + character_data.name + "_" + str(character_data.dialogue_index) + ".dtl"
 	character.walk_in(character_data)
 	current_character = character_data
@@ -53,6 +60,7 @@ func next_dialogue(character_data : CharacterData):
 	character_data.dialogue_index += 1
 
 func on_finished_walking ():
+	Dialogic.VAR.potion_given = false
 	Dialogic.start_timeline(timeline)
 	potion_diary.close_diary()
 
@@ -62,6 +70,16 @@ func DialogicSignal(arg):
 		finished_talking.emit()
 		await get_tree().create_timer(2.0).timeout
 		dialogue_ready.emit()
+	elif (arg is String and arg == "leave"):
+		finished_talking.emit()
+		await get_tree().create_timer(2.0).timeout
+		dialogue_ready.emit()
+	elif (arg is String and arg == "wait_potion"):
+		awaiting_potion = true
+		character.character_clicked.connect(order_interface.give_potion)
+		await game_events.potion_given
+		Dialogic.VAR.potion_given = true
+		Dialogic.start_timeline(timeline)
 
 
 func _on_close_shop_button_pressed() -> void:

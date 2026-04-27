@@ -1,0 +1,32 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+&"_translation_id": "",
+&"color": Color(0.6627451, 0.9529412, 0.9607843, 1),
+&"custom_info": {
+"prefix": "",
+"sound_mood_default": "",
+"sound_moods": {},
+"style": "style",
+"suffix": ""
+},
+&"default_portrait": "Default",
+&"description": "A younger elf soldier that was raised in the inner walls of the castle as part of the guard force, and ended up working her way up in the ranks, eventually becoming vice-captain of the main guard force protecting the city. Seems a little dense and a bit blunt sometimes, probably due to her limited social experience, but she’s good-looking, so we’ll let ‘em off the hook. Will do everything for the city she’s protecting and the guard force.
+Ecstatic over the fact that a potion-maker has set up shop in the city, since it means more supplies for the guard force (potions are convenient to carry around).",
+&"display_name": "Elvish",
+&"mirror": false,
+&"nicknames": [""],
+&"offset": Vector2(0, 0),
+&"portraits": {
+"Default": {
+"export_overrides": {
+"image": "\"res://assets/knight.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
+&"scale": 1.0
+}

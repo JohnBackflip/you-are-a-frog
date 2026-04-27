@@ -1,5 +1,4 @@
-Mortimer: Good evening. I'd like to put in an order for a [color={bold_color}]minor potion of poison[/color]. If possible I'd like to pick it up in [color={bold_color}]2 days[/color], the same time as today.
+Mortimer: Mortimer shows up with a standard order for  [color={bold_color}]any potion to incapacitate his enemies[/color], pickup in  [color={bold_color}]2 days[/color]
 set {request} = "Minor potion of poison"
 set {deadline} = 2.0
-[wait time="1.0"]
 [signal arg_type="dict" arg="{"desired_potion0":"placebo","desired_potion1":"sleep","desired_potion2":"drowsy","undesired_potion0":"healing","undesired_potion1":"speed","undesired_potion2":"strength"}"]

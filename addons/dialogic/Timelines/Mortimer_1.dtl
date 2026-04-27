@@ -1,0 +1,12 @@
+if {potion_given} == false:
+	Mortimer: Do you have the potion I asked you?
+	- Yes, here it is!
+		[signal arg="wait_potion"]
+		[end_timeline]
+	- Uh no
+		Mortimer: \:(
+Mortimer: Hehe anyway can you  [color={bold_color}]sabotage[/color] that stupid elf for me? Y'know, can't be super useful if I am dead.
+
+set {request} = "Minor potion of healing"
+set {deadline} = 1.0
+[signal arg_type="dict" arg="{"desired_property0":"medical","desired_property1":"energizing","undesired_property0":"poisonous","undesired_property1":"somniferous"}"]

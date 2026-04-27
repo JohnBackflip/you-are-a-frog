@@ -20,7 +20,7 @@ Kindly introduces THE PLAYER to the shop mechanics, such as a basic shop managem
 &"portraits": {
 "Default": {
 "export_overrides": {
-"image": "\"res://assets/knight.png\""
+"image": "\"res://assets/childe.png\""
 },
 "ignore_char_scale": true,
 "mirror": false,

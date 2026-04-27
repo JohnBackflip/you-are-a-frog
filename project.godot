@@ -24,12 +24,17 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
+"Elvish": "res://addons/dialogic/Characters/Elvish.dch",
 "Mortimer": "res://addons/dialogic/Characters/Mortimer.dch",
 "NPChilde": "res://addons/dialogic/Characters/NPChilde.dch"
 }
 directories/dtl_directory={
+"Elvish_0": "res://addons/dialogic/Timelines/Elvish_0.dtl",
+"Elvish_1": "res://addons/dialogic/Timelines/Elvish_1.dtl",
 "Mortimer_0": "res://addons/dialogic/Timelines/Mortimer_0.dtl",
-"N.P. Childe_0": "res://addons/dialogic/Timelines/N.P. Childe_0.dtl"
+"Mortimer_1": "res://addons/dialogic/Timelines/Mortimer_1.dtl",
+"N.P. Childe_0": "res://addons/dialogic/Timelines/N.P. Childe_0.dtl",
+"N.P. Childe_1": "res://addons/dialogic/Timelines/N.P. Childe_1.dtl"
 }
 layout/style_directory={
 "": "res://addons/dialogic/Styles/style.tres",
@@ -38,6 +43,7 @@ layout/style_directory={
 variables={
 "bold_color": "8e91f6",
 "deadline": 1,
+"potion_given": false,
 "request": ""
 }
 layout/style_list=["res://addons/dialogic/Styles/style.tres"]
@@ -91,6 +97,7 @@ enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 [global_group]
 
 property_bar="The colour part in the ratio chart"
+diary=""
 
 [gui]
 

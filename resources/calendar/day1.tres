@@ -1,7 +1,10 @@
-[gd_resource type="Resource" script_class="DailyCustomers" load_steps=3 format=3 uid="uid://b2rqe8qt2wynu"]
+[gd_resource type="Resource" script_class="DailyCustomers" load_steps=5 format=3 uid="uid://b2rqe8qt2wynu"]
 
 [ext_resource type="Script" uid="uid://b5nbxtpiyq5ta" path="res://scripts/character/character_data.gd" id="1_5sfc5"]
 [ext_resource type="Script" uid="uid://cd2fhgo117axf" path="res://scripts/calendar/daily_customers.gd" id="1_uunth"]
+[ext_resource type="Resource" uid="uid://c42t0w1oirmgi" path="res://resources/characters/neutral_guy.tres" id="2_7bwmd"]
+[ext_resource type="Resource" uid="uid://c82nnsyvugbuc" path="res://resources/characters/good_guy.tres" id="2_xcthg"]
 
 [resource]
 script = ExtResource("1_uunth")
+customers = Array[ExtResource("1_5sfc5")]([ExtResource("2_7bwmd"), ExtResource("2_xcthg")])
