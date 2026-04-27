@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://q356ulxxi6oe" path="res://assets/cropped_images/desk_potion4.tres" id="9_owys0"]
 [ext_resource type="Texture2D" uid="uid://dykncb3ep7al1" path="res://assets/cropped_images/desk_potion5.tres" id="10_sn7nu"]
 [ext_resource type="Script" uid="uid://bxnd2guymaw3e" path="res://scripts/crafting/crafting_interface.gd" id="11_qhh3u"]
-[ext_resource type="PackedScene" uid="uid://bx8g66wwhuvfl" path="res://scenes/crafting/inventory_2.tscn" id="12_5fy2q"]
+[ext_resource type="PackedScene" uid="uid://2cjtxgpj2eqi" path="res://scenes/crafting/inventory_2.tscn" id="12_5fy2q"]
 [ext_resource type="PackedScene" uid="uid://bj32pp33u7ou4" path="res://scenes/crafting/slot.tscn" id="13_2ldue"]
 [ext_resource type="StyleBox" uid="uid://cduk5duabhbtg" path="res://ui/button_normal.tres" id="14_pnxix"]
 [ext_resource type="StyleBox" uid="uid://daw7j6nw6apcq" path="res://ui/button_pressed.tres" id="15_7qalp"]
