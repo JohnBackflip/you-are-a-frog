@@ -12,11 +12,11 @@ var current_order: OrderData
 var order_btn_group = ButtonGroup.new()
 
 func _ready() -> void:
-	update_orders()
+	update_data()
 	hide_data()
 
 
-func update_orders() -> void:
+func update_data() -> void:
 	for order in orders.get_children():
 		order.queue_free()
 		
@@ -30,10 +30,13 @@ func update_orders() -> void:
 			entry.button_group = order_btn_group
 
 
-func populate_data(order: OrderData) -> void:
+func populate_order_data(order: OrderData) -> void:
 	if order:
 		# Set customer portrait
-		customer_portrait.texture = order.customer.icon
+		if order.customer.icon:
+			customer_portrait.texture = order.customer.icon
+		else:
+			customer_portrait.texture = order.customer.art
 		# Set customer request
 		customer_request.text = order.request
 		# Set order notes
@@ -43,7 +46,7 @@ func populate_data(order: OrderData) -> void:
 
 func on_order_selected(order: OrderData) -> void:
 	current_order = order
-	populate_data(current_order)
+	populate_order_data(current_order)
 
 
 func _on_notes_text_changed() -> void:

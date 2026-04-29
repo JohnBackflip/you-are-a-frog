@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://0yo5kafitfqt"]
+[gd_scene load_steps=18 format=3 uid="uid://0yo5kafitfqt"]
 
 [ext_resource type="Script" uid="uid://f6bjpg5u0tat" path="res://scripts/night_shop.gd" id="1_5fy2q"]
 [ext_resource type="Texture2D" uid="uid://da1hf6oukdqme" path="res://assets/shop_bg_night.png" id="2_5sa7e"]
@@ -13,11 +13,8 @@
 [ext_resource type="Script" uid="uid://bxnd2guymaw3e" path="res://scripts/crafting/crafting_interface.gd" id="11_qhh3u"]
 [ext_resource type="PackedScene" uid="uid://2cjtxgpj2eqi" path="res://scenes/crafting/inventory_2.tscn" id="12_5fy2q"]
 [ext_resource type="PackedScene" uid="uid://bj32pp33u7ou4" path="res://scenes/crafting/slot.tscn" id="13_2ldue"]
-[ext_resource type="StyleBox" uid="uid://cduk5duabhbtg" path="res://ui/button_normal.tres" id="14_pnxix"]
-[ext_resource type="StyleBox" uid="uid://daw7j6nw6apcq" path="res://ui/button_pressed.tres" id="15_7qalp"]
-[ext_resource type="StyleBox" uid="uid://dehhuyk6gs1jn" path="res://ui/button_hovered.tres" id="16_07tns"]
 [ext_resource type="PackedScene" uid="uid://bblhqi2jsidsi" path="res://scenes/crafting/mixer.tscn" id="17_85lvg"]
-[ext_resource type="PackedScene" uid="uid://ds82c7crgovni" path="res://scenes/diary/ui/diary_ui.tscn" id="19_5sa7e"]
+[ext_resource type="PackedScene" uid="uid://ds82c7crgovni" path="res://scenes/diary/diary_ui.tscn" id="19_5sa7e"]
 [ext_resource type="AudioStream" uid="uid://cpi4ypoisok0g" path="res://assets/audio/cricket_ambience.wav" id="19_n5yg0"]
 
 [sub_resource type="GDScript" id="GDScript_0ld40"]
@@ -126,14 +123,11 @@ anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -58.0
 offset_top = -215.0
-offset_right = 42.0
+offset_right = 52.0
 offset_bottom = -165.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = ExtResource("14_pnxix")
-theme_override_styles/pressed = ExtResource("15_7qalp")
-theme_override_styles/hover = ExtResource("16_07tns")
 text = "CRAFT!"
 script = SubResource("GDScript_0ld40")
 
@@ -147,7 +141,7 @@ offset_right = 797.0
 offset_bottom = 360.0
 
 [node name="EndNightButton" type="Button" parent="CanvasLayer"]
-custom_minimum_size = Vector2(100, 0)
+custom_minimum_size = Vector2(120, 0)
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -157,9 +151,6 @@ offset_left = -42.0
 offset_top = -40.0
 grow_horizontal = 0
 grow_vertical = 0
-theme_override_styles/normal = ExtResource("14_pnxix")
-theme_override_styles/pressed = ExtResource("15_7qalp")
-theme_override_styles/hover = ExtResource("16_07tns")
 text = "End Night"
 
 [node name="DiaryUI" parent="CanvasLayer" instance=ExtResource("19_5sa7e")]

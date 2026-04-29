@@ -56,6 +56,8 @@ func next_dialogue(character_data : CharacterData):
 	timeline = timelines_dir + "/" + character_data.name + "_" + str(character_data.dialogue_index) + ".dtl"
 	character.walk_in(character_data)
 	current_character = character_data
+	if current_character and current_character.met == false:
+		current_character.met = true
 	Dialogic.VAR.bold_color = character_data.color
 	character_data.dialogue_index += 1
 
@@ -88,7 +90,7 @@ func _on_close_shop_button_pressed() -> void:
 	get_parent().add_child(night_shop)
 	move_to_front()
 	var tween = create_tween()
-	tween.tween_property(self, "modulate:a", 0, 1.0)
+	tween.tween_property(self, "modulate:a", 0, 2.0)
 	tween.tween_property(night_shop.get_node("Cauldron"), "modulate:a", 1, 0.3)
 	await tween.finished
 	# Reset transparency

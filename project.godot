@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="You're a frog?"
-run/main_scene="uid://chp1jryo073wa"
+run/main_scene="uid://bkwkuepi4i5cs"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -26,7 +26,8 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 directories/dch_directory={
 "Elvish": "res://addons/dialogic/Characters/Elvish.dch",
 "Mortimer": "res://addons/dialogic/Characters/Mortimer.dch",
-"NPChilde": "res://addons/dialogic/Characters/NPChilde.dch"
+"NPChilde": "res://addons/dialogic/Characters/NPChilde.dch",
+"npchilde": "res://addons/dialogic/Characters/npchilde.dch"
 }
 directories/dtl_directory={
 "Elvish_0": "res://addons/dialogic/Timelines/Elvish_0.dtl",

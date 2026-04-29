@@ -65,7 +65,7 @@ func _on_end_night_button_pressed() -> void:
 	var tween = create_tween()
 	tween.tween_property(self.get_node("CanvasLayer/CraftingInterface"), "modulate:a", 0.0, 0.2)
 	tween.tween_property(self.get_node("Cauldron"), "modulate:a", 0.0, 0.5)
-	tween.tween_property(self, "modulate:a", 0, 1.0)
+	tween.tween_property(self, "modulate:a", 0, 2.0)
 	#tween.parallel().tween_property(day_shop.get_node("Background"), "modulate:a", 1, 1.0)
 	await tween.finished
 	# Reset transparency

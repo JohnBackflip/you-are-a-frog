@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2k6hxybbd20p"]
+
+[ext_resource type="Texture2D" uid="uid://cl2jcd4q7llhp" path="res://assets/diary_pages/diary_order_entry.tres" id="1_paxqq"]
+[ext_resource type="Script" uid="uid://bbgprm7p4uq8k" path="res://scripts/diary/order_entry.gd" id="2_lmcrk"]
+
+[node name="OrderEntry" type="TextureButton"]
+custom_minimum_size = Vector2(50, 30)
+offset_right = 67.0
+offset_bottom = 30.0
+toggle_mode = true
+texture_normal = ExtResource("1_paxqq")
+texture_pressed = ExtResource("1_paxqq")
+texture_hover = ExtResource("1_paxqq")
+texture_focused = ExtResource("1_paxqq")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("2_lmcrk")
+
+[node name="NameLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 65.0
+offset_bottom = 27.0
+theme_override_colors/font_color = Color(0.1790416, 0.1051515, 0.07698984, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 0)
+theme_override_font_sizes/font_size = 9
+text = "N.P. Childe"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
+[connection signal="toggled" from="." to="." method="_on_toggled"]

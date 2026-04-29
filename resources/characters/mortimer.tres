@@ -6,6 +6,7 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_peqev"]
 atlas = ExtResource("1_peqev")
+region = Rect2(0, 0, 497, 512)
 
 [resource]
 script = ExtResource("2_fvyjv")
@@ -15,3 +16,4 @@ art = SubResource("AtlasTexture_peqev")
 color = "fcb603"
 icon = ExtResource("2_dxru5")
 scale = 0.7
+background = "Mortimer lived his entire life working for different criminal organizations in the city. What many would consider illegal and immoral, Mortimer sees it as an average Tuesday. It’s a difficult life, but after recently taking over the lead criminal gang in the city, Mortimer is desperate to step up and do a good job to lead his new group, and all the people he suddenly finds that are depending on him for survival."

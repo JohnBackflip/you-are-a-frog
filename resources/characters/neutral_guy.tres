@@ -13,4 +13,6 @@ name = "N.P. Childe"
 alignment = 2
 art = SubResource("AtlasTexture_4h1am")
 color = "8e91f6"
+icon = SubResource("AtlasTexture_4h1am")
 scale = 0.32
+background = "N.P. Childe lives a very average, normal life in the city. He runs a merchant guild that brings in herbs and other potential potion ingredients, among other things. Very well-versed with shop and business management, as well as the city itself. "

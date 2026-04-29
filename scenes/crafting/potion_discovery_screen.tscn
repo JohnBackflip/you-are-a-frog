@@ -1,11 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://v6wkfrj1f6om"]
+[gd_scene load_steps=8 format=3 uid="uid://v6wkfrj1f6om"]
 
 [ext_resource type="Texture2D" uid="uid://brxg4jb5qop75" path="res://assets/potion_icons.png" id="1_6jmay"]
 [ext_resource type="Script" uid="uid://bj3bit6fobprt" path="res://scripts/ui/potion_discovery_screen.gd" id="1_skvh2"]
 [ext_resource type="Texture2D" uid="uid://bgrgtnvtqv0qn" path="res://assets/vfx/spotlight_01_a.png" id="2_asjob"]
-[ext_resource type="StyleBox" uid="uid://cduk5duabhbtg" path="res://ui/button_normal.tres" id="2_skvh2"]
-[ext_resource type="StyleBox" uid="uid://daw7j6nw6apcq" path="res://ui/button_pressed.tres" id="3_asjob"]
-[ext_resource type="StyleBox" uid="uid://dehhuyk6gs1jn" path="res://ui/button_hovered.tres" id="4_5uisf"]
 
 [sub_resource type="Curve" id="Curve_asjob"]
 _data = [Vector2(0.008333333, 0.65342766), 0.0, 0.0, 0, 0, Vector2(0.8277777, 0.50489664), 0.0, 0.0, 0, 0, Vector2(1, 0.23612624), 0.0, 0.0, 0, 0]
@@ -94,12 +91,9 @@ stretch_mode = 5
 custom_minimum_size = Vector2(80, 35)
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 3
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = ExtResource("2_skvh2")
-theme_override_styles/pressed = ExtResource("3_asjob")
-theme_override_styles/hover = ExtResource("4_5uisf")
 text = "Cool!"
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="close"]
