@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="CharacterSet" load_steps=6 format=3 uid="uid://clugad002na4t"]
 
 [ext_resource type="Script" uid="uid://b5nbxtpiyq5ta" path="res://scripts/character/character_data.gd" id="1_ns0vq"]
-[ext_resource type="Resource" uid="uid://c82nnsyvugbuc" path="res://resources/characters/good_guy.tres" id="2_r2fp3"]
+[ext_resource type="Resource" uid="uid://c82nnsyvugbuc" path="res://resources/characters/karin.tres" id="2_r2fp3"]
 [ext_resource type="Resource" uid="uid://tgbe3t2r8q67" path="res://resources/characters/mortimer.tres" id="3_w8dn7"]
 [ext_resource type="Script" uid="uid://cmco5h4dg5b2h" path="res://scripts/character/character_set.gd" id="4_g5gyk"]
-[ext_resource type="Resource" uid="uid://c42t0w1oirmgi" path="res://resources/characters/neutral_guy.tres" id="4_w8dn7"]
+[ext_resource type="Resource" uid="uid://c42t0w1oirmgi" path="res://resources/characters/npchilde.tres" id="4_w8dn7"]
 
 [resource]
 script = ExtResource("4_g5gyk")

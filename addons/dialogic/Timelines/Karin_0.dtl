@@ -1,4 +1,4 @@
-Elvish: Elf knight shows up with a story quest to help her with an attack on the underground faction, pickup in 2 days
+Karin: Elf knight shows up with a story quest to help her with an attack on the underground faction, pickup in 2 days
 
 set {request} = "help her with an attack on the underground faction"
 set {deadline} = 2.0

@@ -1,6 +1,6 @@
 NPChilde: "Why hello there! What a lovely shop you've set up, and in a great location! You will surely have many customers in no time.
 
-NPChilde:Let me introduce myself: I am [color={bold_color}]N.P. Childe[/color], the largest merchant here in this town for distributing herbs and potent ingredients!
+NPChilde: Let me introduce myself\: I am [color={bold_color}]N.P. Childe[/color], the largest merchant here in this town for distributing herbs and potent ingredients!
 
 NPChilde: Tell you what - let me offer you this [color={bold_color}]starting pack of ingredients[/color] as a showcase of goodwill!
 
@@ -8,4 +8,4 @@ NPChilde: Nifty stuff, isn't it? In exchange, I would like a [color={bold_color}
 
 set {request} = "I would like a potion of healing, since my back has been acting up again"
 set {deadline} = 1.0
-[signal arg_type="dict" arg="{"desired_potion0":"healing"}"]
+[signal arg_type="dict" arg="{"desired_potion0":"healing","undesired_potion0":"poison"}"]

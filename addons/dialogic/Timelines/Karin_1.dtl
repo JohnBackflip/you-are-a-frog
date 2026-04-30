@@ -1,4 +1,4 @@
-Elvish: Elf knight collects the potion
+Karin: Elf knight collects the potion
 set {request} = "Minor potion of healing"
 set {deadline} = 1.0
 [signal arg_type="dict" arg="{"desired_property0":"medical","desired_property1":"energizing","undesired_property0":"poisonous","undesired_property1":"somniferous"}"]

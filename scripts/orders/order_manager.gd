@@ -99,4 +99,4 @@ func on_new_order  (customer: CharacterData, request: String, deadline: int, des
 	order.undesired_potions = dechiphered.undesired_potions
 	order.undesired_properties = dechiphered.undesired_properties
 	orders.append(order)
-	print(order.get_customer_name(), order.deadline, order.request)
+	print(order.get_customer_name(), order.deadline, order.request, order.desired_potions, order.undesired_potions)

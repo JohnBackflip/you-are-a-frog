@@ -5,6 +5,7 @@ var customer: CharacterData
 var request: String
 var deadline: int
 var notes: String
+var fulfilled: bool
 # Use properties for general requests, otherwise use potions for more specific requests 
 var desired_potions: Array[PotionData]
 var desired_properties: Array[IngredientProperty]
