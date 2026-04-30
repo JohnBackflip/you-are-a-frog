@@ -1,11 +1,17 @@
-[gd_resource type="Resource" script_class="CharacterData" load_steps=3 format=3 uid="uid://c82nnsyvugbuc"]
+[gd_resource type="Resource" script_class="CharacterData" load_steps=4 format=3 uid="uid://c82nnsyvugbuc"]
 
 [ext_resource type="Texture2D" uid="uid://bn1vqb1ytxkts" path="res://assets/knight.png" id="1_xin5u"]
 [ext_resource type="Script" uid="uid://b5nbxtpiyq5ta" path="res://scripts/character/character_data.gd" id="2_pxndx"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_xin5u"]
+atlas = ExtResource("1_xin5u")
+region = Rect2(0, 0, 475, 253)
+
 [resource]
 script = ExtResource("2_pxndx")
 name = "Elvish"
+faction = "Castle Guards"
 art = ExtResource("1_xin5u")
 color = "a9f3f5"
+icon = SubResource("AtlasTexture_xin5u")
 scale = 0.7

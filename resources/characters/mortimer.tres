@@ -11,7 +11,7 @@ region = Rect2(0, 0, 497, 512)
 [resource]
 script = ExtResource("2_fvyjv")
 name = "Mortimer"
-alignment = 1
+faction = "Rebels"
 art = SubResource("AtlasTexture_peqev")
 color = "fcb603"
 icon = ExtResource("2_dxru5")

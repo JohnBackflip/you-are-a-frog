@@ -11,8 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://by5ccgowu40ny" path="res://assets/cropped_images/desk_potion3.tres" id="8_u1556"]
 [ext_resource type="Texture2D" uid="uid://q356ulxxi6oe" path="res://assets/cropped_images/desk_potion4.tres" id="9_3v3vx"]
 [ext_resource type="Texture2D" uid="uid://dykncb3ep7al1" path="res://assets/cropped_images/desk_potion5.tres" id="10_6hiy0"]
-[ext_resource type="Script" path="res://scripts/orders/order_interface.gd" id="12_u1556"]
-[ext_resource type="PackedScene" uid="uid://2cjtxgpj2eqi" path="res://scenes/crafting/inventory_2.tscn" id="13_u1556"]
+[ext_resource type="Script" uid="uid://bb2be4dbm4lwr" path="res://scripts/orders/order_interface.gd" id="12_u1556"]
+[ext_resource type="PackedScene" uid="uid://bx8g66wwhuvfl" path="res://scenes/crafting/inventory_2.tscn" id="13_u1556"]
 [ext_resource type="PackedScene" uid="uid://bj32pp33u7ou4" path="res://scenes/crafting/slot.tscn" id="14_3v3vx"]
 [ext_resource type="PackedScene" uid="uid://ds82c7crgovni" path="res://scenes/diary/diary_ui.tscn" id="15_s8gqh"]
 [ext_resource type="PackedScene" uid="uid://bno15tnqsojkj" path="res://scenes/shop/companion.tscn" id="15_wmuix"]
@@ -106,6 +106,7 @@ offset_right = 1280.0
 offset_bottom = 720.0
 grow_horizontal = 1
 grow_vertical = 1
+texture = null
 metadata/_edit_use_anchors_ = true
 
 [node name="GrabbedSlot" parent="CanvasLayer/OrderInterface" instance=ExtResource("14_3v3vx")]

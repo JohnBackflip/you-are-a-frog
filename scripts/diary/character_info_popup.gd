@@ -25,9 +25,7 @@ func _on_background_overlay_gui_input(event: InputEvent) -> void:
 
 
 func populate_character_info(character_data: CharacterData) -> void:
-	var faction = CharacterData.ALIGNMENT.keys()[character_data.alignment]
-	
 	character_name.text = character_data.name
-	character_faction.text = faction
+	character_faction.text = character_data.faction
 	character_background.text = character_data.background
 	character_art.texture = character_data.art

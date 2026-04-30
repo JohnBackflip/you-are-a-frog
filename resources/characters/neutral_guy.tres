@@ -10,7 +10,7 @@ region = Rect2(339, 305, 1354, 2153)
 [resource]
 script = ExtResource("2_ndasu")
 name = "N.P. Childe"
-alignment = 2
+faction = "Merchant Guild"
 art = SubResource("AtlasTexture_4h1am")
 color = "8e91f6"
 icon = SubResource("AtlasTexture_4h1am")
