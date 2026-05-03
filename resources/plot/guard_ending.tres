@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Ending" load_steps=2 format=3 uid="uid://cposw1uy7akhp"]
+
+[ext_resource type="Script" uid="uid://ioxi56kga6m0" path="res://scripts/plot/ending_data.gd" id="1_4yygb"]
+
+[resource]
+script = ExtResource("1_4yygb")
+end_name = "Guard"
+description = "The party went off without a hitch. Everybody had a great time and the cake arrived safely. Princess Bridgitte personally had a blast and can add yet another successful party to her achievement list to boast about. Karin and her guards got rewarded and gained a reputation as the best cake protectors in the kingdom. Mortimer was intercepted downtown while trying to get into the carriage carrying the birthday cake, but [ENTER WHAT HAPPENED BASED ON THE POTION]. Mortimer then got thrown into the castle dungeon, but being the rat he is he will for sure weasel his way out. "

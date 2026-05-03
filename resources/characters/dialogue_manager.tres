@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=2 format=3 uid="uid://df0fjwmhmird7"]
 
-[ext_resource type="Script" uid="uid://d4im1yu4arort" path="res://scripts/character/plot_manager.gd" id="1_i547p"]
+[ext_resource type="Script" uid="uid://d4im1yu4arort" path="res://scripts/character/dialogue_manager.gd" id="1_i547p"]
 
 [resource]
 script = ExtResource("1_i547p")

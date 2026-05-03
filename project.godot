@@ -44,7 +44,7 @@ layout/style_directory={
 variables={
 "bold_color": "8e91f6",
 "deadline": 1,
-"potion_given": false,
+"potion_given": "",
 "request": ""
 }
 layout/style_list=["res://addons/dialogic/Styles/style.tres"]

@@ -153,7 +153,6 @@ var Wait := preload("res://addons/dialogic/Modules/Wait/subsystem_wait.gd").new(
 
 #endregion
 
-
 ## Autoloads are added first, so this happens REALLY early on game startup.
 func _ready() -> void:
 	_collect_subsystems()

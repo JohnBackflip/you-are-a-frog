@@ -57,46 +57,22 @@ func initialize() -> void:
 	init_properties()
 	init_potions()
 
-func decipher_desired(desired_undesired : Dictionary) -> Dictionary:
-	var desired_potions    : Array[PotionData]
-	var undesired_potions  : Array[PotionData]
-	var desired_properties : Array[IngredientProperty]
-	var undesired_properties : Array[IngredientProperty]
-	
-	var result : Dictionary = { "desired_potions" = desired_potions,
-								"undesired_potions" = undesired_potions,
-								"desired_properties" = desired_properties,
-								"undesired_properties" = undesired_properties}
-	for req in desired_undesired.keys():
-		var property_potion = desired_undesired.get(req)
-		if req.contains("property"):
-			if (!properties.has(property_potion)):
-				push_error("Property " + property_potion + " not in dictionary")
-			if req.contains("undesired"):
-				result.undesired_properties.append(properties.get(property_potion))
-			else:
-				result.desired_properties.append(properties.get(property_potion))
-		elif req.contains("potion"):
-			if (!potions.has(property_potion)):
-				push_error("Potion " + property_potion + " not in dictionary")
-			if req.contains("undesired"):
-				result.undesired_potions.append(potions.get(property_potion))
-			else:
-				result.desired_potions.append(potions.get(property_potion))
-		else:
-			push_error("Wrongly formulated (un)desired property/potion")
-	return result
-
 # Gets called when the order is placed, prepares the order
-func on_new_order  (customer: CharacterData, request: String, deadline: int, desired_undesired : Dictionary):
+func on_new_order  (customer: CharacterData, request: String, deadline: int) -> void:
 	var order : OrderData  = OrderData.new()
 	order.customer = customer
 	order.request = request
 	order.deadline = deadline
-	var dechiphered : Dictionary = decipher_desired(desired_undesired)
-	order.desired_potions = dechiphered.desired_potions
-	order.desired_properties = dechiphered.desired_properties
-	order.undesired_potions = dechiphered.undesired_potions
-	order.undesired_properties = dechiphered.undesired_properties
 	orders.append(order)
-	print(order.get_customer_name(), order.deadline, order.request, order.desired_potions, order.undesired_potions)
+	print(order.get_customer_name(), order.deadline, order.request)
+
+func resolve_order (customer : CharacterData, given_potion : PotionData) -> void:
+	var order : OrderData
+	for order_data in orders:
+		if (order_data.customer == customer):
+			order = order_data
+			break
+	orders.erase(order)
+	var outcome_points : Array[EndingPoints] = customer.timeline.outcome[given_potion].endings
+	for ending_points in outcome_points:
+		game_manager.plot_manager.endings[ending_points.ending] += ending_points.points

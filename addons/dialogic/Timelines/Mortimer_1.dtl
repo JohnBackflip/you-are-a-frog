@@ -1,12 +1,12 @@
-if {potion_given} == false:
-	Mortimer: Do you have the potion I asked you?
-	- Yes, here it is!
-		[signal arg="wait_potion"]
-		[end_timeline]
-	- Uh no
-		Mortimer: \:(
-Mortimer: Hehe anyway can you  [color={bold_color}]sabotage[/color] that stupid elf for me? Y'know, can't be super useful if I am dead.
+if {potion_given} == "":
+	Mortimer: Hi. I am back to collect my potion I ordered a few days ago. The one to [color={bold_color}]temporarily incapacitate some people[/color].
+	[signal arg="wait_potion"]
+	[end_timeline]
 
-set {request} = "Minor potion of healing"
+Mortimer: {potion_given}?
+if {potion_given} == "Potion of Sleep":
+	Mortimer: Thank you. Name's [color={bold_color}]Mortimer[/color] by the way. I got word that the guards are coming for me and my people, and that the vice-captain visited your shop yesterday. Don't trust them.
+	Mortimer: I need you to [color={bold_color}]sabotage their operation[/color] for me. If you do, I promise I will give you a [color={bold_color}]worthwhile reward[/color] after.
+set {request} = "Sabotage the guards' operation"
 set {deadline} = 1.0
-[signal arg_type="dict" arg="{"desired_property0":"medical","desired_property1":"energizing","undesired_property0":"poisonous","undesired_property1":"somniferous"}"]
+[signal arg="order"]

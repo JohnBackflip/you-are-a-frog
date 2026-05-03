@@ -26,6 +26,7 @@ func _init() -> void:
 	else:
 		push_error("Could not open potion folder path: " + customer_calendar_folder)
 
-func get_day(day : int):
+func get_day(day : int) -> DailyCustomers:
 	if day <= customer_calendar.size() - 1:
 		return customer_calendar[day]
+	return null

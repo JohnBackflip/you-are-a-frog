@@ -18,10 +18,6 @@ scene = ExtResource("5_q23g7")
 [sub_resource type="Resource" id="Resource_iddic"]
 script = ExtResource("2_wq1ju")
 scene = ExtResource("6_q23g7")
-overrides = {
-"name_label_font": "\"res://addons/dialogic/Example Assets/Fonts/Roboto-Thin.ttf\"",
-"name_label_use_global_font": "false"
-}
 
 [sub_resource type="Resource" id="Resource_2d565"]
 script = ExtResource("2_wq1ju")
@@ -37,4 +33,4 @@ layer_info = {
 "13": SubResource("Resource_iddic"),
 "15": SubResource("Resource_2d565")
 }
-metadata/_latest_layer = "12"
+metadata/_latest_layer = "13"

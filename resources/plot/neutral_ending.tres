@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Ending" load_steps=2 format=3 uid="uid://byegw1uh3mqis"]
+
+[ext_resource type="Script" uid="uid://ioxi56kga6m0" path="res://scripts/plot/ending_data.gd" id="1_ckg2k"]
+
+[resource]
+script = ExtResource("1_ckg2k")
+end_name = "Neutral"
+description = "The cake got destroyed. Mortimer got caught red handed while trying to lace the four-tier delight. The guard force overwhelmed him and in a desperate last move Mortimer decided to throw himself at the cake. The cake got ruined, the rat got covered in cream and the guards failed their mission. Karin was horrified at the sight and immediately put Mortimer in chains. The party still happened, but the guests had to make do with last minute cupcakes made by yours truly guard captain Karin. Princess Bridgitte could not boast about this year's cake but the party was not a complete disaster."

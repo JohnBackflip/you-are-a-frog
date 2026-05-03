@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2on4o7xd16o2"]
+
+[ext_resource type="Script" uid="uid://bfxfmh0gu8js" path="res://scripts/plot/ending.gd" id="1_1dx4u"]
+[ext_resource type="Texture2D" uid="uid://cfwhanqe6jifd" path="res://assets/blank.png" id="2_wafyp"]
+
+[node name="Ending" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+script = ExtResource("1_1dx4u")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+self_modulate = Color(0.072842576, 0.07284265, 0.072842605, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_wafyp")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_top = 50.0
+offset_right = -100.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+vertical_alignment = 1
+autowrap_mode = 3

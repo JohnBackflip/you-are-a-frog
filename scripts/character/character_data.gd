@@ -10,5 +10,11 @@ class_name CharacterData
 @export var scale : float
 @export_multiline var background: String
 
-var dialogue_index : int = 0
+@export var timeline : TimelineData
 var met: bool = false
+
+func next_timeline(potion : PotionData) -> TimelineData:
+	var next : TimelineData = timeline.outcome[potion].next_dialogue
+	if (!next):
+		next = timeline.outcome[null].next_dialogue
+	return next

@@ -6,8 +6,6 @@ const DAY_SHOP_PATH = "res://scenes/shop/day_shop.tscn"
 const NIGHT_SHOP_PATH = "res://scenes/shop/night_shop.tscn"
 
 var target_scene_path: String
-# Scene might need to be saved before switching (e.g. ingredients in the mixer going back to inventory)
-var to_save_scene_path: String
 
 # Data-related
 var player_inventory_data: InventoryData = preload("uid://eajge1jeea0y")
@@ -16,6 +14,7 @@ var mixer_data: MixerData = preload("uid://ctskj2xpfe8fy")
 var character_set : CharacterSet = preload("res://resources/characters/character_set.tres")
 var customer_calendar : CustomerCalendar = preload("res://resources/calendar/customer_calendar.tres")
 var order_manager: OrderManager = preload("res://resources/orders/order_manager.tres")
+var plot_manager : PlotManager = preload("res://resources/plot/plot_manager.tres")
 
 enum Period {DAY, NIGHT}
 enum InventoryTab {INGREDIENT, POTION}

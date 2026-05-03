@@ -22,7 +22,10 @@ func set_player_inventory_data(inventory_data: InventoryData) -> void:
 	player_inventory.set_inventory_data(inventory_data)
 
 func on_show_tooltip(inventory_data: InventoryData, index: int, pos : Vector2) -> void:
-	item_description.set_info(inventory_data.slot_datas_ingredient[index] if player_inventory.current_tab == game_manager.InventoryTab.INGREDIENT else inventory_data.slot_datas_potion[index])
+	if (inventory_data is MixerData):
+		item_description.set_info(inventory_data.slot_datas_ingredient[index])
+	else:
+		item_description.set_info(inventory_data.slot_datas_ingredient[index] if player_inventory.current_tab == game_manager.InventoryTab.INGREDIENT else inventory_data.slot_datas_potion[index])
 	item_description.show()
 	item_description.position.x = player_inventory.position.x - item_description.size.x
 	item_description.position.y = pos.y
@@ -35,9 +38,9 @@ func on_inventory_interact(inventory_data: InventoryData, index: int, button: in
 	# This is pretty much an if statement but more convenient
 	match [grabbed_slot_data, button]:
 		[null, MOUSE_BUTTON_LEFT]:
-			grabbed_slot_data = inventory_data.grab_slot_data(index, player_inventory.current_tab)
+			grabbed_slot_data = inventory_data.grab_slot_data(index, player_inventory.current_tab if inventory_data is not MixerData else game_manager.InventoryTab.INGREDIENT)
 		[_, MOUSE_BUTTON_LEFT]:
-			grabbed_slot_data = inventory_data.drop_slot_data(grabbed_slot_data, index, player_inventory.current_tab)
+			grabbed_slot_data = inventory_data.drop_slot_data(grabbed_slot_data, index, player_inventory.current_tab if inventory_data is not MixerData else game_manager.InventoryTab.INGREDIENT)
 				
 	update_grabbed_slot()
 

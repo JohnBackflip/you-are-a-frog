@@ -3,13 +3,13 @@ extends Node2D
 signal dialogue_ready
 signal finished_talking
 
-@export_dir var timeline_dir : String
 @onready var potion_diary : Control = $CanvasLayer/DiaryUI
 @onready var character : Node2D = $Character
 @onready var order_interface : Control = $CanvasLayer/OrderInterface
 
-var timeline : String
-var timelines_dir : String
+var plot_manager : PlotManager
+
+var timeline : Resource
 
 var character_set: CharacterSet
 var customer_calendar : CustomerCalendar
@@ -18,16 +18,13 @@ var daily_customers : DailyCustomers
 var current_character : CharacterData
 var player_inventory_data: InventoryData
 
-# Allows to give potions to characters only when they are waiting for them
-var awaiting_potion : bool
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	character_set = game_manager.character_set
+	plot_manager = game_manager.plot_manager
 	finished_talking.connect(character.on_finished_talking)
 	character.finished_walking.connect(on_finished_walking)
 	Dialogic.signal_event.connect(DialogicSignal)
-	timelines_dir = timeline_dir
 	customer_calendar = game_manager.customer_calendar
 
 	# Initialise potion inventory
@@ -47,44 +44,49 @@ func daily_dialogue(day: int):
 			await dialogue_ready
 		# TODO: implement randoms asw
 
-
 func next_dialogue(character_data : CharacterData):
-	awaiting_potion = false
 	if character.character_clicked.is_connected(order_interface.give_potion):
 		character.character_clicked.disconnect(order_interface.give_potion)
 	
-	timeline = timelines_dir + "/" + character_data.name + "_" + str(character_data.dialogue_index) + ".dtl"
-	character.walk_in(character_data)
 	current_character = character_data
+	timeline = current_character.timeline.dialogic_timeline
+	character.walk_in(character_data)
 	if current_character and current_character.met == false:
 		current_character.met = true
 	Dialogic.VAR.bold_color = character_data.color
-	character_data.dialogue_index += 1
 
 func on_finished_walking ():
-	Dialogic.VAR.potion_given = false
+	Dialogic.VAR.potion_given = ""
 	Dialogic.start_timeline(timeline)
 	potion_diary.close_diary()
 
 func DialogicSignal(arg):
-	if (arg is Dictionary):
-		game_events.new_order.emit(current_character, Dialogic.VAR.request, Dialogic.VAR.deadline, arg)
-		finished_talking.emit()
-		await get_tree().create_timer(2.0).timeout
-		dialogue_ready.emit()
-	elif (arg is String and arg == "leave"):
-		finished_talking.emit()
-		await get_tree().create_timer(2.0).timeout
-		dialogue_ready.emit()
-	elif (arg is String and arg == "wait_potion"):
-		awaiting_potion = true
-		character.character_clicked.connect(order_interface.give_potion)
-		await game_events.potion_given
-		Dialogic.VAR.potion_given = true
-		Dialogic.start_timeline(timeline)
-
+	var potion : PotionData = null
+	match arg:
+		"order":
+			game_events.new_order.emit(current_character, Dialogic.VAR.request, Dialogic.VAR.deadline)
+		"leave":
+			pass
+		"wait_potion":
+			character.character_clicked.connect(order_interface.give_potion)
+			potion = await game_events.potion_given
+			
+			game_manager.order_manager.resolve_order(current_character, potion)
+			
+			Dialogic.VAR.potion_given = potion.name
+			Dialogic.start_timeline(timeline)
+			return
+	current_character.timeline = current_character.next_timeline(potion)
+	finished_talking.emit()
+	await get_tree().create_timer(1.0).timeout
+	dialogue_ready.emit()
 
 func _on_close_shop_button_pressed() -> void:
+	# The game ends when there are no more days
+	if (customer_calendar.customer_calendar.size() <= game_manager.day+1):
+		plot_manager.go_to_ending()
+		queue_free()
+		return
 	var night_shop = load("uid://0yo5kafitfqt").instantiate()
 	night_shop.get_node("Cauldron").modulate.a = 0
 	get_parent().add_child(night_shop)

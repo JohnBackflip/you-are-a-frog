@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="TimelineData" load_steps=8 format=3 uid="uid://n6g5ygfxrobu"]
+
+[ext_resource type="Resource" uid="uid://8oi2rr5js2ge" path="res://addons/dialogic/Timelines/Mortimer_0.dtl" id="1_gik8w"]
+[ext_resource type="Script" uid="uid://c7frnt306tx28" path="res://scripts/items/potions/potion_data.gd" id="2_fw86b"]
+[ext_resource type="Script" uid="uid://dbjypilgem226" path="res://scripts/plot/potion_outcome.gd" id="3_c6sm8"]
+[ext_resource type="Script" uid="uid://kdpvn2x2u522" path="res://scripts/plot/ending_points.gd" id="5_43ocj"]
+[ext_resource type="Resource" uid="uid://c72rj23hhhp7t" path="res://resources/calendar/timelines/Mortimer_collect1.tres" id="5_jtssx"]
+[ext_resource type="Script" uid="uid://6knlg22ir0m1" path="res://scripts/plot/timeline_data.gd" id="12_le6vf"]
+
+[sub_resource type="Resource" id="Resource_7nvyx"]
+script = ExtResource("3_c6sm8")
+next_dialogue = ExtResource("5_jtssx")
+metadata/_custom_type_script = "uid://dbjypilgem226"
+
+[resource]
+script = ExtResource("12_le6vf")
+dialogic_timeline = ExtResource("1_gik8w")
+outcome = Dictionary[ExtResource("2_fw86b"), ExtResource("3_c6sm8")]({
+null: SubResource("Resource_7nvyx")
+})

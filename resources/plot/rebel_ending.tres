@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Ending" load_steps=2 format=3 uid="uid://drfkeiv5071ja"]
+
+[ext_resource type="Script" uid="uid://ioxi56kga6m0" path="res://scripts/plot/ending_data.gd" id="1_f6lco"]
+
+[resource]
+script = ExtResource("1_f6lco")
+end_name = "Rebel"
+description = "The rat managed to slip by the guards unnoticed and lace the four-tier delight with an unknown substance. The cake arrived without a hitch and the party started. The oblivious aristocrats all lined up to get a slice - how could you not eat the famous cake? For some reason the party was not very lively as all the guests [INSERT WHAT HAPPENED DUE TO POTION]. Later that evening a hooded creature resembling a rat was seen skedaddling from the castle grounds."

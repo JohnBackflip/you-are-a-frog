@@ -1,4 +1,6 @@
-Karin: Elf knight collects the potion
-set {request} = "Minor potion of healing"
-set {deadline} = 1.0
-[signal arg_type="dict" arg="{"desired_property0":"medical","desired_property1":"energizing","undesired_property0":"poisonous","undesired_property1":"somniferous"}"]
+if {potion_given} == "":
+	Karin: I've come to collect my order.
+	[signal arg="wait_potion"]
+	[end_timeline]
+Karin: Thank you. I'll make sure to compensate you accordingly if the operation tomorrow is [color={bold_color}]successful[/color].
+[signal arg="leave"]
