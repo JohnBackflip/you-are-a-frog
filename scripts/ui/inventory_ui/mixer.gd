@@ -1,39 +1,30 @@
-extends Control
+extends Inventory
+class_name MixerInventory
+
+signal craft_mixer
 
 @export var mixer_data: MixerData
 
-@onready var ring: TextureProgressBar = $Ring
 @onready var slots: Control = $Slots
-@onready var property_bars: Control = $PropertyBars
-@onready var craft_button: Button = %CraftButton
-@onready var potion_slot: PotionSlot = $PotionSlot
 
-const PROPERTY_BAR = preload("uid://qsvuyflknd5j")
-const SLOT = preload("uid://bj32pp33u7ou4")
-
-var ring_radius: float
 var crafting_ingredients: Array[IngredientData]
 var potion_slot_data: SlotData
 
+var can_craft : bool = false
+var last_slot : int = 0
+var holding_item : bool = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	# Connect signals
-	craft_button.pressed.connect(on_craft_button_pressed)
-	potion_slot.collect_potion.connect(request_potion_storage)
-	
-	ring_radius = min(ring.size.x, ring.size.y) / 2
+	pivot_offset = size/2
 	if mixer_data:
 		layout_slots(mixer_data)
 
 
-func on_craft_button_pressed() -> void:
-	if potion_slot_data:
-		print("There is still a potion inside the mixer!")
-		return
+func craft() -> void:
 	var result_potion: PotionData = game_manager.encyclopedia.find_craftable_potion(crafting_ingredients)
 	potion_slot_data = SlotData.new()
 	potion_slot_data.item_data = result_potion
-	potion_slot.set_slot_data(potion_slot_data)
 	
 	# Consume items in potion slot (all of them for now, to change for partial recipes)
 	for index in range(mixer_data.slot_datas_ingredient.size()):
@@ -49,6 +40,7 @@ func on_craft_button_pressed() -> void:
 		game_events.potion_discovered.emit(result_potion)
 		result_potion.recipe_unlocked = true
 		print("New potion %s discovered!" % result_potion.name)
+	request_potion_storage()
 
 func request_potion_storage() -> void:
 	if potion_slot_data:
@@ -57,9 +49,8 @@ func request_potion_storage() -> void:
 		var success = game_manager.player_inventory_data.add_item(potion)
 		if success:
 			print("Potion store success!")
-			potion_slot.set_slot_data(null)
 			potion_slot_data = null
-		
+
 func request_ingredients_storage() -> void:
 	for index in range(mixer_data.slot_datas_ingredient.size()):
 		var slot_data = mixer_data.slot_datas_ingredient[index]
@@ -77,63 +68,68 @@ func on_ingredients_update(new_mixer_data: MixerData, ingredients: Array[Ingredi
 	mixer_data = new_mixer_data
 	layout_slots(new_mixer_data)
 	if ingredients and ingredients.size() >= 2:
-		craft_button.show()
+		can_craft = true
 		crafting_ingredients = ingredients
 	else:
-		craft_button.hide()
+		can_craft = false
 
-# Initialise slots around the ring and progress bars
+# Initialise slots inside the mixer
 func layout_slots(mixer: MixerData):
 	# Clear slots and property bars
 	for child in slots.get_children():
 		child.queue_free()
-	for child in property_bars.get_children():
-		child.queue_free()
-	
+	last_slot = 0
 	var mixer_size = mixer.slot_datas_ingredient.size()
 
-	# Calculate the angle step (e.g., 360 / 3 = 120 degrees)
-	var angle_step = 360.0 / mixer_size
+	var center = Vector2(slots.size.x/2, slots.size.y-64)
 
-	var center = size / 2
-
+	for i in range(1, mixer_size):
+		if (mixer.slot_datas_ingredient[i-1]) == null:
+			mixer.slot_datas_ingredient[i-1] = mixer.slot_datas_ingredient[i]
+			mixer.slot_datas_ingredient[i] = null
+	
 	for i in range(mixer_size):
 		var slot_data = mixer.slot_datas_ingredient[i]
 		var slot = SLOT.instantiate()
 		slot.slot_clicked.connect(mixer_data.on_slot_clicked)
 		slot.slot_hovered.connect(mixer_data.on_slot_hovered)
 		slot.slot_hover_left.connect(mixer_data.on_slot_hover_left)
+		slot.parent_inventory = self
 		slot.index = i
+		slot.modulate = "aaffff"
+		# Rotate slightly, as if moved
 		slots.add_child(slot)
 		if slot_data:
+			last_slot += 1
 			slot.set_slot_data(slot_data)
 			slot_data.item_consumed.connect(slot.on_item_consumed)
-		
-		# 1. Calculate angle in degrees, then convert to radians
-		# Subtract 90 to start at the "Top" (12 o'clock) instead of the "Right"
-		var angle_deg = (i * angle_step) - 90
-		var angle_rad = deg_to_rad(angle_deg)
-		
-		# 2. Calculate coordinates relative to center
-		var x = cos(angle_rad) * (ring_radius + 50.0)
-		var y = sin(angle_rad) * (ring_radius + 50.0)
-		
-		# 3. Set the position
-		slot.position = center + Vector2(x, y) - (slot.size / 2)
-		
-		# 4. Add a progress bar corresponding to this slot
-		var property_bar = PROPERTY_BAR.instantiate() as TextureProgressBar
-		property_bar.position = ring.position
-		property_bar.radial_initial_angle = angle_deg + 90
-		property_bar.max_value = mixer_size
-		property_bar.value = 0.0
-		if slot_data and slot_data.item_data:
-			if slot_data.item_data is IngredientData:
-				var item = slot_data.item_data as IngredientData
-				property_bar.tint_progress = item.property.colour
-				property_bar.value = 1.0
-		property_bars.add_child(property_bar)
+			slot.rotation =(randf())*1.5
+			slot.position = center - Vector2((i%2)*slot.size.x/2, slot.size.y*i)
+				
 
 func save_contents() -> void:
-	request_potion_storage()
 	request_ingredients_storage()
+
+func _on_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
+		if (last_slot < mixer_data.slot_datas_ingredient.size()):
+			mixer_data.on_slot_clicked(last_slot, event.button_index, self)
+
+
+func _on_handle_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
+		if (can_craft):
+			craft_mixer.emit()
+
+func _on_mouse_entered() -> void:
+	if (can_craft or holding_item):
+		var tween = create_tween()
+		tween.tween_property(self, "modulate", Color(1.2, 1.2, 1.2), 0.1)
+		tween.parallel().tween_property(self, "scale", Vector2(1.05, 1.05), 0.1)
+
+
+func _on_mouse_exited() -> void:
+	if (can_craft or holding_item):
+		var tween = create_tween()
+		tween.tween_property(self, "modulate", Color(1, 1, 1), 0.1)
+		tween.parallel().tween_property(self, "scale", Vector2(1.0, 1.0), 0.1)

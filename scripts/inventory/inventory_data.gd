@@ -2,18 +2,18 @@ extends Resource
 class_name InventoryData
 
 signal inventory_updated(inventory_data: InventoryData)
-signal inventory_interact(inventory_data: InventoryData, index: int, button: int)
-signal inventory_show_tooltip(inventory_data: InventoryData, index: int, pos : int)
+signal inventory_interact(inventory : Inventory, inventory_data: InventoryData, index: int, button: int)
+signal inventory_show_tooltip(inventory_data: InventoryData, index: int, inventory : Inventory)
 signal inventory_hide_tooltip()
 
 @export var slot_datas_potion: Array[SlotData]
 @export var slot_datas_ingredient: Array[SlotData]
 
-func on_slot_clicked(index: int, button: int) -> void:
-	inventory_interact.emit(self, index, button)
+func on_slot_clicked(index: int, button: int, inventory : Inventory) -> void:
+	inventory_interact.emit(inventory, self, index, button)
 
-func on_slot_hovered(index: int, pos : Vector2) -> void:
-	inventory_show_tooltip.emit(self, index, pos)
+func on_slot_hovered(index: int, inventory : Inventory) -> void:
+	inventory_show_tooltip.emit(self, index, inventory)
 
 func on_slot_hover_left() -> void:
 	inventory_hide_tooltip.emit()
@@ -37,34 +37,39 @@ func add_item(data: ItemData, quantity : int = 1) -> bool:
 			
 
 
-func grab_slot_data(index: int, current_tab : game_manager.InventoryTab) -> SlotData:
+func grab_slot_data(index: int, inventory : Inventory) -> SlotData:
 	var slot_data : SlotData
-	if current_tab == game_manager.InventoryTab.INGREDIENT:
-		slot_data = slot_datas_ingredient[index]
-	elif current_tab == game_manager.InventoryTab.POTION:
-		slot_data = slot_datas_potion[index]
+	var slot_datas : Array[SlotData]
+	if inventory is IngredientInventory:
+		slot_datas = slot_datas_ingredient
+	elif inventory is PotionInventory:
+		slot_datas = slot_datas_potion
+	elif inventory is MixerInventory:
+		slot_datas = slot_datas_ingredient
 
+	slot_data = slot_datas[index]
 	if slot_data:
-		if current_tab == game_manager.InventoryTab.INGREDIENT:
-			slot_datas_ingredient[index] = null
-		elif current_tab == game_manager.InventoryTab.POTION:
-			slot_datas_potion[index] = null
+		slot_datas[index] = null
 		inventory_updated.emit(self)
 		return slot_data
 	else:
 		return null
 
 
-func drop_slot_data(grabbed_slot_data: SlotData, index: int, current_tab : game_manager.InventoryTab) -> SlotData:
+func drop_slot_data(grabbed_slot_data: SlotData, index: int, inventory : Inventory) -> SlotData:
 	var slot_data : SlotData
-	if current_tab == game_manager.InventoryTab.INGREDIENT && grabbed_slot_data.item_data is IngredientData:
-		slot_data = slot_datas_ingredient[index]
-		slot_datas_ingredient[index] = grabbed_slot_data
-	elif current_tab == game_manager.InventoryTab.POTION && grabbed_slot_data.item_data is PotionData:
-		slot_data = slot_datas_potion[index]
-		slot_datas_potion[index] = grabbed_slot_data
+	var slot_datas : Array[SlotData]
+	if inventory is IngredientInventory && grabbed_slot_data.item_data is IngredientData:
+		slot_datas = slot_datas_ingredient
+	elif inventory is PotionInventory && grabbed_slot_data.item_data is PotionData:
+		slot_datas = slot_datas_potion
+	elif inventory is MixerInventory && grabbed_slot_data.item_data is IngredientData:
+		slot_datas = slot_datas_ingredient
 	else:
 		return grabbed_slot_data
+
+	slot_data = slot_datas[index]
+	slot_datas[index] = grabbed_slot_data
 
 	inventory_updated.emit(self)
 	return slot_data

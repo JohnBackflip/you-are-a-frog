@@ -60,6 +60,6 @@ metadata/_custom_type_script = "uid://ya5q8k0syvlc"
 
 [resource]
 script = ExtResource("1_886py")
-slot_datas_potion = Array[ExtResource("2_3o3uf")]([null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
+slot_datas_potion = Array[ExtResource("2_3o3uf")]([null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
 slot_datas_ingredient = Array[ExtResource("2_3o3uf")]([SubResource("Resource_fuwxj"), SubResource("Resource_cejnm"), SubResource("Resource_iu74g"), null, SubResource("Resource_6im7c"), SubResource("Resource_qibqt"), SubResource("Resource_a72gn"), SubResource("Resource_k1k83"), null, null, SubResource("Resource_83vuj"), null, null, null, null])
 metadata/_custom_type_script = "uid://b3trg1hfu14lr"

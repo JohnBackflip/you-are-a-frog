@@ -1,14 +1,10 @@
 # Handles interactions between the player and game
 extends InventoryInterface
 
-@onready var craft_button: Button = $CraftButton
 @onready var mixer: Control = %Mixer
 
-func on_toggle_crafting_mode() -> void:
-	mixer.visible = not mixer.visible
-	craft_button.visible = mixer.visible and craft_button.visible
-	if (!mixer.visible):
-		save_mixer_contents()
+func _ready() -> void:
+	mixer.craft_mixer.connect(on_craft)
 
 # Returns the contents of the mixer to the inventory
 func save_mixer_contents() -> void:
@@ -24,3 +20,14 @@ func set_mixer_data(mixer_data: MixerData) -> void:
 
 	# Connect signals
 	mixer_data.mixer_contents.connect(mixer.on_ingredients_update)
+
+func on_craft() -> void:
+	mixer.get_child(-1).play("pour_beaker")
+
+
+func _on_mixer_animation_finished(anim_name: StringName) -> void:
+	if (anim_name == "pour_beaker"):
+		mixer.craft()
+		mixer.request_ingredients_storage()
+		await get_tree().create_timer(1.0).timeout
+		mixer.get_child(-1).play("return_beaker")

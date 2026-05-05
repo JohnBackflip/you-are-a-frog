@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var canvas_layer: CanvasLayer = $CanvasLayer
 @onready var crafting_interface: Control = $CanvasLayer/CraftingInterface
-@onready var cauldron: Area2D = $Cauldron
+@onready var cauldron: Sprite2D = $Cauldron
 @onready var companion: Area2D = $Companion
 
 # This is set to the demo inventory for now, change when needed. Might have to change these to global variables
@@ -16,7 +16,6 @@ const DAY_SHOP = preload("uid://chp1jryo073wa")
 
 func _ready() -> void:
 	# Connect signals
-	cauldron.toggle_crafting_mode.connect(crafting_interface.on_toggle_crafting_mode)
 	game_events.potion_discovered.connect(on_potion_discovered)
 	companion.mouse_entered.connect(_on_companion_mouse_entered)
 	companion.mouse_exited.connect(_on_companion_mouse_exited)

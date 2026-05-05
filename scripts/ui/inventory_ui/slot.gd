@@ -2,7 +2,7 @@ extends PanelContainer
 class_name Slot
 
 signal slot_clicked(index: int, button: int)
-signal slot_hovered(index: int, pos : Vector2)
+signal slot_hovered(index: int, inventory : Inventory)
 signal slot_hover_left()
 
 @onready var texture_rect: TextureRect = $MarginContainer/TextureRect
@@ -10,6 +10,10 @@ signal slot_hover_left()
 
 var index: int
 
+var parent_inventory : Inventory
+
+func _ready() -> void:
+	pivot_offset = size/2
 
 func set_slot_data(slot_data: SlotData):
 	if slot_data and slot_data.item_data:
@@ -25,11 +29,10 @@ func set_slot_data(slot_data: SlotData):
 		quantity_label.text = ""
 		quantity_label.hide()
 
-
 func _on_gui_input(event: InputEvent) -> void:
 	# If this slot is clicked
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
-		slot_clicked.emit(index, event.button_index)
+		slot_clicked.emit(index, event.button_index, parent_inventory)
 		
 # This is only used for mixer slots for now
 func on_item_consumed(slot_data: SlotData, new_quantity: int) -> void:
@@ -41,7 +44,7 @@ func on_item_consumed(slot_data: SlotData, new_quantity: int) -> void:
 
 # Make tooltip visible when hovering
 func _on_mouse_entered() -> void:
-	slot_hovered.emit(index, position)
+	slot_hovered.emit(index, parent_inventory)
 
 # Make tooltip invisible when not hovering anymore
 func _on_mouse_exited() -> void:

@@ -2,10 +2,9 @@ extends Control
 
 @onready var description : RichTextLabel = $Description
 
-func set_info(slot_data : SlotData) :
+func set_info(slot_data : SlotData) -> bool:
 	if !slot_data:
-		description.text = "Seems like there isn't anything here..."
-		return
+		return false
 
 	var item_data = slot_data.item_data
 	if item_data is IngredientData:
@@ -15,3 +14,4 @@ func set_info(slot_data : SlotData) :
 	elif item_data is PotionData:
 		description.text =	"[b]Name: [/b]" + item_data.name + \
 				"\n[b]Description: [/b]" + item_data.description 
+	return true

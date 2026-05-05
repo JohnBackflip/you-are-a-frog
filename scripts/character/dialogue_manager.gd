@@ -30,8 +30,7 @@ func _ready() -> void:
 	# Initialise potion inventory
 	player_inventory_data = game_manager.player_inventory_data
 	order_interface.set_player_inventory_data(player_inventory_data)
-	order_interface.highlight_potion_tab()
-
+	
 	var day = game_manager.day
 	print("Day: ", day)
 	daily_dialogue(day)
@@ -89,11 +88,13 @@ func _on_close_shop_button_pressed() -> void:
 		return
 	var night_shop = load("uid://0yo5kafitfqt").instantiate()
 	night_shop.get_node("Cauldron").modulate.a = 0
+	night_shop.get_node("%Mixer").modulate.a = 0
 	get_parent().add_child(night_shop)
 	move_to_front()
 	var tween = create_tween()
 	tween.tween_property(self, "modulate:a", 0, 2.0)
 	tween.tween_property(night_shop.get_node("Cauldron"), "modulate:a", 1, 0.3)
+	tween.tween_property(night_shop.get_node("%Mixer"), "modulate:a", 1, 0.3)
 	await tween.finished
 	# Reset transparency
 	self_modulate.a = 1

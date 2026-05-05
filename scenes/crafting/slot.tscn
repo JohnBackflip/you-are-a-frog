@@ -3,12 +3,14 @@
 [ext_resource type="Script" uid="uid://dbgfybkynxr5h" path="res://scripts/ui/inventory_ui/slot.gd" id="1_m57sd"]
 
 [node name="Slot" type="PanelContainer"]
+self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(64, 64)
 offset_right = 32.0
 offset_bottom = 32.0
 script = ExtResource("1_m57sd")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
+self_modulate = Color(18.892157, 18.892157, 18.892157, 0)
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/margin_left = 4

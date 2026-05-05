@@ -1,62 +1,42 @@
-[gd_scene load_steps=6 format=3 uid="uid://bblhqi2jsidsi"]
+[gd_scene load_steps=4 format=3 uid="uid://bblhqi2jsidsi"]
 
 [ext_resource type="Script" uid="uid://b2b5p63caj5qe" path="res://scripts/ui/inventory_ui/mixer.gd" id="1_2mcqu"]
+[ext_resource type="Texture2D" uid="uid://253347ujs6ci" path="res://assets/mixer.png" id="1_51uip"]
 [ext_resource type="Resource" uid="uid://ctskj2xpfe8fy" path="res://resources/inventory/mixer_data.tres" id="2_jf88f"]
-[ext_resource type="Texture2D" uid="uid://ddpufmvi83i8y" path="res://assets/ring.png" id="3_nne17"]
-[ext_resource type="PackedScene" uid="uid://bj32pp33u7ou4" path="res://scenes/crafting/slot.tscn" id="4_w7mhs"]
-[ext_resource type="Script" uid="uid://djjraotw7r0bx" path="res://scripts/inventory/potion_slot.gd" id="5_jf88f"]
 
-[node name="Mixer" type="Control"]
-custom_minimum_size = Vector2(330, 330)
-layout_mode = 3
-anchors_preset = 0
-size_flags_horizontal = 4
-size_flags_vertical = 4
+[node name="Mixer" type="TextureRect"]
+anchors_preset = -1
+anchor_top = 0.21944444
+anchor_right = 0.16953126
+anchor_bottom = 0.63750005
+offset_bottom = -3.0517578e-05
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("1_51uip")
+expand_mode = 1
 script = ExtResource("1_2mcqu")
 mixer_data = ExtResource("2_jf88f")
+metadata/_edit_use_anchors_ = true
 
-[node name="Ring" type="TextureProgressBar" parent="."]
-custom_minimum_size = Vector2(150, 150)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-grow_horizontal = 2
-grow_vertical = 2
-fill_mode = 8
-nine_patch_stretch = true
-texture_under = ExtResource("3_nne17")
-tint_under = Color(0, 0, 0, 1)
+[node name="Handle" type="Control" parent="."]
+anchors_preset = 0
+offset_top = 34.0
+offset_right = 48.0
+offset_bottom = 270.0
 
 [node name="Slots" type="Control" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_left = 0.23508772
+anchor_top = 0.19122255
+anchor_right = 0.71578944
+anchor_bottom = 0.9019144
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="PropertyBars" type="Control" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="PotionSlot" parent="." instance=ExtResource("4_w7mhs")]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -32.0
-offset_top = -32.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("5_jf88f")
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="gui_input" from="Handle" to="." method="_on_handle_gui_input"]
+[connection signal="mouse_entered" from="Handle" to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Handle" to="." method="_on_mouse_exited"]
