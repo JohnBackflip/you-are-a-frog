@@ -1,6 +1,0 @@
-if {potion_given} == "":
-	Karin: I've come to collect my order.
-	[signal arg="wait_potion"]
-	[end_timeline]
-Karin: Thank you. I'll make sure to compensate you accordingly if the operation tomorrow is [color={bold_color}]successful[/color].
-[signal arg="leave"]

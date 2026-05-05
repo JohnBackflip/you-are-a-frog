@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://bwe26a1mdaome"]
+[gd_scene load_steps=8 format=3 uid="uid://b2cf11pgsj20c"]
 
+[ext_resource type="Script" uid="uid://di2vnaiq8ysvx" path="res://ui/inventory/inventory_ui.gd" id="1_isfg7"]
 [ext_resource type="Texture2D" uid="uid://ctet7knephplq" path="res://assets/shelf_day.png" id="1_xhn68"]
 [ext_resource type="Texture2D" uid="uid://ckfc3uiq6kmu2" path="res://assets/shelf_night.png" id="2_hjbap"]
 [ext_resource type="PackedScene" uid="uid://bj32pp33u7ou4" path="res://scenes/crafting/slot.tscn" id="2_pbatm"]
@@ -35,6 +36,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+script = ExtResource("1_isfg7")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(640, 360)

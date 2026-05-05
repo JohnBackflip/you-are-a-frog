@@ -57,9 +57,10 @@ func next_dialogue(character_data : CharacterData):
 
 func on_finished_walking ():
 	Dialogic.VAR.potion_given = ""
-	var potion_given : PotionData = current_character.timeline.potion_given
+	var potion_given : PotionData = current_character.potion_given
 	if (potion_given):
 		Dialogic.VAR.feedback = current_character.timeline.outcome[potion_given].dialogue_outcome
+		current_character.potion_given = null
 	Dialogic.start_timeline(timeline)
 	potion_diary.close_diary()
 
@@ -86,6 +87,7 @@ func DialogicSignal(arg):
 			
 			game_manager.order_manager.resolve_order(current_character, potion)
 			
+			Dialogic.VAR.feedback = current_character.timeline.outcome[potion].dialogue_outcome
 			Dialogic.VAR.potion_given = potion.name
 			Dialogic.start_timeline(timeline)
 	current_character.timeline = current_character.next_timeline(potion)
@@ -97,6 +99,7 @@ func _on_close_shop_button_pressed() -> void:
 		plot_manager.go_to_ending()
 		queue_free()
 		return
+	game_manager.period = game_manager.Period.NIGHT
 	var night_shop = load("uid://0yo5kafitfqt").instantiate()
 	night_shop.get_node("Cauldron").modulate.a = 0
 	night_shop.get_node("%Mixer").modulate.a = 0

@@ -56,6 +56,7 @@ func on_potion_discovered(potion: PotionData) -> void:
 func _on_end_night_button_pressed() -> void:
 	game_manager.day += 1
 	var day_shop = preload("res://scenes/shop/day_shop.tscn").instantiate()
+	game_manager.period = game_manager.Period.DAY
 	crafting_interface.save_mixer_contents()
 	#day_shop.modulate.a = 0
 	get_parent().add_child(day_shop)

@@ -1,7 +1,7 @@
 if {potion_given} == "":
-	Mortimer: Hi. I am back to collect my potion I ordered yesterday. To help me with the [color={bold_color}]big speech[/color].
+	Mortimer: I am back to collect my potion! To clean up my home.
 	[signal arg="wait_potion"]
 	[end_timeline]
 
-Mortimer: Thanks.
+Mortimer: {feedback}
 [signal arg="leave_done"]

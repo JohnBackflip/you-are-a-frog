@@ -2,11 +2,13 @@
 
 [ext_resource type="Texture2D" uid="uid://b2e1othi6mwqi" path="res://assets/childe.png" id="1_4h1am"]
 [ext_resource type="Script" uid="uid://b5nbxtpiyq5ta" path="res://scripts/character/character_data.gd" id="2_ndasu"]
-[ext_resource type="Resource" uid="uid://d1dpwlrc6de4m" path="res://resources/calendar/timelines/NPChilde_introduction.tres" id="3_sugpk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4h1am"]
 atlas = ExtResource("1_4h1am")
 region = Rect2(339, 305, 1354, 2153)
+
+[sub_resource type="Resource" id="Resource_j0uep"]
+metadata/__load_path__ = "res://resources/calendar/timelines/NPChilde_introduction.tres"
 
 [resource]
 script = ExtResource("2_ndasu")
@@ -17,4 +19,4 @@ color = "8e91f6"
 icon = SubResource("AtlasTexture_4h1am")
 scale = 0.32
 background = "N.P. Childe lives a very average, normal life in the city. He runs a merchant guild that brings in herbs and other potential potion ingredients, among other things. Very well-versed with shop and business management, as well as the city itself. "
-timeline = ExtResource("3_sugpk")
+timeline = SubResource("Resource_j0uep")

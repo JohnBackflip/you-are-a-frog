@@ -10,6 +10,7 @@ class_name CharacterData
 @export var scale : float
 @export_multiline var background: String
 
+@export var potion_given : PotionData
 @export var timeline : TimelineData
 var met: bool = false
 

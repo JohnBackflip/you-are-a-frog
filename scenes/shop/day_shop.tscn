@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://by5ccgowu40ny" path="res://assets/cropped_images/desk_potion3.tres" id="8_u1556"]
 [ext_resource type="Texture2D" uid="uid://q356ulxxi6oe" path="res://assets/cropped_images/desk_potion4.tres" id="9_3v3vx"]
 [ext_resource type="PackedScene" uid="uid://bblhqi2jsidsi" path="res://scenes/crafting/mixer.tscn" id="11_wmuix"]
-[ext_resource type="PackedScene" uid="uid://bwe26a1mdaome" path="res://scenes/crafting/inventory.tscn" id="12_ksefx"]
+[ext_resource type="PackedScene" uid="uid://b2cf11pgsj20c" path="res://scenes/crafting/inventory.tscn" id="12_ksefx"]
 [ext_resource type="Script" uid="uid://bb2be4dbm4lwr" path="res://scripts/orders/order_interface.gd" id="12_u1556"]
 [ext_resource type="PackedScene" uid="uid://bj32pp33u7ou4" path="res://scenes/crafting/slot.tscn" id="14_3v3vx"]
 [ext_resource type="Script" uid="uid://daoqvnp1hwhld" path="res://scripts/ui/inventory_ui/item_description.gd" id="15_ksefx"]

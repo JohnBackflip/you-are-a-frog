@@ -1,7 +1,5 @@
-Mortimer: Hello. Heh, uhm, so, I am going to do a big speech tomorrow, in front of a lot of people. Can you give me something that will help me present?
+Mortimer: Hello. In a few days, I will have some guests over and [color={bold_color}]I need my house to look good and nice[/color]. Can you give me a potion to help with this?
 
-Mortimer: Thank you. I'll be back tomorrow.
-
-set {request} = "Help Mortimer give a speech"
+set {request} = "I need my place to look good and nice"
 set {deadline} = 1.0
 [signal arg="order"]
