@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="IngredientData" load_steps=2 format=3 uid="uid://ppbmhme4y2hc"]
+
+[ext_resource type="Script" uid="uid://twcr3o7hisyf" path="res://scripts/items/ingredients/ingredient_data.gd" id="1_raind"]
+
+[resource]
+script = ExtResource("1_raind")
+name = "Whole Milk"
+description = "It brings the whole family together! Make sure to keep stored cold unless you plan to churn it, no house is complete without milk in the fridge!"
+metadata/_custom_type_script = "uid://twcr3o7hisyf"

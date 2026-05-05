@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="PotionData" load_steps=6 format=3 uid="uid://cgfrmkgkikp8y"]
+
+[ext_resource type="Texture2D" uid="uid://q356ulxxi6oe" path="res://assets/cropped_images/desk_potion4.tres" id="1_ndeu1"]
+[ext_resource type="Script" uid="uid://twcr3o7hisyf" path="res://scripts/items/ingredients/ingredient_data.gd" id="1_ndk5c"]
+[ext_resource type="Script" uid="uid://c7frnt306tx28" path="res://scripts/items/potions/potion_data.gd" id="2_g6q3i"]
+[ext_resource type="Resource" uid="uid://cpie0onc3bixp" path="res://resources/ingredients/square_sponge.tres" id="2_wec6r"]
+[ext_resource type="Resource" uid="uid://d1vcbyku2amux" path="res://resources/ingredients/pixie_dust.tres" id="3_ndeu1"]
+
+[resource]
+script = ExtResource("2_g6q3i")
+recipe = Array[ExtResource("1_ndk5c")]([ExtResource("2_wec6r"), ExtResource("3_ndeu1")])
+name = "Squeaky Clean Potion"
+art = ExtResource("1_ndeu1")
+metadata/_custom_type_script = "uid://c7frnt306tx28"

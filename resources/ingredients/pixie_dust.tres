@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="IngredientData" load_steps=2 format=3 uid="uid://d1vcbyku2amux"]
+
+[ext_resource type="Script" uid="uid://twcr3o7hisyf" path="res://scripts/items/ingredients/ingredient_data.gd" id="1_qwp0s"]
+
+[resource]
+script = ExtResource("1_qwp0s")
+name = "Pixie Dust"
+description = "Don't look too closely or the Fae will spirit you away! But maybe you should, it sparkles so nicely... What a nice forest... Is that your house?!? Oh, no, of course not. Right?"
+metadata/_custom_type_script = "uid://twcr3o7hisyf"

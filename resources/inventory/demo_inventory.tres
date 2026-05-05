@@ -1,44 +1,31 @@
-[gd_resource type="Resource" script_class="InventoryData" load_steps=13 format=3 uid="uid://eajge1jeea0y"]
+[gd_resource type="Resource" script_class="InventoryData" load_steps=9 format=3 uid="uid://eajge1jeea0y"]
 
 [ext_resource type="Script" uid="uid://b3trg1hfu14lr" path="res://scripts/inventory/inventory_data.gd" id="1_886py"]
 [ext_resource type="Script" uid="uid://ya5q8k0syvlc" path="res://scripts/inventory/slot_data.gd" id="2_3o3uf"]
-[ext_resource type="Resource" uid="uid://xl8ry04s0ggg" path="res://resources/ingredients/banana.tres" id="3_83vuj"]
-[ext_resource type="Resource" uid="uid://cu73ggvwv8i1v" path="res://resources/ingredients/apple.tres" id="3_jyk7l"]
-[ext_resource type="Resource" uid="uid://bjln21jd2twkv" path="res://resources/ingredients/poison_mushroom.tres" id="4_46yob"]
-[ext_resource type="Resource" uid="uid://dshila4utvib1" path="res://resources/ingredients/wine.tres" id="5_k1k83"]
-[ext_resource type="Resource" uid="uid://dbveok1nnprmn" path="res://resources/ingredients/coffee.tres" id="7_fuwxj"]
+[ext_resource type="Resource" uid="uid://d1vcbyku2amux" path="res://resources/ingredients/pixie_dust.tres" id="3_10et7"]
+[ext_resource type="Resource" uid="uid://ppbmhme4y2hc" path="res://resources/ingredients/whole_milk.tres" id="4_m40pg"]
+[ext_resource type="Resource" uid="uid://cpie0onc3bixp" path="res://resources/ingredients/square_sponge.tres" id="5_qdl88"]
 
-[sub_resource type="Resource" id="Resource_fuwxj"]
+[sub_resource type="Resource" id="Resource_8jehf"]
 script = ExtResource("2_3o3uf")
-item_data = ExtResource("3_83vuj")
-quantity = 2
-metadata/_custom_type_script = "uid://ya5q8k0syvlc"
-
-[sub_resource type="Resource" id="Resource_cejnm"]
-script = ExtResource("2_3o3uf")
-item_data = ExtResource("3_jyk7l")
+item_data = ExtResource("3_10et7")
 quantity = 3
 metadata/_custom_type_script = "uid://ya5q8k0syvlc"
 
-[sub_resource type="Resource" id="Resource_iu74g"]
+[sub_resource type="Resource" id="Resource_4b6ei"]
 script = ExtResource("2_3o3uf")
-item_data = ExtResource("5_k1k83")
-metadata/_custom_type_script = "uid://ya5q8k0syvlc"
-
-[sub_resource type="Resource" id="Resource_6im7c"]
-script = ExtResource("2_3o3uf")
-item_data = ExtResource("4_46yob")
+item_data = ExtResource("4_m40pg")
 quantity = 3
 metadata/_custom_type_script = "uid://ya5q8k0syvlc"
 
-[sub_resource type="Resource" id="Resource_qibqt"]
+[sub_resource type="Resource" id="Resource_8iivk"]
 script = ExtResource("2_3o3uf")
-item_data = ExtResource("7_fuwxj")
-quantity = 2
+item_data = ExtResource("5_qdl88")
+quantity = 3
 metadata/_custom_type_script = "uid://ya5q8k0syvlc"
 
 [resource]
 script = ExtResource("1_886py")
 slot_datas_potion = Array[ExtResource("2_3o3uf")]([null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
-slot_datas_ingredient = Array[ExtResource("2_3o3uf")]([SubResource("Resource_fuwxj"), SubResource("Resource_cejnm"), SubResource("Resource_iu74g"), null, SubResource("Resource_6im7c"), SubResource("Resource_qibqt")])
+slot_datas_ingredient = Array[ExtResource("2_3o3uf")]([SubResource("Resource_8jehf"), SubResource("Resource_4b6ei"), SubResource("Resource_8iivk"), null, null, null])
 metadata/_custom_type_script = "uid://b3trg1hfu14lr"

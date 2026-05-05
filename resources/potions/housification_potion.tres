@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="PotionData" load_steps=7 format=3 uid="uid://ddqacanldsq8j"]
+
+[ext_resource type="Script" uid="uid://twcr3o7hisyf" path="res://scripts/items/ingredients/ingredient_data.gd" id="1_bi665"]
+[ext_resource type="Texture2D" uid="uid://brxg4jb5qop75" path="res://assets/potion_icons.png" id="1_pbs5m"]
+[ext_resource type="Script" uid="uid://c7frnt306tx28" path="res://scripts/items/potions/potion_data.gd" id="2_pbs5m"]
+[ext_resource type="Resource" uid="uid://ppbmhme4y2hc" path="res://resources/ingredients/whole_milk.tres" id="3_qkxjo"]
+[ext_resource type="Resource" uid="uid://d1vcbyku2amux" path="res://resources/ingredients/pixie_dust.tres" id="4_g7lc4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3v1xt"]
+atlas = ExtResource("1_pbs5m")
+region = Rect2(998, 629, 560, 754)
+
+[resource]
+script = ExtResource("2_pbs5m")
+recipe = Array[ExtResource("1_bi665")]([ExtResource("3_qkxjo"), ExtResource("4_g7lc4")])
+name = "Housification Potion"
+art = SubResource("AtlasTexture_3v1xt")
+description = "Turns anything into a house!"
+stackable = false
+metadata/_custom_type_script = "uid://c7frnt306tx28"

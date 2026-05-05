@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="PotionData" load_steps=7 format=3 uid="uid://cj8s3i5f3o70i"]
+
+[ext_resource type="Script" uid="uid://twcr3o7hisyf" path="res://scripts/items/ingredients/ingredient_data.gd" id="1_utto6"]
+[ext_resource type="Texture2D" uid="uid://brxg4jb5qop75" path="res://assets/potion_icons.png" id="1_w4yex"]
+[ext_resource type="Script" uid="uid://c7frnt306tx28" path="res://scripts/items/potions/potion_data.gd" id="2_w4yex"]
+[ext_resource type="Resource" uid="uid://ppbmhme4y2hc" path="res://resources/ingredients/whole_milk.tres" id="3_6qyiw"]
+[ext_resource type="Resource" uid="uid://cpie0onc3bixp" path="res://resources/ingredients/square_sponge.tres" id="4_fvh5t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ve01d"]
+atlas = ExtResource("1_w4yex")
+region = Rect2(2192, 629, 560, 754)
+
+[resource]
+script = ExtResource("2_w4yex")
+recipe = Array[ExtResource("1_utto6")]([ExtResource("3_6qyiw"), ExtResource("4_fvh5t")])
+name = "Cheesification Potion"
+art = SubResource("AtlasTexture_ve01d")
+description = "Cheese"
+stackable = false
+metadata/_custom_type_script = "uid://c7frnt306tx28"
