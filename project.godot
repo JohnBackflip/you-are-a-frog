@@ -34,6 +34,7 @@ directories/dtl_directory={
 "Karin_1": "res://addons/dialogic/Timelines/Karin_1.dtl",
 "Mortimer_0": "res://addons/dialogic/Timelines/Mortimer_0.dtl",
 "Mortimer_1": "res://addons/dialogic/Timelines/Mortimer_1.dtl",
+"Mortimer_2": "res://addons/dialogic/Timelines/Mortimer_2.dtl",
 "N.P. Childe_0": "res://addons/dialogic/Timelines/N.P. Childe_0.dtl",
 "N.P. Childe_1": "res://addons/dialogic/Timelines/N.P. Childe_1.dtl"
 }
@@ -44,6 +45,7 @@ layout/style_directory={
 variables={
 "bold_color": "8e91f6",
 "deadline": 1,
+"feedback": "",
 "potion_given": "",
 "request": ""
 }

@@ -1,7 +1,7 @@
-Mortimer: Hello. I would need a potion of sorts to [color={bold_color}]temporarily incapacitate[/color] some bad people, and I would need it in [color={bold_color}]2 days[/color]. Can I count on you to help me out?
+Mortimer: Hello. Heh, uhm, so, I am going to do a big speech tomorrow, in front of a lot of people. Can you give me something that will help me present?
 
-Mortimer: Thank you. I'll be back in 2 days to pick it up.
+Mortimer: Thank you. I'll be back tomorrow.
 
-set {request} = "Potion to temporarily incapacitate some bad people"
-set {deadline} = 2.0
+set {request} = "Help Mortimer give a speech"
+set {deadline} = 1.0
 [signal arg="order"]

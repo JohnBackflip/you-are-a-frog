@@ -56,6 +56,9 @@ func next_dialogue(character_data : CharacterData):
 
 func on_finished_walking ():
 	Dialogic.VAR.potion_given = ""
+	var potion_given : PotionData = current_character.timeline.potion_given
+	if (potion_given):
+		Dialogic.VAR.feedback = current_character.timeline.outcome[potion_given].dialogue_outcome
 	Dialogic.start_timeline(timeline)
 	potion_diary.close_diary()
 
@@ -64,8 +67,18 @@ func DialogicSignal(arg):
 	match arg:
 		"order":
 			game_events.new_order.emit(current_character, Dialogic.VAR.request, Dialogic.VAR.deadline)
+			finished_talking.emit()
+			await get_tree().create_timer(1.0).timeout
+			dialogue_ready.emit()
 		"leave":
-			pass
+			finished_talking.emit()
+			await get_tree().create_timer(1.0).timeout
+			dialogue_ready.emit()
+		"leave_done":
+			finished_talking.emit()
+			await get_tree().create_timer(1.0).timeout
+			dialogue_ready.emit()
+			return
 		"wait_potion":
 			character.character_clicked.connect(order_interface.give_potion)
 			potion = await game_events.potion_given
@@ -74,11 +87,8 @@ func DialogicSignal(arg):
 			
 			Dialogic.VAR.potion_given = potion.name
 			Dialogic.start_timeline(timeline)
-			return
 	current_character.timeline = current_character.next_timeline(potion)
-	finished_talking.emit()
-	await get_tree().create_timer(1.0).timeout
-	dialogue_ready.emit()
+	
 
 func _on_close_shop_button_pressed() -> void:
 	# The game ends when there are no more days

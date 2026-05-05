@@ -67,6 +67,8 @@ func on_new_order  (customer: CharacterData, request: String, deadline: int) -> 
 	print(order.get_customer_name(), order.deadline, order.request)
 
 func resolve_order (customer : CharacterData, given_potion : PotionData) -> void:
+	if (!customer):
+		return
 	var order : OrderData
 	for order_data in orders:
 		if (order_data.customer == customer):
@@ -76,3 +78,4 @@ func resolve_order (customer : CharacterData, given_potion : PotionData) -> void
 	var outcome_points : Array[EndingPoints] = customer.timeline.outcome[given_potion].endings
 	for ending_points in outcome_points:
 		game_manager.plot_manager.endings[ending_points.ending] += ending_points.points
+	customer.timeline.outcome[given_potion].next_dialogue.potion_given = given_potion
