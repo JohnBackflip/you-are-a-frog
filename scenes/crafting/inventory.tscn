@@ -1,10 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://b2cf11pgsj20c"]
+[gd_scene load_steps=7 format=3 uid="uid://bwe26a1mdaome"]
 
 [ext_resource type="Texture2D" uid="uid://ctet7knephplq" path="res://assets/shelf_day.png" id="1_xhn68"]
 [ext_resource type="Texture2D" uid="uid://ckfc3uiq6kmu2" path="res://assets/shelf_night.png" id="2_hjbap"]
 [ext_resource type="PackedScene" uid="uid://bj32pp33u7ou4" path="res://scenes/crafting/slot.tscn" id="2_pbatm"]
-[ext_resource type="Script" uid="uid://75a44nc4a2tt" path="res://scripts/ui/inventory_ui/ingredient_inventory.gd" id="3_7nqdk"]
-[ext_resource type="Script" uid="uid://xt6o7v7dhiqt" path="res://scripts/ui/inventory_ui/potion_inventory.gd" id="4_hjbap"]
+[ext_resource type="Script" path="res://scripts/ui/inventory_ui/ingredient_inventory.gd" id="3_7nqdk"]
+[ext_resource type="Script" path="res://scripts/ui/inventory_ui/potion_inventory.gd" id="4_hjbap"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_isfg7"]
 animations = [{

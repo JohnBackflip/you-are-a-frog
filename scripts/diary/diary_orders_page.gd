@@ -23,6 +23,8 @@ func update_data() -> void:
 	if game_manager.order_manager.orders:
 		order_datas = game_manager.order_manager.orders
 		for order_data: OrderData in order_datas:
+			if order_data.fulfilled:
+				continue
 			var entry = ORDER_ENTRY.instantiate()
 			orders.add_child(entry)
 			entry.set_order_data(order_data)

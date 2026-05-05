@@ -99,6 +99,7 @@ enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 
 [global_group]
 
+property_bar="The colour part in the ratio chart"
 diary=""
 
 [gui]

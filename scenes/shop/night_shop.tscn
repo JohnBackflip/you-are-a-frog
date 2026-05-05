@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bj32pp33u7ou4" path="res://scenes/crafting/slot.tscn" id="13_2ldue"]
 [ext_resource type="Script" uid="uid://daoqvnp1hwhld" path="res://scripts/ui/inventory_ui/item_description.gd" id="13_5eyxy"]
 [ext_resource type="Texture2D" uid="uid://cfwhanqe6jifd" path="res://assets/blank.png" id="14_nebgi"]
-[ext_resource type="PackedScene" uid="uid://b2cf11pgsj20c" path="res://scenes/crafting/inventory.tscn" id="15_06nyc"]
+[ext_resource type="PackedScene" uid="uid://bwe26a1mdaome" path="res://scenes/crafting/inventory.tscn" id="15_06nyc"]
 [ext_resource type="PackedScene" uid="uid://bblhqi2jsidsi" path="res://scenes/crafting/mixer.tscn" id="17_85lvg"]
 [ext_resource type="PackedScene" uid="uid://ds82c7crgovni" path="res://scenes/diary/diary_ui.tscn" id="19_5sa7e"]
 [ext_resource type="AudioStream" uid="uid://cpi4ypoisok0g" path="res://assets/audio/cricket_ambience.wav" id="19_n5yg0"]

@@ -1,12 +1,33 @@
-[gd_resource type="Resource" script_class="CharacterData" load_steps=5 format=3 uid="uid://c82nnsyvugbuc"]
+[gd_resource type="Resource" script_class="CharacterData" load_steps=13 format=3 uid="uid://c82nnsyvugbuc"]
 
 [ext_resource type="Texture2D" uid="uid://bn1vqb1ytxkts" path="res://assets/knight.png" id="1_g87s1"]
 [ext_resource type="Script" uid="uid://b5nbxtpiyq5ta" path="res://scripts/character/character_data.gd" id="2_hccf4"]
-[ext_resource type="Resource" uid="uid://thvcib8ynseu" path="res://resources/calendar/timelines/Karin_introduction.tres" id="3_hccf4"]
+[ext_resource type="Resource" uid="uid://dxe3van1cr7sk" path="res://addons/dialogic/Timelines/Karin_0.dtl" id="3_d7dce"]
+[ext_resource type="Script" uid="uid://c7frnt306tx28" path="res://scripts/items/potions/potion_data.gd" id="4_kom7g"]
+[ext_resource type="Script" uid="uid://dbjypilgem226" path="res://scripts/plot/potion_outcome.gd" id="5_ko240"]
+[ext_resource type="Script" uid="uid://kdpvn2x2u522" path="res://scripts/plot/ending_points.gd" id="6_e1822"]
+[ext_resource type="Resource" uid="uid://min0dfuv5033" path="res://addons/dialogic/Timelines/Karin_1.dtl" id="7_xe32b"]
+[ext_resource type="Script" uid="uid://6knlg22ir0m1" path="res://scripts/plot/timeline_data.gd" id="8_p0wcl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xin5u"]
 atlas = ExtResource("1_g87s1")
 region = Rect2(0, 0, 475, 253)
+
+[sub_resource type="Resource" id="Resource_tuucp"]
+script = ExtResource("8_p0wcl")
+dialogic_timeline = ExtResource("7_xe32b")
+
+[sub_resource type="Resource" id="Resource_7nvyx"]
+script = ExtResource("5_ko240")
+next_dialogue = SubResource("Resource_tuucp")
+metadata/_custom_type_script = "uid://dbjypilgem226"
+
+[sub_resource type="Resource" id="Resource_wobx0"]
+script = ExtResource("8_p0wcl")
+dialogic_timeline = ExtResource("3_d7dce")
+outcome = Dictionary[ExtResource("4_kom7g"), ExtResource("5_ko240")]({
+null: SubResource("Resource_7nvyx")
+})
 
 [resource]
 script = ExtResource("2_hccf4")
@@ -16,4 +37,4 @@ art = ExtResource("1_g87s1")
 color = "a9f3f5"
 icon = SubResource("AtlasTexture_xin5u")
 scale = 0.7
-timeline = ExtResource("3_hccf4")
+timeline = SubResource("Resource_wobx0")

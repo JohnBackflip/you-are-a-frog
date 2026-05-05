@@ -50,6 +50,7 @@ func next_dialogue(character_data : CharacterData):
 	current_character = character_data
 	timeline = current_character.timeline.dialogic_timeline
 	character.walk_in(character_data)
+	$ShopBell.play()
 	if current_character and current_character.met == false:
 		current_character.met = true
 	Dialogic.VAR.bold_color = character_data.color

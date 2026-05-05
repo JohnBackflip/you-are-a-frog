@@ -26,6 +26,9 @@ func craft() -> void:
 	potion_slot_data = SlotData.new()
 	potion_slot_data.item_data = result_potion
 	
+	if result_potion == null:
+		return
+		
 	# Consume items in potion slot (all of them for now, to change for partial recipes)
 	for index in range(mixer_data.slot_datas_ingredient.size()):
 		var slot_data = mixer_data.slot_datas_ingredient[index]

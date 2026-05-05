@@ -10,8 +10,7 @@ var player_inventory_data: InventoryData
 var mixer_data: MixerData
 var character_set: CharacterSet
 
-const POTION_DISCOVERY_SCREEN = preload("uid://v6wkfrj1f6om")
-const DAY_SHOP = preload("uid://chp1jryo073wa")
+const POTION_DISCOVERY_SCREEN = preload("res://scenes/crafting/potion_discovery_screen.tscn")
 
 
 func _ready() -> void:
@@ -56,7 +55,7 @@ func on_potion_discovered(potion: PotionData) -> void:
 
 func _on_end_night_button_pressed() -> void:
 	game_manager.day += 1
-	var day_shop = preload("uid://chp1jryo073wa").instantiate()
+	var day_shop = preload("res://scenes/shop/day_shop.tscn").instantiate()
 	crafting_interface.save_mixer_contents()
 	#day_shop.modulate.a = 0
 	get_parent().add_child(day_shop)
