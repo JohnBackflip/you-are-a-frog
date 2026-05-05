@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3qb47ie8b2g"
-path="res://.godot/imported/ingredient_pole.png-f80f2e26680a49f48caa3ac84f3d90f2.ctex"
+uid="uid://ctet7knephplq"
+path="res://.godot/imported/shelf_day.png-2559b6a818c33812a32b789285f6e4e4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ingredient_pole.png"
-dest_files=["res://.godot/imported/ingredient_pole.png-f80f2e26680a49f48caa3ac84f3d90f2.ctex"]
+source_file="res://assets/shelf_day.png"
+dest_files=["res://.godot/imported/shelf_day.png-2559b6a818c33812a32b789285f6e4e4.ctex"]
 
 [params]
 

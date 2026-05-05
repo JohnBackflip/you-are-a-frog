@@ -1,101 +1,217 @@
-[gd_scene load_steps=5 format=3 uid="uid://b2cf11pgsj20c"]
+[gd_scene load_steps=7 format=3 uid="uid://b2cf11pgsj20c"]
 
-[ext_resource type="StyleBox" uid="uid://b7mquqaqmh7yf" path="res://ui/panel_container.tres" id="1_6ij2f"]
+[ext_resource type="Texture2D" uid="uid://ctet7knephplq" path="res://assets/shelf_day.png" id="1_xhn68"]
+[ext_resource type="Texture2D" uid="uid://ckfc3uiq6kmu2" path="res://assets/shelf_night.png" id="2_hjbap"]
 [ext_resource type="PackedScene" uid="uid://bj32pp33u7ou4" path="res://scenes/crafting/slot.tscn" id="2_pbatm"]
-[ext_resource type="Script" uid="uid://daoqvnp1hwhld" path="res://scripts/ui/inventory_ui/item_description.gd" id="5_b27hk"]
+[ext_resource type="Script" uid="uid://75a44nc4a2tt" path="res://scripts/ui/inventory_ui/ingredient_inventory.gd" id="3_7nqdk"]
+[ext_resource type="Script" uid="uid://xt6o7v7dhiqt" path="res://scripts/ui/inventory_ui/potion_inventory.gd" id="4_hjbap"]
 
-[sub_resource type="GDScript" id="GDScript_0hyp3"]
-script/source = "extends PanelContainer
-class_name Inventory
+[sub_resource type="SpriteFrames" id="SpriteFrames_isfg7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_xhn68")
+}],
+"loop": true,
+"name": &"day",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_hjbap")
+}],
+"loop": true,
+"name": &"night",
+"speed": 5.0
+}]
 
-const SLOT = preload(\"uid://bj32pp33u7ou4\")
-
-@onready var item_grid: GridContainer = $VBoxContainer/MarginContainer/ItemGrid
-
-
-func set_inventory_data(inventory_data: InventoryData) -> void:
-	inventory_data.inventory_updated.connect(populate_item_grid)
-	populate_item_grid(inventory_data)
-
-
-func populate_item_grid(inventory_data: InventoryData) -> void:
-	# Clear previous / placeholder items
-	for item in item_grid.get_children():
-		item.queue_free()
-		
-	for index in inventory_data.slot_datas.size():
-		var slot_data = inventory_data.slot_datas[index]
-		var slot = SLOT.instantiate()
-		item_grid.add_child(slot)
-		
-		slot.slot_clicked.connect(inventory_data.on_slot_clicked)
-		slot.index = index
-		
-		if slot_data:
-			slot.set_slot_data(slot_data)
-"
-
-[node name="Inventory" type="PanelContainer"]
-offset_right = 40.0
-offset_bottom = 40.0
-theme_override_styles/panel = ExtResource("1_6ij2f")
-script = SubResource("GDScript_0hyp3")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_top = 8
-theme_override_constants/margin_right = 8
-theme_override_constants/margin_bottom = 8
-
-[node name="ItemGrid" type="GridContainer" parent="VBoxContainer/MarginContainer"]
-layout_mode = 2
-theme_override_constants/h_separation = 8
-theme_override_constants/v_separation = 8
-columns = 5
-
-[node name="Slot" parent="VBoxContainer/MarginContainer/ItemGrid" instance=ExtResource("2_pbatm")]
-layout_mode = 2
-
-[node name="ItemDescription" type="TabContainer" parent="VBoxContainer"]
-visible = false
-layout_mode = 2
+[node name="Inventory" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -720.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
 size_flags_vertical = 3
-current_tab = 0
-script = ExtResource("5_b27hk")
 
-[node name="Description" type="MarginContainer" parent="VBoxContainer/ItemDescription"]
-custom_minimum_size = Vector2(0, 200)
-layout_mode = 2
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_top = 8
-theme_override_constants/margin_right = 8
-theme_override_constants/margin_bottom = 8
-metadata/_tab_index = 0
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(640, 360)
+scale = Vector2(0.335, 0.335)
+sprite_frames = SubResource("SpriteFrames_isfg7")
+animation = &"night"
 
-[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/ItemDescription/Description"]
-layout_mode = 2
-theme_override_constants/line_separation = 3
-theme_override_constants/paragraph_separation = 4
-bbcode_enabled = true
-text = "Hello "
+[node name="IngredientInventory" type="Control" parent="."]
+layout_mode = 1
+anchor_left = 0.00078125
+anchor_top = 0.0375
+anchor_right = 0.7242187
+anchor_bottom = 0.17083333
+offset_top = 47.0
+offset_bottom = 137.0
+script = ExtResource("3_7nqdk")
 
-[node name="KnownRecipes" type="MarginContainer" parent="VBoxContainer/ItemDescription"]
-visible = false
-custom_minimum_size = Vector2(0, 200)
-layout_mode = 2
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_top = 8
-theme_override_constants/margin_right = 8
-theme_override_constants/margin_bottom = 8
-metadata/_tab_index = 1
+[node name="IngredientGrid" type="GridContainer" parent="IngredientInventory"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.95238096
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 60
+theme_override_constants/v_separation = 8
+columns = 6
+metadata/_edit_use_anchors_ = true
 
-[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/ItemDescription/KnownRecipes"]
+[node name="Slot" parent="IngredientInventory/IngredientGrid" instance=ExtResource("2_pbatm")]
+custom_minimum_size = Vector2(64, 80)
 layout_mode = 2
-theme_override_constants/line_separation = 3
-theme_override_constants/paragraph_separation = 4
-bbcode_enabled = true
-text = "You don't know any recipes with this ingredient... [i]yet[/i]"
+
+[node name="Slot2" parent="IngredientInventory/IngredientGrid" instance=ExtResource("2_pbatm")]
+custom_minimum_size = Vector2(64, 80)
+layout_mode = 2
+
+[node name="Slot3" parent="IngredientInventory/IngredientGrid" instance=ExtResource("2_pbatm")]
+custom_minimum_size = Vector2(64, 80)
+layout_mode = 2
+
+[node name="Slot4" parent="IngredientInventory/IngredientGrid" instance=ExtResource("2_pbatm")]
+custom_minimum_size = Vector2(64, 80)
+layout_mode = 2
+
+[node name="Slot5" parent="IngredientInventory/IngredientGrid" instance=ExtResource("2_pbatm")]
+custom_minimum_size = Vector2(64, 80)
+layout_mode = 2
+
+[node name="Slot6" parent="IngredientInventory/IngredientGrid" instance=ExtResource("2_pbatm")]
+custom_minimum_size = Vector2(64, 80)
+layout_mode = 2
+
+[node name="PotionInventory" type="Control" parent="."]
+layout_mode = 1
+anchor_left = 0.731
+anchor_top = 0.06944445
+anchor_right = 0.98515624
+anchor_bottom = 0.06944445
+offset_left = 0.32000732
+offset_top = 52.0
+offset_bottom = 525.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_hjbap")
+
+[node name="PotionGrid" type="GridContainer" parent="PotionInventory"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -155.5
+offset_top = -227.5
+offset_right = 157.5
+offset_bottom = 337.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 17
+theme_override_constants/v_separation = 15
+columns = 4
+
+[node name="Slot" parent="PotionInventory/PotionGrid" instance=ExtResource("2_pbatm")]
+custom_minimum_size = Vector2(64, 80)
+layout_mode = 2
+
+[node name="Slot2" parent="PotionInventory/PotionGrid" instance=ExtResource("2_pbatm")]
+custom_minimum_size = Vector2(64, 80)
+layout_mode = 2
+
+[node name="Slot3" parent="PotionInventory/PotionGrid" instance=ExtResource("2_pbatm")]
+custom_minimum_size = Vector2(64, 80)
+layout_mode = 2
+
+[node name="Slot4" parent="PotionInventory/PotionGrid" instance=ExtResource("2_pbatm")]
+custom_minimum_size = Vector2(64, 80)
+layout_mode = 2
+
+[node name="Slot5" parent="PotionInventory/PotionGrid" instance=ExtResource("2_pbatm")]
+custom_minimum_size = Vector2(64, 80)
+layout_mode = 2
+
+[node name="Slot6" parent="PotionInventory/PotionGrid" instance=ExtResource("2_pbatm")]
+custom_minimum_size = Vector2(64, 80)
+layout_mode = 2
+
+[node name="Slot7" parent="PotionInventory/PotionGrid" instance=ExtResource("2_pbatm")]
+custom_minimum_size = Vector2(64, 80)
+layout_mode = 2
+
+[node name="Slot8" parent="PotionInventory/PotionGrid" instance=ExtResource("2_pbatm")]
+custom_minimum_size = Vector2(64, 80)
+layout_mode = 2
+
+[node name="Slot9" parent="PotionInventory/PotionGrid" instance=ExtResource("2_pbatm")]
+custom_minimum_size = Vector2(64, 80)
+layout_mode = 2
+
+[node name="Slot10" parent="PotionInventory/PotionGrid" instance=ExtResource("2_pbatm")]
+custom_minimum_size = Vector2(64, 80)
+layout_mode = 2
+
+[node name="Slot11" parent="PotionInventory/PotionGrid" instance=ExtResource("2_pbatm")]
+custom_minimum_size = Vector2(64, 80)
+layout_mode = 2
+
+[node name="Slot12" parent="PotionInventory/PotionGrid" instance=ExtResource("2_pbatm")]
+custom_minimum_size = Vector2(64, 80)
+layout_mode = 2
+
+[node name="Slot13" parent="PotionInventory/PotionGrid" instance=ExtResource("2_pbatm")]
+custom_minimum_size = Vector2(64, 80)
+layout_mode = 2
+
+[node name="Slot14" parent="PotionInventory/PotionGrid" instance=ExtResource("2_pbatm")]
+custom_minimum_size = Vector2(64, 80)
+layout_mode = 2
+
+[node name="Slot15" parent="PotionInventory/PotionGrid" instance=ExtResource("2_pbatm")]
+custom_minimum_size = Vector2(64, 80)
+layout_mode = 2
+
+[node name="Slot16" parent="PotionInventory/PotionGrid" instance=ExtResource("2_pbatm")]
+custom_minimum_size = Vector2(64, 80)
+layout_mode = 2
+
+[node name="Slot17" parent="PotionInventory/PotionGrid" instance=ExtResource("2_pbatm")]
+custom_minimum_size = Vector2(64, 80)
+layout_mode = 2
+
+[node name="Slot18" parent="PotionInventory/PotionGrid" instance=ExtResource("2_pbatm")]
+custom_minimum_size = Vector2(64, 80)
+layout_mode = 2
+
+[node name="Slot19" parent="PotionInventory/PotionGrid" instance=ExtResource("2_pbatm")]
+custom_minimum_size = Vector2(64, 80)
+layout_mode = 2
+
+[node name="Slot20" parent="PotionInventory/PotionGrid" instance=ExtResource("2_pbatm")]
+custom_minimum_size = Vector2(64, 80)
+layout_mode = 2
+
+[node name="Slot21" parent="PotionInventory/PotionGrid" instance=ExtResource("2_pbatm")]
+custom_minimum_size = Vector2(64, 80)
+layout_mode = 2
+
+[node name="Slot22" parent="PotionInventory/PotionGrid" instance=ExtResource("2_pbatm")]
+custom_minimum_size = Vector2(64, 80)
+layout_mode = 2
+
+[node name="Slot23" parent="PotionInventory/PotionGrid" instance=ExtResource("2_pbatm")]
+custom_minimum_size = Vector2(64, 80)
+layout_mode = 2
+
+[node name="Slot24" parent="PotionInventory/PotionGrid" instance=ExtResource("2_pbatm")]
+custom_minimum_size = Vector2(64, 80)
+layout_mode = 2

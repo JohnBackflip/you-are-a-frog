@@ -1,4 +1,4 @@
-extends TextureRect
+extends Control
 class_name Inventory
 
 const SLOT = preload("uid://bj32pp33u7ou4")

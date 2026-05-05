@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://chp1jryo073wa"]
+[gd_scene load_steps=17 format=3 uid="uid://chp1jryo073wa"]
 
 [ext_resource type="Script" uid="uid://d4im1yu4arort" path="res://scripts/character/dialogue_manager.gd" id="1_5uuf7"]
 [ext_resource type="Texture2D" uid="uid://baie5fkg2tqqm" path="res://assets/shop_bg_day.png" id="2_y5p17"]
@@ -6,13 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://ctkfngs64ierh" path="res://assets/table.png" id="4_dip7t"]
 [ext_resource type="Texture2D" uid="uid://b5d05pcx3qonl" path="res://assets/cauldron.png" id="5_dip7t"]
 [ext_resource type="PackedScene" uid="uid://bdlxaluranoch" path="res://scenes/diary/diary.tscn" id="5_wmuix"]
-[ext_resource type="Texture2D" uid="uid://b0i1pwq3bq2o4" path="res://assets/cropped_images/desk_potion1.tres" id="6_s8gqh"]
 [ext_resource type="Texture2D" uid="uid://by5ccgowu40ny" path="res://assets/cropped_images/desk_potion3.tres" id="8_u1556"]
 [ext_resource type="Texture2D" uid="uid://q356ulxxi6oe" path="res://assets/cropped_images/desk_potion4.tres" id="9_3v3vx"]
 [ext_resource type="PackedScene" uid="uid://bblhqi2jsidsi" path="res://scenes/crafting/mixer.tscn" id="11_wmuix"]
+[ext_resource type="PackedScene" uid="uid://b2cf11pgsj20c" path="res://scenes/crafting/inventory.tscn" id="12_ksefx"]
 [ext_resource type="Script" uid="uid://bb2be4dbm4lwr" path="res://scripts/orders/order_interface.gd" id="12_u1556"]
-[ext_resource type="PackedScene" uid="uid://bx8g66wwhuvfl" path="res://scenes/crafting/potion_inventory.tscn" id="13_u1556"]
-[ext_resource type="PackedScene" uid="uid://bilbwsxdaa7w2" path="res://scenes/crafting/ingredient_inventory.tscn" id="13_wmuix"]
 [ext_resource type="PackedScene" uid="uid://bj32pp33u7ou4" path="res://scenes/crafting/slot.tscn" id="14_3v3vx"]
 [ext_resource type="Script" uid="uid://daoqvnp1hwhld" path="res://scripts/ui/inventory_ui/item_description.gd" id="15_ksefx"]
 [ext_resource type="PackedScene" uid="uid://ds82c7crgovni" path="res://scenes/diary/diary_ui.tscn" id="15_s8gqh"]
@@ -47,7 +45,7 @@ texture = ExtResource("5_dip7t")
 metadata/_edit_lock_ = true
 
 [node name="Diary" parent="." groups=["diary"] instance=ExtResource("5_wmuix")]
-position = Vector2(848, 561)
+position = Vector2(813.38, 561)
 scale = Vector2(0.17, 0.17)
 metadata/_edit_group_ = true
 
@@ -57,22 +55,16 @@ position = Vector2(83, 543)
 [node name="DeskPotions" type="Node2D" parent="."]
 
 [node name="DeskPotion1" type="Sprite2D" parent="DeskPotions"]
-position = Vector2(400, 530)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("6_s8gqh")
-
-[node name="DeskPotion2" type="Sprite2D" parent="DeskPotions"]
 position = Vector2(208, 526)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("8_u1556")
 
-[node name="DeskPotion3" type="Sprite2D" parent="DeskPotions"]
+[node name="DeskPotion2" type="Sprite2D" parent="DeskPotions"]
 position = Vector2(306, 577)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("9_3v3vx")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = 10
 
 [node name="OrderInterface" type="Control" parent="CanvasLayer"]
 layout_mode = 3
@@ -85,28 +77,8 @@ mouse_filter = 2
 script = ExtResource("12_u1556")
 metadata/_edit_lock_ = true
 
-[node name="IngredientInventory" parent="CanvasLayer/OrderInterface" instance=ExtResource("13_wmuix")]
-layout_mode = 0
-anchors_preset = 0
-anchor_right = 0.0
-offset_left = 1.0
-offset_top = 27.0
-offset_right = 1023.0
-offset_bottom = 123.0
-grow_horizontal = 1
-
-[node name="PotionInventory" parent="CanvasLayer/OrderInterface" instance=ExtResource("13_u1556")]
-layout_mode = 0
-anchors_preset = 0
-anchor_left = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 962.0
-offset_top = 0.0
-offset_right = 1280.0
-offset_bottom = 720.0
-grow_horizontal = 1
-grow_vertical = 1
+[node name="Inventory" parent="CanvasLayer/OrderInterface" instance=ExtResource("12_ksefx")]
+layout_mode = 1
 
 [node name="Mixer" parent="CanvasLayer/OrderInterface" instance=ExtResource("11_wmuix")]
 visible = false
@@ -128,9 +100,9 @@ mouse_filter = 2
 [node name="ItemDescription" type="Control" parent="CanvasLayer/OrderInterface"]
 visible = false
 anchors_preset = 0
-offset_left = 733.0
+offset_left = 692.0
 offset_top = 77.0
-offset_right = 969.0
+offset_right = 928.0
 offset_bottom = 331.0
 script = ExtResource("15_ksefx")
 metadata/_edit_group_ = true

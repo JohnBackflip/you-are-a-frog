@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://klb0k74rtddr"
-path="res://.godot/imported/frog_companion.png-4a0722f6461b8beaa5a75edcb16f2f3d.ctex"
+uid="uid://ckfc3uiq6kmu2"
+path="res://.godot/imported/shelf_night.png-2ff17ce3414f5c9fb1adad677073149d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/frog_companion.png"
-dest_files=["res://.godot/imported/frog_companion.png-4a0722f6461b8beaa5a75edcb16f2f3d.ctex"]
+source_file="res://assets/shelf_night.png"
+dest_files=["res://.godot/imported/shelf_night.png-2ff17ce3414f5c9fb1adad677073149d.ctex"]
 
 [params]
 
