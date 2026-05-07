@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://kdpvn2x2u522" path="res://scripts/plot/ending_points.gd" id="5_if4fk"]
 [ext_resource type="Resource" uid="uid://cj8s3i5f3o70i" path="res://resources/potions/cheesification_potion.tres" id="5_pigmw"]
 [ext_resource type="Resource" uid="uid://drfkeiv5071ja" path="res://resources/plot/rebel_ending.tres" id="6_b2mbr"]
-[ext_resource type="Resource" uid="uid://bqo5lgwisi2t5" path="res://addons/dialogic/Timelines/Mortimer_1.dtl" id="7_6q7ju"]
+[ext_resource type="Resource" path="res://addons/dialogic/Timelines/Mortimer_1.dtl" id="7_6q7ju"]
 [ext_resource type="Resource" uid="uid://3wy42pwphco2" path="res://resources/calendar/timelines/Mortimer_react_cheese.tres" id="7_pmm6s"]
 [ext_resource type="Resource" uid="uid://ddqacanldsq8j" path="res://resources/potions/housification_potion.tres" id="8_1lslh"]
 [ext_resource type="Resource" uid="uid://50geupsbydl2" path="res://resources/calendar/timelines/Mortimer_react_house.tres" id="9_1lslh"]

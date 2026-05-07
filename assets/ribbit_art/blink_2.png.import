@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1ixbkb36e0iy"
-path="res://.godot/imported/ribbit_house.png-5c36b8767a9162a1e2ba8ed45e97eb99.ctex"
+uid="uid://mvpl33tbtb08"
+path="res://.godot/imported/blink_2.png-827c07ba13cdf68edf2a6c44e6f5121d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ribbit_art/ribbit_house.png"
-dest_files=["res://.godot/imported/ribbit_house.png-5c36b8767a9162a1e2ba8ed45e97eb99.ctex"]
+source_file="res://assets/ribbit_art/blink_2.png"
+dest_files=["res://.godot/imported/blink_2.png-827c07ba13cdf68edf2a6c44e6f5121d.ctex"]
 
 [params]
 

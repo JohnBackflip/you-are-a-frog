@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qkw0564dgagi"
-path="res://.godot/imported/frog_companion_reactions.png-e2fab0124407256c2fbc094fa2724822.ctex"
+uid="uid://wul3mtjoa6l5"
+path="res://.godot/imported/digusted.png-883714d6045dc2fb3af89b6f830c5946.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ribbit_art/frog_companion_reactions.png"
-dest_files=["res://.godot/imported/frog_companion_reactions.png-e2fab0124407256c2fbc094fa2724822.ctex"]
+source_file="res://assets/ribbit_art/digusted.png"
+dest_files=["res://.godot/imported/digusted.png-883714d6045dc2fb3af89b6f830c5946.ctex"]
 
 [params]
 
