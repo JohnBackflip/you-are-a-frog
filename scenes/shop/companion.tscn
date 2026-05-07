@@ -1,8 +1,8 @@
 [gd_scene load_steps=15 format=3 uid="uid://bno15tnqsojkj"]
 
 [ext_resource type="Script" uid="uid://bdbu6rnl7qtth" path="res://scripts/companion.gd" id="1_y6mwj"]
-[ext_resource type="Texture2D" uid="uid://busmn0cwgvioc" path="res://assets/frog_idle.png" id="2_yqa1o"]
-[ext_resource type="Texture2D" uid="uid://qkw0564dgagi" path="res://assets/frog_companion_reactions.png" id="3_eol6h"]
+[ext_resource type="Texture2D" uid="uid://busmn0cwgvioc" path="res://assets/ribbit_art/frog_idle.png" id="2_yqa1o"]
+[ext_resource type="Texture2D" uid="uid://qkw0564dgagi" path="res://assets/ribbit_art/frog_companion_reactions.png" id="3_eol6h"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yqa1o"]
 atlas = ExtResource("2_yqa1o")
@@ -107,7 +107,6 @@ script = ExtResource("1_y6mwj")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.23, 0.23)
 sprite_frames = SubResource("SpriteFrames_mqvd2")
-animation = &"drowsy"
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

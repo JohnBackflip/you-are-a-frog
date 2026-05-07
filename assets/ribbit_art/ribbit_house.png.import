@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qkw0564dgagi"
-path="res://.godot/imported/frog_companion_reactions.png-9320a38be6246e9ad67d26e69b8bd51b.ctex"
+uid="uid://1ixbkb36e0iy"
+path="res://.godot/imported/ribbit_house.png-5c36b8767a9162a1e2ba8ed45e97eb99.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/frog_companion_reactions.png"
-dest_files=["res://.godot/imported/frog_companion_reactions.png-9320a38be6246e9ad67d26e69b8bd51b.ctex"]
+source_file="res://assets/ribbit_art/ribbit_house.png"
+dest_files=["res://.godot/imported/ribbit_house.png-5c36b8767a9162a1e2ba8ed45e97eb99.ctex"]
 
 [params]
 

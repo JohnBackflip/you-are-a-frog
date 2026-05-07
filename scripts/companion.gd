@@ -10,19 +10,11 @@ func _ready() -> void:
 
 
 func taste_potion(potion: PotionData) -> void:
-	var primary_property = potion.primary_property
-	if primary_property:
-		react(primary_property)
+	react(potion)
 
 
-func react(primary_property: IngredientProperty) -> void:
-	var effect = primary_property.name
-	if effect == "Poisonous":
-		animated_sprite_2d.play("disgusted")
-	elif effect == "Energizing" or effect == "Medical" or effect == "Euphoric":
-		animated_sprite_2d.play("happy")
-	elif effect == "Somniferous":
-		animated_sprite_2d.play("drowsy")
+func react(potion: PotionData) -> void:
+	# Add reactions
 	var timer = get_tree().create_timer(3.0)
 	await timer.timeout
 	play_default_animation()

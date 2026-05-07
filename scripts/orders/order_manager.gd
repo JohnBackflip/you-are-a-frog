@@ -1,34 +1,12 @@
 extends Resource
 class_name OrderManager
 
-@export_dir var properties_folder: String = "res://resources/ingredient_properties"
 @export_dir var potions_folder: String = "res://resources/potions"
 
 var orders : Array[OrderData]
 
-var properties : Dictionary
 var potions : Dictionary
 
-func init_properties() -> void:
-	properties.clear()
-	var dir = DirAccess.open(properties_folder)
-	
-	if dir:
-		dir.list_dir_begin()
-		var file_name = dir.get_next()
-		
-		while file_name != "":
-			# Only load files ending in .tres or .res
-			if not dir.current_is_dir() and (file_name.ends_with(".tres") or file_name.ends_with(".res")):
-				var property = load(properties_folder + "/" + file_name)
-				if property is IngredientProperty:
-					properties.set(file_name.get_slice(".tres", 0), property)
-			
-			file_name = dir.get_next()
-		
-		print("Loaded %d properties from folder!" % properties.size())
-	else:
-		push_error("Could not open properties folder path: " + properties_folder)
 
 func init_potions() -> void:
 	potions.clear()
@@ -54,7 +32,6 @@ func init_potions() -> void:
 func initialize() -> void:
 	game_events.new_order.connect(on_new_order)
 	# Create dictionaries for properties and potions
-	init_properties()
 	init_potions()
 
 # Gets called when the order is placed, prepares the order

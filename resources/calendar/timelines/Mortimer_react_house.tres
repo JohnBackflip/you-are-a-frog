@@ -1,6 +1,6 @@
-[gd_resource type="Resource" script_class="TimelineData" load_steps=8 format=3 uid="uid://b5utwv5aa16dm"]
+[gd_resource type="Resource" script_class="TimelineData" load_steps=8 format=3 uid="uid://50geupsbydl2"]
 
-[ext_resource type="Resource" uid="uid://bhprq1tof0xbl" path="res://addons/dialogic/Timelines/Mortimer_2_house.dtl" id="1_n6hax"]
+[ext_resource type="Resource" path="res://addons/dialogic/Timelines/Mortimer_2_house.dtl" id="1_n6hax"]
 [ext_resource type="Script" uid="uid://c7frnt306tx28" path="res://scripts/items/potions/potion_data.gd" id="2_faoqm"]
 [ext_resource type="Script" uid="uid://dbjypilgem226" path="res://scripts/plot/potion_outcome.gd" id="3_0br7j"]
 [ext_resource type="Resource" uid="uid://ddqacanldsq8j" path="res://resources/potions/housification_potion.tres" id="5_n6hax"]
