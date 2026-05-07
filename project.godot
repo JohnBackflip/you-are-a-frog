@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="You're a frog?"
-run/main_scene="uid://0yo5kafitfqt"
+run/main_scene="uid://bkwkuepi4i5cs"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -24,12 +24,17 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
+"Karin": "res://addons/dialogic/Characters/Karin.dch",
 "Mortimer": "res://addons/dialogic/Characters/Mortimer.dch",
-"NPChilde": "res://addons/dialogic/Characters/NPChilde.dch"
+"NPChilde": "res://addons/dialogic/Characters/NPChilde.dch",
+"npchilde": "res://addons/dialogic/Characters/npchilde.dch"
 }
 directories/dtl_directory={
-"Mortimer": "res://addons/dialogic/Timelines/Mortimer_0.dtl",
-"N.P. Childe_0": "res://addons/dialogic/Timelines/N.P. Childe_0.dtl"
+"Mortimer_0": "res://addons/dialogic/Timelines/Mortimer_0.dtl",
+"Mortimer_1": "res://addons/dialogic/Timelines/Mortimer_1.dtl",
+"Mortimer_2_cheese": "res://addons/dialogic/Timelines/Mortimer_2_cheese.dtl",
+"Mortimer_2_clean": "res://addons/dialogic/Timelines/Mortimer_2_clean.dtl",
+"Mortimer_2_house": "res://addons/dialogic/Timelines/Mortimer_2_house.dtl"
 }
 layout/style_directory={
 "": "res://addons/dialogic/Styles/style.tres",
@@ -37,8 +42,10 @@ layout/style_directory={
 }
 variables={
 "bold_color": "8e91f6",
-"potion_deadline": "",
-"potion_use": ""
+"deadline": 1,
+"feedback": "",
+"potion_given": "",
+"request": ""
 }
 layout/style_list=["res://addons/dialogic/Styles/style.tres"]
 layout/default_style="res://addons/dialogic/Styles/style.tres"
@@ -75,6 +82,7 @@ audio/channel_defaults={
 }
 }
 glossary/default_case_sensitive=true
+extensions_folder="res://addons/dialogic_additions"
 
 [display]
 
@@ -90,6 +98,7 @@ enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 [global_group]
 
 property_bar="The colour part in the ratio chart"
+diary=""
 
 [gui]
 

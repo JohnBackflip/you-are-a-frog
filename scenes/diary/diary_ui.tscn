@@ -1,0 +1,253 @@
+[gd_scene load_steps=17 format=3 uid="uid://ds82c7crgovni"]
+
+[ext_resource type="Script" uid="uid://cdpht5w7hhgb1" path="res://scripts/diary/diary_ui.gd" id="1_j4lj5"]
+[ext_resource type="PackedScene" uid="uid://ds0k76ll33rf6" path="res://scenes/diary/diary_orders_page.tscn" id="1_jilsl"]
+[ext_resource type="Script" uid="uid://7mnecywhklei" path="res://scripts/ui/bookmark.gd" id="2_2bs0q"]
+[ext_resource type="Texture2D" uid="uid://cu7cylo0k5m0o" path="res://assets/diary_pages/glows.png" id="3_mr5fw"]
+[ext_resource type="PackedScene" uid="uid://bs46cpek736ru" path="res://scenes/diary/diary_characters_page.tscn" id="5_ysxg7"]
+[ext_resource type="PackedScene" uid="uid://glgregjfj5fd" path="res://scenes/diary/diary_ingredients_page.tscn" id="6_0snhv"]
+[ext_resource type="PackedScene" uid="uid://bjksw023tdqy6" path="res://scenes/diary/diary_inventory_page.tscn" id="7_podp2"]
+[ext_resource type="PackedScene" uid="uid://d2manvjo3dpis" path="res://scenes/diary/diary_potions_page.tscn" id="8_dmoih"]
+[ext_resource type="PackedScene" uid="uid://b5sdyhw2p8wqr" path="res://scenes/diary/diary_guild_page.tscn" id="8_nv0x2"]
+[ext_resource type="AudioStream" uid="uid://c3qlfnoydhnd" path="res://assets/audio/page_flip_sfx.mp3" id="9_dmoih"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2bs0q"]
+atlas = ExtResource("3_mr5fw")
+region = Rect2(78, 112, 321, 333)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ysxg7"]
+atlas = ExtResource("3_mr5fw")
+region = Rect2(531, 146, 275, 315)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mr5fw"]
+atlas = ExtResource("3_mr5fw")
+region = Rect2(976, 120, 295, 314)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gvkwb"]
+atlas = ExtResource("3_mr5fw")
+region = Rect2(1393, 147, 299, 305)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bv6bd"]
+atlas = ExtResource("3_mr5fw")
+region = Rect2(1835.8848, 147, 281.11523, 316)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ybt0g"]
+atlas = ExtResource("3_mr5fw")
+region = Rect2(2305.1165, 150, 301.88354, 312)
+
+[node name="DiaryUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_j4lj5")
+
+[node name="BackgroundOverlay" type="ColorRect" parent="."]
+self_modulate = Color(0, 0, 0, 0.5882353)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MouseBufferArea" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -546.0
+offset_top = -269.0
+offset_right = 487.0
+offset_bottom = 294.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Bookmarks" type="Control" parent="."]
+anchors_preset = 0
+mouse_filter = 2
+
+[node name="OrdersBookmark" type="Control" parent="Bookmarks"]
+anchors_preset = 0
+offset_left = 118.0
+offset_top = 148.0
+offset_right = 168.0
+offset_bottom = 191.0
+script = ExtResource("2_2bs0q")
+target_page = ExtResource("1_jilsl")
+metadata/_edit_group_ = true
+
+[node name="Glow" type="TextureRect" parent="Bookmarks/OrdersBookmark"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -28.0
+offset_top = -23.0
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("AtlasTexture_2bs0q")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CharactersBookmark" type="Control" parent="Bookmarks"]
+anchors_preset = 0
+offset_left = 118.0
+offset_top = 216.0
+offset_right = 168.0
+offset_bottom = 259.0
+script = ExtResource("2_2bs0q")
+target_page = ExtResource("5_ysxg7")
+metadata/_edit_group_ = true
+
+[node name="Glow" type="TextureRect" parent="Bookmarks/CharactersBookmark"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -28.0
+offset_top = -23.0
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("AtlasTexture_ysxg7")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="IngredientsBookmark" type="Control" parent="Bookmarks"]
+anchors_preset = 0
+offset_left = 118.0
+offset_top = 283.0
+offset_right = 168.0
+offset_bottom = 326.0
+script = ExtResource("2_2bs0q")
+target_page = ExtResource("6_0snhv")
+metadata/_edit_group_ = true
+
+[node name="Glow" type="TextureRect" parent="Bookmarks/IngredientsBookmark"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -28.0
+offset_top = -23.0
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("AtlasTexture_mr5fw")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="InventoryBookmark" type="Control" parent="Bookmarks"]
+anchors_preset = 0
+offset_left = 118.0
+offset_top = 354.0
+offset_right = 168.0
+offset_bottom = 397.0
+script = ExtResource("2_2bs0q")
+target_page = ExtResource("7_podp2")
+metadata/_edit_group_ = true
+
+[node name="Glow" type="TextureRect" parent="Bookmarks/InventoryBookmark"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -28.0
+offset_top = -23.0
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("AtlasTexture_gvkwb")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="GuildBookmark" type="Control" parent="Bookmarks"]
+anchors_preset = 0
+offset_left = 118.0
+offset_top = 426.0
+offset_right = 168.0
+offset_bottom = 469.0
+script = ExtResource("2_2bs0q")
+target_page = ExtResource("8_nv0x2")
+metadata/_edit_group_ = true
+
+[node name="Glow" type="TextureRect" parent="Bookmarks/GuildBookmark"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -28.0
+offset_top = -23.0
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("AtlasTexture_bv6bd")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PotionsBookmark" type="Control" parent="Bookmarks"]
+anchors_preset = 0
+offset_left = 118.0
+offset_top = 496.0
+offset_right = 168.0
+offset_bottom = 539.0
+script = ExtResource("2_2bs0q")
+target_page = ExtResource("8_dmoih")
+metadata/_edit_group_ = true
+
+[node name="Glow" type="TextureRect" parent="Bookmarks/PotionsBookmark"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -28.0
+offset_top = -23.0
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("AtlasTexture_ybt0g")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Page" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="DiaryOrdersPage" parent="Page" instance=ExtResource("1_jilsl")]
+layout_mode = 1
+
+[node name="AudioPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_dmoih")
+
+[connection signal="gui_input" from="BackgroundOverlay" to="." method="_on_background_overlay_gui_input"]
+[connection signal="mouse_entered" from="Bookmarks/OrdersBookmark" to="Bookmarks/OrdersBookmark" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Bookmarks/OrdersBookmark" to="Bookmarks/OrdersBookmark" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Bookmarks/CharactersBookmark" to="Bookmarks/CharactersBookmark" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Bookmarks/CharactersBookmark" to="Bookmarks/CharactersBookmark" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Bookmarks/IngredientsBookmark" to="Bookmarks/IngredientsBookmark" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Bookmarks/IngredientsBookmark" to="Bookmarks/IngredientsBookmark" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Bookmarks/InventoryBookmark" to="Bookmarks/InventoryBookmark" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Bookmarks/InventoryBookmark" to="Bookmarks/InventoryBookmark" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Bookmarks/GuildBookmark" to="Bookmarks/GuildBookmark" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Bookmarks/GuildBookmark" to="Bookmarks/GuildBookmark" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Bookmarks/PotionsBookmark" to="Bookmarks/PotionsBookmark" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Bookmarks/PotionsBookmark" to="Bookmarks/PotionsBookmark" method="_on_mouse_exited"]

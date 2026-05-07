@@ -1,0 +1,128 @@
+[gd_scene load_steps=9 format=3 uid="uid://bkwkuepi4i5cs"]
+
+[ext_resource type="Script" uid="uid://cfvesbpumlkg1" path="res://scripts/ui/title_screen.gd" id="1_cs5ya"]
+[ext_resource type="Texture2D" uid="uid://da1hf6oukdqme" path="res://assets/shop_bg_night.png" id="2_mykxm"]
+[ext_resource type="Texture2D" uid="uid://dv74yr6bht13w" path="res://assets/title_white.png" id="3_tklts"]
+[ext_resource type="Texture2D" uid="uid://baie5fkg2tqqm" path="res://assets/shop_bg_day.png" id="4_u26n3"]
+[ext_resource type="Texture2D" uid="uid://chybxfxcknmrc" path="res://assets/title_black.png" id="5_ib7db"]
+[ext_resource type="StyleBox" uid="uid://uvag3gqxkqnw" path="res://ui/main_button_normal.tres" id="6_frs5l"]
+[ext_resource type="StyleBox" uid="uid://dr3nf5133wxk5" path="res://ui/main_button_pressed.tres" id="7_mynnq"]
+[ext_resource type="StyleBox" uid="uid://cyvt5jwt00q4r" path="res://ui/main_button_hovered.tres" id="8_e8tpv"]
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cs5ya")
+
+[node name="NightMenu" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="NightMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_mykxm")
+expand_mode = 1
+
+[node name="Title" type="TextureRect" parent="NightMenu"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -350.0
+offset_right = 350.0
+offset_bottom = 430.0
+grow_horizontal = 2
+texture = ExtResource("3_tklts")
+expand_mode = 1
+
+[node name="DayMenu" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="DayMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_u26n3")
+expand_mode = 1
+
+[node name="Title" type="TextureRect" parent="DayMenu"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -350.0
+offset_right = 350.0
+offset_bottom = 430.0
+grow_horizontal = 2
+texture = ExtResource("5_ib7db")
+expand_mode = 1
+
+[node name="MenuButtons" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = 55.0
+offset_right = 90.0
+offset_bottom = 278.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="StartButton" type="Button" parent="MenuButtons"]
+custom_minimum_size = Vector2(180, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Start"
+
+[node name="SettingsButton" type="Button" parent="MenuButtons"]
+custom_minimum_size = Vector2(180, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = ExtResource("6_frs5l")
+theme_override_styles/pressed = ExtResource("7_mynnq")
+theme_override_styles/hover = ExtResource("8_e8tpv")
+text = "Settings"
+
+[node name="QuitButton" type="Button" parent="MenuButtons"]
+custom_minimum_size = Vector2(180, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = ExtResource("6_frs5l")
+theme_override_styles/pressed = ExtResource("7_mynnq")
+theme_override_styles/hover = ExtResource("8_e8tpv")
+text = "Quit"
+
+[connection signal="pressed" from="MenuButtons/StartButton" to="." method="_on_start_button_pressed"]

@@ -1,41 +1,31 @@
 extends Node2D
 
-signal finished_walking(timeline : String, deadline : String)
-signal finished_talking()
+signal finished_walking()
+signal character_clicked()
 
 @onready var step : AnimationPlayer = $CharacterStep
 @onready var walk : AnimationPlayer = $CharacterWalk
 @onready var leave_animation  : AnimationPlayer = $CharacterLeave
 @onready var character : Sprite2D = $"Character"
 
-var timeline : String
-var timelines_dir : String
-
-func _ready() -> void:
-	Dialogic.signal_event.connect(DialogicSignal)
-
-func initialize_char (timeline_dir : String):
-	timelines_dir = timeline_dir
-
 # Prepares a character to walk in, and "loads" the dialogue that will happen
-func walk_in(character_data : CharacterData, index_timeline : int):
-	step.play("RESET")
-	walk.play("RESET")
+func walk_in(character_data : CharacterData):
 	leave_animation.play("RESET")
-	character.flip_h = true
-	timeline = timelines_dir + "/" + character_data.name + "_" + str(index_timeline) + ".dtl"
 	character.texture = character_data.art
-	Dialogic.VAR.bold_color = character_data.color
+	character.scale = Vector2(character_data.scale, character_data.scale)
 	
 	walk.play("character_walk")
 	step.play("character_step")
 
 func _on_character_walk_animation_finished(_anim_name):
 	step.stop(true)
-	character.flip_h = false
-	finished_walking.emit(timeline, Dialogic.VAR.potion_deadline)
+	finished_walking.emit()
 
-func DialogicSignal(arg : String):
-	if (arg == "leave"):
-		leave_animation.play("leave")
-		finished_talking.emit()
+func on_finished_talking ():
+	leave_animation.play("leave")
+
+
+func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.is_pressed():
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			character_clicked.emit()

@@ -1,0 +1,17 @@
+extends Resource
+class_name OrderData
+
+var customer: CharacterData
+var request: String
+var deadline: int
+var notes: String
+var fulfilled: bool
+
+# TODO: Potion system still not fully decided, this is kept here for legacy purposes rn
+# Use properties for general requests, otherwise use potions for more specific requests 
+var desired_potions: Array[PotionData]
+# Potions or properties that lead to rly bad results
+var undesired_potions: Array[PotionData]
+
+func get_customer_name() -> String:
+	return customer.name

@@ -1,0 +1,7 @@
+if {potion_given} == "":
+	Mortimer: I am back to collect my potion! To clean up my home.
+	[signal arg="wait_potion"]
+	[end_timeline]
+
+Mortimer: {feedback}
+[signal arg="leave_done"]

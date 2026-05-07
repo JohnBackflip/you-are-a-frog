@@ -1,0 +1,124 @@
+[gd_scene load_steps=6 format=3 uid="uid://bs46cpek736ru"]
+
+[ext_resource type="Script" uid="uid://cdjankra13ytb" path="res://scripts/diary/diary_characters_page.gd" id="1_3l1df"]
+[ext_resource type="Texture2D" uid="uid://d2hmns1lhsnxs" path="res://assets/diary_pages/diary_characters_page.png" id="2_3l1df"]
+[ext_resource type="Resource" uid="uid://clugad002na4t" path="res://resources/characters/character_set.tres" id="2_ud3ph"]
+[ext_resource type="Texture2D" uid="uid://bdt6wm5onesju" path="res://assets/mortimer_icon.png" id="4_of5fc"]
+[ext_resource type="PackedScene" uid="uid://nxekamnq3sgg" path="res://scenes/diary/character_info_popup.tscn" id="5_ycfye"]
+
+[node name="DiaryCharactersPage" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_3l1df")
+character_set = ExtResource("2_ud3ph")
+
+[node name="BookTexture" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_3l1df")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Characters" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CharacterIcon" type="TextureRect" parent="Characters"]
+layout_mode = 0
+offset_left = -349.0
+offset_top = -144.0
+offset_right = -269.0
+offset_bottom = -54.0
+texture = ExtResource("4_of5fc")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CharacterIcon2" type="TextureRect" parent="Characters"]
+layout_mode = 0
+offset_left = -170.0
+offset_top = -144.0
+offset_right = -90.0
+offset_bottom = -54.0
+texture = ExtResource("4_of5fc")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CharacterIcon3" type="TextureRect" parent="Characters"]
+layout_mode = 0
+offset_left = -349.0
+offset_top = 39.0
+offset_right = -269.0
+offset_bottom = 129.0
+texture = ExtResource("4_of5fc")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CharacterIcon4" type="TextureRect" parent="Characters"]
+layout_mode = 0
+offset_left = -170.0
+offset_top = 39.0
+offset_right = -90.0
+offset_bottom = 129.0
+texture = ExtResource("4_of5fc")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CharacterIcon5" type="TextureRect" parent="Characters"]
+layout_mode = 0
+offset_left = 91.0
+offset_top = -144.0
+offset_right = 171.0
+offset_bottom = -54.0
+texture = ExtResource("4_of5fc")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CharacterIcon6" type="TextureRect" parent="Characters"]
+layout_mode = 0
+offset_left = 270.0
+offset_top = -144.0
+offset_right = 350.0
+offset_bottom = -54.0
+texture = ExtResource("4_of5fc")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CharacterIcon7" type="TextureRect" parent="Characters"]
+layout_mode = 0
+offset_left = 91.0
+offset_top = 39.0
+offset_right = 171.0
+offset_bottom = 129.0
+texture = ExtResource("4_of5fc")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CharacterIcon8" type="TextureRect" parent="Characters"]
+layout_mode = 0
+offset_left = 270.0
+offset_top = 39.0
+offset_right = 350.0
+offset_bottom = 129.0
+texture = ExtResource("4_of5fc")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CharacterInfoPopup" parent="." instance=ExtResource("5_ycfye")]
+visible = false
+layout_mode = 1

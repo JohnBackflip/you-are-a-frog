@@ -1,0 +1,207 @@
+[gd_scene load_steps=9 format=3 uid="uid://nxekamnq3sgg"]
+
+[ext_resource type="Script" uid="uid://cqo43vr3wwc5w" path="res://scripts/diary/character_info_popup.gd" id="1_wew4s"]
+[ext_resource type="Texture2D" uid="uid://1mc6scoam2ck" path="res://assets/cropped_images/ui_panel_box.tres" id="2_oynbg"]
+[ext_resource type="Texture2D" uid="uid://gktapicha3cy" path="res://assets/mortimer.png" id="3_ndog5"]
+[ext_resource type="FontFile" uid="uid://tsldiu1ssl4" path="res://assets/fonts/DeliciousHandrawn-Regular.ttf" id="4_oy0pr"]
+[ext_resource type="Script" uid="uid://ftiiisbbd7bp" path="res://scripts/ui/scroll_container.gd" id="5_ndog5"]
+[ext_resource type="Texture2D" uid="uid://cb16b83245tw6" path="res://assets/cropped_images/ui_arrow_next.tres" id="6_oy0pr"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bb3w7"]
+texture = ExtResource("2_oynbg")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bb3w7"]
+bg_color = Color(0.5322934, 0.4751798, 0.41816086, 0.6666667)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="CharacterInfoPopup" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_wew4s")
+
+[node name="BackgroundOverlay" type="ColorRect" parent="."]
+self_modulate = Color(0, 0, 0, 0.5882353)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -176.5
+offset_top = -228.5
+offset_right = 176.5
+offset_bottom = 228.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_bb3w7")
+
+[node name="PanelContainer" type="PanelContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 19.5
+offset_top = 57.5
+offset_right = 169.5
+offset_bottom = 207.5
+theme_override_styles/panel = SubResource("StyleBoxFlat_bb3w7")
+metadata/_edit_group_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="CharacterArt" type="TextureRect" parent="Panel/PanelContainer/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("3_ndog5")
+expand_mode = 1
+stretch_mode = 5
+flip_h = true
+
+[node name="InfoLabel" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -53.5
+offset_top = 20.5
+offset_right = 53.5
+offset_bottom = 48.5
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("4_oy0pr")
+theme_override_font_sizes/font_size = 20
+text = "CHARACTER INFO"
+horizontal_alignment = 1
+
+[node name="InfoContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 186.5
+offset_top = 57.5
+offset_right = 333.5
+offset_bottom = 227.5
+theme_override_constants/separation = 2
+
+[node name="NameLabel" type="Label" parent="Panel/InfoContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("4_oy0pr")
+theme_override_font_sizes/font_size = 20
+text = "Name: "
+vertical_alignment = 1
+
+[node name="CharacterName" type="Label" parent="Panel/InfoContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 0.14901961)
+theme_override_fonts/font = ExtResource("4_oy0pr")
+theme_override_font_sizes/font_size = 16
+text = "Mortimer"
+vertical_alignment = 1
+
+[node name="BlankLine" type="Label" parent="Panel/InfoContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_oy0pr")
+theme_override_font_sizes/font_size = 12
+vertical_alignment = 1
+
+[node name="FactionLabel" type="Label" parent="Panel/InfoContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("4_oy0pr")
+theme_override_font_sizes/font_size = 20
+text = "Faction:"
+vertical_alignment = 1
+
+[node name="CharacterFaction" type="Label" parent="Panel/InfoContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 0.14901961)
+theme_override_fonts/font = ExtResource("4_oy0pr")
+text = "Underground"
+vertical_alignment = 1
+
+[node name="Background" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -53.5
+offset_top = -8.0
+offset_right = 53.5
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("4_oy0pr")
+theme_override_font_sizes/font_size = 20
+text = "BACKGROUND"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 20.5
+offset_top = 250.5
+offset_right = 332.5
+offset_bottom = 412.5
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+script = ExtResource("5_ndog5")
+
+[node name="CharacterBackground" type="Label" parent="Panel/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 0.14901961)
+theme_override_fonts/font = ExtResource("4_oy0pr")
+theme_override_font_sizes/font_size = 16
+text = "Mortimer lived his entire life working for different criminal organizations in the city. What many would consider illegal and immoral, Mortimer sees it as an average Tuesday. It’s a difficult life, but after recently taking over the lead criminal gang in the city, Mortimer is desperate to step up and do a good job to lead his new group, and all the people he suddenly finds that are depending on him for survival."
+autowrap_mode = 3
+
+[node name="ScrollArrow" type="TextureRect" parent="Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -42.5
+offset_right = 27.736511
+offset_bottom = -21.027222
+grow_horizontal = 2
+grow_vertical = 0
+rotation = 1.5707964
+texture = ExtResource("6_oy0pr")
+expand_mode = 1
+stretch_mode = 5
+
+[connection signal="gui_input" from="BackgroundOverlay" to="." method="_on_background_overlay_gui_input"]

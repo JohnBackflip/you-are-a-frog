@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="PlotManager" load_steps=2 format=3 uid="uid://cdlf1dr47tb32"]
+
+[ext_resource type="Script" uid="uid://xfy5g420i7g8" path="res://scripts/plot/plot_manager.gd" id="1_mt1oe"]
+
+[resource]
+script = ExtResource("1_mt1oe")

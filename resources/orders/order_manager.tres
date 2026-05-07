@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="OrderManager" load_steps=2 format=3 uid="uid://bf2vvhq8k0x1s"]
+
+[ext_resource type="Script" uid="uid://dppti1uanasu1" path="res://scripts/orders/order_manager.gd" id="1_l0xp5"]
+
+[resource]
+script = ExtResource("1_l0xp5")

@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmsiq3cfhlark"]
+
+[ext_resource type="Texture2D" uid="uid://cfwhanqe6jifd" path="res://assets/blank.png" id="1_ep5rh"]
+[ext_resource type="Script" uid="uid://b26haksljqgns" path="res://scripts/ui/loading_screen.gd" id="1_hprjd"]
+
+[node name="LoadingScreen" type="Control"]
+z_index = 9
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hprjd")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+self_modulate = Color(0.072842576, 0.07284265, 0.072842605, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ep5rh")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = -111.0
+offset_right = 70.0
+offset_bottom = -69.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Loading..."

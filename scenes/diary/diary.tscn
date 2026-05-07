@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://bdlxaluranoch"]
+
+[ext_resource type="Script" uid="uid://bennponl3empk" path="res://scripts/diary/diary.gd" id="1_a646j"]
+[ext_resource type="Texture2D" uid="uid://c2hq42wua87fu" path="res://assets/cropped_images/recipe_book_day.tres" id="2_a646j"]
+[ext_resource type="Texture2D" uid="uid://bp8yqoyexcw64" path="res://assets/cropped_images/recipe_book_night.tres" id="3_yxdbw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1vfb6"]
+atlas = ExtResource("2_a646j")
+region = Rect2(0, 0, 1486, 695)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bhyhu"]
+atlas = ExtResource("3_yxdbw")
+region = Rect2(0, 0, 1486, 695)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1vfb6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1vfb6")
+}],
+"loop": true,
+"name": &"day",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bhyhu")
+}],
+"loop": true,
+"name": &"night",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a646j"]
+size = Vector2(1275, 628)
+
+[node name="Diary" type="Area2D"]
+script = ExtResource("1_a646j")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_1vfb6")
+animation = &"night"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(20.5, -60)
+shape = SubResource("RectangleShape2D_a646j")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

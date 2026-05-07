@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="IngredientData" load_steps=4 format=3 uid="uid://ppbmhme4y2hc"]
+
+[ext_resource type="Texture2D" uid="uid://bs7085janjrti" path="res://assets/ingredients.png" id="1_8mcic"]
+[ext_resource type="Script" uid="uid://twcr3o7hisyf" path="res://scripts/items/ingredients/ingredient_data.gd" id="1_raind"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_38u1n"]
+atlas = ExtResource("1_8mcic")
+region = Rect2(2215, 1359, 233, 378)
+
+[resource]
+script = ExtResource("1_raind")
+name = "Whole Milk"
+art = SubResource("AtlasTexture_38u1n")
+description = "It brings the whole family together! Make sure to keep stored cold unless you plan to churn it, no house is complete without milk in the fridge!"
+metadata/_custom_type_script = "uid://twcr3o7hisyf"
