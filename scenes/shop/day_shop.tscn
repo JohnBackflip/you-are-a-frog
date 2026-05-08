@@ -95,17 +95,15 @@ offset_bottom = 0.0
 visible = false
 z_index = 99
 layout_mode = 0
-offset_right = 64.0
-offset_bottom = 64.0
 mouse_filter = 2
 
 [node name="ItemDescription" type="Control" parent="CanvasLayer/OrderInterface"]
 visible = false
 anchors_preset = 0
 offset_left = 692.0
-offset_top = 77.0
+offset_top = 156.0
 offset_right = 928.0
-offset_bottom = 331.0
+offset_bottom = 410.0
 script = ExtResource("15_ksefx")
 metadata/_edit_group_ = true
 

@@ -16,7 +16,10 @@ func set_quantity(value: int) -> void:
 	else:
 		quantity = value
 		
-		
+func add_item() -> void:
+	if item_data:
+		set_quantity(quantity+1)
+
 func consume_item() -> void:
 	if item_data:
 		set_quantity(quantity - 1)

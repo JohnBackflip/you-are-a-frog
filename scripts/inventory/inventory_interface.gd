@@ -5,7 +5,7 @@ class_name InventoryInterface
 @onready var potion_inventory: Inventory = $Inventory/PotionInventory
 @onready var mixer_inventory : Inventory = $Mixer
 @onready var item_description : Control = $ItemDescription
-@onready var grabbed_slot: PanelContainer = $GrabbedSlot
+@onready var grabbed_slot: Control = $GrabbedSlot
 
 var grabbed_slot_data: SlotData
 
