@@ -55,6 +55,7 @@ func request_potion_storage() -> void:
 			potion_slot_data = null
 
 func request_ingredients_storage() -> void:
+	game_manager.player_inventory_data.rearange_ingredients()
 	for index in range(mixer_data.slot_datas_ingredient.size()):
 		var slot_data = mixer_data.slot_datas_ingredient[index]
 		if slot_data:

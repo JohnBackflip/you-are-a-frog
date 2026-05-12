@@ -2,16 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<<< HEAD:assets/ribbit_art/blink_3.png.import
 uid="uid://cn2rh0l7cv3uj"
 path="res://.godot/imported/blink_3.png-4f36ccf395b6b80053b4bf65c54ebf6a.ctex"
+========
+uid="uid://dg7pjgsqx0ju0"
+path="res://.godot/imported/empty_overlay_closed.png-ea0d14245c89e67fa72e8ed4f2a67c2d.ctex"
+>>>>>>>> 813b6ef2c0c9d982bb5e0d1069a7ff7de401ee76:assets/ingredient_bag/empty_overlay_closed.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<<< HEAD:assets/ribbit_art/blink_3.png.import
 source_file="res://assets/ribbit_art/blink_3.png"
 dest_files=["res://.godot/imported/blink_3.png-4f36ccf395b6b80053b4bf65c54ebf6a.ctex"]
+========
+source_file="res://assets/ingredient_bag/empty_overlay_closed.png"
+dest_files=["res://.godot/imported/empty_overlay_closed.png-ea0d14245c89e67fa72e8ed4f2a67c2d.ctex"]
+>>>>>>>> 813b6ef2c0c9d982bb5e0d1069a7ff7de401ee76:assets/ingredient_bag/empty_overlay_closed.png.import
 
 [params]
 

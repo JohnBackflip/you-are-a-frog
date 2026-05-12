@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=3 uid="uid://0yo5kafitfqt"]
 
-[ext_resource type="Script" uid="uid://f6bjpg5u0tat" path="res://scripts/night_shop.gd" id="1_5fy2q"]
+[ext_resource type="Script" path="res://scripts/night_shop.gd" id="1_5fy2q"]
 [ext_resource type="Texture2D" uid="uid://da1hf6oukdqme" path="res://assets/shop_bg_night.png" id="2_5sa7e"]
 [ext_resource type="Texture2D" uid="uid://b5d05pcx3qonl" path="res://assets/cauldron.png" id="3_cw7th"]
 [ext_resource type="PackedScene" uid="uid://bdlxaluranoch" path="res://scenes/diary/diary.tscn" id="4_bgxok"]
@@ -123,7 +123,8 @@ metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
 
 [node name="Companion" parent="." instance=ExtResource("5_ob5p7")]
-position = Vector2(83, 543)
+position = Vector2(100, 543)
+scale = Vector2(0.495, 0.495)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -161,17 +162,15 @@ libraries = {
 visible = false
 z_index = 99
 layout_mode = 0
-offset_right = 64.0
-offset_bottom = 64.0
 mouse_filter = 2
 
 [node name="ItemDescription" type="Control" parent="CanvasLayer/CraftingInterface"]
 visible = false
 anchors_preset = 0
 offset_left = 692.0
-offset_top = 77.0
+offset_top = 156.0
 offset_right = 928.0
-offset_bottom = 331.0
+offset_bottom = 410.0
 script = ExtResource("13_5eyxy")
 metadata/_edit_group_ = true
 

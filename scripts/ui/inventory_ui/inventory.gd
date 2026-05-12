@@ -19,6 +19,7 @@ func add_slot(inventory_data : InventoryData, index : int, slot_data : SlotData,
 		slot.parent_inventory = inventory
 
 		if slot_data:
+			slot_data.item_consumed.connect(slot.on_item_consumed)
 			slot.set_slot_data(slot_data)
 
 func populate_items(inventory_data : InventoryData) -> void:

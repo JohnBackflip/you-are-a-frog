@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" path="res://scripts/companion.gd" id="1_y6mwj"]
 [ext_resource type="Texture2D" uid="uid://cie3eu348rigm" path="res://assets/ribbit_art/ribbit_cheese.png" id="2_5pfd0"]
-[ext_resource type="Texture2D" path="res://assets/ribbit_art/frog_companion_reactions.png" id="3_eol6h"]
 [ext_resource type="Texture2D" uid="uid://yvh44vx2bbdr" path="res://assets/ribbit_art/ribbit_clean.png" id="3_ep4q2"]
 [ext_resource type="Texture2D" uid="uid://dyej5o5kcq8jp" path="res://assets/ribbit_art/idle.png" id="4_7uf6m"]
 [ext_resource type="Texture2D" uid="uid://dwj84i6cp1uaw" path="res://assets/ribbit_art/blink_1.png" id="5_vu8ik"]
@@ -10,12 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://cn2rh0l7cv3uj" path="res://assets/ribbit_art/blink_3.png" id="7_xrcrb"]
 [ext_resource type="Texture2D" uid="uid://bnm386eymdmv6" path="res://assets/ribbit_art/blink_4.png" id="8_pwefw"]
 [ext_resource type="Texture2D" uid="uid://wul3mtjoa6l5" path="res://assets/ribbit_art/digusted.png" id="9_5rrg1"]
+[ext_resource type="Texture2D" uid="uid://bq7nir7ac5w7o" path="res://assets/ribbit_art/frog_drinking.png" id="10_0e47y"]
 [ext_resource type="Texture2D" uid="uid://cdsekndi55o3t" path="res://assets/ribbit_art/drowsy.png" id="11_pbjh5"]
 [ext_resource type="Texture2D" uid="uid://bl3fcl7bbtyxh" path="res://assets/ribbit_art/happy.png" id="12_7hmy7"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hm2ig"]
-atlas = ExtResource("3_eol6h")
-region = Rect2(0, 0, 2048, 2732)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mqvd2"]
 animations = [{
@@ -68,7 +64,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hm2ig")
+"texture": ExtResource("10_0e47y")
 }],
 "loop": false,
 "name": &"drinking",
@@ -92,7 +88,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0ewvi"]
-size = Vector2(82, 98)
+size = Vector2(325, 272)
 
 [node name="Companion" type="Area2D"]
 script = ExtResource("1_y6mwj")
@@ -100,10 +96,9 @@ script = ExtResource("1_y6mwj")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.23, 0.23)
 sprite_frames = SubResource("SpriteFrames_mqvd2")
-animation = &"cheese"
+animation = &"happy"
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(0, -2)
+position = Vector2(-9.5, -23)
 shape = SubResource("RectangleShape2D_0ewvi")

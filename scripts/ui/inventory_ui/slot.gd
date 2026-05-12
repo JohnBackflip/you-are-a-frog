@@ -1,4 +1,4 @@
-extends PanelContainer
+extends Control
 class_name Slot
 
 signal slot_clicked(index: int, button: int)
