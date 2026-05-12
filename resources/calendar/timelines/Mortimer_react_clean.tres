@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="TimelineData" load_steps=9 format=3 uid="uid://w31nh0wowyau"]
 
-[ext_resource type="Resource" path="res://addons/dialogic/Timelines/Mortimer_2_clean.dtl" id="1_6wnbs"]
+[ext_resource type="Resource" uid="uid://46ic5toqj6a5" path="res://addons/dialogic/Timelines/Mortimer_2_clean.dtl" id="1_6wnbs"]
 [ext_resource type="Script" uid="uid://c7frnt306tx28" path="res://scripts/items/potions/potion_data.gd" id="2_4s2yy"]
 [ext_resource type="Script" uid="uid://dbjypilgem226" path="res://scripts/plot/potion_outcome.gd" id="3_7lsq8"]
 [ext_resource type="Resource" uid="uid://cgfrmkgkikp8y" path="res://resources/potions/squeaky_clean_potion.tres" id="5_6wnbs"]

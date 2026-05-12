@@ -30,13 +30,12 @@ func init_potions() -> void:
 
 func find_craftable_potion(ingredients: Array[IngredientData]) -> PotionData:
 	# Look through each potion to see if it matches the recipe
+	var ingredient_names = ingredients.map(func(i): return i.name)
+	ingredient_names.sort()
 	for potion: PotionData in potions:
-		var recipe = potion.recipe
-		var craftable = true
-		for ingredient: IngredientData in ingredients:
-			if ingredient not in recipe:
-				craftable = false
-		if craftable:
+		var recipe = potion.recipe.map(func(i): return i.name)
+		recipe.sort()
+		if ingredient_names == recipe:
 			return potion
 	return null
 

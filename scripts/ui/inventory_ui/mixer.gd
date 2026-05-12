@@ -48,10 +48,10 @@ func craft() -> void:
 func request_potion_storage() -> void:
 	if potion_slot_data:
 		var potion = potion_slot_data.item_data as PotionData
-		print("potion name:", potion.name)
+		#print("potion name:", potion.name)
 		var success = game_manager.player_inventory_data.add_item(potion)
 		if success:
-			print("Potion store success!")
+			#print("Potion store success!")
 			potion_slot_data = null
 
 func request_ingredients_storage() -> void:
@@ -59,10 +59,10 @@ func request_ingredients_storage() -> void:
 	for index in range(mixer_data.slot_datas_ingredient.size()):
 		var slot_data = mixer_data.slot_datas_ingredient[index]
 		if slot_data:
-			print("Ingredient name:", slot_data.item_data.name)
+			#print("Ingredient name:", slot_data.item_data.name)
 			var success = game_manager.player_inventory_data.add_item(slot_data.item_data, slot_data.quantity)
 			if success:
-				print("Ingredient store success!")
+				#print("Ingredient store success!")
 				mixer_data.slot_datas_ingredient[index] = null
 
 	layout_slots(mixer_data)

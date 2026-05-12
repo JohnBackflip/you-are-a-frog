@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="TimelineData" load_steps=9 format=3 uid="uid://3wy42pwphco2"]
 
-[ext_resource type="Resource" path="res://addons/dialogic/Timelines/Mortimer_2_cheese.dtl" id="1_tib7q"]
+[ext_resource type="Resource" uid="uid://chxsbgaaohehs" path="res://addons/dialogic/Timelines/Mortimer_2_cheese.dtl" id="1_tib7q"]
 [ext_resource type="Script" uid="uid://c7frnt306tx28" path="res://scripts/items/potions/potion_data.gd" id="2_0103g"]
 [ext_resource type="Script" uid="uid://dbjypilgem226" path="res://scripts/plot/potion_outcome.gd" id="3_xgmo8"]
 [ext_resource type="Resource" uid="uid://cj8s3i5f3o70i" path="res://resources/potions/cheesification_potion.tres" id="5_tib7q"]
