@@ -1,6 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://glgregjfj5fd"]
+[gd_scene load_steps=6 format=3 uid="uid://glgregjfj5fd"]
 
 [ext_resource type="Texture2D" uid="uid://br8jtx804776t" path="res://assets/diary_pages/diary_ingredients_page.png" id="1_2aqeb"]
+[ext_resource type="Script" uid="uid://b4c5w5ngjyfq0" path="res://scripts/diary/diary_ingredients_page.gd" id="1_seneq"]
+[ext_resource type="Texture2D" uid="uid://bs7085janjrti" path="res://assets/ingredients.png" id="2_48s6h"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0a0sc"]
+atlas = ExtResource("2_48s6h")
+region = Rect2(1723, 1383, 308, 355)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_seneq"]
+atlas = ExtResource("2_48s6h")
+region = Rect2(2215, 1359, 233, 378)
 
 [node name="DiaryIngredientsPage" type="Control"]
 layout_mode = 3
@@ -10,6 +20,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+script = ExtResource("1_seneq")
 
 [node name="BookTexture" type="TextureRect" parent="."]
 layout_mode = 1
@@ -22,3 +33,289 @@ mouse_filter = 2
 texture = ExtResource("1_2aqeb")
 expand_mode = 1
 stretch_mode = 5
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 272.0
+offset_top = 223.0
+offset_right = 555.0
+offset_bottom = 499.0
+theme_override_constants/h_separation = 25
+theme_override_constants/v_separation = 23
+columns = 4
+
+[node name="Ingredient" type="MarginContainer" parent="GridContainer"]
+custom_minimum_size = Vector2(52, 52)
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="TextureButton" type="TextureRect" parent="GridContainer/Ingredient"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_0a0sc")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Ingredient2" type="MarginContainer" parent="GridContainer"]
+custom_minimum_size = Vector2(52, 52)
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="TextureButton" type="TextureRect" parent="GridContainer/Ingredient2"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_0a0sc")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Ingredient3" type="MarginContainer" parent="GridContainer"]
+custom_minimum_size = Vector2(52, 52)
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="TextureButton" type="TextureRect" parent="GridContainer/Ingredient3"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_0a0sc")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Ingredient4" type="MarginContainer" parent="GridContainer"]
+custom_minimum_size = Vector2(52, 52)
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="TextureButton" type="TextureRect" parent="GridContainer/Ingredient4"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_0a0sc")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Ingredient5" type="MarginContainer" parent="GridContainer"]
+custom_minimum_size = Vector2(52, 52)
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="TextureButton" type="TextureRect" parent="GridContainer/Ingredient5"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_0a0sc")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Ingredient6" type="MarginContainer" parent="GridContainer"]
+custom_minimum_size = Vector2(52, 52)
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="TextureButton" type="TextureRect" parent="GridContainer/Ingredient6"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_0a0sc")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Ingredient7" type="MarginContainer" parent="GridContainer"]
+custom_minimum_size = Vector2(52, 52)
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="TextureButton" type="TextureRect" parent="GridContainer/Ingredient7"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_0a0sc")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Ingredient8" type="MarginContainer" parent="GridContainer"]
+custom_minimum_size = Vector2(52, 52)
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="TextureButton" type="TextureRect" parent="GridContainer/Ingredient8"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_0a0sc")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Ingredient9" type="MarginContainer" parent="GridContainer"]
+custom_minimum_size = Vector2(52, 52)
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="TextureButton" type="TextureRect" parent="GridContainer/Ingredient9"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_0a0sc")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Ingredient10" type="MarginContainer" parent="GridContainer"]
+custom_minimum_size = Vector2(52, 52)
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="TextureButton" type="TextureRect" parent="GridContainer/Ingredient10"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_0a0sc")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Ingredient11" type="MarginContainer" parent="GridContainer"]
+custom_minimum_size = Vector2(52, 52)
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="TextureButton" type="TextureRect" parent="GridContainer/Ingredient11"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_0a0sc")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Ingredient12" type="MarginContainer" parent="GridContainer"]
+custom_minimum_size = Vector2(52, 52)
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="TextureButton" type="TextureRect" parent="GridContainer/Ingredient12"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_0a0sc")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Ingredient13" type="MarginContainer" parent="GridContainer"]
+custom_minimum_size = Vector2(52, 52)
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="TextureButton" type="TextureRect" parent="GridContainer/Ingredient13"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_0a0sc")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Ingredient14" type="MarginContainer" parent="GridContainer"]
+custom_minimum_size = Vector2(52, 52)
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="TextureButton" type="TextureRect" parent="GridContainer/Ingredient14"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_0a0sc")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Ingredient15" type="MarginContainer" parent="GridContainer"]
+custom_minimum_size = Vector2(52, 52)
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="TextureButton" type="TextureRect" parent="GridContainer/Ingredient15"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_0a0sc")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Ingredient16" type="MarginContainer" parent="GridContainer"]
+custom_minimum_size = Vector2(52, 52)
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="TextureButton" type="TextureRect" parent="GridContainer/Ingredient16"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_0a0sc")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="IngredientDetailArt" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 136.0
+offset_top = -142.0
+offset_right = 340.0
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_seneq")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="IngredientDetailName" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 137.0
+offset_top = 55.0
+offset_right = 339.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0.18039216, 0.105882354, 0.078431375, 1)
+bbcode_enabled = true
+text = "[b]Whole milk[/b]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="IngredientDetailDescription" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 71.0
+offset_top = 88.0
+offset_right = 403.0
+offset_bottom = 183.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0.18039216, 0.105882354, 0.078431375, 1)
+text = "It brings the whole family together! Make sure to keep stored cold unless you plan to churn it, no house is complete without milk in the fridge!"
