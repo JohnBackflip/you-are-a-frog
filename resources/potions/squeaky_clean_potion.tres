@@ -15,4 +15,5 @@ script = ExtResource("2_g6q3i")
 recipe = Array[ExtResource("1_ndk5c")]([ExtResource("2_wec6r"), ExtResource("3_ndeu1")])
 name = "Squeaky Clean Potion"
 art = SubResource("AtlasTexture_krwre")
+stackable = false
 metadata/_custom_type_script = "uid://c7frnt306tx28"

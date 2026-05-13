@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="PotionData" load_steps=7 format=3 uid="uid://dvpuree42g8hc"]
+
+[ext_resource type="Script" uid="uid://twcr3o7hisyf" path="res://scripts/items/ingredients/ingredient_data.gd" id="1_1yiud"]
+[ext_resource type="Texture2D" uid="uid://brxg4jb5qop75" path="res://assets/potion_icons.png" id="1_xnt2j"]
+[ext_resource type="Script" uid="uid://c7frnt306tx28" path="res://scripts/items/potions/potion_data.gd" id="2_0me50"]
+[ext_resource type="Resource" uid="uid://b7y11p60qyli" path="res://resources/ingredients/dry_cloud.tres" id="3_0j1wf"]
+[ext_resource type="Resource" uid="uid://ckxvddcuj1x7q" path="res://resources/ingredients/mad_hornet_stinger.tres" id="4_8udut"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_li5pb"]
+atlas = ExtResource("1_xnt2j")
+region = Rect2(998, 629, 560, 754)
+
+[resource]
+script = ExtResource("2_0me50")
+recipe = Array[ExtResource("1_1yiud")]([ExtResource("3_0j1wf"), ExtResource("4_8udut")])
+name = "Sleep Potion"
+art = SubResource("AtlasTexture_li5pb")
+description = "Induces heavy sleep after imbibing even a small dosage. Short to medium incubation time, don't expect the Harpy to fall out of the air in 5 seconds."
+stackable = false
+metadata/_custom_type_script = "uid://c7frnt306tx28"

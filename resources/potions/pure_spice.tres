@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="PotionData" load_steps=7 format=3 uid="uid://m6h8vi4wvabw"]
+
+[ext_resource type="Script" uid="uid://twcr3o7hisyf" path="res://scripts/items/ingredients/ingredient_data.gd" id="1_1o27o"]
+[ext_resource type="Texture2D" uid="uid://dxhked8oouaok" path="res://assets/#1 - Transparent Icons.png" id="1_jc1ay"]
+[ext_resource type="Script" uid="uid://c7frnt306tx28" path="res://scripts/items/potions/potion_data.gd" id="2_jc1ay"]
+[ext_resource type="Resource" uid="uid://ckxvddcuj1x7q" path="res://resources/ingredients/mad_hornet_stinger.tres" id="3_gvu2k"]
+[ext_resource type="Resource" uid="uid://fy6l8yokfbaq" path="res://resources/ingredients/crystal_habanero.tres" id="4_n3ire"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e12nj"]
+atlas = ExtResource("1_jc1ay")
+region = Rect2(387, 291, 26, 26)
+
+[resource]
+script = ExtResource("2_jc1ay")
+recipe = Array[ExtResource("1_1o27o")]([ExtResource("3_gvu2k"), ExtResource("4_n3ire")])
+name = "Pure Spice"
+art = SubResource("AtlasTexture_e12nj")
+description = "What is even a scale? Scoville? It probably won't even be measurable. A drop of this will make any food create pure agony. Standard procedure for Alchemist Guild hazing rituals."
+stackable = false
+metadata/_custom_type_script = "uid://c7frnt306tx28"

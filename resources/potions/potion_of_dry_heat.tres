@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="PotionData" load_steps=7 format=3 uid="uid://bcl1ajax1j8i0"]
+
+[ext_resource type="Texture2D" uid="uid://dxhked8oouaok" path="res://assets/#1 - Transparent Icons.png" id="1_1dky1"]
+[ext_resource type="Script" uid="uid://twcr3o7hisyf" path="res://scripts/items/ingredients/ingredient_data.gd" id="1_7f7ly"]
+[ext_resource type="Script" uid="uid://c7frnt306tx28" path="res://scripts/items/potions/potion_data.gd" id="2_qcue0"]
+[ext_resource type="Resource" uid="uid://b7y11p60qyli" path="res://resources/ingredients/dry_cloud.tres" id="3_3o5hu"]
+[ext_resource type="Resource" uid="uid://fy6l8yokfbaq" path="res://resources/ingredients/crystal_habanero.tres" id="4_hmh00"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bin5f"]
+atlas = ExtResource("1_1dky1")
+region = Rect2(419, 291, 26, 26)
+
+[resource]
+script = ExtResource("2_qcue0")
+recipe = Array[ExtResource("1_7f7ly")]([ExtResource("3_3o5hu"), ExtResource("4_hmh00")])
+name = "Potion of Dry Heat"
+art = SubResource("AtlasTexture_bin5f")
+description = "Your one stop shop for any iceberg adventures. It does what it says on the tin, it boosts your body heat and keeps you dry at all times."
+stackable = false
+metadata/_custom_type_script = "uid://c7frnt306tx28"
