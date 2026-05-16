@@ -30,11 +30,12 @@ directories/dch_directory={
 "npchilde": "res://addons/dialogic/Characters/npchilde.dch"
 }
 directories/dtl_directory={
+"Karin_0": "res://addons/dialogic/Timelines/Karin_0.dtl",
+"Karin_1": "res://addons/dialogic/Timelines/Karin_1.dtl",
 "Mortimer_0": "res://addons/dialogic/Timelines/Mortimer_0.dtl",
 "Mortimer_1": "res://addons/dialogic/Timelines/Mortimer_1.dtl",
-"Mortimer_2_cheese": "res://addons/dialogic/Timelines/Mortimer_2_cheese.dtl",
-"Mortimer_2_clean": "res://addons/dialogic/Timelines/Mortimer_2_clean.dtl",
-"Mortimer_2_house": "res://addons/dialogic/Timelines/Mortimer_2_house.dtl"
+"NPChilde_0": "res://addons/dialogic/Timelines/NPChilde_0.dtl",
+"NPChilde_1": "res://addons/dialogic/Timelines/NPChilde_1.dtl"
 }
 layout/style_directory={
 "": "res://addons/dialogic/Styles/style.tres",

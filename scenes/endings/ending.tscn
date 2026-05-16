@@ -24,7 +24,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_wafyp")
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="RichTextLabel" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -35,8 +35,11 @@ offset_right = -100.0
 offset_bottom = -50.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "The rat managed to slip by the guards unnoticed and lace the four-tier delight with an unknown substance. The cake arrived without a hitch and the party started. The oblivious aristocrats all lined up to get a slice - how could you not eat the famous cake?
+
+For some reason the party was not very lively as all the guests "
+fit_content = true
 vertical_alignment = 1
-autowrap_mode = 3

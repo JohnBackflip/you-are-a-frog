@@ -1,0 +1,6 @@
+if {potion_given} == "":
+	Karin: I've come to collect my order.
+	[signal arg="wait_potion"]
+	[end_timeline]
+Karin: Thank you. Hopefully this will keep the [color={bold_color}]rats[/color] away from the cake.
+[signal arg="leave_done"]

@@ -4,3 +4,4 @@ class_name EndingPoints
 
 @export var ending : EndingData
 @export var points : int
+@export var ending_text : String = ""

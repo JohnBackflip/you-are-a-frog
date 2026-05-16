@@ -15,7 +15,13 @@ class_name CharacterData
 var met: bool = false
 
 func next_timeline(potion : PotionData) -> TimelineData:
+	if (!timeline):
+		print("End of " + name + " timeline")
+		return null
 	var next : TimelineData = timeline.outcome[potion].next_dialogue
 	if (!next):
+		if (!timeline.outcome[null]):
+			print("End of " + name + " timeline")
+			return null
 		next = timeline.outcome[null].next_dialogue
 	return next

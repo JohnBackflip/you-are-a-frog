@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://b5nbxtpiyq5ta" path="res://scripts/character/character_data.gd" id="1_5sfc5"]
 [ext_resource type="Script" uid="uid://cd2fhgo117axf" path="res://scripts/calendar/daily_customers.gd" id="1_uunth"]
-[ext_resource type="Resource" uid="uid://tgbe3t2r8q67" path="res://resources/characters/mortimer.tres" id="2_xcthg"]
+[ext_resource type="Resource" uid="uid://c82nnsyvugbuc" path="res://resources/characters/karin.tres" id="3_t7fin"]
 
 [resource]
 script = ExtResource("1_uunth")
-customers = Array[ExtResource("1_5sfc5")]([ExtResource("2_xcthg"), ExtResource("2_xcthg")])
+customers = Array[ExtResource("1_5sfc5")]([ExtResource("3_t7fin")])

@@ -1,0 +1,12 @@
+if {potion_given} == "":
+	[signal arg="wait_potion"]
+	NPChilde: Good day. I've come to check on the potion making - is my order ready?
+	[end_timeline]
+
+NPChilde: Why thank you! This should help my back pain for at least some time ahead. It's the first time a potion maker set up shop in this lively city, and the townsfolk are grateful to have one here.
+
+NPChilde: As I previously mentioned, I'm a merchant who trades in herbs and other potent ingredients, and I sense a good opportunity for the both of us here.
+
+NPChilde: But let's leave that for later. Thank you for this, my friend.
+
+[signal arg="leave_done"]

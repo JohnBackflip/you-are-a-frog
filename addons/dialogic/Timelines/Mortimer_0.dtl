@@ -1,5 +1,7 @@
-Mortimer: Hello. In a few days, I will have some guests over and [color={bold_color}]I need my house to look good and nice[/color]. Can you give me a potion to help with this?
+Mortimer: Hello. I would need a potion to [color={bold_color}]incapacitate people[/color]. Or make sure they don't have a good time. Can I count on you to help me out?
 
-set {request} = "I need my place to look good and nice"
-set {deadline} = 1.0
+Mortimer: Thank you. I'll be back in [color={bold_color}]2 days[/color] to pick it up.
+
+set {request} = "Laxative potion. Please"
+set {deadline} = 2.0
 [signal arg="order"]

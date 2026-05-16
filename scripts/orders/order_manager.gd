@@ -44,6 +44,7 @@ func on_new_order  (customer: CharacterData, request: String, deadline: int) -> 
 	print(order.get_customer_name(), order.deadline, order.request)
 
 func resolve_order (customer : CharacterData, potion_given : PotionData) -> void:
+	print("Potion " + potion_given.name + " given to " + customer.name)
 	var order : OrderData
 	for order_data in orders:
 		if (order_data.customer == customer):
@@ -53,4 +54,6 @@ func resolve_order (customer : CharacterData, potion_given : PotionData) -> void
 	var outcome_points : Array[EndingPoints] = customer.timeline.outcome[potion_given].endings
 	for ending_points in outcome_points:
 		game_manager.plot_manager.endings[ending_points.ending] += ending_points.points
+		if (ending_points.ending_text != ""):
+			ending_points.ending.description_potion = ending_points.ending_text
 	customer.potion_given = potion_given

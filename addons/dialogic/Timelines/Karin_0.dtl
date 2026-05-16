@@ -1,0 +1,10 @@
+Karin: Good day. My name is [color={bold_color}]Karin[/color], and I am the vice-captain of the castle guard division of the general guard force of the city.
+
+Karin: As you surely know, her royal highness the princess will be having her [color={bold_color}]birthday party[/color] this week. As the guards serving the royal family, we have been tasked with the high honour of [color={bold_color}]transporting the 18-tier cake[/color] from the bakery to the banquet.
+
+Karin: I would therefore request a potion that will [color={bold_color}]help me out with this important task[/color], and I will come back to pick it up in [color={bold_color}]2 days[/color]. I look forward to your [color={bold_color}]cooperation[/color].
+
+
+set {request} = "Help me transport the princess' cake safely"
+set {deadline} = 2.0
+[signal arg="order"]

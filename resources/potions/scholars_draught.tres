@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="PotionData" load_steps=7 format=3 uid="uid://cvp7modhwpklu"]
+[gd_resource type="Resource" script_class="PotionData" load_steps=7 format=3 uid="uid://bsjrd27vypspb"]
 
 [ext_resource type="Texture2D" uid="uid://b72lcy1w3348i" path="res://assets/potions_v2.png" id="1_1wshg"]
 [ext_resource type="Script" uid="uid://twcr3o7hisyf" path="res://scripts/items/ingredients/ingredient_data.gd" id="1_5ji7n"]

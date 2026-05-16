@@ -1,0 +1,85 @@
+[gd_resource type="Resource" script_class="TimelineData" load_steps=25 format=3 uid="uid://bqk0tmdgvaovv"]
+
+[ext_resource type="Resource" uid="uid://cqf4x67mloa8s" path="res://addons/dialogic/Timelines/Karin_1.dtl" id="1_hc4x4"]
+[ext_resource type="Script" uid="uid://c7frnt306tx28" path="res://scripts/items/potions/potion_data.gd" id="2_hc4x4"]
+[ext_resource type="Script" uid="uid://dbjypilgem226" path="res://scripts/plot/potion_outcome.gd" id="3_8mb6g"]
+[ext_resource type="Resource" uid="uid://dc4p6s70p26tu" path="res://resources/potions/cloud_of_fluff_draught.tres" id="4_tk2ao"]
+[ext_resource type="Script" uid="uid://kdpvn2x2u522" path="res://scripts/plot/ending_points.gd" id="5_ai4tj"]
+[ext_resource type="Resource" uid="uid://drfkeiv5071ja" path="res://resources/plot/rebel_ending.tres" id="6_3g1tc"]
+[ext_resource type="Resource" uid="uid://cposw1uy7akhp" path="res://resources/plot/guard_ending.tres" id="6_8mb6g"]
+[ext_resource type="Resource" uid="uid://hns16i2ndugl" path="res://resources/potions/elixir_of_rage.tres" id="7_ro225"]
+[ext_resource type="Resource" uid="uid://bc3748yjpavb2" path="res://resources/potions/pure_spice.tres" id="8_2d8t8"]
+[ext_resource type="Resource" uid="uid://1rovfpw423gu" path="res://resources/potions/potion_of_dry_heat.tres" id="9_0yhhu"]
+[ext_resource type="Resource" uid="uid://byegw1uh3mqis" path="res://resources/plot/neutral_ending.tres" id="10_nbnvj"]
+[ext_resource type="Resource" uid="uid://bsjrd27vypspb" path="res://resources/potions/scholars_draught.tres" id="11_geoxn"]
+[ext_resource type="Resource" uid="uid://dn1j01dtv3tar" path="res://resources/potions/sleep_potion.tres" id="12_i11sm"]
+[ext_resource type="Script" uid="uid://6knlg22ir0m1" path="res://scripts/plot/timeline_data.gd" id="13_87bpp"]
+
+[sub_resource type="Resource" id="Resource_hc4x4"]
+script = ExtResource("5_ai4tj")
+ending = ExtResource("6_8mb6g")
+points = 1
+ending_text = "the guards discovered him trying to get through the bouncy protective clouds surrounding the cake that Karin had placed"
+metadata/_custom_type_script = "uid://kdpvn2x2u522"
+
+[sub_resource type="Resource" id="Resource_ai4tj"]
+script = ExtResource("5_ai4tj")
+ending = ExtResource("10_nbnvj")
+points = -1
+metadata/_custom_type_script = "uid://kdpvn2x2u522"
+
+[sub_resource type="Resource" id="Resource_3g1tc"]
+script = ExtResource("5_ai4tj")
+ending = ExtResource("6_3g1tc")
+points = -1
+metadata/_custom_type_script = "uid://kdpvn2x2u522"
+
+[sub_resource type="Resource" id="Resource_ro225"]
+script = ExtResource("3_8mb6g")
+endings = Array[ExtResource("5_ai4tj")]([SubResource("Resource_hc4x4"), SubResource("Resource_ai4tj"), SubResource("Resource_3g1tc")])
+metadata/_custom_type_script = "uid://dbjypilgem226"
+
+[sub_resource type="Resource" id="Resource_tk2ao"]
+script = ExtResource("5_ai4tj")
+ending = ExtResource("6_8mb6g")
+points = 1
+ending_text = "Karin supposedly went berserk and ran around the vicinity like a madman, running into Mortimer in the process and beating him up because \"he looked suspicious"
+metadata/_custom_type_script = "uid://kdpvn2x2u522"
+
+[sub_resource type="Resource" id="Resource_8mb6g"]
+script = ExtResource("3_8mb6g")
+endings = Array[ExtResource("5_ai4tj")]([SubResource("Resource_tk2ao"), SubResource("Resource_ai4tj"), SubResource("Resource_3g1tc")])
+metadata/_custom_type_script = "uid://dbjypilgem226"
+
+[sub_resource type="Resource" id="Resource_d1ioi"]
+script = ExtResource("3_8mb6g")
+metadata/_custom_type_script = "uid://dbjypilgem226"
+
+[sub_resource type="Resource" id="Resource_dlr10"]
+script = ExtResource("3_8mb6g")
+metadata/_custom_type_script = "uid://dbjypilgem226"
+
+[sub_resource type="Resource" id="Resource_2d8t8"]
+script = ExtResource("5_ai4tj")
+ending = ExtResource("6_8mb6g")
+points = 1
+ending_text = "Karin expressed a never-before-seen level of intellect and outwitted the sneaky rat by following the legendary Sun Tzu's Art of War. On another note, the rest of the guards complained about having to endure listening to all of her various stratagems for the entire journey"
+metadata/_custom_type_script = "uid://kdpvn2x2u522"
+
+[sub_resource type="Resource" id="Resource_0yhhu"]
+script = ExtResource("3_8mb6g")
+endings = Array[ExtResource("5_ai4tj")]([SubResource("Resource_2d8t8"), SubResource("Resource_ai4tj"), SubResource("Resource_3g1tc")])
+metadata/_custom_type_script = "uid://dbjypilgem226"
+
+[resource]
+script = ExtResource("13_87bpp")
+dialogic_timeline = ExtResource("1_hc4x4")
+outcome = Dictionary[ExtResource("2_hc4x4"), ExtResource("3_8mb6g")]({
+null: null,
+ExtResource("4_tk2ao"): SubResource("Resource_ro225"),
+ExtResource("7_ro225"): SubResource("Resource_8mb6g"),
+ExtResource("8_2d8t8"): SubResource("Resource_d1ioi"),
+ExtResource("9_0yhhu"): SubResource("Resource_dlr10"),
+ExtResource("11_geoxn"): SubResource("Resource_0yhhu"),
+ExtResource("12_i11sm"): SubResource("Resource_dlr10")
+})

@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://c7frnt306tx28" path="res://scripts/items/potions/potion_data.gd" id="5_546lt"]
 [ext_resource type="Script" uid="uid://dbjypilgem226" path="res://scripts/plot/potion_outcome.gd" id="6_g6186"]
 [ext_resource type="Script" uid="uid://kdpvn2x2u522" path="res://scripts/plot/ending_points.gd" id="7_mkaco"]
-[ext_resource type="Resource" uid="uid://by1d77ljyeahh" path="res://resources/calendar/timelines/Mortimer_collect1.tres" id="8_xp16b"]
+[ext_resource type="Resource" uid="uid://by1d77ljyeahh" path="res://resources/calendar/timelines/Mortimer_collect.tres" id="8_xp16b"]
 [ext_resource type="Script" uid="uid://6knlg22ir0m1" path="res://scripts/plot/timeline_data.gd" id="9_tpbtu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_peqev"]

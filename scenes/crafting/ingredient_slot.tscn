@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cry6royyfhjiu" path="res://assets/ingredient_bag/empty_opened.png" id="5_s26j4"]
 [ext_resource type="Texture2D" uid="uid://can4x876dgc4h" path="res://assets/ingredient_bag/one_overlay_open.png" id="7_8u5ws"]
 [ext_resource type="Texture2D" uid="uid://cq4bn3h2unv14" path="res://assets/ingredient_bag/ful_overlay_closed.png" id="7_ctrim"]
-[ext_resource type="Texture2D" uid="uid://dg7pjgsqx0ju0" path="res://assets/ingredient_bag/empty_overlay_closed.png" id="8_s26j4"]
+[ext_resource type="Texture2D" uid="uid://bslv8bybcgyt6" path="res://assets/ingredient_bag/empty_overlay_closed.png" id="8_s26j4"]
 [ext_resource type="Texture2D" uid="uid://dh3u13uhqaktm" path="res://assets/ingredient_bag/full_overlay_opened.png" id="9_15mms"]
 [ext_resource type="Texture2D" uid="uid://cvr4evqm88fjv" path="res://assets/ingredient_bag/one_closed.png" id="10_8u5ws"]
 [ext_resource type="Texture2D" uid="uid://dvg87cpkx5pto" path="res://assets/ingredient_bag/empty_overlay_open.png" id="10_xt5ch"]

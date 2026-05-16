@@ -1,0 +1,104 @@
+[gd_resource type="Resource" script_class="TimelineData" load_steps=27 format=3 uid="uid://by1d77ljyeahh"]
+
+[ext_resource type="Resource" uid="uid://bqo5lgwisi2t5" path="res://addons/dialogic/Timelines/Mortimer_1.dtl" id="1_ojhu3"]
+[ext_resource type="Script" uid="uid://c7frnt306tx28" path="res://scripts/items/potions/potion_data.gd" id="2_oyq2l"]
+[ext_resource type="Script" uid="uid://dbjypilgem226" path="res://scripts/plot/potion_outcome.gd" id="3_nsgp5"]
+[ext_resource type="Script" uid="uid://6knlg22ir0m1" path="res://scripts/plot/timeline_data.gd" id="4_7iwmu"]
+[ext_resource type="Resource" uid="uid://dc4p6s70p26tu" path="res://resources/potions/cloud_of_fluff_draught.tres" id="4_vub77"]
+[ext_resource type="Script" uid="uid://kdpvn2x2u522" path="res://scripts/plot/ending_points.gd" id="5_crc7e"]
+[ext_resource type="Resource" uid="uid://drfkeiv5071ja" path="res://resources/plot/rebel_ending.tres" id="6_gmc2i"]
+[ext_resource type="Resource" uid="uid://hns16i2ndugl" path="res://resources/potions/elixir_of_rage.tres" id="7_kw7tv"]
+[ext_resource type="Resource" uid="uid://bc3748yjpavb2" path="res://resources/potions/pure_spice.tres" id="8_mqr02"]
+[ext_resource type="Resource" uid="uid://1rovfpw423gu" path="res://resources/potions/potion_of_dry_heat.tres" id="9_14et6"]
+[ext_resource type="Resource" uid="uid://byegw1uh3mqis" path="res://resources/plot/neutral_ending.tres" id="10_44y21"]
+[ext_resource type="Resource" uid="uid://bsjrd27vypspb" path="res://resources/potions/scholars_draught.tres" id="11_wruyw"]
+[ext_resource type="Resource" uid="uid://dn1j01dtv3tar" path="res://resources/potions/sleep_potion.tres" id="12_8ymaw"]
+
+[sub_resource type="Resource" id="Resource_crc7e"]
+script = ExtResource("5_crc7e")
+ending = ExtResource("10_44y21")
+points = 1
+ending_text = "the cake was encased in a strange, fluffy, and bouncy cloud which had to be removed by the guards"
+metadata/_custom_type_script = "uid://kdpvn2x2u522"
+
+[sub_resource type="Resource" id="Resource_gmc2i"]
+script = ExtResource("3_nsgp5")
+endings = Array[ExtResource("5_crc7e")]([SubResource("Resource_crc7e")])
+metadata/_custom_type_script = "uid://dbjypilgem226"
+
+[sub_resource type="Resource" id="Resource_kw7tv"]
+script = ExtResource("5_crc7e")
+ending = ExtResource("6_gmc2i")
+points = 1
+ending_text = "started beating the crap out of each other. The guards had to step in to get the situation under control and evacuate the princess"
+metadata/_custom_type_script = "uid://kdpvn2x2u522"
+
+[sub_resource type="Resource" id="Resource_mqr02"]
+script = ExtResource("3_nsgp5")
+endings = Array[ExtResource("5_crc7e")]([SubResource("Resource_kw7tv")])
+metadata/_custom_type_script = "uid://dbjypilgem226"
+
+[sub_resource type="Resource" id="Resource_14et6"]
+script = ExtResource("5_crc7e")
+ending = ExtResource("6_gmc2i")
+points = 1
+ending_text = "suddenly ran for the toilets all at once. Long queues were seen from all the nearest toilets, guests were banging on cubicles and a foul stench filled the air. Some of them were seen breathing fire or lying on the ground clutching their bellies"
+metadata/_custom_type_script = "uid://kdpvn2x2u522"
+
+[sub_resource type="Resource" id="Resource_44y21"]
+script = ExtResource("3_nsgp5")
+endings = Array[ExtResource("5_crc7e")]([SubResource("Resource_14et6")])
+metadata/_custom_type_script = "uid://dbjypilgem226"
+
+[sub_resource type="Resource" id="Resource_wruyw"]
+script = ExtResource("5_crc7e")
+ending = ExtResource("10_44y21")
+points = 1
+ending_text = "a large number of people reported feeling really hot for some reason, despite the perfect weather for a party"
+metadata/_custom_type_script = "uid://kdpvn2x2u522"
+
+[sub_resource type="Resource" id="Resource_8ymaw"]
+script = ExtResource("3_nsgp5")
+endings = Array[ExtResource("5_crc7e")]([SubResource("Resource_wruyw")])
+metadata/_custom_type_script = "uid://dbjypilgem226"
+
+[sub_resource type="Resource" id="Resource_hpoyk"]
+script = ExtResource("5_crc7e")
+ending = ExtResource("10_44y21")
+points = 1
+ending_text = "everybody started babbling on about various theorems and whatnot. Reportedly, someone tried to approach a rat to discuss about the ingenuity of Sun Tzu's Art of War, but they were so annoying that the rat ran away"
+metadata/_custom_type_script = "uid://kdpvn2x2u522"
+
+[sub_resource type="Resource" id="Resource_d1ioi"]
+script = ExtResource("3_nsgp5")
+endings = Array[ExtResource("5_crc7e")]([SubResource("Resource_hpoyk")])
+metadata/_custom_type_script = "uid://dbjypilgem226"
+
+[sub_resource type="Resource" id="Resource_n10gw"]
+script = ExtResource("5_crc7e")
+ending = ExtResource("6_gmc2i")
+points = 1
+ending_text = "fell asleep. The guards stepped in and tried to wake them up but to no avail"
+metadata/_custom_type_script = "uid://kdpvn2x2u522"
+
+[sub_resource type="Resource" id="Resource_dlr10"]
+script = ExtResource("3_nsgp5")
+endings = Array[ExtResource("5_crc7e")]([SubResource("Resource_n10gw")])
+metadata/_custom_type_script = "uid://dbjypilgem226"
+
+[sub_resource type="Resource" id="Resource_vub77"]
+script = ExtResource("3_nsgp5")
+metadata/_custom_type_script = "uid://dbjypilgem226"
+
+[resource]
+script = ExtResource("4_7iwmu")
+dialogic_timeline = ExtResource("1_ojhu3")
+outcome = Dictionary[ExtResource("2_oyq2l"), ExtResource("3_nsgp5")]({
+null: SubResource("Resource_vub77"),
+ExtResource("4_vub77"): SubResource("Resource_gmc2i"),
+ExtResource("7_kw7tv"): SubResource("Resource_mqr02"),
+ExtResource("8_mqr02"): SubResource("Resource_44y21"),
+ExtResource("9_14et6"): SubResource("Resource_8ymaw"),
+ExtResource("11_wruyw"): SubResource("Resource_d1ioi"),
+ExtResource("12_8ymaw"): SubResource("Resource_dlr10")
+})

@@ -1,7 +1,13 @@
 if {potion_given} == "":
-	Mortimer: I am back to collect my potion! To clean up my home.
+	Mortimer: Hi. I am back to collect my potion I ordered a few days ago. 
+	Mortimer: The one to [color={bold_color}]make people have a bad time[/color] one.
 	[signal arg="wait_potion"]
 	[end_timeline]
 
-Mortimer: {feedback}
-[signal arg="leave_done"]
+Mortimer: Thank you. Name's [color={bold_color}]Mortimer[/color] by the way. I got word that the castle guards are transporting the cake this year. This is [color={bold_color}]quite an inconvenience[/color].
+
+Mortimer: I need you to [color={bold_color}]sabotage their task[/color] for me. If you do, I promise I will give you [color={bold_color}]a worthwhile reward[color={bold_color}] after.
+
+set {request} = "Sabotage the guards' operation"
+set {deadline} = 1.0
+[signal arg="order"]
