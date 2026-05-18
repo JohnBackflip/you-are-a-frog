@@ -15,6 +15,8 @@ func taste_potion(potion: PotionData) -> void:
 
 func react(potion: PotionData) -> void:
 	# Add reactions
+	# Now that ribbit has reacted, the art is how Ribbit reacted
+	potion.art = potion.ribbit_art
 	var timer = get_tree().create_timer(3.0)
 	await timer.timeout
 	play_default_animation()

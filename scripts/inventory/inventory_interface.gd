@@ -11,7 +11,7 @@ var grabbed_slot_data: SlotData
 
 func _physics_process(_delta: float) -> void:
 	if grabbed_slot.visible:
-		grabbed_slot.position = get_global_mouse_position()
+		grabbed_slot.position = get_global_mouse_position() - grabbed_slot.size/2
 
 # Initialise player inventory
 func set_player_inventory_data(inventory_data: InventoryData) -> void:
@@ -48,7 +48,10 @@ func on_inventory_interact(inventory : Inventory, inventory_data: InventoryData,
 # Update cursor whenever an item is grabbed
 func update_grabbed_slot() -> void:
 	if grabbed_slot_data:
+		if grabbed_slot_data.item_data is PotionData:
+			grabbed_slot.scale = Vector2(2.7, 2.7)
 		grabbed_slot.show()
 		grabbed_slot.set_slot_data(grabbed_slot_data)
 	else:
+		grabbed_slot.scale = Vector2(1.0, 1.0)
 		grabbed_slot.hide()

@@ -33,6 +33,7 @@ func _on_companion_input_event(_viewport: Node, event: InputEvent, _shape_idx: i
 			var grabbed_slot_data = crafting_interface.grabbed_slot_data
 			if grabbed_slot_data and grabbed_slot_data.item_data is PotionData:
 				companion.taste_potion(grabbed_slot_data.item_data)
+				crafting_interface.update_grabbed_slot()
 
 
 func _on_companion_mouse_entered() -> void:

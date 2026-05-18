@@ -13,6 +13,7 @@ region = Rect2(2358, 629, 560, 754)
 [resource]
 script = ExtResource("2_pbs5m")
 recipe = Array[ExtResource("1_bi665")]([ExtResource("3_qkxjo"), ExtResource("4_g7lc4")])
+ribbit_art = SubResource("AtlasTexture_3v1xt")
 name = "Housification Potion"
 art = SubResource("AtlasTexture_3v1xt")
 description = "Turns anything into a house!"

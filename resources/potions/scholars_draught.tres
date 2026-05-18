@@ -1,18 +1,23 @@
-[gd_resource type="Resource" script_class="PotionData" load_steps=7 format=3 uid="uid://bsjrd27vypspb"]
+[gd_resource type="Resource" script_class="PotionData" load_steps=8 format=3 uid="uid://bsjrd27vypspb"]
 
-[ext_resource type="Texture2D" uid="uid://b72lcy1w3348i" path="res://assets/potions_v2.png" id="1_1wshg"]
 [ext_resource type="Script" uid="uid://twcr3o7hisyf" path="res://scripts/items/ingredients/ingredient_data.gd" id="1_5ji7n"]
+[ext_resource type="Texture2D" uid="uid://brxg4jb5qop75" path="res://assets/potion_icons.png" id="1_45ufi"]
 [ext_resource type="Script" uid="uid://c7frnt306tx28" path="res://scripts/items/potions/potion_data.gd" id="2_1wshg"]
 [ext_resource type="Resource" uid="uid://crj4gihidbjij" path="res://resources/ingredients/explosive_funguy.tres" id="3_45ufi"]
 [ext_resource type="Resource" uid="uid://fy6l8yokfbaq" path="res://resources/ingredients/crystal_habanero.tres" id="4_v5lvh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2sbue"]
-atlas = ExtResource("1_1wshg")
-region = Rect2(2358, 629, 560, 754)
+atlas = ExtResource("1_45ufi")
+region = Rect2(2358, 962, 560, 754)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v5lvh"]
+atlas = ExtResource("1_45ufi")
+region = Rect2(2358, 111, 560, 754)
 
 [resource]
 script = ExtResource("2_1wshg")
 recipe = Array[ExtResource("1_5ji7n")]([ExtResource("3_45ufi"), ExtResource("4_v5lvh")])
+ribbit_art = SubResource("AtlasTexture_v5lvh")
 name = "Scholar's Draught"
 art = SubResource("AtlasTexture_2sbue")
 description = "Drinking this potion will give a serious intelligence boost and a sharp mind. But you will have an indescribable urge to share your genius mind with those around you. Those darn scholars just can't help themselves, the King is worried they might annoy him to death at this rate, but they are too useful to run them out."

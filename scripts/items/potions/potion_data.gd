@@ -2,6 +2,7 @@ extends ItemData
 class_name PotionData
 
 @export var recipe: Array[IngredientData]
+@export var ribbit_art : Texture
 
 var recipe_unlocked: bool = false #This unlocks recipe and potion image
 var effect_discovered: bool = false #This unlocks the actual potion name, set this to true after customer feedback

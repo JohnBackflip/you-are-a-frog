@@ -1,18 +1,23 @@
-[gd_resource type="Resource" script_class="PotionData" load_steps=7 format=3 uid="uid://dc4p6s70p26tu"]
+[gd_resource type="Resource" script_class="PotionData" load_steps=8 format=3 uid="uid://dc4p6s70p26tu"]
 
 [ext_resource type="Script" uid="uid://twcr3o7hisyf" path="res://scripts/items/ingredients/ingredient_data.gd" id="1_gelis"]
-[ext_resource type="Texture2D" uid="uid://b72lcy1w3348i" path="res://assets/potions_v2.png" id="1_p5la3"]
+[ext_resource type="Texture2D" uid="uid://brxg4jb5qop75" path="res://assets/potion_icons.png" id="1_p5la3"]
 [ext_resource type="Script" uid="uid://c7frnt306tx28" path="res://scripts/items/potions/potion_data.gd" id="2_gtwil"]
 [ext_resource type="Resource" uid="uid://b7y11p60qyli" path="res://resources/ingredients/dry_cloud.tres" id="3_m7h4h"]
 [ext_resource type="Resource" uid="uid://crj4gihidbjij" path="res://resources/ingredients/explosive_funguy.tres" id="4_k4yhi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2blsw"]
 atlas = ExtResource("1_p5la3")
-region = Rect2(1599, 629, 560, 754)
+region = Rect2(123, 962, 560, 754)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m7h4h"]
+atlas = ExtResource("1_p5la3")
+region = Rect2(123, 111, 560, 754)
 
 [resource]
 script = ExtResource("2_gtwil")
 recipe = Array[ExtResource("1_gelis")]([ExtResource("3_m7h4h"), ExtResource("4_k4yhi")])
+ribbit_art = SubResource("AtlasTexture_m7h4h")
 name = "Cloud of Fluff Draught"
 art = SubResource("AtlasTexture_2blsw")
 description = "Encases the area doused with the potion in a fluffy cloud of protection that bounces all who try to enter or exit said area away."
