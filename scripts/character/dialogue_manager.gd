@@ -40,6 +40,21 @@ func daily_dialogue(day: int):
 			next_dialogue(customer)
 			await dialogue_ready
 		# TODO: implement randoms asw
+	var tween = create_tween()
+	tween.tween_property(self, "modulate", Color(0.7, 0.7, 0.7), 1.5)
+	# Make the close shop button "pulse" to catch the players' attention
+	%CloseShopButton.show()
+	tween = create_tween().set_loops()
+
+	tween.tween_property(%CloseShopButton, "modulate", Color(1.2, 1.2, 1.2), 0.1)
+	tween.parallel().tween_property(%CloseShopButton, "scale", Vector2(1.05, 1.05), 0.3)
+
+	tween.tween_interval(0.5)
+
+	tween.tween_property(%CloseShopButton, "modulate", Color(1, 1, 1), 0.1)
+	tween.parallel().tween_property(%CloseShopButton, "scale", Vector2.ONE, 0.3)
+
+	tween.tween_interval(0.5)
 
 func next_dialogue(character_data : CharacterData):
 	if character.character_clicked.is_connected(crafting_interface.give_potion):

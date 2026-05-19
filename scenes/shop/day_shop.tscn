@@ -315,6 +315,8 @@ grow_vertical = 2
 bbcode_enabled = true
 
 [node name="CloseShopButton" type="Button" parent="CanvasLayer"]
+unique_name_in_owner = true
+visible = false
 custom_minimum_size = Vector2(120, 0)
 anchors_preset = 3
 anchor_left = 1.0
