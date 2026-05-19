@@ -6,6 +6,8 @@ signal inventory_interact(inventory : Inventory, inventory_data: InventoryData, 
 signal inventory_show_tooltip(inventory_data: InventoryData, index: int, inventory : Inventory)
 signal inventory_hide_tooltip()
 
+signal modified_slot(index : int, slot_data : SlotData)
+
 @export var slot_datas_potion: Array[SlotData]
 @export var slot_datas_ingredient: Array[SlotData]
 
@@ -15,8 +17,8 @@ func on_slot_clicked(index: int, button: int, inventory : Inventory) -> void:
 func on_slot_hovered(index: int, inventory : Inventory) -> void:
 	inventory_show_tooltip.emit(self, index, inventory)
 
-func on_slot_hover_left() -> void:
-	inventory_hide_tooltip.emit()
+func on_slot_hover_left(index: int, inventory : Inventory) -> void:
+	inventory_hide_tooltip.emit(index, inventory)
 
 func consume_item(slots : Array[SlotData], index : int) -> void:
 	slots[index].consume_item()
@@ -42,7 +44,7 @@ func store_ingredient(data : ItemData, quantity : int = 1) -> bool:
 	for index in slot_datas_ingredient.size():
 		if slot_datas_ingredient[index] and slot_datas_ingredient[index].item_data == data:
 			slot_datas_ingredient[index].add_item()
-			inventory_updated.emit(self)
+			modified_slot.emit(index, slot_datas_ingredient[index])
 			return true
 
 	# If item last of its kind, find an empty slot
@@ -83,7 +85,7 @@ func grab_ingredient(index : int) -> SlotData:
 		var slot_data = slot_datas_ingredient[index].duplicate(true)
 		consume_item(slot_datas_ingredient, index)
 		slot_data.set_quantity(1)
-		inventory_updated.emit(self)
+		modified_slot.emit(index, slot_datas_ingredient[index])
 		return slot_data
 	else:
 		return null
@@ -119,7 +121,7 @@ func drop_ingredient(grabbed_slot_data: SlotData, index: int) -> SlotData:
 		slot_datas_ingredient[index].add_item()
 		slot_data = null
 
-	inventory_updated.emit(self)
+	modified_slot.emit(index, slot_datas_ingredient[index])
 	return slot_data
 
 func drop_slot_data(grabbed_slot_data: SlotData, index: int, inventory : Inventory) -> SlotData:

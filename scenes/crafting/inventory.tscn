@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://75a44nc4a2tt" path="res://scripts/ui/inventory_ui/ingredient_inventory.gd" id="3_7nqdk"]
 [ext_resource type="Script" uid="uid://xt6o7v7dhiqt" path="res://scripts/ui/inventory_ui/potion_inventory.gd" id="4_hjbap"]
 [ext_resource type="PackedScene" uid="uid://mtyjkkj4jpv5" path="res://scenes/crafting/ingredient_slot.tscn" id="5_7nqdk"]
-[ext_resource type="AudioStream" uid="uid://gnhnqvtjlst1" path="res://assets/audio/bag/bag_close.wav" id="8_2pheq"]
+[ext_resource type="AudioStream" uid="uid://ys4bgj6887g4" path="res://assets/audio/bag/bag_close.mp3" id="8_2pheq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_isfg7"]
 animations = [{

@@ -23,15 +23,29 @@ func set_player_inventory_data(inventory_data: InventoryData) -> void:
 
 func on_show_tooltip(inventory_data: InventoryData, index: int, inventory : Inventory) -> void:
 	var has_text : bool
-	if (inventory_data is MixerData or  inventory is IngredientInventory):
+	if (inventory_data is MixerData or inventory is IngredientInventory):
 		has_text = item_description.set_info(inventory_data.slot_datas_ingredient[index])
+		# Open the bag. Only if the player is holding the same type of ingredient or not holding anything.
+		if (inventory is IngredientInventory):
+			var can_open : bool = false
+			if (grabbed_slot_data):
+				if (grabbed_slot_data.item_data is IngredientData):
+					var slot = inventory_data.slot_datas_ingredient[index]
+					if (!slot or slot.item_data == grabbed_slot_data.item_data):
+						can_open = true
+			else:
+				can_open = true
+			if can_open:
+				inventory.open_bag(index)
 	else:
 		has_text = item_description.set_info(inventory_data.slot_datas_potion[index])
 	
 	item_description.visible = has_text
 
-func on_hide_tooltip() -> void:
+func on_hide_tooltip(index: int, inventory : Inventory) -> void:
 	item_description.hide()
+	if (inventory is IngredientInventory):
+		inventory.close_bag(index)
 
 # Grab or place selected item from the inventory 
 func on_inventory_interact(inventory : Inventory, inventory_data: InventoryData, index: int, button: int) -> void:
@@ -42,7 +56,7 @@ func on_inventory_interact(inventory : Inventory, inventory_data: InventoryData,
 		[_, MOUSE_BUTTON_LEFT]:
 			grabbed_slot_data = inventory_data.drop_slot_data(grabbed_slot_data, index, inventory)
 	
-	mixer_inventory.holding_item = grabbed_slot_data != null
+	mixer_inventory.holding_item = grabbed_slot_data and grabbed_slot_data.item_data is IngredientData
 	update_grabbed_slot()
 
 # Update cursor whenever an item is grabbed

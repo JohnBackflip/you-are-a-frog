@@ -3,7 +3,7 @@ class_name Slot
 
 signal slot_clicked(index: int, button: int)
 signal slot_hovered(index: int, inventory : Inventory)
-signal slot_hover_left()
+signal slot_hover_left(index: int, inventory : Inventory)
 
 @onready var texture_rect: TextureRect = $MarginContainer/TextureRect
 @onready var quantity_label: Label = $QuantityLabel
@@ -48,4 +48,4 @@ func _on_mouse_entered() -> void:
 
 # Make tooltip invisible when not hovering anymore
 func _on_mouse_exited() -> void:
-	slot_hover_left.emit()
+	slot_hover_left.emit(index, parent_inventory)

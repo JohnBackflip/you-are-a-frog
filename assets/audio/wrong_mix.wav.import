@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://gnhnqvtjlst1"
-path="res://.godot/imported/bag_close.wav-21b5dd4bbfe81eaeffee2cdf8232720e.sample"
+uid="uid://cujt5cvi8226g"
+path="res://.godot/imported/wrong_mix.wav-a68d5f2434b50abc93ca6d14c6c44e55.sample"
 
 [deps]
 
-source_file="res://assets/audio/bag/bag_close.wav"
-dest_files=["res://.godot/imported/bag_close.wav-21b5dd4bbfe81eaeffee2cdf8232720e.sample"]
+source_file="res://assets/audio/wrong_mix.wav"
+dest_files=["res://.godot/imported/wrong_mix.wav-a68d5f2434b50abc93ca6d14c6c44e55.sample"]
 
 [params]
 

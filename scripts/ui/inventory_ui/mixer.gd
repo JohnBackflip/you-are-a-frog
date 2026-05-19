@@ -7,7 +7,7 @@ signal craft_mixer
 @onready var slots: Control = $Slots
 
 @export var discovered_sound : AudioStream = preload("res://assets/audio/potion_discovered.wav")
-
+@export var wrong_sound : AudioStream = preload("res://assets/audio/wrong_mix.wav")
 
 var crafting_ingredients: Array[IngredientData]
 var potion_slot_data: SlotData
@@ -22,16 +22,24 @@ func _ready() -> void:
 	if mixer_data:
 		layout_slots(mixer_data)
 
+func craftable() -> bool: 
+	return game_manager.encyclopedia.find_craftable_potion(crafting_ingredients) != null
+
+func error_crafting() -> void:
+	request_ingredients_storage()
+	game_functions.play_audio(audio_player, wrong_sound)
+	await audio_player.finished
 
 func craft(cauldron : Node) -> void:
-	await cauldron.bubble()
 	var result_potion: PotionData = game_manager.encyclopedia.find_craftable_potion(crafting_ingredients)
 	potion_slot_data = SlotData.new()
 	potion_slot_data.item_data = result_potion
 	
 	if result_potion == null:
+		request_ingredients_storage()
+		game_functions.play_audio(audio_player, wrong_sound)
 		return
-		
+
 	# Consume items in potion slot (all of them for now, to change for partial recipes)
 	for index in range(mixer_data.slot_datas_ingredient.size()):
 		var slot_data = mixer_data.slot_datas_ingredient[index]
@@ -39,7 +47,8 @@ func craft(cauldron : Node) -> void:
 			slot_data.consume_item()
 			if slot_data.quantity <= 0:
 				mixer_data.slot_datas_ingredient[index] = null
-	
+	request_ingredients_storage()
+	await cauldron.bubble()
 	# Play some animation here
 	mixer_data.inventory_updated.emit(mixer_data)
 	if result_potion.recipe and result_potion.recipe_unlocked == false:
@@ -59,6 +68,7 @@ func request_potion_storage() -> void:
 			potion_slot_data = null
 
 func request_ingredients_storage() -> void:
+	can_craft = false
 	game_manager.player_inventory_data.rearange_ingredients()
 	for index in range(mixer_data.slot_datas_ingredient.size()):
 		var slot_data = mixer_data.slot_datas_ingredient[index]
@@ -68,7 +78,6 @@ func request_ingredients_storage() -> void:
 			if success:
 				#print("Ingredient store success!")
 				mixer_data.slot_datas_ingredient[index] = null
-
 	layout_slots(mixer_data)
 
 # Update whenever ingredients are added or removed to the mixer slots
@@ -135,9 +144,7 @@ func _on_mouse_entered() -> void:
 		tween.tween_property(self, "modulate", Color(1.2, 1.2, 1.2), 0.1)
 		tween.parallel().tween_property(self, "scale", Vector2(1.05, 1.05), 0.1)
 
-
 func _on_mouse_exited() -> void:
-	if (can_craft or holding_item):
-		var tween = create_tween()
-		tween.tween_property(self, "modulate", Color(1, 1, 1), 0.1)
-		tween.parallel().tween_property(self, "scale", Vector2(1.0, 1.0), 0.1)
+	var tween = create_tween()
+	tween.tween_property(self, "modulate", Color(1, 1, 1), 0.1)
+	tween.parallel().tween_property(self, "scale", Vector2(1.0, 1.0), 0.1)

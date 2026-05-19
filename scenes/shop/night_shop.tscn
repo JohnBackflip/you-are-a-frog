@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://0yo5kafitfqt"]
+[gd_scene load_steps=19 format=3 uid="uid://0yo5kafitfqt"]
 
 [ext_resource type="Script" uid="uid://f6bjpg5u0tat" path="res://scripts/night_shop.gd" id="1_5fy2q"]
 [ext_resource type="Texture2D" uid="uid://da1hf6oukdqme" path="res://assets/shop_bg_night.png" id="2_5sa7e"]
@@ -39,6 +39,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_cw7th"]
@@ -95,11 +107,29 @@ tracks/1/keys = {
 "values": [0.79055834, 0.0]
 }
 
+[sub_resource type="Animation" id="Animation_3up25"]
+resource_name = "wrong_combo"
+length = 0.35
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0.44, 0.44, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5eyxy"]
 _data = {
 &"RESET": SubResource("Animation_06nyc"),
 &"pour_beaker": SubResource("Animation_cw7th"),
-&"return_beaker": SubResource("Animation_5eyxy")
+&"return_beaker": SubResource("Animation_5eyxy"),
+&"wrong_combo": SubResource("Animation_3up25")
 }
 
 [node name="NightShop" type="Node2D"]
@@ -144,12 +174,12 @@ layout_mode = 1
 [node name="Mixer" parent="CanvasLayer/CraftingInterface" instance=ExtResource("17_85lvg")]
 unique_name_in_owner = true
 layout_mode = 1
-anchor_left = 0.1234375
+anchor_left = 0.1421875
 anchor_top = 0.5361111
-anchor_right = 0.27890605
+anchor_right = 0.29765606
 anchor_bottom = 0.86805505
-offset_left = 39.0
-offset_right = 38.999817
+offset_left = 15.0
+offset_right = 14.999573
 offset_bottom = -0.00079345703
 
 [node name="MixerAnimation" type="AnimationPlayer" parent="CanvasLayer/CraftingInterface/Mixer"]

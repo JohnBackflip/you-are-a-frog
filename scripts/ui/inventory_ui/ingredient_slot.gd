@@ -8,15 +8,17 @@ class_name IngredientSlot
 
 @export var sound_open : AudioStream = preload("res://assets/audio/bag/bag_open.wav")
 @export var sound_take : AudioStream = preload("res://assets/audio/bag/bag_take.wav")
-@export var sound_close : AudioStream = preload("res://assets/audio/bag/bag_close.wav")
+@export var sound_close : AudioStream = preload("res://assets/audio/bag/bag_close.mp3")
 
 const colors : Array[float] = [0.0, 0.05, 0.29, 0.55, 0.68, 0.85]
 @onready var own_color : Color
 
+var is_open : bool = false
+
 enum State {EMPTY, ONE, FULL}
 var state : State = State.EMPTY
 
-func change_anim(is_open : bool):
+func change_anim():
 	var appended : String = ""
 	if state == State.EMPTY:
 		appended = "_empty"
@@ -33,7 +35,6 @@ func change_anim(is_open : bool):
 
 func _ready() -> void:
 	super()
-	change_anim(false)
 	bag.material = ShaderMaterial.new()
 	bag.material.shader = shader
 	bag.material.set_shader_parameter("target_color", Color.from_hsv(colors[get_index()], 1.0, 0.74, 1.0))
@@ -50,21 +51,20 @@ func update_state(slot_data: SlotData):
 
 func add_slot_data(slot_data: SlotData):
 	update_state(slot_data)
-	change_anim(false)
+	change_anim()
 
 func set_slot_data(slot_data: SlotData):
 	update_state(slot_data)
+	change_anim()
 	game_functions.play_audio(bag_sound, sound_take)
 
-# Make tooltip visible when hovering, change to "opened bag"
-func _on_mouse_entered() -> void:
-	slot_hovered.emit(index, parent_inventory)
+func open_bag() -> void:
 	game_functions.play_audio(bag_sound, sound_open)
-	change_anim(true)
+	is_open = true
+	change_anim()
 
-# Make tooltip invisible when not hovering anymore, change to "closed bag"
-func _on_mouse_exited() -> void:
-	slot_hover_left.emit()
+func close_bag() -> void:
+	is_open = false
 	if bag.animation.contains("opened"):
 		game_functions.play_audio(bag_sound, sound_close)
-	change_anim(false)
+	change_anim()

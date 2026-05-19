@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://dvg87cpkx5pto" path="res://assets/ingredient_bag/empty_overlay_open.png" id="10_xt5ch"]
 [ext_resource type="Texture2D" uid="uid://csncoxynbienb" path="res://assets/ingredient_bag/one_overlay_closed.png" id="11_8u5ws"]
 [ext_resource type="Texture2D" uid="uid://ccdbxl4tofo4s" path="res://assets/ingredient_bag/one_opened.png" id="14_uv55l"]
-[ext_resource type="AudioStream" uid="uid://gnhnqvtjlst1" path="res://assets/audio/bag/bag_close.wav" id="15_uv55l"]
+[ext_resource type="AudioStream" uid="uid://ys4bgj6887g4" path="res://assets/audio/bag/bag_close.mp3" id="15_uv55l"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_let6m"]
 animations = [{
@@ -135,14 +135,14 @@ script = ExtResource("1_p4v5u")
 position = Vector2(59, 61)
 scale = Vector2(0.16958334, 0.15877777)
 sprite_frames = SubResource("SpriteFrames_let6m")
-animation = &"closed_one"
+animation = &"closed_empty"
 
 [node name="Bag" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_4wxe5")
 position = Vector2(59, 61)
 scale = Vector2(0.16958334, 0.15877777)
 sprite_frames = SubResource("SpriteFrames_0jgdq")
-animation = &"opened_one"
+animation = &"closed_empty"
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 self_modulate = Color(18.892157, 18.892157, 18.892157, 0)
@@ -166,6 +166,10 @@ stretch_mode = 5
 [node name="QuantityLabel" type="Label" parent="."]
 visible = false
 layout_mode = 0
+offset_left = 11.0
+offset_top = 11.0
+offset_right = 39.0
+offset_bottom = 34.0
 size_flags_horizontal = 8
 size_flags_vertical = 8
 theme_override_colors/font_color = Color(1, 1, 1, 1)

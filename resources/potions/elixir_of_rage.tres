@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="PotionData" load_steps=8 format=3 uid="uid://hns16i2ndugl"]
+[gd_resource type="Resource" script_class="PotionData" load_steps=9 format=3 uid="uid://hns16i2ndugl"]
 
 [ext_resource type="Texture2D" uid="uid://brxg4jb5qop75" path="res://assets/potion_icons.png" id="1_bvg10"]
 [ext_resource type="Script" uid="uid://twcr3o7hisyf" path="res://scripts/items/ingredients/ingredient_data.gd" id="1_w8ogk"]
 [ext_resource type="Script" uid="uid://c7frnt306tx28" path="res://scripts/items/potions/potion_data.gd" id="2_npbs8"]
 [ext_resource type="Resource" uid="uid://ckxvddcuj1x7q" path="res://resources/ingredients/mad_hornet_stinger.tres" id="3_bqon6"]
 [ext_resource type="Resource" uid="uid://crj4gihidbjij" path="res://resources/ingredients/explosive_funguy.tres" id="4_4tm2a"]
+[ext_resource type="AudioStream" uid="uid://bd7hndapgcmbp" path="res://assets/audio/ingredients/drop_wood.wav" id="6_bqon6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_etady"]
 atlas = ExtResource("1_bvg10")

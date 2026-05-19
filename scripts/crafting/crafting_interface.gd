@@ -23,12 +23,16 @@ func set_mixer_data(mixer_data: MixerData) -> void:
 	mixer_data.mixer_contents.connect(mixer.on_ingredients_update)
 
 func on_craft() -> void:
-	mixer.get_child(-1).play("pour_beaker")
+	if mixer.craftable():
+		mixer.get_child(-1).play("pour_beaker")
+	else:
+		mixer.get_child(-1).play("wrong_combo")
+		await mixer.error_crafting()
+		mixer.get_child(-1).play("RESET")
 
 
 func _on_mixer_animation_finished(anim_name: StringName) -> void:
 	if (anim_name == "pour_beaker"):
 		mixer.craft(cauldron)
-		mixer.request_ingredients_storage()
 		await get_tree().create_timer(1.0).timeout
 		mixer.get_child(-1).play("return_beaker")
