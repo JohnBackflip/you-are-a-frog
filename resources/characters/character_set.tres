@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="CharacterSet" load_steps=4 format=3 uid="uid://clugad002na4t"]
+[gd_resource type="Resource" script_class="CharacterSet" load_steps=5 format=3 uid="uid://clugad002na4t"]
 
 [ext_resource type="Script" uid="uid://b5nbxtpiyq5ta" path="res://scripts/character/character_data.gd" id="1_ns0vq"]
+[ext_resource type="Resource" uid="uid://c82nnsyvugbuc" path="res://resources/characters/karin.tres" id="3_8caab"]
 [ext_resource type="Resource" uid="uid://tgbe3t2r8q67" path="res://resources/characters/mortimer.tres" id="3_w8dn7"]
 [ext_resource type="Script" uid="uid://cmco5h4dg5b2h" path="res://scripts/character/character_set.gd" id="4_g5gyk"]
 
 [resource]
 script = ExtResource("4_g5gyk")
-characters = Array[ExtResource("1_ns0vq")]([ExtResource("3_w8dn7")])
+characters = Array[ExtResource("1_ns0vq")]([ExtResource("3_w8dn7"), ExtResource("3_8caab")])

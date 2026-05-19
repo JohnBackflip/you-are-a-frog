@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://dbng7uxvvs4my"]
+
+[ext_resource type="Texture2D" uid="uid://b5d05pcx3qonl" path="res://assets/cauldron.png" id="1_v4s5u"]
+[ext_resource type="Texture2D" uid="uid://cuin2pk6f66kr" path="res://assets/vfx/smoke_cauldron.png" id="2_opmdb"]
+[ext_resource type="Script" uid="uid://dkcumbeimi5gi" path="res://scripts/crafting/cauldron.gd" id="2_oybyc"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_oybyc"]
+
+[sub_resource type="Gradient" id="Gradient_8kiie"]
+colors = PackedColorArray(0.2331512, 0.21501136, 0.56895536, 1, 1, 1, 1, 1)
+
+[node name="Cauldron" type="Sprite2D"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_v4s5u")
+script = ExtResource("2_oybyc")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+visible = false
+material = SubResource("CanvasItemMaterial_oybyc")
+position = Vector2(-50, -126.666664)
+amount = 50
+texture = ExtResource("2_opmdb")
+lifetime = 0.7
+preprocess = 1.3900000000000001
+speed_scale = 0.0
+randomness = 0.32
+lifetime_randomness = 0.1
+emission_shape = 3
+emission_rect_extents = Vector2(300, 50)
+spread = 24.0
+gravity = Vector2(0, -700)
+initial_velocity_min = 21.81
+initial_velocity_max = 417.54
+scale_amount_min = 0.5
+color = Color(0.86898494, 0.8689849, 0.8689849, 1)
+color_ramp = SubResource("Gradient_8kiie")
+
+[node name="Bubbler" type="AudioStreamPlayer2D" parent="."]

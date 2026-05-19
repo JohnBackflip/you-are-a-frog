@@ -7,12 +7,15 @@ signal character_clicked()
 @onready var walk : AnimationPlayer = $CharacterWalk
 @onready var leave_animation  : AnimationPlayer = $CharacterLeave
 @onready var character : Sprite2D = $"Character"
+@onready var collider : CollisionShape2D = $CollisionShape2D
 
 # Prepares a character to walk in, and "loads" the dialogue that will happen
 func walk_in(character_data : CharacterData):
 	leave_animation.play("RESET")
 	character.texture = character_data.art
 	character.scale = Vector2(character_data.scale, character_data.scale)
+	collider.scale = character.scale
+	collider.position = position/2 # Center the collider
 	
 	walk.play("character_walk")
 	step.play("character_step")

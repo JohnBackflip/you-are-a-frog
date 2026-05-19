@@ -16,7 +16,7 @@ func _ready() -> void:
 func update_data() -> void:
 	character_index = 0
 	for character_data in character_set.characters:
-		if character_data not in character_datas: #and character_data.met:
+		if character_data not in character_datas and character_data.met:
 			character_datas.append(character_data)
 	populate_data()
 

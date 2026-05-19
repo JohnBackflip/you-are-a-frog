@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CharacterData" load_steps=13 format=3 uid="uid://tgbe3t2r8q67"]
+[gd_resource type="Resource" script_class="CharacterData" load_steps=12 format=3 uid="uid://tgbe3t2r8q67"]
 
 [ext_resource type="Texture2D" uid="uid://gktapicha3cy" path="res://assets/mortimer.png" id="1_peqev"]
 [ext_resource type="Texture2D" uid="uid://bdt6wm5onesju" path="res://assets/mortimer_icon.png" id="2_dxru5"]
@@ -9,10 +9,6 @@
 [ext_resource type="Script" uid="uid://kdpvn2x2u522" path="res://scripts/plot/ending_points.gd" id="7_mkaco"]
 [ext_resource type="Resource" uid="uid://by1d77ljyeahh" path="res://resources/calendar/timelines/Mortimer_collect.tres" id="8_xp16b"]
 [ext_resource type="Script" uid="uid://6knlg22ir0m1" path="res://scripts/plot/timeline_data.gd" id="9_tpbtu"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_peqev"]
-atlas = ExtResource("1_peqev")
-region = Rect2(0, 0, 497, 512)
 
 [sub_resource type="Resource" id="Resource_7nvyx"]
 script = ExtResource("6_g6186")
@@ -30,9 +26,9 @@ null: SubResource("Resource_7nvyx")
 script = ExtResource("2_fvyjv")
 name = "Mortimer"
 faction = "Rebels"
-art = SubResource("AtlasTexture_peqev")
+art = ExtResource("1_peqev")
 color = "fcb603"
 icon = ExtResource("2_dxru5")
-scale = 0.7
+scale = 0.17
 background = "Mortimer lived his entire life working for different criminal organizations in the city. What many would consider illegal and immoral, Mortimer sees it as an average Tuesday. It’s a difficult life, but after recently taking over the lead criminal gang in the city, Mortimer is desperate to step up and do a good job to lead his new group, and all the people he suddenly finds that are depending on him for survival."
 timeline = SubResource("Resource_85cw3")

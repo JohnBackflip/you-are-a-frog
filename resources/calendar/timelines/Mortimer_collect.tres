@@ -14,6 +14,10 @@
 [ext_resource type="Resource" uid="uid://bsjrd27vypspb" path="res://resources/potions/scholars_draught.tres" id="11_wruyw"]
 [ext_resource type="Resource" uid="uid://dn1j01dtv3tar" path="res://resources/potions/sleep_potion.tres" id="12_8ymaw"]
 
+[sub_resource type="Resource" id="Resource_vub77"]
+script = ExtResource("3_nsgp5")
+metadata/_custom_type_script = "uid://dbjypilgem226"
+
 [sub_resource type="Resource" id="Resource_crc7e"]
 script = ExtResource("5_crc7e")
 ending = ExtResource("10_44y21")
@@ -84,10 +88,6 @@ metadata/_custom_type_script = "uid://kdpvn2x2u522"
 [sub_resource type="Resource" id="Resource_dlr10"]
 script = ExtResource("3_nsgp5")
 endings = Array[ExtResource("5_crc7e")]([SubResource("Resource_n10gw")])
-metadata/_custom_type_script = "uid://dbjypilgem226"
-
-[sub_resource type="Resource" id="Resource_vub77"]
-script = ExtResource("3_nsgp5")
 metadata/_custom_type_script = "uid://dbjypilgem226"
 
 [resource]
