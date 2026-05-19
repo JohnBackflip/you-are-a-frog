@@ -14,8 +14,8 @@ func walk_in(character_data : CharacterData):
 	leave_animation.play("RESET")
 	character.texture = character_data.art
 	character.scale = Vector2(character_data.scale, character_data.scale)
-	collider.scale = character.scale
-	collider.position = position/2 # Center the collider
+	#collider.scale = character.scale
+	#collider.position = position/2 # Center the collider
 	
 	walk.play("character_walk")
 	step.play("character_step")

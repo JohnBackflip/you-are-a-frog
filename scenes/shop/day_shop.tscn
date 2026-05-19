@@ -252,7 +252,7 @@ texture = ExtResource("9_3v3vx")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="OrderInterface" type="Control" parent="CanvasLayer"]
+[node name="CraftingInterface" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -263,10 +263,10 @@ mouse_filter = 2
 script = ExtResource("12_u1556")
 metadata/_edit_lock_ = true
 
-[node name="Inventory" parent="CanvasLayer/OrderInterface" instance=ExtResource("12_ksefx")]
+[node name="Inventory" parent="CanvasLayer/CraftingInterface" instance=ExtResource("12_ksefx")]
 layout_mode = 1
 
-[node name="Mixer" parent="CanvasLayer/OrderInterface" instance=ExtResource("11_wmuix")]
+[node name="Mixer" parent="CanvasLayer/CraftingInterface" instance=ExtResource("11_wmuix")]
 visible = false
 layout_mode = 0
 anchors_preset = 0
@@ -275,13 +275,13 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 offset_bottom = 0.0
 
-[node name="GrabbedSlot" parent="CanvasLayer/OrderInterface" instance=ExtResource("14_3v3vx")]
+[node name="GrabbedSlot" parent="CanvasLayer/CraftingInterface" instance=ExtResource("14_3v3vx")]
 visible = false
 z_index = 99
 layout_mode = 0
 mouse_filter = 2
 
-[node name="ItemDescription" type="Control" parent="CanvasLayer/OrderInterface"]
+[node name="ItemDescription" type="Control" parent="CanvasLayer/CraftingInterface"]
 visible = false
 anchors_preset = 0
 offset_left = 1.0
@@ -291,7 +291,7 @@ offset_bottom = 335.0
 script = ExtResource("15_ksefx")
 metadata/_edit_group_ = true
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/OrderInterface/ItemDescription"]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/CraftingInterface/ItemDescription"]
 modulate = Color(0.13725491, 0, 0.24705882, 0.4)
 layout_mode = 1
 anchors_preset = 15
@@ -301,7 +301,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("16_u1556")
 
-[node name="Description" type="RichTextLabel" parent="CanvasLayer/OrderInterface/ItemDescription"]
+[node name="Description" type="RichTextLabel" parent="CanvasLayer/CraftingInterface/ItemDescription"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -333,5 +333,5 @@ visible = false
 
 [connection signal="input_event" from="Character" to="Character" method="_on_input_event"]
 [connection signal="animation_finished" from="Character/CharacterWalk" to="Character" method="_on_character_walk_animation_finished"]
-[connection signal="gui_input" from="CanvasLayer/OrderInterface" to="CanvasLayer/OrderInterface" method="_on_gui_input"]
+[connection signal="gui_input" from="CanvasLayer/CraftingInterface" to="CanvasLayer/CraftingInterface" method="_on_gui_input"]
 [connection signal="pressed" from="CanvasLayer/CloseShopButton" to="." method="_on_close_shop_button_pressed"]

@@ -1,11 +1,10 @@
-extends Node2D
+extends Shop
 
 signal dialogue_ready
 signal finished_talking
 
 @onready var potion_diary : Control = $CanvasLayer/DiaryUI
 @onready var character : Node2D = $Character
-@onready var order_interface : Control = $CanvasLayer/OrderInterface
 
 var plot_manager : PlotManager
 
@@ -16,10 +15,10 @@ var customer_calendar : CustomerCalendar
 var daily_customers : DailyCustomers
 
 var current_character : CharacterData
-var player_inventory_data: InventoryData
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	super()
 	character_set = game_manager.character_set
 	plot_manager = game_manager.plot_manager
 	finished_talking.connect(character.on_finished_talking)
@@ -28,8 +27,7 @@ func _ready() -> void:
 	customer_calendar = game_manager.customer_calendar
 
 	# Initialise potion inventory
-	player_inventory_data = game_manager.player_inventory_data
-	order_interface.set_player_inventory_data(player_inventory_data)
+	crafting_interface.set_player_inventory_data(player_inventory_data)
 	
 	var day = game_manager.day
 	print("Day: ", day)
@@ -44,8 +42,8 @@ func daily_dialogue(day: int):
 		# TODO: implement randoms asw
 
 func next_dialogue(character_data : CharacterData):
-	if character.character_clicked.is_connected(order_interface.give_potion):
-		character.character_clicked.disconnect(order_interface.give_potion)
+	if character.character_clicked.is_connected(crafting_interface.give_potion):
+		character.character_clicked.disconnect(crafting_interface.give_potion)
 	
 	current_character = character_data
 	timeline = current_character.timeline.dialogic_timeline
@@ -82,7 +80,7 @@ func DialogicSignal(arg):
 			dialogue_ready.emit()
 			return
 		"wait_potion":
-			character.character_clicked.connect(order_interface.give_potion)
+			character.character_clicked.connect(crafting_interface.give_potion)
 			potion = await game_events.potion_given
 			
 			game_manager.order_manager.resolve_order(current_character, potion)
