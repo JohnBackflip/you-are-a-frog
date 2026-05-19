@@ -57,9 +57,6 @@ func daily_dialogue(day: int):
 	tween.tween_interval(0.5)
 
 func next_dialogue(character_data : CharacterData):
-	if character.character_clicked.is_connected(crafting_interface.give_potion):
-		character.character_clicked.disconnect(crafting_interface.give_potion)
-	
 	current_character = character_data
 	timeline = current_character.timeline.dialogic_timeline
 	character.walk_in(character_data)
@@ -97,6 +94,8 @@ func DialogicSignal(arg):
 		"wait_potion":
 			character.character_clicked.connect(crafting_interface.give_potion)
 			potion = await game_events.potion_given
+			if character.character_clicked.is_connected(crafting_interface.give_potion):
+				character.character_clicked.disconnect(crafting_interface.give_potion)
 			
 			game_manager.order_manager.resolve_order(current_character, potion)
 			
