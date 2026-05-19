@@ -102,3 +102,5 @@ autoplay = "default"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-9.5, -23)
 shape = SubResource("RectangleShape2D_0ewvi")
+
+[node name="AudioPlayer" type="AudioStreamPlayer2D" parent="."]

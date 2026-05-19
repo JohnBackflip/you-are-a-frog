@@ -4,8 +4,10 @@ class_name MixerInventory
 signal craft_mixer
 
 @export var mixer_data: MixerData
-
 @onready var slots: Control = $Slots
+
+@export var discovered_sound : AudioStream = preload("res://assets/audio/potion_discovered.wav")
+
 
 var crafting_ingredients: Array[IngredientData]
 var potion_slot_data: SlotData
@@ -21,7 +23,8 @@ func _ready() -> void:
 		layout_slots(mixer_data)
 
 
-func craft() -> void:
+func craft(cauldron : Node) -> void:
+	await cauldron.bubble()
 	var result_potion: PotionData = game_manager.encyclopedia.find_craftable_potion(crafting_ingredients)
 	potion_slot_data = SlotData.new()
 	potion_slot_data.item_data = result_potion
@@ -42,6 +45,7 @@ func craft() -> void:
 	if result_potion.recipe and result_potion.recipe_unlocked == false:
 		game_events.potion_discovered.emit(result_potion)
 		result_potion.recipe_unlocked = true
+		game_functions.play_audio(audio_player, discovered_sound)
 		print("New potion %s discovered!" % result_potion.name)
 	request_potion_storage()
 

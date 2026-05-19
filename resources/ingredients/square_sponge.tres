@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="IngredientData" load_steps=4 format=3 uid="uid://cpie0onc3bixp"]
+[gd_resource type="Resource" script_class="IngredientData" load_steps=5 format=3 uid="uid://cpie0onc3bixp"]
 
 [ext_resource type="Texture2D" uid="uid://bs7085janjrti" path="res://assets/ingredients.png" id="1_0w7j8"]
 [ext_resource type="Script" uid="uid://twcr3o7hisyf" path="res://scripts/items/ingredients/ingredient_data.gd" id="1_3xvxw"]
+[ext_resource type="AudioStream" uid="uid://mia2godbr5qb" path="res://assets/audio/ingredients/soft_impact.wav" id="3_dxbbc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dxbbc"]
 atlas = ExtResource("1_0w7j8")
@@ -12,4 +13,5 @@ script = ExtResource("1_3xvxw")
 name = "Square Sponge"
 art = SubResource("AtlasTexture_dxbbc")
 description = "It's a Square Sponge. Very angular. Probably nice for cleaning? It's also very rectangular. On another note it's got corners."
+sound = ExtResource("3_dxbbc")
 metadata/_custom_type_script = "uid://twcr3o7hisyf"

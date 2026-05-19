@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="IngredientData" load_steps=4 format=3 uid="uid://crj4gihidbjij"]
+[gd_resource type="Resource" script_class="IngredientData" load_steps=5 format=3 uid="uid://crj4gihidbjij"]
 
 [ext_resource type="Script" uid="uid://twcr3o7hisyf" path="res://scripts/items/ingredients/ingredient_data.gd" id="1_rnuso"]
 [ext_resource type="Texture2D" uid="uid://dxhked8oouaok" path="res://assets/#1 - Transparent Icons.png" id="1_uar88"]
+[ext_resource type="AudioStream" uid="uid://c4dn4jxrpxf4t" path="res://assets/audio/ingredients/thud.wav" id="3_pdhfi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pdhfi"]
 atlas = ExtResource("1_uar88")
@@ -12,4 +13,5 @@ script = ExtResource("1_rnuso")
 name = "Explosive Funguy"
 art = SubResource("AtlasTexture_pdhfi")
 description = "The mushroom has grown legs! Very tiny ones, but definitely legs! Don't let the little guy run away! But be careful, if you don't use a gentle touch it might blow up in your face! "
+sound = ExtResource("3_pdhfi")
 metadata/_custom_type_script = "uid://twcr3o7hisyf"

@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://f6bjpg5u0tat" path="res://scripts/night_shop.gd" id="1_5fy2q"]
 [ext_resource type="Texture2D" uid="uid://da1hf6oukdqme" path="res://assets/shop_bg_night.png" id="2_5sa7e"]
-[ext_resource type="Texture2D" uid="uid://b5d05pcx3qonl" path="res://assets/cauldron.png" id="3_cw7th"]
 [ext_resource type="PackedScene" uid="uid://bdlxaluranoch" path="res://scenes/diary/diary.tscn" id="4_bgxok"]
 [ext_resource type="PackedScene" uid="uid://bno15tnqsojkj" path="res://scenes/shop/companion.tscn" id="5_ob5p7"]
+[ext_resource type="PackedScene" uid="uid://dbng7uxvvs4my" path="res://scenes/crafting/cauldron.tscn" id="6_3up25"]
 [ext_resource type="Script" uid="uid://bxnd2guymaw3e" path="res://scripts/crafting/crafting_interface.gd" id="11_qhh3u"]
 [ext_resource type="PackedScene" uid="uid://bj32pp33u7ou4" path="res://scenes/crafting/slot.tscn" id="13_2ldue"]
 [ext_resource type="Script" uid="uid://daoqvnp1hwhld" path="res://scripts/ui/inventory_ui/item_description.gd" id="13_5eyxy"]
@@ -111,11 +111,6 @@ texture = ExtResource("2_5sa7e")
 centered = false
 metadata/_edit_lock_ = true
 
-[node name="Cauldron" type="Sprite2D" parent="."]
-position = Vector2(563, 455)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("3_cw7th")
-
 [node name="Diary" parent="." instance=ExtResource("4_bgxok")]
 position = Vector2(813.38, 561)
 scale = Vector2(0.17, 0.17)
@@ -138,6 +133,10 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("11_qhh3u")
 metadata/_edit_lock_ = true
+
+[node name="Cauldron" parent="CanvasLayer/CraftingInterface" instance=ExtResource("6_3up25")]
+unique_name_in_owner = true
+position = Vector2(563, 455)
 
 [node name="Inventory" parent="CanvasLayer/CraftingInterface" instance=ExtResource("15_06nyc")]
 layout_mode = 1

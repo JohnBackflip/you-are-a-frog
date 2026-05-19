@@ -3,6 +3,7 @@ class_name Inventory
 
 const SLOT = preload("uid://bj32pp33u7ou4")
 @onready var grid: GridContainer
+@onready var audio_player : AudioStreamPlayer2D = $AudioPlayer
 
 func set_inventory_data(inventory_data: InventoryData) -> void:
 	inventory_data.inventory_updated.connect(populate_items)

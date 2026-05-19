@@ -1,7 +1,7 @@
 extends Shop
 
 @onready var canvas_layer: CanvasLayer = $CanvasLayer
-@onready var cauldron: Sprite2D = $Cauldron
+@onready var cauldron: Sprite2D = $CanvasLayer/CraftingInterface/Cauldron
 
 # This is set to the demo inventory for now, change when needed. Might have to change these to global variables
 var mixer_data: MixerData
@@ -36,7 +36,7 @@ func _on_end_night_button_pressed() -> void:
 	move_to_front()
 	var tween = create_tween()
 	tween.tween_property(self.get_node("CanvasLayer/CraftingInterface"), "modulate:a", 0.0, 0.2)
-	tween.tween_property(self.get_node("Cauldron"), "modulate:a", 0.0, 0.5)
+	tween.tween_property(self.get_node("%Cauldron"), "modulate:a", 0.0, 0.5)
 	tween.tween_property(self, "modulate:a", 0, 2.0)
 	#tween.parallel().tween_property(day_shop.get_node("Background"), "modulate:a", 1, 1.0)
 	await tween.finished

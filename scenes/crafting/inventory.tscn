@@ -1,12 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://b2cf11pgsj20c"]
+[gd_scene load_steps=10 format=3 uid="uid://b2cf11pgsj20c"]
 
-[ext_resource type="Script" path="res://ui/inventory/inventory_ui.gd" id="1_isfg7"]
+[ext_resource type="Script" uid="uid://di2vnaiq8ysvx" path="res://ui/inventory/inventory_ui.gd" id="1_isfg7"]
 [ext_resource type="Texture2D" uid="uid://ctet7knephplq" path="res://assets/shelf_day.png" id="1_xhn68"]
 [ext_resource type="Texture2D" uid="uid://ckfc3uiq6kmu2" path="res://assets/shelf_night.png" id="2_hjbap"]
 [ext_resource type="PackedScene" uid="uid://bj32pp33u7ou4" path="res://scenes/crafting/slot.tscn" id="2_pbatm"]
 [ext_resource type="Script" uid="uid://75a44nc4a2tt" path="res://scripts/ui/inventory_ui/ingredient_inventory.gd" id="3_7nqdk"]
 [ext_resource type="Script" uid="uid://xt6o7v7dhiqt" path="res://scripts/ui/inventory_ui/potion_inventory.gd" id="4_hjbap"]
 [ext_resource type="PackedScene" uid="uid://mtyjkkj4jpv5" path="res://scenes/crafting/ingredient_slot.tscn" id="5_7nqdk"]
+[ext_resource type="AudioStream" uid="uid://gnhnqvtjlst1" path="res://assets/audio/bag/bag_close.wav" id="8_2pheq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_isfg7"]
 animations = [{
@@ -55,6 +56,10 @@ offset_top = 47.0
 offset_bottom = 137.0
 script = ExtResource("3_7nqdk")
 
+[node name="AudioPlayer" type="AudioStreamPlayer2D" parent="IngredientInventory"]
+position = Vector2(-937, -99)
+stream = ExtResource("8_2pheq")
+
 [node name="IngredientGrid" type="GridContainer" parent="IngredientInventory"]
 unique_name_in_owner = true
 layout_mode = 1
@@ -98,6 +103,10 @@ offset_bottom = 525.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("4_hjbap")
+
+[node name="AudioPlayer" type="AudioStreamPlayer2D" parent="PotionInventory"]
+position = Vector2(-936, -52)
+stream = ExtResource("8_2pheq")
 
 [node name="PotionGrid" type="GridContainer" parent="PotionInventory"]
 unique_name_in_owner = true
@@ -212,3 +221,10 @@ layout_mode = 2
 [node name="Slot24" parent="PotionInventory/PotionGrid" instance=ExtResource("2_pbatm")]
 self_modulate = Color(1, 1, 1, 1)
 layout_mode = 2
+
+[connection signal="mouse_entered" from="IngredientInventory/IngredientGrid/Slot" to="." method="_on_ingredient_slot_mouse_entered"]
+[connection signal="mouse_entered" from="IngredientInventory/IngredientGrid/Slot2" to="." method="_on_slot_mouse_entered"]
+[connection signal="mouse_entered" from="IngredientInventory/IngredientGrid/Slot3" to="." method="_on_slot_mouse_entered"]
+[connection signal="mouse_entered" from="IngredientInventory/IngredientGrid/Slot4" to="." method="_on_slot_mouse_entered"]
+[connection signal="mouse_entered" from="IngredientInventory/IngredientGrid/Slot5" to="." method="_on_slot_mouse_entered"]
+[connection signal="mouse_entered" from="IngredientInventory/IngredientGrid/Slot6" to="." method="_on_slot_mouse_entered"]

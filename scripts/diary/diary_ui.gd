@@ -41,6 +41,7 @@ func _on_background_overlay_gui_input(event: InputEvent) -> void:
 
 
 func open_diary() -> void:
+	play_pageflip_sfx()
 	show()
 	var tween = create_tween()
 	tween.tween_property(background_overlay, "self_modulate", background_overlay.self_modulate, 0.1).from(Color(0.0, 0.0, 0.0, 0.0))
@@ -56,6 +57,7 @@ func close_diary() -> void:
 		tween.tween_property(background_overlay, "self_modulate", Color(0.0, 0.0, 0.0, 0.0), 0.1)
 		tween.parallel().tween_property(page, "position", page.position + Vector2(0.0, 500.0), 0.15)
 		await tween.finished
+		play_pageflip_sfx()
 		hide()
 		# Reset items to original values
 		background_overlay.self_modulate = initial_modulate

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://mtyjkkj4jpv5"]
+[gd_scene load_steps=19 format=3 uid="uid://mtyjkkj4jpv5"]
 
 [ext_resource type="Script" uid="uid://dg37x2sist7is" path="res://scripts/ui/inventory_ui/ingredient_slot.gd" id="1_p4v5u"]
 [ext_resource type="Shader" uid="uid://b8p02a1wqmd0y" path="res://resources/inventory/ingredient_slot.gdshader" id="2_qoove"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://dvg87cpkx5pto" path="res://assets/ingredient_bag/empty_overlay_open.png" id="10_xt5ch"]
 [ext_resource type="Texture2D" uid="uid://csncoxynbienb" path="res://assets/ingredient_bag/one_overlay_closed.png" id="11_8u5ws"]
 [ext_resource type="Texture2D" uid="uid://ccdbxl4tofo4s" path="res://assets/ingredient_bag/one_opened.png" id="14_uv55l"]
+[ext_resource type="AudioStream" uid="uid://gnhnqvtjlst1" path="res://assets/audio/bag/bag_close.wav" id="15_uv55l"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_let6m"]
 animations = [{
@@ -171,6 +172,9 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
 text = "x99"
+
+[node name="OpenClose" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_uv55l")
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

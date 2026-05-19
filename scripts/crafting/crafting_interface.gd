@@ -2,6 +2,7 @@
 extends InventoryInterface
 
 @onready var mixer: Control = %Mixer
+@onready var cauldron : Sprite2D = $Cauldron
 
 func _ready() -> void:
 	mixer.craft_mixer.connect(on_craft)
@@ -27,7 +28,7 @@ func on_craft() -> void:
 
 func _on_mixer_animation_finished(anim_name: StringName) -> void:
 	if (anim_name == "pour_beaker"):
-		mixer.craft()
+		mixer.craft(cauldron)
 		mixer.request_ingredients_storage()
 		await get_tree().create_timer(1.0).timeout
 		mixer.get_child(-1).play("return_beaker")

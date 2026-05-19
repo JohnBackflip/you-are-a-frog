@@ -136,6 +136,7 @@ func drop_slot_data(grabbed_slot_data: SlotData, index: int, inventory : Invento
 
 	slot_data = slot_datas[index]
 	slot_datas[index] = grabbed_slot_data
+	game_functions.play_audio(inventory.audio_player, grabbed_slot_data.item_data.sound)
 
 	inventory_updated.emit(self)
 	return slot_data
