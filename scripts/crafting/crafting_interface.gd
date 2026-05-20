@@ -5,6 +5,7 @@ extends InventoryInterface
 @onready var cauldron : Sprite2D = $Cauldron
 
 func _ready() -> void:
+	super()
 	mixer.craft_mixer.connect(on_craft)
 
 # Returns the contents of the mixer to the inventory

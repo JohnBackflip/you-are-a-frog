@@ -22,6 +22,7 @@ enum InventoryTab {INGREDIENT, POTION}
 var day: int = 0 #Set to 0 for index usage
 var period: Period = Period.DAY
 
+var grabbed_slot_data : SlotData
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

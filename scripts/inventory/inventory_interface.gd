@@ -7,7 +7,16 @@ class_name InventoryInterface
 @onready var item_description : Control = $ItemDescription
 @onready var grabbed_slot: Control = $GrabbedSlot
 
-var grabbed_slot_data: SlotData
+# Grabbed_slot_data is a global variable. This keeps it updated between scenes
+var grabbed_slot_data: SlotData = game_manager.grabbed_slot_data:
+	get:
+		return game_manager.grabbed_slot_data
+	set (value):
+		game_manager.grabbed_slot_data = value
+
+func _ready() -> void:
+	if grabbed_slot_data:
+		update_grabbed_slot()
 
 func _physics_process(_delta: float) -> void:
 	if grabbed_slot.visible:
@@ -64,6 +73,8 @@ func update_grabbed_slot() -> void:
 	if grabbed_slot_data:
 		if grabbed_slot_data.item_data is PotionData:
 			grabbed_slot.scale = Vector2(2.7, 2.7)
+		else:
+			grabbed_slot.scale = Vector2(1.0, 1.0)
 		grabbed_slot.show()
 		grabbed_slot.set_slot_data(grabbed_slot_data)
 	else:

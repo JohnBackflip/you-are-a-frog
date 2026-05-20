@@ -225,6 +225,7 @@ offset_bottom = -13.0
 grow_horizontal = 2
 grow_vertical = 2
 bbcode_enabled = true
+text = "I am a text!"
 
 [node name="EndNightButton" type="Button" parent="CanvasLayer"]
 custom_minimum_size = Vector2(120, 0)
